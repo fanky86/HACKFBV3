@@ -1,5 +1,12 @@
 import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid,calendar
 #------------------[  MODULE  ]-------------------#
+
+
+try:
+    import play-audio
+except ImportError:
+    print('• Sedang Menginstall Modul Play-Audio •')
+    os.system('pkg install play-audio')
 try:
     import licensing
 except ImportError:
@@ -461,36 +468,36 @@ def menu(my_name,my_id):
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		Console(width=80, style="bold cyan").print(Panel(f"""[bold white]{(file)}"""))
+		Console().print(Panel(f"""[bold white]{(file)}""",width=80, style=f{"color_panel"}))
 	try:
-		Console(width=80, style="bold cyan").print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",subtitle="╭───", subtitle_align="left"))
+		Console().print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style=f{"color_panel"}))
 		opsi()
 	except IOError:
-		Console(width=80, style="bold cyan").print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu"""))
+		Console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style=f{"color_panel"}))
 		exit()
 
 def opsi():
 	CP = ("CP/")
-	romi = Console().input(f"[bold cyan]   ╰─> ")
+	romi = console.input(f" {H2}• {P2}Tempelkan Sini : ")
 	if romi == "":
-		Console().print(f"[bold cyan]   ╰─>[bold red] Isi Yang Benar""",width=80,style=f"bold white")
+		Console().print(f"[bold cyan]   ╰─>[bold red] Isi Yang Benar""",width=80, style=f{"color_panel"})
 		opsi()
 	try:
 		file_cp = open(CP+romi, "r").readlines()
 	except IOError:
-		exit(Console().print(Panel(f"""[bold cyan]   ╰─>[bold red] Nama File {(romi)} Tidak Di Temukan""",width=80,style=f"bold white")))
-	prints(Panel(f"""[bold white]Sebelum Melanjutkan Hidupkan/Matikan Mode Pesawat""",width=80,style=f"bold cyan"))
-	Console(width=80, style="bold cyan").print(Panel("[bold white] Ubah Password ? Y/T ",subtitle="╭───", subtitle_align="left"))
-	pw= Console().input(f"[bold cyan]   ╰─> ")
+		exit(Console().print(Panel(f"""[bold cyan]   ╰─>[bold red] Nama File {(romi)} Tidak Di Temukan""",width=80, style=f{"color_panel"})))
+	prints(Panel(f"""[bold white]Sebelum Melanjutkan Hidupkan/Matikan Mode Pesawat""",width=80, style=f{"color_panel"}))
+	Console().print(Panel("[bold white] Ubah Password ? Y/T ",width=80, style=f{"color_panel"}))
+	pw= console.input(f" {H2}• {P2}masukan Y/T: ")
 	if pw in['y','Y']:
 		ubah_pass.append("ubah_sandi")
-		Console(width=80, style="bold cyan").print(panel("[bold white] Masukan Password Baru",subtitle="╭───", subtitle_align="left"))
-		pw2=Console().input(f"[bold cyan]   ╰─> ")
+		Console().print(panel("[bold white] Masukan Password Baru",subtitle="╭───", width=80, style=f{"color_panel"}))
+		pw2=console.input(f" {H2}• {P2}PW Baru : ")
 		if len(pw2) <= 5:
-			Console().print(Panel(f"""[bold white]Sandi Minimal 6 Karakter""",width=80,style=f"bold cyan"))
+			Console().print(Panel(f"""[bold white]Sandi Minimal 6 Karakter""",width=80, style=f{"color_panel"}))
 		else:
 			pwbaru.append(pw2)
-	prints(Panel(f"""[bold white]Total akun : [bold green]{str(len(file_cp))}""",width=80,style=f"bold cyan"))
+	prints(Panel(f"""[bold white]Total akun : [bold green]{str(len(file_cp))}""",width=80, style=f{"color_panel"}))
 	nomor = 0
 	for fb in file_cp:
 		akun = fb.replace("\n","")
@@ -1518,8 +1525,6 @@ if __name__=='__main__':
 	try:os.system('git pull')
 	except:pass
 	try:os.mkdir('/sdcard/RUDAL-DUMP')
-	except:pass
-	try:os.system('pkg install play-audio')
 	except:pass
 	try:os.mkdir('OK')
 	except:pass
