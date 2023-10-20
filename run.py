@@ -460,12 +460,12 @@ def menu(my_name,my_id):
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		prints(Panel(f"{(file)}",width=80, style=f"{color_panel}"))
+		prints(Panel(f"""{M2}{(file)}",width=80, style=f"{color_panel}"""))
 	try:
-		prints(Panel(f"Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt",width=80, style=f"{color_panel}"))
+		prints(Panel(f"""Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style=f"{color_panel}"))
 		opsi()
 	except IOError:
-		prints(Panel(f"Tidak Ada File Untuk Di Cek Silahkan Crack Dulu",width=80, style=f"{color_panel}"))
+		prints(Panel(f"""Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style=f"{color_panel}"))
 		exit()
 
 def opsi():
@@ -483,7 +483,7 @@ def opsi():
 	pw= console.input(f" {H2}• {P2}masukan Y/T: ")
 	if pw in['y','Y']:
 		ubah_pass.append("ubah_sandi")
-		Console().print(panel("[bold white] Masukan Password Baru",subtitle="╭───", width=80, style={"color_panel"}))
+		Console().print(panel("""[bold white] Masukan Password Baru""", width=80, style={"color_panel"}))
 		pw2=console.input(f" {H2}• {P2}PW Baru : ")
 		if len(pw2) <= 5:
 			Console().print(Panel(f"""[bold white]Sandi Minimal 6 Karakter""",width=80, style={"color_panel"}))
