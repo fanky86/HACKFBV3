@@ -1196,20 +1196,19 @@ ubahP = []
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		Console(width=80, style="bold cyan").print(Panel(f"""[bold white]{(file)}"""))
+		Console().print(Panel(f"""[bold white]{(file)}""",width=80, style=f"{bold cyan}")))
 	try:
-		Console(width=80, style="bold cyan").print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",subtitle="╭───", subtitle_align="left"))
+		Console().print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80,style=f"{color_panel}"))
 		opsi()
 	except IOError:
-		Console(width=80, style="bold cyan").print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu"""))
+		Console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu"""width=80,style=f"{color_panel}"))
 		exit()
 
 def opsi():
 	CP = ("CP/")
-	romi = Console().input(f"[bold cyan]   ╰─> ")
+	romi = console.input(f" {H2}• {P2}Masukan : ")
 	if romi == "":
-		Console().print(f"[bold cyan]   ╰─>[bold red] Isi Yang Benar""",width=80,style=f"bold white")
-		opsi()
+		console.print(f" {H2}• {P2}Isi Yang Bener! ")		opsi()
 	try:
 		file_cp = open(CP+romi, "r").readlines()
 	except IOError:
