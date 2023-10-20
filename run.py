@@ -284,8 +284,8 @@ def banner():
 def login123():
 	os.system('clear')
 	banner()
-	Console(width=80, style="{color_panel}").print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie\n[[bold cyan]02[bold white]] Keluar
-    """, title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (LOGIN) [bold green]<[bold yellow]<[bold red]<"))
+	Console().print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie\n[[bold cyan]02[bold white]] Keluar
+    """,width=80, style=f"{color_panel}", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (LOGIN) [bold green]<[bold yellow]<[bold red]<"))
 	bryn = console.input(f" {H2}• {P2}pilih menu : ")
 	if bryn in ['1','01']:
 		login_lagi334()
