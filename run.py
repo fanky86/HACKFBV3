@@ -3,7 +3,7 @@ import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subp
 
 
 try:
-    import play-audio
+    import playsound
 except ImportError:
     print('• Sedang Menginstall Modul Play-Audio •')
     os.system('pkg install play-audio')
