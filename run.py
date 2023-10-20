@@ -1196,7 +1196,7 @@ ubahP = []
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		Console().print(Panel(f"""[bold white]{(file)}""",width=80, style=f"{bold cyan}")))
+		Console().print(Panel(f"""[bold white]{(file)}""",width=80, style=f"{bold cyan}"))
 	try:
 		Console().print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80,style=f"{color_panel}"))
 		opsi()
