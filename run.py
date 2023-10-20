@@ -316,8 +316,8 @@ def login():
 		
 def login_lagi334():
     try:
-        Console().print(Panel("""Disarankan Untuk Menggunakan Cookie Yang Masih Fresh Untuk Melakukan Crack Account""",width=80,style=f"{color_panel}",subtitle="╭───", subtitle_align="left", title="[bold green]>[hot_pink2] (SARAN) [bold green]<"))
-        your_cookies = console.input(f" {H2}• {P2}Cookie : ")
+        Console().print(Panel("""[bold white]Disarankan Untuk Menggunakan Cookie Yang Masih Fresh Untuk Melakukan Crack Account""",width=80,style=f"{color_panel}", title="SARAN"))
+        your_cookies = console.input(f" {H2}• {P2}Masukan Cookie : ")
         with requests.Session() as r:
             try:
                 r.headers.update({'content-type': 'application/x-www-form-urlencoded',})
