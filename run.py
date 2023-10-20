@@ -6,7 +6,7 @@ try:
     import playsound
 except ImportError:
     print('• Sedang Menginstall Modul Play-Audio •')
-    os.system('pkg install play-audio')
+    os.system('pkg install playsound')
 try:
     import licensing
 except ImportError:
@@ -467,12 +467,12 @@ def menu(my_name,my_id):
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		prints(Panel(f"""[bold white]{(file)}""",width=80, style=f"{color_panel}"))
+		prints(Panel(f"{(file)}",width=80, style=f"{color_panel}"))
 	try:
-		prints(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style=f"{color_panel}"))
+		prints(Panel(f"Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt",width=80, style=f"{color_panel}"))
 		opsi()
 	except IOError:
-		prints(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style=f"{color_panel}"))
+		prints(Panel(f"Tidak Ada File Untuk Di Cek Silahkan Crack Dulu",width=80, style=f"{color_panel}"))
 		exit()
 
 def opsi():
