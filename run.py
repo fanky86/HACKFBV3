@@ -371,7 +371,6 @@ def login_lagi334():
                             Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{access_token}""",width=80, style=f"{color_panel}", title="[bold green]>[hot_pink2] (PILIHAN) [bold green]<"))
                             tokenew = open(".token.txt","w").write(access_token)
                             cook= open(".cok.txt","w").write(your_cookies)
-                            followdong()
                             Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5);followdong()
                             time.sleep(3)
                             back()
@@ -468,12 +467,12 @@ def menu(my_name,my_id):
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		console().print(Panel("""[bold white]{(file)}""",width=80, style=f{"color_panel"}))
+		console().print(Panel(f"""[bold white]{(file)}""",width=80, style=f"{color_panel}"))
 	try:
-		console().print(Panel("""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style={"color_panel"}))
+		console().print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style=f"{color_panel}"))
 		opsi()
 	except IOError:
-		console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style={"color_panel"}))
+		console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style=f"{color_panel}"))
 		exit()
 
 def opsi():
