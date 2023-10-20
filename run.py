@@ -468,12 +468,12 @@ def menu(my_name,my_id):
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		Console().print(Panel("""[bold white]{(file)}""",width=80, style=f{"color_panel"}))
+		console().print(Panel("""[bold white]{(file)}""",width=80, style=f{"color_panel"}))
 	try:
-		Console().print(Panel("""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style={"color_panel"}))
+		console().print(Panel("""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style={"color_panel"}))
 		opsi()
 	except IOError:
-		Console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style={"color_panel"}))
+		console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style={"color_panel"}))
 		exit()
 
 def opsi():
