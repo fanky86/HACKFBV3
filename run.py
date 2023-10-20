@@ -468,7 +468,7 @@ def menu(my_name,my_id):
 def file_cp():
 	dirs = os.listdir('CP')
 	for file in dirs:
-		Console().print(Panel(f"""[bold white]{(file)}""",width=80, style=f{"color_panel"}))
+		Console().print(Panel(f"""[bold white]{(file)}""",width=80, style={"color_panel"}))
 	try:
 		Console().print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style={"color_panel"}))
 		opsi()
