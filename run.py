@@ -1198,10 +1198,10 @@ def file_cp():
 	for file in dirs:
 		Console().print(Panel(f"""{(file)}""",width=80, style="{bold cyan}"))
 	try:
-		Console().print(Panel(f"""Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80,style=f"{color_panel}"))
+		Console().print(Panel(f"""Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80,style="{color_panel}"))
 		opsi()
 	except IOError:
-		Console().print(Panel(f"""Tidak Ada File Untuk Di Cek Silahkan Crack Dulu"""width=80,style=f"{color_panel}"))
+		Console().print(Panel(f"""Tidak Ada File Untuk Di Cek Silahkan Crack Dulu"""width=80,style="{color_panel}"))
 		exit()
 
 def opsi():
