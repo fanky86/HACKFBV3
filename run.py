@@ -479,8 +479,7 @@ def opsi():
 	except IOError:
 		exit(Console().print(Panel(f"""[bold cyan]   ╰─>[bold red] Nama File {(romi)} Tidak Di Temukan""",width=80, style=f"{color_panel}")))
 	prints(Panel(f"""[bold white]Sebelum Melanjutkan Hidupkan/Matikan Mode Pesawat""",width=80, style=f"{color_panel}"))
-	Console().print(Panel("[bold white] Ubah Password ? Y/T ",width=80, style={"color_panel"}))
-	pw= console.input(f" {H2}• {P2}masukan Y/T: ")
+	pw= console.input(f" {H2}• {P2}Ubah Password Y/T: ")
 	if pw in['y','Y']:
 		ubah_pass.append("ubah_sandi")
 		Console().print(panel("""[bold white] Masukan Password Baru""", width=80, style={"color_panel"}))
