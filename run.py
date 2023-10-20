@@ -458,11 +458,11 @@ def menu(my_name,my_id):
     
     ###----------[ PINDAH KE MENU BOT ]---------- ###
     elif HaHi in["BOT","Bot","bot"]:
-        exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style=f"{color_panel}")))
+        exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style="{color_panel}")))
     elif HaHi in["LAIN","Lain","lain"]:
         Lain(cookie).menu()
     else:
-        exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style=f"{color_panel}")))
+        exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style="{color_panel}")))
 
 
 def file_cp():
@@ -470,34 +470,34 @@ def file_cp():
 	for file in dirs:
 		Console().print(Panel(f"""[bold white]{(file)}""",width=80, style=f{"color_panel"}))
 	try:
-		Console().print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style=f{"color_panel"}))
+		Console().print(Panel(f"""[bold white]Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt""",width=80, style={"color_panel"}))
 		opsi()
 	except IOError:
-		Console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style=f{"color_panel"}))
+		Console().print(Panel(f"""[bold white]Tidak Ada File Untuk Di Cek Silahkan Crack Dulu""",width=80, style={"color_panel"}))
 		exit()
 
 def opsi():
 	CP = ("CP/")
 	romi = console.input(f" {H2}• {P2}Tempelkan Sini : ")
 	if romi == "":
-		Console().print(f"[bold cyan]   ╰─>[bold red] Isi Yang Benar""",width=80, style=f{"color_panel"})
+		Console().print(f"[bold cyan]   ╰─>[bold red] Isi Yang Benar""",width=80, style={"color_panel"})
 		opsi()
 	try:
 		file_cp = open(CP+romi, "r").readlines()
 	except IOError:
-		exit(Console().print(Panel(f"""[bold cyan]   ╰─>[bold red] Nama File {(romi)} Tidak Di Temukan""",width=80, style=f{"color_panel"})))
-	prints(Panel(f"""[bold white]Sebelum Melanjutkan Hidupkan/Matikan Mode Pesawat""",width=80, style=f{"color_panel"}))
+		exit(Console().print(Panel(f"""[bold cyan]   ╰─>[bold red] Nama File {(romi)} Tidak Di Temukan""",width=80, style={"color_panel"})))
+	prints(Panel(f"""[bold white]Sebelum Melanjutkan Hidupkan/Matikan Mode Pesawat""",width=80, style={"color_panel"}))
 	Console().print(Panel("[bold white] Ubah Password ? Y/T ",width=80, style=f{"color_panel"}))
 	pw= console.input(f" {H2}• {P2}masukan Y/T: ")
 	if pw in['y','Y']:
 		ubah_pass.append("ubah_sandi")
-		Console().print(panel("[bold white] Masukan Password Baru",subtitle="╭───", width=80, style=f{"color_panel"}))
+		Console().print(panel("[bold white] Masukan Password Baru",subtitle="╭───", width=80, style={"color_panel"}))
 		pw2=console.input(f" {H2}• {P2}PW Baru : ")
 		if len(pw2) <= 5:
-			Console().print(Panel(f"""[bold white]Sandi Minimal 6 Karakter""",width=80, style=f{"color_panel"}))
+			Console().print(Panel(f"""[bold white]Sandi Minimal 6 Karakter""",width=80, style={"color_panel"}))
 		else:
 			pwbaru.append(pw2)
-	prints(Panel(f"""[bold white]Total akun : [bold green]{str(len(file_cp))}""",width=80, style=f{"color_panel"}))
+	prints(Panel(f"""[bold white]Total akun : [bold green]{str(len(file_cp))}""",width=80, style={"color_panel"}))
 	nomor = 0
 	for fb in file_cp:
 		akun = fb.replace("\n","")
