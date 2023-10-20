@@ -1208,7 +1208,8 @@ def opsi():
 	CP = ("CP/")
 	romi = console.input(f" {H2}• {P2}Masukan : ")
 	if romi == "":
-		console.print(f" {H2}• {P2}Isi Yang Bener! ")		opsi()
+		console.print(f" {H2}• {P2}Isi Yang Bener! ")
+		opsi()
 	try:
 		file_cp = open(CP+romi, "r").readlines()
 	except IOError:
