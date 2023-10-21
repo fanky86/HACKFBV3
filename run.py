@@ -1070,7 +1070,7 @@ def metode_api(idf,pwv):
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
 					break
-			elif "c_user" in ses.cookies.get_dict().keys():
+			elif "c_user" in p.cookies.get_dict().keys():
 				if 'no' in taplikasi:
 					ok+=1
 					coki=po.cookies.get_dict()
