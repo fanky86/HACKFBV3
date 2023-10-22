@@ -1600,7 +1600,7 @@ if __name__=='__main__':
 	except:pass
 	try:os.mkdir('OK')
 	except:pass
-	try:os.mkdir('play-audio')
+	try:os.system('pkg install play-audio')
 	except:pass
 	try:os.mkdir('CP')
 	except:pass
