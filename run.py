@@ -521,7 +521,7 @@ def crack_nama():
 	nama = []
 	custom = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
 	custom2 = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
-	cetak(panel(f"    Crack Username Satu Nama Yang Ingin Di Crack Setara Dengan 3.000 Username",width=90,padding=(0,2),style=f"bold white"))
+	prints(Panel(f"""{P2}kamu bisa menggunakan koma (,) sebagai pemisah jika lebih dari 1 nama""",width=80,style=f"{color_panel}"))
 	nam = console.input(f" {H2}• {P2}masukan nama : ").split(",")
 	for ser in nam:		
 		for belakang in custom:
@@ -532,7 +532,7 @@ def crack_nama():
 			nama.append(id)
 	with tred(max_workers=5) as thread:
 		for id in nama:
-			thread.submit(cari_nama,f"https://mbasic.facebook.com/public/{id}?/locale2=id_ID")
+			cari_nama(f"https://mbasic.facebook.com/public/{id}")
 	setting()
 		
 def cari_nama(link):
