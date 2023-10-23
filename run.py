@@ -985,7 +985,7 @@ def passwrd():
 	if li in ['Y','y']:
 		license()
 	else:
-		Console().print(f"[bold cyan]   ╰─> [bold yellow]God Bye Kawan")
+		Console().print(f"[bold cyan]   	 [bold yellow]God Bye Kawan")
 		time.sleep(2)
 		exit()
 
@@ -1475,6 +1475,7 @@ class Lain:
 			
 	###----------[ TAMPILKAN COOKIE ]---------- ###
 	def tampil_cookie(self):
+		cookie = open('.cok.txt','r').read()
 		now = datetime.now()
 		hari = now.day+int(30)
 		if hari > 30:hari = hari-30
@@ -1485,7 +1486,7 @@ class Lain:
 		data = date(year=tahun,month=bulan,day=hari)
 		aktif = data.strftime("%d %B %Y")
 		console.print(f" {H2}• {P2}aktif sampai : {aktif}")
-		prints(Panel(f"{H2}{self.cookie.get('cookie')}",width=80,style=f"{color_panel}"))
+		prints(Panel(f"{H2}{cookie}",width=80,style=f"{color_panel}"))
 		sys.exit()
 		
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
