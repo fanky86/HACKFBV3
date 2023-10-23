@@ -392,7 +392,8 @@ def login_lagi334():
                             Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{access_token}""",width=80, style=f"{color_panel}", title="[bold green]>[hot_pink2] (PILIHAN) [bold green]<"))
                             tokenew = open(".token.txt","w").write(access_token)
                             cook= open(".cok.txt","w").write(your_cookies)
-                            Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5);followdong()
+                            followdong()
+                            Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5)
                             time.sleep(3)
                             back()
 
