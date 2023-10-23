@@ -299,7 +299,7 @@ def clear():
 #------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
     Console().print(Panel("""
-{x}{sir}Fanky{x}
+{sir}Fanky{sir}{x}
 [bold red]███████████████████████             
 [bold red]███████████████████████          [bold yellow]Github    : [bold green]https://github.com/Rudal-XD
 [bold red]███████████████████████          [bold yellow]Wa        : [bold green]+62895386194***
