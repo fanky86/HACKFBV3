@@ -1538,8 +1538,8 @@ class get_data_web:
         self.xyz = requests.Session()
         prints(Panel(f"""{H2}masukan url/link yang mau di source code""",width=80,padding=(0,6),style=f"{color_panel}"))
         url = console.input(f" {H2}• {P2}Masukan URL : ")
-        prints(Panel(f"""{P2}[{color_text}01{P2}]. Source Payload  [{color_text}02{P2}]. Parsed Payload	[{color_text}03{P2}]. Source Code Post Requests""",width=80,padding=(0,7),style=f"{color_panel}"))
-        self.tanya = console.input(" {H2}• {P2}pilih menu : ")
+        prints(Panel(f"""{P2}[{color_text}01{P2}].Source Payload	[{color_text}02{P2}].Parsed Payload	\n[{color_text}03{P2}].Source Code Post Requests""",width=80,padding=(0,7),style=f"{color_panel}"))
+        self.tanya = console.input(f" {H2}• {P2}pilih menu : ")
         self.domain = url.split('/')[2]
         self.get_form(url)
        
@@ -1550,7 +1550,7 @@ class get_data_web:
             if self.tanya in ['1','01','a']: self.printing1(req,x)
             elif self.tanya in ['2','02','b']: self.printing2(req,x)
             elif self.tanya in ['3','03','c']: self.printing3(url,req,x)
-            else: exit('\n{H2}• {P2} Isi Yang Benar Asu')
+            else: exit(f'{H2}• {P2} Isi Yang Benar Asu')
 
     def get_head1(self,req):
         data = {}
@@ -1588,12 +1588,12 @@ class get_data_web:
         data = self.get_data1(x)
         post = self.get_post1(x)
         coki = self.xyz.cookies.get_dict()
-        prints(Panel(f"""\n\n[Source Payload]\n""",width=80,style=f"{color_panel}")) 
-        prints(Panel(f"""[HOST]  %s"""%(self.domain),width=80,style=f"{color_panel}")) 
-        prints(Panel(f"""[Head]  %s"""%(head),width=80,style=f"{color_panel}"))
-        prints(Panel(f"""[Data]  %s"""%(data),width=80,style=f"{color_panel}"))
-        prints(Panel(f"""[Coki]  %s"""%(coki),width=80,style=f"{color_panel}"))
-        prints(Panel(f"""[Post]  %s"""%(post),width=80,style=f"{color_panel}"))
+        prints(Panel(f"""{P2}			[Source Payload]{P2}""",width=80,style=f"{color_panel}")) 
+        prints(Panel(f"""{P2}[HOST]{H2}  %s"""%(self.domain),width=80,style=f"{color_panel}")) 
+        prints(Panel(f"""{P2}[Head]{H2}  %s"""%(head),width=80,style=f"{color_panel}"))
+        prints(Panel(f"""{P2}[Data]{H2}  %s"""%(data),width=80,style=f"{color_panel}"))
+        prints(Panel(f"""{P2}[Coki]{H2}  %s"""%(coki),width=80,style=f"{color_panel}"))
+        prints(Panel(f"""{P2}[Post]{H2}  %s"""%(post),width=80,style=f"{color_panel}"))
     
     
     def printing2(self,req,x):
