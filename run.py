@@ -458,19 +458,7 @@ def menu(my_name,my_id):
         Dump_Email(user,format,limit)
         setting()
     elif HaHi in ['5','05']:
-        prints(Panel(f"""{P2}kamu bisa menggunakan koma (,) sebagai pemisah jika lebih dari 1 nama""",width=80,style=f"{color_panel}"))
-        user = console.input(f" {H2}• {P2}masukan nama : ")
-        common = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
-        custom2 = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
-        for idt in user.split(","):
-            id.append(idt)
-            for people in common:
-                id.append(people+" "+idt)
-                try:
-                    for gas in id:
-                        Dump_Pencarian(f"https://mbasic.facebook.com/public/{gas}")
-                except:pass
-                Dump_Pencarian(f"https://mbasic.facebook.com/public/{gas}")
+        crack_nama()
     elif HaHi in ['6','06']:
         publikv2()
     elif HaHi in ["7","07"]:
@@ -528,6 +516,45 @@ def crack_file():
 		for xid in lin:
 			id.append(xid)
 		setting()
+
+def crack_nama():
+	nama = []
+	custom = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
+	custom2 = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
+	cetak(panel(f"    Crack Username Satu Nama Yang Ingin Di Crack Setara Dengan 3.000 Username",width=90,padding=(0,2),style=f"bold white"))
+	nam = console.input(f" {H2}• {P2}masukan nama : ").split(",")
+	for ser in nam:		
+		for belakang in custom:
+			id = ser+belakang
+			nama.append(id)
+		for depan in custom2:
+			id = depan+ser
+			nama.append(id)
+	with tred(max_workers=5) as thread:
+		for id in nama:
+			thread.submit(cari_nama,f"https://mbasic.facebook.com/public/{id}?/locale2=id_ID")
+	setting()
+		
+def cari_nama(link):
+    r = parser(ses.get(str(link)).text,'html.parser')
+    for x in r.find_all('td'):
+        data = re.findall('\<a\ href\=\"\/(.*?)\">\<div\ class\=\".*?\">\<div\ class\=\".*?\">(.*?)<\/div\>',str(x))
+        for uid,nama in data:
+            if 'profile.php?' in uid:
+                uid = re.findall('id=(.*)',str(uid))[0]
+            elif '<span' in nama:
+                nama = re.findall('(.*?)\<',str(nama))[0]
+            bo = uid+'|'+nama
+            if bo in id:pass
+            else:id.append(bo)
+    link = r.find('a',string='Lihat Hasil Selanjutnya').get('href')
+    if(link):
+        sys.stdout.write(f"\r [+] Mengumpulkan {len(id)} Idz ...");sys.stdout.flush()
+        time.sleep(0.0000003)
+        cari_nama(link)
+    else:
+        print("\r")
+
 
 def Dump_Pencarian(url):
     try:
