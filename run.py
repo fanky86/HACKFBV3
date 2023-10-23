@@ -299,7 +299,7 @@ def clear():
 #------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
     Console().print(Panel("""
-          [bold green]Fanky[bold white]
+      [bold green]Fanky[bold white]
 [bold red]███████████████████████             
 [bold red]███████████████████████          [bold yellow]Github    : [bold green]https://github.com/Rudal-XD
 [bold red]███████████████████████          [bold yellow]Wa        : [bold green]+62895386194***
@@ -478,7 +478,7 @@ def menu(my_name,my_id):
     
     ###----------[ PINDAH KE MENU BOT ]---------- ###
     elif HaHi in["BOT","Bot","bot"]:
-        exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style="{color_panel}")))
+        exit(prints(Panel(f"{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya",width=80,style=f"{color_panel}")))
     elif HaHi in["LAIN","Lain","lain"]:
         Lain(cookie).menu()
     else:
