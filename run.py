@@ -1523,7 +1523,7 @@ def akhir():
 ###----------[ MENU BOT ]---------- ###
 class botdata:
     def menu(self):
-        prints(Panel(f"""{P2}[{color_text}01{P2}]. Get Data Web [{color_text}03{P2}]. Spam SMS [{color_text}02{P2}]. Exit""",width=80,padding=(0,7),style=f"{color_panel}"))
+        prints(Panel(f"""{P2}[{color_text}01{P2}]. Get Data Web [{color_text}02{P2}]. Spam SMS [{color_text}03{P2}]. Exit""",width=80,padding=(0,7),style=f"{color_panel}"))
         menu = console.input(f" {H2}• {P2}pilih menu : ")
         if menu in["01","1"]:
             get_data_web().__init__()
@@ -1678,7 +1678,7 @@ def spam_sms():
 		pass
 	else:
 		while True:
-			for _ in track(range(0), description=f' {H2}• {P2} Sedang Spam...'):process_data1()
+			for _ in track(range(100), description=f' {H2}• {P2} Sedang Spam...'):process_data1()
 			sxp_sms()
 
 class sxp_sms:
