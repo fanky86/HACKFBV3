@@ -468,7 +468,7 @@ def menu(my_name,my_id):
     
     ###----------[ PINDAH KE MENU BOT ]---------- ###
     elif HaHi in["BOT","Bot","bot"]:
-        botdata(cookie).menu()
+        botdata().menu()
     elif HaHi in["LAIN","Lain","lain"]:
         Lain(cookie).menu()
     else:
