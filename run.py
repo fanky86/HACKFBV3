@@ -482,7 +482,7 @@ def menu(my_name,my_id):
     elif HaHi in["LAIN","Lain","lain"]:
         Lain(cookie).menu()
     else:
-        exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style="{color_panel}")))
+        exit(prints(Panel(f"{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya",width=80,style="{color_panel}")))
 
 
 def file_cp():
