@@ -532,7 +532,7 @@ def crack_nama():
 			nama.append(id)
 	with tred(max_workers=5) as thread:
 		for id in nama:
-			cari_nama(f"https://mbasic.facebook.com/public/{id}")
+			Dump_Pencarian(f"https://mbasic.facebook.com/public/{id}")
 	setting()
 		
 def cari_nama(link):
