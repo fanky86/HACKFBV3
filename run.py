@@ -1107,7 +1107,6 @@ def _async(idf,pwv):
                 tree.add(Panel.fit(f"[yellow] {idf} | {pw} ",style=f"white")).add(Panel.fit(f"[yellow] {tahun(idf)} ",style=f"white"))
                 tree.add(Panel.fit(f"[yellow]{ua}",style=f"white"))
                 prints(tree)
-                os.popen('play-audio c.mp3')
                 open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
                 cp+=1
                 break	
@@ -1119,7 +1118,6 @@ def _async(idf,pwv):
                 tree.add(Panel.fit(f"[green]{kuki}",style=f"white"))
                 tree.add(Panel.fit(f"[green]{ua}",style=f"white"))
                 prints(tree)
-                os.popen('play-audio o.mp3')
                 open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
                 break
             else:continue
