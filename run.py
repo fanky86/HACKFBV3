@@ -1523,8 +1523,7 @@ def akhir():
 ###----------[ MENU BOT ]---------- ###
 class botdata:
     def menu(self):
-        prints(Panel(f"""{P2}[{color_text}01{P2}]. Get Data Web 
-                     [{color_text}02{P2}]. Spam SMS """,width=80,padding=(0,7),style=f"{color_panel}"))
+        prints(Panel(f"""{P2}[{color_text}01{P2}]. Get Data Web [{color_text}02{P2}]. Spam SMS [{color_text}02{P2}]. Exit""",width=80,padding=(0,7),style=f"{color_panel}"))
         menu = console.input(f" {H2}• {P2}pilih menu : ")
         if menu in["01","1"]:
             get_data_web().__init__()
@@ -1537,11 +1536,10 @@ class get_data_web:
     
     def __init__(self):
         self.xyz = requests.Session()
-        url = input(' [+] Masukkan URL : ')
-        print('\n [1] Source Payload')
-        print(' [2] Parsed Payload')
-        print(' [3] Source Code Post Requests')
-        self.tanya = input(' [+] Pilih : ')
+        prints(Panel(f"""{H2}masukan url/link yang mau di source code""",width=80,padding=(0,6),style=f"{color_panel}"))
+        url = console.input(f" {H2}• {P2}Masukan URL : ")
+        prints(Panel(f"""{P2}[{color_text}01{P2}]. Source Payload  [{color_text}02{P2}]. Parsed Payload	[{color_text}03{P2}]. Source Code Post Requests""",width=80,padding=(0,7),style=f"{color_panel}"))
+        self.tanya = console.input(" {H2}• {P2}pilih menu : ")
         self.domain = url.split('/')[2]
         self.get_form(url)
        
@@ -1552,7 +1550,7 @@ class get_data_web:
             if self.tanya in ['1','01','a']: self.printing1(req,x)
             elif self.tanya in ['2','02','b']: self.printing2(req,x)
             elif self.tanya in ['3','03','c']: self.printing3(url,req,x)
-            else: exit('\n [+] Isi Yang Benar Asu')
+            else: exit('\n{H2}• {P2} Isi Yang Benar Asu')
 
     def get_head1(self,req):
         data = {}
@@ -1590,13 +1588,14 @@ class get_data_web:
         data = self.get_data1(x)
         post = self.get_post1(x)
         coki = self.xyz.cookies.get_dict()
-        print('\n\n[SOURCE PAYLOAD]\n')
-        print('[Host] %s'%(self.domain))
-        print('[Head] %s'%(head))
-        print('[Data] %s'%(data))
-        print('[Coki] %s'%(coki))
-        print('[Post] %s'%(post))
-
+        prints(Panel(f"""\n\n[Source Payload]\n""",width=80,style=f"{color_panel}")) 
+        prints(Panel(f"""[HOST]  %s"""%(self.domain),width=80,style=f"{color_panel}")) 
+        prints(Panel(f"""[Head]  %s"""%(head),width=80,style=f"{color_panel}"))
+        prints(Panel(f"""[Data]  %s"""%(data),width=80,style=f"{color_panel}"))
+        prints(Panel(f"""[Coki]  %s"""%(coki),width=80,style=f"{color_panel}"))
+        prints(Panel(f"""[Post]  %s"""%(post),width=80,style=f"{color_panel}"))
+    
+    
     def printing2(self,req,x):
         head = self.get_head1(req)
         data = self.get_data2(x)
@@ -1671,13 +1670,13 @@ def process_data1():
 	
 def spam_sms():
 	global nomor 
-	cetak(panel(f'''   Masukan Nomor Target Yang Ingin Di Spam Contoh : +6281234567xxx''',width=90,padding=(0,8),style=f"bold white"))
-	nomor = input(f" [+] Input No Hp : +62").replace("+62","")
+	prints(Panel(f"""{H2}Masukan Nomor Target Yang Ingin Di Spam Contoh : +6281234567xxx""",width=80,padding=(0,6),style=f"{color_panel}"))
+	nomor = console.input(f" {H2}• {P2}Masukan No +62 : ").replace("+62","")
 	if nomor == "":
 		pass
 	else:
 		while True:
-			for _ in track(range(100), description=f' [+] Sedang Spam...'):process_data1()
+			for _ in track(range(50), description=f' {H2}• {P2} Sedang Spam...'):process_data1()
 			sxp_sms()
 
 class sxp_sms:
