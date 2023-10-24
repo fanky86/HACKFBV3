@@ -479,11 +479,11 @@ def menu(my_name,my_id):
 def crack_file():
 	try:vin = os.listdir('/sdcard/RUDAL-DUMP/')
 	except FileNotFoundError:
-		print(' [+] File Tidak Ditemukan ')
+		console.print(f' {H2}• {P2} File Tidak Ditemukan ')
 		time.sleep(2)
 		exit()
 	if len(vin)==0:
-		print(' [+] Kamu Tidak Memiliki File Dump ')
+		console.print(f' {H2}• {P2} Kamu Tidak Memiliki File Dump ')
 		time.sleep(2)
 		exit()
 	else:
@@ -497,20 +497,20 @@ def crack_file():
 				nom = ''+str(cih)
 				lol.update({str(cih):str(isi)})
 				lol.update({nom:str(isi)})
-				print(f' %s. %s [ %s Idz ]'%(nom,isi,len(hem)))
+				console.print(f' {H2}• {P2} %s. %s    ────>   %s Idz '%(nom,isi,len(hem)),width=80,style=f"{color_panel}")
 			else:
 				lol.update({str(cih):str(isi)})
 				print('['+str(cih)+'] '+isi+' [ '+str(len(hem))+' Account ]'+x)
-				print(' [+] %s. %s [ %s Idz] '%(cih,isi,len(hem)))
-		geeh = input(' [+] Pilih : ')
+				console.print(f' {H2}• {P2} %s. %s    ────>   %s Idz '%(cih,isi,len(hem)))
+		geeh = console.input(f' {H2}• {P2} Pilih : ')
 		try:geh = lol[geeh]
 		except KeyError:
-			print(f' [+] Pilih Yang Bener Kontol ')
+			console.print(f' {H2}• {P2} Pilih Yang Bener Kontol ')
 			time.sleep(3)
 			exit()
 		try:lin = open('/sdcard/RUDAL-DUMP/'+geh,'r').read().splitlines()
 		except:
-			print(' [+] File Tidak Ditemukan, Coba Lagi Nanti ')
+			console.print(f' {H2}• {P2} File Tidak Ditemukan, Coba Lagi Nanti ')
 			time.sleep(2)
 			exit()
 		for xid in lin:
