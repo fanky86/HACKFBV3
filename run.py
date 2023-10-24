@@ -1529,10 +1529,10 @@ class botdata:
             get_data_web().__init__()
         elif menu in["02","2"]:
             spam_sms()
-        elif menu in["03",""]:
+        elif menu in["03","3"]:
             back()
         else:
-            exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style=f"{color_panel}")))
+            exit(prints(Panel(f"""{M2}🙏 Masukan Yang Bener Tolol""",width=80,style=f"{color_panel}")))
 
 class get_data_web:
     
