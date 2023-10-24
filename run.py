@@ -1037,7 +1037,7 @@ def methodnew(idf,pwv):
 				"lsd":re.search('name="lsd" type="hidden" value="(.*?)"',str(requ)).group(1),
 				"jazoest":re.search('name="jazoest" type="hidden" value="(.*?)"',str(requ)).group(1),
 				"uid":idf,
-				"next" ='https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8',
+				"next":"https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8",
 				"flow":"login_no_pin",
 				"pass":pw,}
 			cookie = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
