@@ -987,7 +987,7 @@ def passwrd():
 	Console().print(Panel(' [bold green]Lanjut Crack Kembali ?  Y/T  ',width=80,style=f"{color_panel}"))
 	li = console.input(f" {H2}• {P2}pilih : ")
 	if li in ['Y','y']:
-		license()
+		back()
 	else:
 		Console().print(f"[bold cyan]   	 [bold yellow]God Bye Kawan")
 		time.sleep(2)
@@ -997,7 +997,7 @@ def passwrd():
 def methodnew(idf,pwv):
 	global loop,ok,cp
 	ses = requests.Session()
-	ua = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36'
+	ua = random.choice(free)
 	load = random.choice(["😝","😛"])
 	prog.update(des,description=f'\r[bold white]Validate [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
 	prog.advance(des)
