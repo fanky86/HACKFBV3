@@ -497,11 +497,11 @@ def crack_file():
 				nom = ''+str(cih)
 				lol.update({str(cih):str(isi)})
 				lol.update({nom:str(isi)})
-				console.print(f' {H2}• {P2} %s. %s    ────>   %s Idz '%(nom,isi,len(hem)),width=80,style=f"{color_panel}")
+				console.print(Panel(f'{H2}• {P2}%s. %s    ──>   %s Idz '%(nom,isi,len(hem)),width=80,style=f"{color_panel}"))
 			else:
 				lol.update({str(cih):str(isi)})
 				print('['+str(cih)+'] '+isi+' [ '+str(len(hem))+' Account ]'+x)
-				console.print(f' {H2}• {P2} %s. %s    ────>   %s Idz '%(cih,isi,len(hem)))
+				console.print(Panel(f'{H2}• {P2}%s. %s    ──>   %s Idz '%(cih,isi,len(hem))))
 		geeh = console.input(f' {H2}• {P2} Pilih : ')
 		try:geh = lol[geeh]
 		except KeyError:
