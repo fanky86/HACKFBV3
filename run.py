@@ -1523,14 +1523,14 @@ def akhir():
 ###----------[ MENU BOT ]---------- ###
 class botdata:
     def menu(self):
-        prints(Panel(f"""{P2}[{color_text}01{P2}]. Get Data Web [{color_text}02{P2}]. Spam SMS [{color_text}03{P2}]. Exit""",width=80,padding=(0,7),style=f"{color_panel}"))
+        prints(Panel(f"""{P2}[{color_text}01{P2}]. Get Data Web [{color_text}02{P2}]. Spam SMS [{color_text}03{P2}]. Kembali Ke menu""",width=80,padding=(0,7),style=f"{color_panel}"))
         menu = console.input(f" {H2}• {P2}pilih menu : ")
         if menu in["01","1"]:
             get_data_web().__init__()
         elif menu in["02","2"]:
             spam_sms()
-        elif menu in["02","2"]:
-            exit(f" {H2}• {P2}Thank You sudah menggunakan script ini")
+        elif menu in["03",""]:
+            back()
         else:
             exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style=f"{color_panel}")))
 
@@ -1542,7 +1542,7 @@ class get_data_web:
         url = console.input(f" {H2}• {P2}Masukan URL : ")
         prints(Panel(f"""{P2}[{color_text}01{P2}].Source Payload	[{color_text}02{P2}].Parsed Payload	\n[{color_text}03{P2}].Source Code Post Requests""",width=80,padding=(0,7),style=f"{color_panel}"))
         self.tanya = console.input(f" {H2}• {P2}pilih menu : ")
-        self.domain = url.split('/')[2]
+        self.domain = url.split('/')[1]
         self.get_form(url)
        
     def get_form(self,url):
@@ -1596,7 +1596,7 @@ class get_data_web:
         prints(Panel(f"""{P2}[Data]{H2}  %s"""%(data),width=80,style=f"{color_panel}"))
         prints(Panel(f"""{P2}[Coki]{H2}  %s"""%(coki),width=80,style=f"{color_panel}"))
         prints(Panel(f"""{P2}[Post]{H2}  %s"""%(post),width=80,style=f"{color_panel}"))
-    
+        open('/sdcard/FilePayload').write('%s\n%s\n%s\n%s\n%s'%(self.domain,head,data,coki,post))
     
     def printing2(self,req,x):
         head = self.get_head1(req)
@@ -2194,6 +2194,8 @@ if __name__=='__main__':
 	try:os.mkdir('OK')
 	except:pass
 	try:os.system('pkg install play-audio')
+	except:pass
+	try:os.mkdir('/sdcard/FilePayload')
 	except:pass
 	try:os.mkdir('CP')
 	except:pass
