@@ -999,7 +999,8 @@ def methodnew(idf,pwv):
 	ses = requests.Session()
 	ua = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36'
 	load = random.choice(["😝","😛"])
-	print(f"\r [{H}{load}{P}] {loop}/{len(id)} OK-:{ok} CP-:{cp}",end=" ");sys.stdout.flush()
+	prog.update(des,description=f'\r[bold white]Validate [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
+	prog.advance(des)
 	for pw in pwv:
 		try:
 			if 'ya' in ualuh: ua = ualu[0]
