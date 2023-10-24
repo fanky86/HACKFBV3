@@ -1008,6 +1008,28 @@ def methodnew(idf,pwv):
 			hst= 'iphone.facebook.com'
 			url= 'https://iphone.facebook.com/login.php?skip_api_login=1&api_key=322935469656730&kid_directed_site=0&app_id=322935469656730&signed_next=1&next=https%3A%2F%2Fiphone.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D322935469656730%26redirect_uri%3Dhttps%253A%252F%252Fauth.meta.com%252Flogin%252Ffacebook%252Fresponse%252F%253Fstate%253DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26response_type%3Dcode%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dab649465-fbff-4ead-bd68-1de3ab7f9dcf%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fauth.meta.com%2Flogin%2Ffacebook%2Fresponse%2F%3Fstate%3DATCMVytVxs3h0vcwtuRnTboIZVGU1p8q4UHbGllNo8vq2pe5IPqyOfpkf_q1Uq5svpIjq5puNbPyQcIX1pOgaSIl0LKIhrb-8_hFoA-XEpAgEcaXRa5z5eTcn1p1ULhZ-wod-ybV_dypdtHDfRCGTF8nYtaiR6nU9hPmSVLIrxOiYwMHe_VE8ndo8keeolKKGR6i6iBvgiqIbTJogKobqz1fZIR1kagelBP5hTy4VySjsUJQazmiYjrzfH47-dXsHtrcmCjQfIFymBXUSR6XGKU4VQrGJcaN0l6Sgx--dJ965eNC0FSEQR5ohLW7NFzD0nq2QFGVYKUrnNw8Vxfah19oh6pcQDK0gVLEfGr812qeT7ZdV-Ef84p9WYRw9KhS9T6t-Pn0Pk3EQUiQerafL6kzHpe3VoopCDasoXA5H9N_HH-g3KU8LOU4CrvMftgT0cPDszrVUMvI7m0isu5Uz0ipWyZIsHS7jRRNbGVim1agC4WQYwwY_fuMsr8U9SCf-pcRARh7h7785H9dyB5RW7XTnNwHlcPHi2DF7zXWxaHh-Pggjgwr0EqXvrrbT9r2t32iqGYMtPdgV9-st5WZws77tPJF97-WDyLmDg-kduQWUIO8FBstxOBvyvuNJfkXayu_TCLxCmtDlFT_9Rihxv5IY3dmcUg_xYccs0Haq-hCdJu_vx367fg3CXZj5MH1bHbO9730ZvT10I6iK60%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr'
 			hdg = {
+				"Vary":"Accept-Encoding",
+				"Content-Encoding":"gzip"
+				"reporting-endpoints":"default="https://iphone.facebook.com/ajax/mtouch_error_reports/?device_level=unknown",
+    "content-security-policy":"default-src data: blob: 'self' https://*.fbsbx.com 'unsafe-inline' *.facebook.com *.fbcdn.net 'unsafe-eval';script-src *.facebook.com *.fbcdn.net *.facebook.net *.google-analytics.com *.google.com 127.0.0.1:* 'unsafe-inline' blob: data: 'self' connect.facebook.net 'unsafe-eval';style-src fonts.googleapis.com *.fbcdn.net data: *.facebook.com 'unsafe-inline';connect-src *.facebook.com facebook.com *.fbcdn.net *.facebook.net wss://*.facebook.com:* wss://*.whatsapp.com:* wss://*.fbcdn.net attachment.fbsbx.com ws://localhost:* blob: *.cdninstagram.com 'self' http://localhost:3103 wss://gateway.facebook.com wss://edge-chat.facebook.com wss://snaptu-d.facebook.com wss://kaios-d.facebook.com/ v.whatsapp.net *.fbsbx.com *.fb.com;font-src data: *.gstatic.com *.facebook.com *.fbcdn.net *.fbsbx.com;img-src *.fbcdn.net *.facebook.com data: https://*.fbsbx.com *.tenor.co media.tenor.com facebook.com *.cdninstagram.com fbsbx.com fbcdn.net *.giphy.com connect.facebook.net *.carriersignal.info blob: android-webview-video-poster: googleads.g.doubleclick.net www.googleadservices.com *.whatsapp.net *.fb.com *.oculuscdn.com;media-src *.cdninstagram.com blob: *.fbcdn.net *.fbsbx.com www.facebook.com *.facebook.com https://*.giphy.com data:;frame-src *.doubleclick.net *.google.com *.facebook.com www.googleadservices.com *.fbsbx.com fbsbx.com data: www.instagram.com *.fbcdn.net https://paywithmybank.com https://sandbox.paywithmybank.com;worker-src blob: *.facebook.com data:;",
+    "document-policy":"force-load-at-top",
+    "permissions-policy":"accelerometer=(), ambient-light-sensor=(), bluetooth=(), camera=(self), geolocation=(self), gyroscope=(), hid=(), idle-detection=(), magnetometer=(), microphone=(self), midi=(), otp-credentials=(self), payment=(), screen-wake-lock=(), serial=(), usb=()",
+    "cross-origin-resource-policy":"same-origin",
+    "cross-origin-opener-policy":"same-origin-allow-popups",
+    "Pragma":"no-cache",
+    "Cache-Control":"private, no-cache, no-store, must-revalidate",
+    "X-Content-Type-Options":"nosniff",
+    "X-XSS-Protection":"0",
+    "X-Frame-Options":"DENY",
+    "accept-ch-lifetime":"4838400",
+    "accept-ch":"viewport-width,dpr,Sec-CH-Prefers-Color-Scheme,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Model",
+    "Content-Type":"text/html; charset=utf-8",
+    "Strict-Transport-Security":"max-age=15552000; preload",
+    "Alt-Svc":"h3=":443";ma=86400",
+    "Transfer-Encoding":"chunked",
+    "Connection":"keep-alive"
+    }
+			hdggg = {
 				'Host': 'iphone.facebook.com',
 				'cache-control': 'max-age=0',
 				'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="115", "Google Chrome";v="115"',
