@@ -1542,7 +1542,7 @@ class get_data_web:
         url = console.input(f" {H2}• {P2}Masukan URL : ")
         prints(Panel(f"""{P2}[{color_text}01{P2}].Source Payload	[{color_text}02{P2}].Parsed Payload	\n[{color_text}03{P2}].Source Code Post Requests""",width=80,padding=(0,7),style=f"{color_panel}"))
         self.tanya = console.input(f" {H2}• {P2}pilih menu : ")
-        self.domain = url.split('/')[1]
+        self.domain = url.split('/')[2]
         self.get_form(url)
        
     def get_form(self,url):
