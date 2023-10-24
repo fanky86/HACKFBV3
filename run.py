@@ -1596,8 +1596,7 @@ class get_data_web:
         prints(Panel(f"""{P2}[Data]{H2}  %s"""%(data),width=80,style=f"{color_panel}"))
         prints(Panel(f"""{P2}[Coki]{H2}  %s"""%(coki),width=80,style=f"{color_panel}"))
         prints(Panel(f"""{P2}[Post]{H2}  %s"""%(post),width=80,style=f"{color_panel}"))
-        open('/sdcard/FilePayload').write('%s\n%s\n%s\n%s\n%s'%(self.domain,head,data,coki,post))
-    
+            
     def printing2(self,req,x):
         head = self.get_head1(req)
         data = self.get_data2(x)
