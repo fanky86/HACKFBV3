@@ -1619,7 +1619,7 @@ class Lain:
 		bulan = now.month+1
 		if bulan > 12:bulan = bulan-12
 		tahun = now.year+1
-		if tahun > 12:tahun = now.year+1
+		if tahun > 1:tahun = now.year+1
 		data = date(year=tahun,month=bulan,day=hari)
 		aktif = data.strftime("%d %B %Y")
 		console.print(f" {H2}• {P2}aktif sampai : {aktif}")
