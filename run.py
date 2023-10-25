@@ -1012,8 +1012,8 @@ def methodnew(idf,pwv):
 	bi = random.choice(['\33[m']) 
 	pers = loop*100/len(id2)
 	fff = '%'
-	sys.stdout.write(f"\r NdreeXyz {h}{P}{b}{loop}{P}/{P}{len(id)}{P} {hh}OK:{P}{ok}{P} {kk}CP:{P}{cp}{x}  {P}{'{:.0%}'.format(loop/float(len(id)))}{P}  "),
-	sys.stdout.flush()
+	prog.update(des,description=f"{H2} • {bo}CRACK[bold green] {loop}/{len(id)} [bold white]OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
+	prog.advance(des) 
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
 	ses = requests.Session()
