@@ -905,8 +905,8 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console(width=80, style="bold cyan").print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Metode Mbasic[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode Iphone[bold white] [/]',subtitle="╭───", subtitle_align="left", title="[bold green] Method"))
-    hc = Console().input(f"[bold cyan]   ╰─> ")
+    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Metode Mbasic[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode B-Api[bold white] [/]', title="[bold green] Method",width=80,style=f"{color_panel}"))
+    hc = console.input(f" {H2}• {P2}Masukan : ")
     if hc in ['1','01']:
         method.append('_async')
     elif hc in ['2','02']:
