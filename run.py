@@ -1536,8 +1536,9 @@ class Lain:
 		elif menu in["05","5"]:
 			self.tampil_cookie()
 		elif menu in["06","6"]:
-			os.system("rm data/cookie")
-			exit(prints(Panel(f"""{H2}berhasil menghapus cookie, silahkan ketik ulang python run.py""",width=80,style=f"{color_panel}")))
+			os.system("rm .cok.txt")
+			os.system("rm .token.txt")
+			exit(prints(Panel(f"""{H2}berhasil menghapus cookie dan token, silahkan ketik ulang python run.py""",width=80,style=f"{color_panel}")))
 		else:
 			exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style=f"{color_panel}")))
 
