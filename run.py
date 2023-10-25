@@ -1368,7 +1368,7 @@ def file_cp():
 	for file in dirs:
 		prints(Panel(f"{M2}{(file)}",width=80, style=f"{color_panel}"))
 	try:
-		prints(Panel(f"Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt",width=80, style=f"{color_panel}"))
+		prints(Panel(f"{P2}Copy Nama File Di Atas Kemudian Tempel Di Bawah Ini Contoh : {day}.txt",width=80, style=f"{color_panel}"))
 		opsi()
 	except IOError:
 		prints(Panel(f"Tidak Ada File Untuk Di Cek Silahkan Crack Dulu",width=80, style=f"{color_panel}"))
@@ -1383,24 +1383,24 @@ def opsi():
 	try:
 		file_cp = open(CP+romi, "r").readlines()
 	except IOError:
-		exit(Console().print(Panel(f"""[bold cyan]   ╰─>[bold red] Nama File {(romi)} Tidak Di Temukan""",width=80, style=f"{color_panel}")))
-	prints(Panel(f"""[bold white]Sebelum Melanjutkan Hidupkan/Matikan Mode Pesawat""",width=80, style=f"{color_panel}"))
+		exit(Console().print(Panel(f"[bold cyan]   ╰─>[bold red] Nama File {(romi)} Tidak Di Temukan",width=80, style=f"{color_panel}")))
+	prints(Panel(f"[bold white]Sebelum Melanjutkan Hidupkan/Matikan Mode Pesawat",width=80, style=f"{color_panel}"))
 	pw= console.input(f" {H2}• {P2}Ubah Password Y/T: ")
 	if pw in['y','Y']:
 		ubah_pass.append("ubah_sandi")
-		Console().print(panel("""[bold white] Masukan Password Baru""", width=80, style={"color_panel"}))
+		Console().print(panel("[bold white] Masukan Password Baru", width=80, style=f"{color_panel}"))
 		pw2=console.input(f" {H2}• {P2}PW Baru : ")
 		if len(pw2) <= 5:
-			Console().print(Panel(f"""[bold white]Sandi Minimal 6 Karakter""",width=80, style={"color_panel"}))
+			Console().print(Panel(f"[bold white]Sandi Minimal 6 Karakter",width=80, style=f"{color_panel}"))
 		else:
 			pwbaru.append(pw2)
-	prints(Panel(f"""[bold white]Total akun : [bold green]{str(len(file_cp))}""",width=80, style={"color_panel"}))
+	prints(Panel(f"[bold white]Total akun : [bold green]{str(len(file_cp))}",width=80, style=f"{color_panel}"))
 	nomor = 0
 	for fb in file_cp:
 		akun = fb.replace("\n","")
 		ngecek  = akun.split("|")
 		nomor+=1
-		Console().print(Panel(f"""[bold white][{(str(nomor))}] Cek Sesi Akun = {akun}""",width=80,style=f"bold cyan"));jeda(0.10)
+		Console().print(Panel(f"[bold white][{(str(nomor))}] Cek Sesi Akun = {akun}",width=80,style=f"{color_panel}"));jeda(0.10)
 		try:
 			mengecek(ngecek[0].replace("",""), ngecek[1])
 		except requests.exceptions.ConnectionError:
