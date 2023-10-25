@@ -1009,7 +1009,7 @@ def passwrd():
 
 def methodnew(idf,pwv):
 	global loop,ok,cp
-	bi = random.choice(['\33[m']) 
+	bo = random.choice([m,k,h,b,u,x])
 	pers = loop*100/len(id2)
 	fff = '%'
 	prog.update(des,description=f"{H2} • {bo}CRACK[bold green] {loop}/{len(id)} [bold white]OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
