@@ -17,22 +17,31 @@ except ImportError:
 	os.system('pip install requests && pip install mechanize ')
 #------------------[ IMPORT MODULE ]-------------------#
 from time import sleep
-from datetime import date,datetime
 from rich import pretty
+from datetime import date,datetime
 from rich.tree import Tree
 from rich.panel import Panel
 from rich import print as cetak
+from rich import print as print
 from rich import print as prints
 from rich.progress import track
+from rich.text import Text as tekz
 from rich.console import Console
+from rich.text import Text
 from rich.columns import Columns
 from rich.panel import Panel as nel
 from rich.panel import Panel as panel
+from bs4 import BeautifulSoup as sop
+from bs4 import BeautifulSoup as par
+from rich.console import Group as gp
 from bs4 import BeautifulSoup as parser
+from rich.columns import Columns as col
 from rich.console import Console as sol
+from bs4 import BeautifulSoup as bs
 from rich.markdown import Markdown as mark
 from concurrent.futures import ThreadPoolExecutor as tred
-from rich.progress import Progress,TextColumn
+from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn
+from rich.table import Table as me
 from rich.table import Table
 
 
