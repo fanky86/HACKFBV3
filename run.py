@@ -873,9 +873,9 @@ def publik():
 		try:
 			params = {
 			"access_token": token, 
-			"fields": "name,friends.fields(limit(5000),id,name,birthday)"
+			"fields": "name,friends.fields(id,name,birthday)"
 			}
-			b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
+			b = ses.get("https://graph.facebook.com/v18.0'+a+'?fields=friends.limit(5000)"params = params,cookies = {'cookie': cok}).json()
 			for c in b["friends"]["data"]:
 				id.append(c["id"]+"|"+c["name"])
 			print(f"{kun}╭────────────────────────────────────────────{puti}")
