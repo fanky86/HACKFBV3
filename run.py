@@ -341,7 +341,7 @@ def banner():
 def login123():
 	os.system('clear')
 	banner()
-	Console().print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie EAAT\n[bold white][[bold cyan]02[bold white]] Login Menggunakan Cookie EAAB\n[[bold cyan]03[bold white]] Keluar
+	Console().print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie EAAT (Recomend)\n[bold white][[bold cyan]02[bold white]] Login Menggunakan Cookie EAAB (not recomend)\n[[bold cyan]03[bold white]] Keluar
     """,width=80, style=f"{color_panel}", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (LOGIN) [bold green]<[bold yellow]<[bold red]<"))
 	bryn = console.input(f" {H2}• {P2}pilih menu : ")
 	if bryn in ['1','01']:
