@@ -33,6 +33,8 @@ from rich.console import Console as sol
 from rich.markdown import Markdown as mark
 from concurrent.futures import ThreadPoolExecutor as tred
 from rich.progress import Progress,TextColumn
+from rich.table import Table
+
 
 #------------------[ GLOBAL NAME ]-------------------#
 sekarang = calendar.timegm(time.gmtime(time.time()))
