@@ -1076,9 +1076,9 @@ def passwrd():
 				if '_async' in method:
 					pool.submit(_async,idf,pwv)
 				elif 'metode_api' in method:
-					pool.submit(memex,idf,pwv,awal)
+					pool.submit(memex,idf,pwv)
 				elif 'reguler' in method:
-					pool.submit(reguler,idf,pwv,awal)
+					pool.submit(reguler,idf,pwv)
 				else:
 					pool.submit(_async,idf,pwv)
 		print('')
