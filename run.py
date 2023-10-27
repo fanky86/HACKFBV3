@@ -873,7 +873,7 @@ def publik():
 		try:
 			params = {
 			"access_token": token, 
-			"fields": "name,friends.fields(id,name,birthday)"
+			"fields": "friends.limit(5000),name,friends.fields(id,name,birthday)"
 			}
 			b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
 			for c in b["friends"]["data"]:
