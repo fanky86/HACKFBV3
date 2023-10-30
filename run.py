@@ -479,8 +479,6 @@ def clear():
         except:pass
 
 def input_cookie():
-    os.system('clear')
-    banner()
     print('%sApabila A2F On, Buka Link Dibawah, Lalu Masukkan Kode A2F'%(P))
     print('%shttps://business.facebook.com/business_locations\n'%(P))
     cookie = input('%sMasukkan Cookie : %s'%(P,J))
@@ -550,8 +548,6 @@ def generate_token_eaai(cok): # Ads Management Token
             url = 'https://www.facebook.com/ads/manager/billing_history/summary/'
             req = xyz.get(url,cookies=cookie)
             tok = re.search('{access_token:"(.*?)"',req.text).group(1)
-            ken = open(".token.txt", "w").write(tok)
-            cok = open(".cok.txt", "w").write(cookie)
             return(tok)
     except Exception as e:
         return('Cookies Invalid')
@@ -610,7 +606,6 @@ def generate_token_eabb(cok): # Hub Materi Iklan Token
             return(tok)
     except Exception as e:
         return('Cookies Invalid')
-
 
 class specific_token:
     def __init__(self,cookie):
