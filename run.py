@@ -443,7 +443,7 @@ def login_lagi335():
 		asu = random.choice([m,k,h,b,u])
 		cookie=input(f'\n{x}[{h}+{x}] Masukkan Cookies :{asu} ')
 		cookies = {'cookie':cookie}
-		url = 'https://www.facebook.com/adsmanager/manage/campaigns'
+		url = 'https://www.facebook.com/test-and-learn/test'
 		req = ses.get(url,cookies=cookies)
 		set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
 		nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
