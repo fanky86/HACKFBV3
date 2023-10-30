@@ -347,7 +347,7 @@ def login123():
 	if bryn in ['1','01']:
 		login_lagi334()
 	elif bryn in ['2','02']:
-		input_cookie()
+		login_lagi335()
 	elif bryn in ['3','03']:
 		exit()
 	else:
@@ -445,10 +445,7 @@ def login_lagi335():
 		cookies = {'cookie':cookie}
 		url = 'https://www.facebook.com/test-and-learn/test'
 		req = ses.get(url,cookies=cookies)
-		set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
-		nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
-		roq = ses.get(nek,cookies=cookies)
-		tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
+		tok = re.search('{"accessToken":"(EAAF\w+)',req.text).group(1)
 		ken = open(".token.txt", "w").write(tok)
 		cok = open(".cok.txt", "w").write(cookie)
 		print(f'  {x}[{h}√{x}]{h} LOGIN BERHASIL KONTOL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
