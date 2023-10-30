@@ -835,7 +835,6 @@ tampung=[]
 
 def publikv2():
     with requests.Session() as ses:
-        banner()
         token = open('.token.txt','r').read()
         cok = open('.cok.txt','r').read()
         a = console.input(f" {H2}• {P2}Masukan Id Target :{U2} ")
