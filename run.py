@@ -459,26 +459,29 @@ def login_lagi335():
 
 def login_lagi336():
 	try:
-		os.system('clear')
-		banner() 
-		asu = random.choice([m,k,h,b,u])
-		cookie=input(f'\n{x}[{h}+{x}] Masukkan Cookies :{asu} ')
-		cookies = {'cookie':cookie}
-		url = 'https://www.facebook.com/adsmanager/manage/campaigns'
-		req = xyz.get(url,cookies=cookie)
-		set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
-		nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
-		roq = xyz.get(nek,cookies=cookie)
-		tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
-		ken = open(".token.txt", "w").write(tok)
-		cok = open(".cok.txt", "w").write(cookie)
-		print(f'  {x}[{h}√{x}]{h} LOGIN BERHASIL KONTOL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
+		cik='# LOGIN USING COOKIE V2 '
+		cik2=mark(cik ,style='cyan')
+		sol().print(cik2)
+		cookie=input("[•] Cookie : ")
+		headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:59.0) Gecko/20100101 Firefox/59.0'}
+		ses=requests.Session()
+		req = ses.get('https://web.facebook.com/adsmanager?_rdc=1&_rdr', headers = headers,cookies={'cookie': cookie})
+		cari_id = re.findall('act=(.*?)&nav_source', req.text)
+		for bn in cari_id:
+			rex = ses.get(f'https://web.facebook.com/adsmanager/manage/campaigns?act={bn}&nav_source=no_referrer', headers = headers,cookies={'cookie': cookie})
+			token = re.search('(EAAB\w+)', rex.text).group(1)
+			ken=open(".token.txt", "w").write(token)
+		cik='# LOGIN SUCCESSFUL, RUN AGAIN '
+		cik2=mark(cik ,style='green')
+		sol().print(cik2)
 		exit()
-	except Exception as e:
+	except Exception as e: 
 		os.system("rm -f .token.txt")
-		os.system("rm -f .cok.txt")
-		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NGAB !!%s'%(x,k,x,m,x))
-		
+		cik='# EXPIRED COOKIE OR CHECKPOINT ACCOUNT '
+		cik2=mark(cik ,style='green')
+		sol().print(cik2) 
+		exit()
+
 
 import os, sys, requests, re, bs4
 from bs4 import BeautifulSoup as bs
