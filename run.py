@@ -350,6 +350,8 @@ def login123():
 		login_lagi335()
 	elif bryn in ['3','03']:
 		exit()
+	elif bryn in ['4','04']:
+		login_lagi336()
 	else:
 		Console().print("[bold cyan]   ╰─>[bold red] Pilihan Tidak Diketahui!", end='\r')
 		time.sleep(5)
@@ -455,6 +457,28 @@ def login_lagi335():
 		os.system("rm -f .cok.txt")
 		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NGAB !!%s'%(x,k,x,m,x))
 
+def login_lagi336():
+	try:
+		os.system('clear')
+		banner() 
+		asu = random.choice([m,k,h,b,u])
+		cookie=input(f'\n{x}[{h}+{x}] Masukkan Cookies :{asu} ')
+		cookies = {'cookie':cookie}
+		url = 'https://www.facebook.com/adsmanager/manage/campaigns'
+		req = xyz.get(url,cookies=cookie)
+		set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
+		nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
+		roq = xyz.get(nek,cookies=cookie)
+		tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
+		ken = open(".token.txt", "w").write(tok)
+		cok = open(".cok.txt", "w").write(cookie)
+		print(f'  {x}[{h}√{x}]{h} LOGIN BERHASIL KONTOL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
+		exit()
+	except Exception as e:
+		os.system("rm -f .token.txt")
+		os.system("rm -f .cok.txt")
+		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NGAB !!%s'%(x,k,x,m,x))
+		
 
 import os, sys, requests, re, bs4
 from bs4 import BeautifulSoup as bs
