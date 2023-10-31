@@ -1227,7 +1227,7 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white] Metode Biasa[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode Reguler[bold white] [/]', title="[bold green] Method",width=80,style=f"{color_panel}"))
+    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white] Metode Biasa[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode Reguler [bold green](recomend)[bold white] [/]', title="[bold green] Method",width=80,style=f"{color_panel}"))
     hc = console.input(f" {H2}• {P2}Masukan : ")
     if hc in ['1','01']:
         method.append('_async')
