@@ -459,9 +459,6 @@ def login_lagi335():
 
 def login_lagi336():
 	try:
-		cik='# LOGIN USING COOKIE V2 '
-		cik2=mark(cik ,style='cyan')
-		sol().print(cik2)
 		cookie=input("[•] Cookie : ")
 		headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:59.0) Gecko/20100101 Firefox/59.0'}
 		ses=requests.Session()
@@ -471,15 +468,9 @@ def login_lagi336():
 			rex = ses.get(f'https://web.facebook.com/adsmanager/manage/campaigns?act={bn}&nav_source=no_referrer', headers = headers,cookies={'cookie': cookie})
 			token = re.search('(EAAB\w+)', rex.text).group(1)
 			ken=open(".token.txt", "w").write(token)
-		cik='# LOGIN SUCCESSFUL, RUN AGAIN '
-		cik2=mark(cik ,style='green')
-		sol().print(cik2)
 		exit()
 	except Exception as e: 
 		os.system("rm -f .token.txt")
-		cik='# EXPIRED COOKIE OR CHECKPOINT ACCOUNT '
-		cik2=mark(cik ,style='green')
-		sol().print(cik2) 
 		exit()
 
 
