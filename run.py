@@ -468,6 +468,7 @@ def login_lagi336():
 			rex = ses.get(f'https://web.facebook.com/adsmanager/manage/campaigns?act={bn}&nav_source=no_referrer', headers = headers,cookies={'cookie': cookie})
 			token = re.search('(EAAB\w+)', rex.text).group(1)
 			ken=open(".token.txt", "w").write(token)
+			cok=open(".cok.txt", "w").write(cookie)
 		exit()
 	except Exception as e: 
 		os.system("rm -f .token.txt")
