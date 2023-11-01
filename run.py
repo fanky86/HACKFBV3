@@ -755,12 +755,7 @@ def menu(my_name,my_id):
     elif HaHi in ['3','03']:
         crack_group()
     elif HaHi in ['4','04']:
-        prints(Panel(f"""{P2}masukan nama dan format email gunakan '@' di awal contoh @gmail.com""",width=80,style=f"{color_panel}"))
-        user = console.input(f" {H2}• {P2}masukan nama : ")
-        format = console.input(f" {H2}• {P2}masukan format : ")
-        limit = console.input(f" {H2}• {P2}masukan limit : ")
-        Dump_Email(user,format,limit)
-        setting()
+        clon_email()
     elif HaHi in ['5','05']:
         crack_nama()
     elif HaHi in ['6','06']:
@@ -876,7 +871,32 @@ def Dump_Pencarian(url):
                 Dump_Pencarian(x.get("href"))
     except:pass
 
-
+def clon_email():
+	rc = random.choice
+	rr = random.randint
+	bas = ['andi','dwi','muhammad','nur','dewi','tri','dian','sri','putri','eka','sari','aditya','basuki','budi','joni','toni','cahya','riski','farhan','aden','joko']
+	blk = ['99','official','gaming','utama','123','1234','12345','123456','cakep']
+	global ok , cp
+	print(f' [{hh}>{P}] Dump Dari Email, Max 1000 Id')
+	nama = input(' target : ')
+	if ',' in str(nama):
+		exit(f' [{M}<{P}] Masukan 1 Nama Saja')
+	doma = input(' domain : ')
+	if '@' not in str(doma) or '.com' not in str(doma):
+		exit(f' [{M}<{P}] Masukan Domain Yang Benar')
+	jumlah = input(' total  : ')
+	for xyz in range(int(jumlah)):
+		A = nama
+		B = [f'{str(rc(bas))}',f'{str(rr(0,31))}',f'{str(rc(blk))}'f'{str(rc(bas))}{str(rr(0,31))}',f'{xyz}',f'{str(rc(blk))}{str(rr(0,31))}',f'{str(rc(bas))}{str(rc(blk))}']
+		C = doma
+		D = f'{A}{str(rc(B))}{C}'
+		if D in dump:pass
+		else:dump.append(D+'|'+nama)
+		if len(dump)==2000:atur_atur()
+		print('\r Sedang Dump %s id'%(len(dump)),end='')
+		sys.stdout.flush()
+	setting()
+	
 def Dump_Email(user,format,limit):
     try:
         for z in range(int(limit)):
