@@ -1474,7 +1474,7 @@ def _async(idf,pwv):
 def memex(idf,pwv,awal):
 	global loop,ok,cp
 	bo = random.choice([m,k,h,b,u,x])
-	ua = random.choice(ugen) 
+	ua = random.choice(free) 
 	#ua2 = random.choice(ugen2)
 	ses = requests.Session()
 	ahir = str(datetime.now()-awal).split('.')[0]
