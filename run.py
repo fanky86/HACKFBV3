@@ -753,7 +753,7 @@ def menu(my_name,my_id):
     elif HaHi in ['2','02']:
         massal()
     elif HaHi in ['3','03']:
-        pengikut()
+        pengikut1()
     elif HaHi in ['4','04']:
         clon_email()
     elif HaHi in ['5','05']:
