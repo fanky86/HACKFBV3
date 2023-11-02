@@ -1390,8 +1390,8 @@ def passwrd():
 	bi = random.choice([u,k,kk,b,h,hh])
 	print('')
 	urut = []
-	urut.append(panel(f'        [bold green]%s [bold white]'%(okc),width=40,title=f"[bold green]OK SAVE",style="bold green"))
-	urut.append(panel(f'         [bold yellow]%s [bold white]'%(cpc),width=40,title=f"[bold yellow]CP SAVE",style="bold yellow"))
+	urut.append(panel(f'        [bold green]%s [bold white]'%(okc),width=40,title=f"[bold green]OK SAVE",style=f"{color_panel}"))
+	urut.append(panel(f'         [bold yellow]%s [bold white]'%(cpc),width=40,title=f"[bold yellow]CP SAVE",style=f"{color_panel}"))
 	wa.print(Columns(urut))
 	awal = datetime.now()
 	Console().print(Panel(f'\t[bold yellow]hidup/matikan Mode Pesawat Setiap 5 menit',title=f"[bold green]Informasi",width=80,style=f"{color_panel}"))
