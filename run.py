@@ -1507,7 +1507,7 @@ def reguler(idf,pwv,awal):
 				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
 				prints(tree)
 				os.popen('play-audio o.mp3')
-				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				cek_apk(kuki)
 				break
 			else:continue
@@ -2115,10 +2115,10 @@ class Lain:
 			tree = Tree(" ",guide_style=f"{color_panel}")
 			if folder=="OK":
 				cookie = akun.split("|")[1]
-				tree.add(f"\r{H2}{user}{P2} ")
+				tree.add(f"\r{H2}{user}|{pw}{P2} ")
 				tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
 			else:
-				tree.add(f"\r{K2}{user}{P2} ")
+				tree.add(f"\r{K2}{user}|{pw}{P2} ")
 			prints(tree)
 		prints(Panel(f"""{P2} berhasil mengecek dan mendapatkan total {len(totalhasil)} akun dari file""",width=80,padding=(0,7),style=f"{color_panel}"))
 		exit()
