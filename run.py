@@ -2114,7 +2114,7 @@ class Lain:
 			pw = akun.split("|")[1]
 			tree = Tree(" ",guide_style=f"{color_panel}")
 			if folder=="OK":
-				cookie = akun.split("|")[2]
+				cookie = akun.split("|")[1]
 				tree.add(f"\r{H2}{user}|{pw}{P2} ")
 				tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
 			else:
