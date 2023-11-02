@@ -742,7 +742,7 @@ def menu(my_name,my_id):
     prints(Panel(f"""{P2}
 [{color_text}01{P2}]. crack dari id publik   [{color_text}05{P2}]. crack dari pencarian nama
 [{color_text}02{P2}]. crack dari id Masal    [{color_text}06{P2}]. Dump ID Publik
-[{color_text}03{P2}]. crack dari id Pengikut    [{color_text}07{P2}]. crack dari File
+[{color_text}03{P2}]. crack dari id Pengikut [{color_text}07{P2}]. crack dari File
 [{color_text}04{P2}]. crack dari random mail [{color_text}08{P2}]. crack dari opsi CP""",width=80,padding=(0,6),style=f"{color_panel}"))
     prints(Panel(f"""{P2}ketik {H2}bot{P2} untuk ke menu bot dan ketik {H2}lain{P2} untuk ke menu lain""",width=80,padding=(0,6),style=f"{color_panel}"))
     HaHi = console.input(f" {H2}• {P2}pilih menu : ")
