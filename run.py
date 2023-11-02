@@ -1476,7 +1476,7 @@ def reguler(idf,pwv,awal):
 				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
 				prints(tree)
 				os.popen('play-audio o.mp3')
-				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki'\n')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
 				cek_apk(kuki)
 				akun.append(idf+'|'+pw+'|'+kuki)
 				break
