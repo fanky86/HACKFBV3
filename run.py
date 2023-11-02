@@ -1531,7 +1531,7 @@ def reguler(idf,pwv,awal):
 					prints(tree)
 					os.popen('play-audio o.mp3')
 					open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-					get_apk(idf,pw,kuki)
+					cek_apk(kuki)
 					break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
