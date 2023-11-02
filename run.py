@@ -2111,14 +2111,14 @@ class Lain:
 		prints(Panel(f"""{P2}nama file hasil crack : {nama_file} dan terdapat total akun : {len(totalhasil)}""",width=80,style=f"{color_panel}"))
 		for akun in totalhasil:
 			user = akun.split("|")[0]
-			pw = akun.split("|")[0]
+			pw = akun.split("|")[1]
 			tree = Tree(" ",guide_style=f"{color_panel}")
 			if folder=="OK":
 				cookie = akun.split("|")[1]
-				tree.add(f"\r{H2}{user}|{pw}{P2} ")
+				tree.add(f"\r{H2}{user}{P2} ")
 				tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
 			else:
-				tree.add(f"\r{K2}{user}|{pw}{P2} ")
+				tree.add(f"\r{K2}{user}{P2} ")
 			prints(tree)
 		prints(Panel(f"""{P2} berhasil mengecek dan mendapatkan total {len(totalhasil)} akun dari file""",width=80,padding=(0,7),style=f"{color_panel}"))
 		exit()
