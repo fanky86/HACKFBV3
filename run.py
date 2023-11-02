@@ -1749,6 +1749,77 @@ def memex(idf,pwv,awal):
 		except requests.exceptions.ConnectionError:
 			time.sleep(31)
 	loop+=1
+
+
+###----------[ PRINT MUNCUL APK ]---------- ###
+def get_apk(self,user,pw,cookie):
+###----------[ CEK MODE GRATIS ]---------- ###
+	try:
+		url = ses.get("https://mbasic.facebook.com/",cookies={"cookie": cookie}).text
+		if "Apa yang Anda pikirkan sekarang" in url:
+			pass
+		else:
+			for z in url.find_all("a",href=True):
+				if "Tidak, Terima Kasih" in z.text:
+					get = ses.get("https://mbasic.facebook.com"+z["href"],cookies={"cookie": cookie})
+					parsing = parser(get.text,"html.parser")
+					action = parsing.find("form",{"method":"post"})["action"]
+					data = {
+							"fb_dtsg":re.search('name="fb_dtsg" value="(.*?)"', str(get.text)).group(1),
+							"jazoest":re.search('name="jazoest" value="(.*?)"', str(get.text)).group(1),
+							"submit": "OK, Gunakan Data"
+						}
+					post = ses.post("https://mbasic.facebook.com"+action,data=data,cookies={"cookie": cookie})
+					break
+	except:pass
+		###----------[ APLIKASI AKTIF ]---------- ###
+	aktip = Tree("Aplikasi Aktif",guide_style="bold grey100")
+	self.apkaktif("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookie)
+	if len(self.aktif)==0:
+		aktip.add(f"{P2}tidak ada aplikasi yang terkait")
+	else:
+		for apk in self.aktif:
+			aktip.add(f"{H2}{apk}{P2}")
+		###----------[ APLIKASI KADALUWARSA ]---------- ###
+		kadalu = Tree("Aplikasi Kadaluwarsa",guide_style="bold grey100")
+		self.apkkadaluwarsa("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookie)
+		if len(self.kadaluwarsa)==0:
+			kadalu.add(f"{P2}tidak ada aplikasi yang terkait")
+		else:
+			for apk in self.kadaluwarsa:
+				kadalu.add(f"{M2}{apk}{P2}")
+		###----------[ PRINT SEMUA ]---------- ###
+		tree = Tree(Panel.fit(f"""{H2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+		tree.add(aktip)
+		tree.add(kadalu)
+		tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
+		prints(tree)
+###----------[ GET APK AKTIF ]---------- ###
+def apkaktif(self,url,cookie):
+	try:
+		data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
+		for apk in data.find_all("h3"):
+			if "Ditambahkan" in apk.text:
+				self.aktif.append(f"{str(apk.text).replace('Ditambahkan',' Ditambahkan')}")
+			else:continue
+				next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
+			self.apkaktif(next,cookie)
+	except:pass
+		
+###----------[ GET APK KADALUWARSA ]---------- ###
+def apkkadaluwarsa(self,url,cookie):
+	try:
+		data = parser(ses.get(url,cookies={"cookie": cookie}).text,"html.parser")
+		for apk in data.find_all("h3"):
+			if "Kedaluwarsa" in apk.text:
+				self.kadaluwarsa.append(f"{str(apk.text).replace('Kedaluwarsa',' Kedaluwarsa')}")
+			else:continue
+				next = "https://mbasic.facebook.com"+data.find("a",string="Lihat Lainnya")["href"]
+			self.apkkadaluwarsa(next,cookie)
+	except:pass
+	
+
+
 #-----------------------[ CEK APLIKASI ]--------------------#
 def cek_apk(kuki):
 	session = requests.Session()
