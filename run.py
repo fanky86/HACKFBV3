@@ -2111,7 +2111,7 @@ class Lain:
 		prints(Panel(f"""{P2}nama file hasil crack : {nama_file} dan terdapat total akun : {len(totalhasil)}""",width=80,style=f"{color_panel}"))
 		for akun in totalhasil:
 			user = akun.split("|")[0]
-			pw = akun.split("|")[1]
+			pw = akun.split("|")[0]
 			tree = Tree(" ",guide_style=f"{color_panel}")
 			if folder=="OK":
 				cookie = akun.split("|")[1]
