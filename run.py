@@ -1684,7 +1684,7 @@ def ceker(idf,pw):
 		if len(cek)==0:pass
 		else:
 			for opsi in range(len(cek)):
-				ops.append(print(f'{H2}• {P2}'+cek[opsi]))
+				ops.append(print('\r  \033[0m              ➛'+cek[opsi]))
 	except:pass
 	if len(ops)==0:pass
 	console().print(f'{H2}• {P2}Columns(ops)')
