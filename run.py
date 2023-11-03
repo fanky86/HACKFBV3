@@ -1477,6 +1477,7 @@ def reguler(idf,pwv,awal):
 				prints(tree)
 				os.popen('play-audio o.mp3')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+				cek_apk(kuki)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
@@ -1682,10 +1683,11 @@ def ceker(idf,pw):
 		cek=[cek.text for cek in responses.find_all("option")]
 		if len(cek)==0:pass
 		else:
-			for opsi in range(len(cek)):ops.append(print("[bold white]"+cek[opsi]))
+			for opsi in range(len(cek)):
+				ops.append(print(f'{H2}• {P2}'+cek[opsi]))
 	except:pass
 	if len(ops)==0:pass
-	print (' [+] Columns %s'%(ops))
+	console().print(f'{H2}• {P2}Columns(ops)')
                           
 def ceker1(idf,pw):
 	global cp
