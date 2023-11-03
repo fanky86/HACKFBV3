@@ -1058,7 +1058,7 @@ def passwrd():
 				if 'reguler' in method:
 					pool.submit(reguler,idf,pwv,awal)
 				else:
-					pool.submit(validate1,idf,pwv)
+					pool.submit(reguler,idf,pwv,awal)
 		print('')
 	Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
 	Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
