@@ -1,26 +1,37 @@
 import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid,calendar
 #------------------[  MODULE  ]-------------------#
-
+M2 = "[#FF0000]" # MERAH
+H2 = "[#00FF00]" # HIJAU
+K2 = "[#FFFF00]" # KUNING
+B2 = "[#00C8FF]" # BIRU
+P2 = "[#FFFFFF]" # PUTIH
+U2 = "[#AF00FF]" # UNGU
+O2 = "[#FF8F00]" # ORANGE
 try:
-    import licensing
+	import requests
 except ImportError:
-    print('• Sedang Menginstall Modul licensing •')
-    os.system('pip install licensing')
+	console.input(f' {H2}• Sedang Menginstall Modul requests •{P2}')
+	os.system('pip install requests && pip install mechanize ')
+try:
+	import licensing
+except ImportError:
+	console.input(f' {H2}• Sedang Menginstall Modul licensing •{P2}')
+	os.system('pip install licensing')
 try:
         import rich
 except ImportError:
-        print('• Sedang Menginstall Modul Rich •')
+        console.input(f' {H2}• Sedang Menginstall Modul Rich •{P2}')
         os.system('pip install rich')
 try:
         import stdiomask
 except ImportError:
-        print('• Sedang Menginstall Modul stdiomask •')
+        console.input(f' {H2}• Sedang Menginstall Modul stdiomask •{P2}')
         os.system('pip install stdiomask')
 try:
-	import requests
+	import bs4
 except ImportError:
-	print('• Sedang Menginstall Modul requests •')
-	os.system('pip install requests && pip install mechanize ')
+	console.input(f' {H2}• Sedang Menginstall Modul bs4 •{P2}')
+	os.system('pip install bs4')
 #------------------[ IMPORT MODULE ]-------------------#
 from time import sleep
 from datetime import date,datetime
