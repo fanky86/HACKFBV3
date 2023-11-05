@@ -8,7 +8,7 @@ P2 = "[#FFFFFF]" # PUTIH
 U2 = "[#AF00FF]" # UNGU
 O2 = "[#FF8F00]" # ORANGE
 try:
-	import requests
+	import request
 except ImportError:
 	console.input(f' {H2}• Sedang Menginstall Modul requests •{P2}')
 	os.system('pip install requests && pip install mechanize ')
