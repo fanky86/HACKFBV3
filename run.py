@@ -7,11 +7,14 @@ B2 = "[#00C8FF]" # BIRU
 P2 = "[#FFFFFF]" # PUTIH
 U2 = "[#AF00FF]" # UNGU
 O2 = "[#FF8F00]" # ORANGE
-os.system('pip install rich')
+try:
+	import rich
+except ImportError:
+	os.system('pip install rich')
 from rich.console import Console
 console = Console()
 try:
-	import request
+	import requests
 except ImportError:
 	console.input(f' {H2}• {U2}Sedang Menginstall Modul requests{H2} •{P2}')
 	os.system('pip install requests && pip install mechanize ')
