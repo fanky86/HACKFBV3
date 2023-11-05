@@ -63,7 +63,6 @@ from rich.console import Console as sol
 from bs4 import BeautifulSoup as beautifulsoup
 from rich.markdown import Markdown as mark
 from concurrent.futures import ThreadPoolExecutor as tred
-from concurrent.futures import ThreadPoolExecutor as BrayennnXD 
 from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn
 from licensing.models import *
 from licensing.methods import Key, Helpers
