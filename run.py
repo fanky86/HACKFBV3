@@ -7,33 +7,33 @@ B2 = "[#00C8FF]" # BIRU
 P2 = "[#FFFFFF]" # PUTIH
 U2 = "[#AF00FF]" # UNGU
 O2 = "[#FF8F00]" # ORANGE
-
+os.system('pip install rich')
 from rich.console import Console
 console = Console()
 try:
 	import request
 except ImportError:
-	console.input(f' {H2}• Sedang Menginstall Modul requests •{P2}')
+	console.input(f' {H2}• {U2}Sedang Menginstall Modul requests{H2} •{P2}')
 	os.system('pip install requests && pip install mechanize ')
 try:
 	import licensing
 except ImportError:
-	console.input(f' {H2}• Sedang Menginstall Modul licensing •{P2}')
+	console.input(f' {H2}• {U2}Sedang Menginstall Modul licensing{H2} •{P2}')
 	os.system('pip install licensing')
 try:
         import rich
 except ImportError:
-        console.input(f' {H2}• Sedang Menginstall Modul Rich •{P2}')
+        console.input(f' {H2}• {U2}Sedang Menginstall Modul Rich {H2}•{P2}')
         os.system('pip install rich')
 try:
         import stdiomask
 except ImportError:
-        console.input(f' {H2}• Sedang Menginstall Modul stdiomask •{P2}')
+        console.input(f' {H2}• {U2}Sedang Menginstall Modul stdiomask {H2}•{P2}')
         os.system('pip install stdiomask')
 try:
 	import bs4
 except ImportError:
-	console.input(f' {H2}• Sedang Menginstall Modul bs4 •{P2}')
+	console.input(f' {H2}• {U2}Sedang Menginstall Modul bs4 {H2}•{P2}')
 	os.system('pip install bs4')
 #------------------[ IMPORT MODULE ]-------------------#
 from time import sleep
