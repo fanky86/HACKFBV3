@@ -8,7 +8,7 @@ P2 = "[#FFFFFF]" # PUTIH
 U2 = "[#AF00FF]" # UNGU
 O2 = "[#FF8F00]" # ORANGE
 
-
+from rich.console import Console
 console = Console()
 try:
 	import request
