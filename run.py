@@ -604,6 +604,7 @@ def crack_nama():
     with tred(max_workers=5) as thread:
         for id in nama:
             thread.submit(cari_nama,f"https://mbasic.facebook.com/public/{id}?/locale2=id_ID")
+        setting()
 def cari_nama(link):
     r = parser(ses.get(str(link)).text,'html.parser')
     for x in r.find_all('td'):
@@ -621,7 +622,6 @@ def cari_nama(link):
         sys.stdout.write(f"\r ╰─  Mengumpulkan {len(id)} Idz ...");sys.stdout.flush()
         time.sleep(0.0000003)
         cari_nama(link)
-        setting()
     else:
         print("\r")
 	
