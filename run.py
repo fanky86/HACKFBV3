@@ -621,7 +621,7 @@ def cari_nama(link):
         sys.stdout.write(f"\r ╰─  Mengumpulkan {len(id)} Idz ...");sys.stdout.flush()
         time.sleep(0.0000003)
         cari_nama(link)
-    setting()
+        setting()
     else:
         print("\r")
 	
