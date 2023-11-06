@@ -1088,7 +1088,8 @@ def reguler(idf,pwv,awal):
 	ahir = str(datetime.now()-awal).split('.')[0]
 	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua = random.choice(free)
+	rud = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
+	ua = random.choice(rud)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
