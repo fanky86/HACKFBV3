@@ -1091,7 +1091,7 @@ def passwrd():
 def bapi(idf,pwv):
     global loop,ok,cp
     bo = random.choice([m,k,h,b,u,x])
-    ua = random.choice(ugen)
+    ua = random.choice(free)
     ua2 = random.choice(ugen2)
     ses = requests.Session()
     prog.update(des,description=f"[bold green]M-Alpha[bold white] {loop}/{len(id)} OK-:[bold green]{ok}[/] CP-:[bold yellow]{cp}[/]")
