@@ -14,29 +14,24 @@ except ImportError:
 from rich.console import Console
 console = Console()
 try:
-	import requests
-except ImportError:
-	console.input(f' {H2}• {U2}Sedang Menginstall Modul requests{H2} •{P2}')
-	os.system('pip install requests && pip install mechanize ')
-try:
 	import licensing
 except ImportError:
-	console.input(f' {H2}• {U2}Sedang Menginstall Modul licensing{H2} •{P2}')
+	console.print(f' {H2}• {U2}Sedang Menginstall Modul licensing{H2} •{P2}')
 	os.system('pip install licensing')
 try:
         import rich
 except ImportError:
-        console.input(f' {H2}• {U2}Sedang Menginstall Modul Rich {H2}•{P2}')
+        console.print(f' {H2}• {U2}Sedang Menginstall Modul Rich {H2}•{P2}')
         os.system('pip install rich')
 try:
         import stdiomask
 except ImportError:
-        console.input(f' {H2}• {U2}Sedang Menginstall Modul stdiomask {H2}•{P2}')
+        console.print(f' {H2}• {U2}Sedang Menginstall Modul stdiomask {H2}•{P2}')
         os.system('pip install stdiomask')
 try:
 	import bs4
 except ImportError:
-	console.input(f' {H2}• {U2}Sedang Menginstall Modul bs4 {H2}•{P2}')
+	console.print(f' {H2}• {U2}Sedang Menginstall Modul bs4 {H2}•{P2}')
 	os.system('pip install bs4')
 #------------------[ IMPORT MODULE ]-------------------#
 import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid,calendar
