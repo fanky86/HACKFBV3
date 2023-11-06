@@ -1,4 +1,4 @@
-import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid,calendar
+import os
 #------------------[  MODULE  ]-------------------#
 M2 = "[#FF0000]" # MERAH
 H2 = "[#00FF00]" # HIJAU
@@ -39,6 +39,7 @@ except ImportError:
 	console.input(f' {H2}• {U2}Sedang Menginstall Modul bs4 {H2}•{P2}')
 	os.system('pip install bs4')
 #------------------[ IMPORT MODULE ]-------------------#
+import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid,calendar
 from time import sleep
 from datetime import date,datetime
 from rich import pretty
