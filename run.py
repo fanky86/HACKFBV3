@@ -875,13 +875,15 @@ def publik():
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()		
 		a = console.input(f" {H2}• {P2}Masukan Id Target :{U2} ")
-		if a in ['me']:
-			for mee in a:
-				koH = requests.get('https://graph.facebook.com/v1.0/'+mee+'?fields=friends.limit(5000)&access_token='+tokenmu[0],cookies={'cookie': cok}).json()
+		if a in ['me','Me','ME']:
+			try:
+				koH = requests.get('https://graph.facebook.com/v1.0/'+mee+'?fields=friends.limit(5000)&access_token='+tokenku[0],cookies={'cookie': cok}).json()
 				for pi in koH['friends']['data']:
 					try:id.append(pi['id']+'|'+pi['name'])
 					except:continue
 				setting()
+			except Exception as d:
+				print(d)
 		elif a in ['']:
 			try:
 				params = {
