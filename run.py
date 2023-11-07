@@ -877,7 +877,7 @@ def publik():
 		a = console.input(f" {H2}• {P2}Masukan Id Target :{U2} ")
 		if a in ['me','Me','ME']:
 			try:
-				koH = requests.get('https://graph.facebook.com/v1.0/'+mee+'?fields=friends.limit(5000)&access_token='+tokenku[0],cookies={'cookie': cok}).json()
+				koH = requests.get('https://graph.facebook.com/v1.0/'+a+'?fields=friends.limit(5000)&access_token='+tokenku[0],cookies={'cookie': cok}).json()
 				for pi in koH['friends']['data']:
 					try:id.append(pi['id']+'|'+pi['name'])
 					except:continue
