@@ -1052,7 +1052,7 @@ def passwrd():
                 idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
                 frs = nmf.split(" ")[0]
                 pwv = ['anjing123','bangsad123','sayangku','maling123','sayang123','malang123','bismillah123']
-                if len(nmf)<5:
+                if len(nmf)<6:
                     if len(frs)<3:
                         pass
                     else:
@@ -1062,6 +1062,11 @@ def passwrd():
                         pwv.append(frs+'12345')
                         pwv.append(frs+'123456')
                         pwv.append(frs+'1234567')
+                        pwv.append("kontol")
+                        pwv.append("kontol123")
+                        pwv.append("bismillah")
+                        pwv.append("mobile legends")
+                        pwv.append("domino123")
                 else:
                     if len(frs)<3:
                         pwv.append(nmf)
@@ -1074,6 +1079,11 @@ def passwrd():
                         pwv.append(frs+'12345')
                         pwv.append(frs+'123456')
                         pwv.append(frs+'1234567')
+                        pwv.append("kontol")
+                        pwv.append("kontol123")
+                        pwv.append("bismillah")
+                        pwv.append("mobile legends")
+                        pwv.append("domino123")
                 if 'ya' in pwpluss: 
                     for xpwd in pwnya:
                         pwv.append(xpwd)
