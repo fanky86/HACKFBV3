@@ -1056,48 +1056,24 @@ def passwrd():
                     if len(frs)<3:
                         pass
                     else:
-                        pwv.append(frs+"123")
-                        pwv.append(frs+"321")
-                        pwv.append(frs+"1234")
-                        pwv.append(frs+"12345")
-                        pwv.append("ganteng")
-                        pwv.append("sayangku")
-                        pwv.append("ganteng123")
-                        pwv.append("katasandi")
-                        pwv.append("freefire")
-                        pwv.append("freefire123")
+                        pwv.append(nmf)
+                        pwv.append(frs+'123')
+                        pwv.append(frs+'1234')
+                        pwv.append(frs+'12345')
+                        pwv.append(frs+'123456')
+                        pwv.append(frs+'1234567')
                 else:
                     if len(frs)<3:
                         pwv.append(nmf)
-                        pwv.append(nmf+"123")
-                        pwv.append(nmf+"321")
                     else:
                         pwv.append(nmf)
-                        pwv.append(frs+"123")
-                        pwv.append(frs+"321")
-                        pwv.append(frs+"1234")
-                        pwv.append(frs+"12345")
-                        pwv.append("kata sandi")
-                        pwv.append("free fire")
-                        pwv.append("free fire123")
-                    belakang = nmf.split(" ")[1]
-                    if len(belakang)<3:
-                        pwv.append(frs+belakang)
-                        pwv.append(frs+belakang+"123")
-                        pwv.append(frs+belakang+"321")
-                        pwv.append(frs+belakang+"1234")
-                        pwv.append(frs+belakang+"12345")
-                    else:
-                        pwv.append(frs+belakang)
-                        pwv.append(belakang+"123")
-                        pwv.append(belakang+"321")
-                        pwv.append(belakang+"1234")
-                        pwv.append(belakang+"12345")
-                        pwv.append("kontol")
-                        pwv.append("kontol123")
-                        pwv.append("bismillah")
-                        pwv.append("mobile legends")
-                        pwv.append("domino123")
+                        pwv.append(frs+'12')
+                        pwv.append(frs+'321')
+                        pwv.append(frs+'123')
+                        pwv.append(frs+'1234')
+                        pwv.append(frs+'12345')
+                        pwv.append(frs+'123456')
+                        pwv.append(frs+'1234567')
                 if 'ya' in pwpluss: 
                     for xpwd in pwnya:
                         pwv.append(xpwd)
