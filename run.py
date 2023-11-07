@@ -1078,7 +1078,7 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(reguler,idf,pwv,awal)
+                pool.submit(reguler,idf,pwv)
                 
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
