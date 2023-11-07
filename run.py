@@ -884,7 +884,7 @@ def publik():
 				setting()
 			except Exception as d:
 				print(d)
-		elif a in ['']:
+		else:
 			try:
 				params = {
 			"access_token": token, 
