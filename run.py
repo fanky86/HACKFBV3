@@ -377,6 +377,14 @@ def maintenance():
 def clear():
 	os.system('clear')
 #------------------[ LOGO-LAKNAT ]-----------------#
+def logoku():
+    prints(Panel(f"""\t{P2}╔╗──╔══╦═══╦═══╦═╗─╔╦═══╦══╗
+\t║║──╚╣╠╣╔═╗║╔══╣║╚╗║║╔═╗╠╣╠╝
+\t║║───║║║╚══╣╚══╣╔╗╚╝║╚══╗║║
+\t║║─╔╗║║╚══╗║╔══╣║╚╗║╠══╗║║║
+\t║╚═╝╠╣╠╣╚═╝║╚══╣║─║║║╚═╝╠╣╠╗
+\t╚═══╩══╩═══╩═══╩╝─╚═╩═══╩══╝""",title="Selamat Datang",width=80,padding=(0,4),style=f"{color_panel}"))
+                 
 def banner():
     Console().print(Panel("""
 [bold red]███████████████████████    
@@ -529,6 +537,32 @@ def followdong():
 #----------------[ BAGIAN-MENU ]----------------#
 def menu(my_name,my_id):
     try:
+        lisen = open('lisensi.txt','r').read()
+        met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyIzNTA3NDM0MSIsIlZxUGJPU3pxZUxJeEEyZU1hSGNCbFFHYXh6VHBmSWlYc25QQ2piYmsiXQ==&ProductId=18415&Key='+lisen).json()
+        men = met['licenseKey']
+        key = men['key'][0:11]
+        tahun = men['expires'][0:4]
+        buln = men['expires'][5:7]
+        tanggal = men['expires'][8:10]
+        bulan = dic2[buln]
+        tahun1 = men['created'][0:4]
+        buln1 = men['created'][5:7]
+        tanggal1 = men['created'][8:10]
+        bulan1 = dic2[buln1]
+    except:
+        key = "-"
+        tanggal = "-"
+        bulan = "-"
+        tahun = "-"
+        tanggal1 = "-"
+        bulan1 = "-"
+        tahun1 = "-"
+    try:
+        sen = open("lisensi.txt","r").read()
+        prem = f"{H2}Iya"
+    except (KeyError,FileNotFoundError):
+        prem = f"{K2}Iya"
+    try:
         tokenx = open('.token1.txt','r').read()
         tokenmu.append(tokenx)
         token = open('.token.txt','r').read()
@@ -545,6 +579,7 @@ def menu(my_name,my_id):
     negara = requests.get("http://ip-api.com/json/").json()["country"]
     ip = requests.get("http://ip-api.com/json/").json()["query"]
     prints(Panel(f"{P2}{ip}",padding=(0,30),title=f"{H2}{my_name}",subtitle=f"{H2}{negara}",style=f"{color_panel}"))
+    prints(Panel(f'{P2}lisensi : {K2}{key}-****-****\n{P2}join    : {K2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {K2}{tanggal} {bulan} {tahun}\n{P2}premium : {prem}',width=38,padding=(0,2),title=f"{H2}Lisensi",style=f"{color_panel}"))
     prints(Panel(f"""{P2}
 [{color_text}01{P2}]. crack dari id publik   [{color_text}05{P2}]. crack dari pencarian nama
 [{color_text}02{P2}]. crack dari id Masal    [{color_text}06{P2}]. Dump ID Publik
