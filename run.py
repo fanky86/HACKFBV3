@@ -2457,5 +2457,5 @@ if __name__=='__main__':
 	try:os.system('touch .prox.txt')
 	except:pass
 	try:os.system('clear')
-	except:pass()
+	except:pass
 	maintenance()
