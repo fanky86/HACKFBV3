@@ -2437,7 +2437,7 @@ class sxp_wa:
 def maintenance():
 	print()
 	print()
-	console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN'width=80,style="bold cyan")
+	console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN',width=80,style="bold cyan")
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
 	try:os.system('git pull')
