@@ -1164,7 +1164,7 @@ def mbasic(idf,pwv):
 	global loop,ok,cp
 	rr = random.randint
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-	prog.update(des,description=f" {K2}•{H2} VALIDATE {SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
 	ua=open('bbnew.txt','r').read().splitlines()
 	ses = requests.Session()
@@ -1199,7 +1199,7 @@ def mbasic(idf,pwv):
 def reguler(idf,pwv):
 	global loop,ok,cp
 	rr = random.randint
-	prog.update(des,description=f" {K2}•{H2} Reguler {SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
 	ua=open('bbnew.txt','r').read().splitlines()
 	ses = requests.Session()
