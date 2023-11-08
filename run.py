@@ -56,6 +56,7 @@ from rich.console import Group as gp
 from bs4 import BeautifulSoup as parser
 from rich.columns import Columns as col
 from rich.console import Console as sol
+from rich.console import Console
 from bs4 import BeautifulSoup as beautifulsoup
 from rich.markdown import Markdown as mark
 from concurrent.futures import ThreadPoolExecutor as tred
@@ -370,7 +371,7 @@ def maintenance():
 	os.system('clear')
 	print()
 	print()
-	console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN',width=80,style="bold cyan")
+	Console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN',width=80,style="bold cyan")
 	print()
 #------------------[ MACHINE-SUPPORT ]---------------#
 def clear():
