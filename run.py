@@ -371,7 +371,7 @@ def maintenance():
 	os.system('clear')
 	print()
 	print()
-	Console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN',width=80,style="bold cyan")
+	Console().print('[bold green] MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN',width=80,style="bold cyan")
 	print()
 #------------------[ MACHINE-SUPPORT ]---------------#
 def clear():
