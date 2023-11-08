@@ -364,6 +364,14 @@ elif 17 <= hour < 18:
   hhl = f"Selamat Sore"
 else:
   hhl = f"Selamat Malam"
+
+
+def maintenance():
+	os.system('clear')
+	print()
+	print()
+	console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN',width=80,style="bold cyan")
+	print()
 #------------------[ MACHINE-SUPPORT ]---------------#
 def clear():
 	os.system('clear')
@@ -2434,10 +2442,6 @@ class sxp_wa:
 		cetak(panel(f" Sukses Spam WA Ke No : +62{nomor}",width=90,padding=(0,2),style=f"bold white"))
 
 
-def maintenance():
-	print()
-	print()
-	console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN',width=80,style="bold cyan")
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
 	try:os.system('git pull')
