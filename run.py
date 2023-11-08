@@ -2433,6 +2433,11 @@ class sxp_wa:
 		self.wa_otp_6(nomor)
 		cetak(panel(f" Sukses Spam WA Ke No : +62{nomor}",width=90,padding=(0,2),style=f"bold white"))
 
+
+def maintenance():
+	print()
+	print()
+	console().print('{H2} MOHON MAAF UNTUK SEKARANG SCRIPT DALAM TAHAP PERBAIKAN'width=80,style="bold cyan")
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
 if __name__=='__main__':
 	try:os.system('git pull')
@@ -2452,5 +2457,5 @@ if __name__=='__main__':
 	try:os.system('touch .prox.txt')
 	except:pass
 	try:os.system('clear')
-	except:pass
-	login()
+	except:pass()
+	maintenance()
