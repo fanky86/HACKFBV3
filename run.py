@@ -422,8 +422,8 @@ def license():
         try :
             os.system ('clear')
             logoku()
-            Console(width=80, style="bold cyan").print(Panel("""[bold yellow][1] [bold white]Dapatkan Api key\n[bold yellow][2] [bold white]Masukan Api Key\n[bold yellow][3] [bold white]Keluar [bold red][Exit][bold white]""",subtitle="╭───", subtitle_align="left", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
-            masuk = Console().input("[bold cyan]   ╰─> ")
+            Console().print(Panel("""[bold yellow][1] [bold white]Dapatkan Api key\n[bold yellow][2] [bold white]Masukan Api Key\n[bold yellow][3] [bold white]Keluar [bold red][Exit][bold white]""",width=80,style=f"{color_panel}",title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
+            masuk = console.input(f" {H2}• {P2}pilih menu : ")
             if masuk in ['1','01']:
                 print (f"{H}[{P}!{H}]{P} Anda Akan Diarahkan Ke Whatsapp...")
                 time .sleep (3 )
@@ -432,8 +432,8 @@ def license():
             elif masuk in ['2','02']:
                 RSAPubKey = "<RSAKeyValue><Modulus>p4V61zMS8Gd/Kd7PKOrwamb78Cbds1AhcLvp1bwdlNRAW1oxoA2uIKYSBwF/9bgmPkli6v6JIk5EDyzNE044Lk2KWYiet4Mn5WIvBxkbPvZeWJejLxJy4ZJiEgLacJRfg5mUTJJn9jZrM59QDke2mmnGRKlJVOO4oZU0mnHd9M6yIFkBa1zBZ/5if69Gkxor08otF3YygPRpAiWPON2DloTUB4FeYiIkTz4o3ZUDP6E4GmH8Pd8THjNttZsk6we3bNeS81b4fJgnowD31r+Q0lZiQL6N3XtZLIPvZ9iedEuDoLqcntgaJx0lJVet9TzRP4CMq0aPU6dHbuBKKpp/cw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
                 auth = "WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ=="
-                Console(width=80, style="bold cyan").print(Panel("""Masukan licensi mu""",subtitle="╭───", subtitle_align="left"))
-                key = str(input("   ╰─>  "))
+                Console().print(Panel("""Masukan licensi mu""",width=80,style=f"{color_panel}"))
+                key = console.input(f" {H2}• {P2}License : ")
                 result = Key.activate(token=auth,\
                     rsa_pub_key=RSAPubKey,\
                     product_id=22574, \
