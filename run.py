@@ -644,8 +644,8 @@ def menu(my_name,my_id):
     negara = requests.get("http://ip-api.com/json/").json()["country"]
     ip = requests.get("http://ip-api.com/json/").json()["query"]
     prints(Panel(f"{P2}{ip}",padding=(0,30),title=f"{H2}{my_name}",subtitle=f"{H2}{negara}",style=f"{color_panel}"))
-    dia.append(Panel(f'{P2}lisensi : {K2}{key}-****-****\n{P2}premium : {prem}',width=38,padding=(0,2),style=f"{color_panel}"))
-    dia.append(panel(f'{P2}Join  : {K2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {K2}{tanggal} {bulan} {tahun}',width=38,padding=(0,2),style=f"{color_panel}"))
+    dia.append(Panel(f'{P2}lisensi : {H2}{key}-****-****\n{P2}premium : {H2}{prem}',width=38,padding=(0,2),style=f"{color_panel}"))
+    dia.append(panel(f'{P2}Join    : {H2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {H2}{tanggal} {bulan} {tahun}',width=38,padding=(0,2),style=f"{color_panel}"))
     console.print(Columns(dia))
     prints(Panel(f"""{P2}
 [{color_text}01{P2}]. crack dari id publik   [{color_text}05{P2}]. crack dari pencarian nama
