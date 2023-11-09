@@ -540,7 +540,7 @@ def followdong():
 def menu(my_name,my_id):
     try:
         lisen = open('lisensi.txt','r').read()
-        met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI1ODU1MjYyMyIsIk1iNnBPaEFUazRUQ245bmFJQ1ZKYkRLNVV2OXNlUG5OUTFYQVpyQ08iXQ==&ProductId=22570&Key='+lisen).json()
+        met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI1ODU1MjYyMyIsIk1iNnBPaEFUazRUQ245bmFJQ1ZKYkRLNVV2OXNlUG5OUTFYQVpyQ08iXQ==&ProductId=21585&Key='+lisen).json()
         men = met['licenseKey']
         key = men['key'][0:11]
         tahun = men['expires'][0:4]
@@ -596,7 +596,7 @@ def menu(my_name,my_id):
     elif HaHi in ['2','02']:
         massal()
     elif HaHi in ['3','03']:
-        follower()
+        pengikutku()
     elif HaHi in ['4','04']:
         clon_email()
     elif HaHi in ['5','05']:
@@ -793,8 +793,60 @@ def kocak(url,cokies):
 		for x in data.find_all("a",href=True):
 			if "Lihat Postingan Lainnya" in x.text:
 				kocak("https://mbasic.facebook.com"+x.get("href"),cokies)
-			
+
+
 ###----------[ DUMP PENGIKUT ]---------- ###
+def pengikutku():
+	try:
+		token = open('.token.txt','r').read()
+		cookie = open('.cok.txt','r').read()
+	except IOError:
+		Console().print("[bold cyan]   ╰─>[bold red] Cookies Kadaluarsa ")
+		time.sleep(5)
+		login()
+	ses = requests.Session()
+	Console().print(panel(f"Ketik 'Me' Jika Ingin Crack Dari Total Followers Anda Sendiri",subtitle="╭───", subtitle_align="left",width=80,padding=(0,7),style=f"bold cyan"))
+	user = Console().input("[bold cyan]   ╰─>[bold red] Masukan Id : ")
+	if user.isdigit():
+		url = (f"https://mbasic.facebook.com/profile.php?id={user}&v=followers")
+	else:
+		url = (f"https://mbasic.facebook.com/{user}?v=followers")
+	try:
+		link = ses.get(url, cookies={"cookie": cookie}).text
+		if "Halaman Tidak Ditemukan" in link:
+			Console().print("[bold cyan]   ╰─>[bold red] Pengguna Dengan User Id {user} Tidak Ditemukan")
+			time.sleep(2);exit()
+		elif "Anda Diblokir Sementara" in link:
+			Console().print("[bold cyan]   ╰─>[bold red] Akun Anda Di Batasin Sementara")
+			time.sleep(2);exit()
+		elif "Konten Tidak Ditemukan" in link:
+			Console().print("[bold cyan]   ╰─>[bold red] Pengguna Dengan User Id {user} Tidak Ditemukan")
+			time.sleep(2);exit()
+		else:
+			dump_followers(url, cookie)
+	except (requests.exceptions.ConnectionError,requests.exceptions.ChunkedEncodingError,requests.exceptions.ReadTimeout) as e:
+		print(" [+] Tidak Ada Koneksi Internet, Periksa Kembali Koneksi Anda")
+		time.sleep(3);exit()
+	print("\r")
+	setting()
+
+
+def dump_followers(link, cookie):
+	try:
+		url = ses.get(link, cookies={"cookie": cookie}).text
+		data = re.findall('" \/>\<div\ class\=\"..\"\>\<a\ href\=\"\/(.*?)\"\><span\>(.*?)\<\/span\>', str(url))
+		for user in data:
+			if "profile.php?" in user[0]:
+				id.append(re.findall("id=(.*?)&amp;eav", user[0])[0]+'|'+user[1])
+			else:
+				id.append(re.findall("(.*?)\?eav", user[0])[0]+'|'+user[1])
+			Console().print(f"[bold cyan]   ╰─>[bold green] Sedang Mengumpulkan {str(len(id))} Id...", end='\r')
+			time.sleep(000000.003)
+		if "Lihat Selengkapnya" in url:
+			dump_followers("https://mbasic.facebook.com"+parser(url, "html.parser").find("a", string="Lihat Selengkapnya").get("href"), cookie)
+	except:pass
+###----------[ DUMP PENGIKUT ]---------- ###
+
 
 def pengikut2():
 	try:
