@@ -398,16 +398,17 @@ def banner():
 
 #----------[LICENSE]------------#
 def cek_key():
-	try:
-		keyku = open('key.txt','r').read()
-		met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+keyku).json()
-		men = met['licenseKey']
-		print(men)
-		login()
-	except KeyError:
-		print('api key kadaluarsa bro')
+	keyku = open('key.txt','r').read()
+	met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+keyku).json()
+	if met[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
+		print("The license does not work: {0}".format(result[1]))
 		time.sleep(2)
 		license()
+	else:
+		print(" License Berhasil Di Pakai")
+		license_key = result[0]
+		time .sleep (2 )
+		login()
 def license():
         try :
             os.system ('clear')
