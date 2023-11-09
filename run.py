@@ -402,7 +402,7 @@ def cek_key():
 		key = open('key.txt','r').read()
 		for lisen in key:
 			met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
-			men = met['licenseKey')
+			men = met['licenseKey']
 			print(men)
 		login()
 	except KeyError:
