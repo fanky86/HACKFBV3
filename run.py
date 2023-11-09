@@ -421,8 +421,8 @@ def cek_key():
 			      machine_code=Helpers.GetMachineCode(v=2))
 	if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
 		print("The license does not work: {0}".format(result[1]))
+		license()
 	else:
-		print(" License Berhasil Di Pakai")
 		license_key = result[0]
 		time .sleep (2 )
 		login()
