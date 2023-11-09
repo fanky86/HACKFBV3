@@ -63,7 +63,6 @@ from concurrent.futures import ThreadPoolExecutor as tred
 from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn
 from licensing.models import *
 from licensing.methods import Key, Helpers
-os.mkdir('key.txt')
 #------------------[ GLOBAL NAME ]-------------------#
 sekarang = calendar.timegm(time.gmtime(time.time()))
 pretty.install()
@@ -86,7 +85,7 @@ sys.stdout.write('\x1b]2; BMBF | Multi Brute Facebook\x07')
 
 
 #------------------[ USER-AGENT ]-------------------#
-try:
+try: 
 	prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=80000&country=all&ssl=all&anonymity=all').text
 	open('.prox.txt','w').write(prox)
 except Exception as e:
