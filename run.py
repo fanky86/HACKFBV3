@@ -432,7 +432,7 @@ def license():
             elif masuk in ['2','02']:
                 RSAPubKey = "<RSAKeyValue><Modulus>p4V61zMS8Gd/Kd7PKOrwamb78Cbds1AhcLvp1bwdlNRAW1oxoA2uIKYSBwF/9bgmPkli6v6JIk5EDyzNE044Lk2KWYiet4Mn5WIvBxkbPvZeWJejLxJy4ZJiEgLacJRfg5mUTJJn9jZrM59QDke2mmnGRKlJVOO4oZU0mnHd9M6yIFkBa1zBZ/5if69Gkxor08otF3YygPRpAiWPON2DloTUB4FeYiIkTz4o3ZUDP6E4GmH8Pd8THjNttZsk6we3bNeS81b4fJgnowD31r+Q0lZiQL6N3XtZLIPvZ9iedEuDoLqcntgaJx0lJVet9TzRP4CMq0aPU6dHbuBKKpp/cw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
                 auth = "WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ=="
-                Console().print(Panel("""Masukan licensi mu""",width=80,style=f"{color_panel}"))
+                Console().print(Panel("""[bold white]Masukan licensi mu""",width=80,style=f"{color_panel}"))
                 key = console.input(f" {H2}• {P2}License : ")
                 result = Key.activate(token=auth,\
                     rsa_pub_key=RSAPubKey,\
@@ -442,7 +442,7 @@ def license():
                 if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
                     print("The license does not work: {0}".format(result[1]))
                 else:
-                    print("License Berhasil Di Pakai")
+                    print(" License Berhasil Di Pakai")
                     license_key = result[0]
                     open('key.txt','w').write(key)
                     time .sleep (2 )
@@ -644,7 +644,9 @@ def menu(my_name,my_id):
     negara = requests.get("http://ip-api.com/json/").json()["country"]
     ip = requests.get("http://ip-api.com/json/").json()["query"]
     prints(Panel(f"{P2}{ip}",padding=(0,30),title=f"{H2}{my_name}",subtitle=f"{H2}{negara}",style=f"{color_panel}"))
-    prints(Panel(f'{P2}lisensi : {K2}{key}-****-****\n{P2}join    : {K2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {K2}{tanggal} {bulan} {tahun}\n{P2}premium : {prem}',width=38,padding=(0,2),title=f"{H2}Lisensi",style=f"{color_panel}"))
+    dia.append(Panel(f'{P2}lisensi : {K2}{key}-****-****\n{P2}premium : {prem}',width=38,padding=(0,2),style=f"{color_panel}"))
+    dia.append(panel(f'{P2}Join  : {K2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {K2}{tanggal} {bulan} {tahun}',width=38,padding=(0,2),style=f"{color_panel}"))
+    console.print(Columns(dia))
     prints(Panel(f"""{P2}
 [{color_text}01{P2}]. crack dari id publik   [{color_text}05{P2}]. crack dari pencarian nama
 [{color_text}02{P2}]. crack dari id Masal    [{color_text}06{P2}]. Dump ID Publik
