@@ -407,6 +407,7 @@ def cek_key():
 		login()
 	except KeyError:
 		print('api key kadaluarsa bro')
+		time.sleep(2)
 		license()
 def license():
         try :
@@ -2680,4 +2681,4 @@ if __name__=='__main__':
 	except:pass
 	try:os.system('clear')
 	except:pass
-	license()
+	cek_key()
