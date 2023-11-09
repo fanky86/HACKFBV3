@@ -406,7 +406,6 @@ def cek_lisen():
 		print('key kadaluarsa ')
 		license()
 	except :
-		os.system('rm -rf key.txt')
 		print ('menghapus key')
 		
 	
