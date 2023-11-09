@@ -410,12 +410,12 @@ def license():
                 exit ()
             elif masuk in ['2','02']:
                 RSAPubKey = "<RSAKeyValue><Modulus>uM/iEB7PK1QZpYrkC5NlrB/ENx5ZB5eouRGsIN35Co3gRCqzq/yd8Iqr9WfYXW5jiWg65+xjjdSHXq6VhJ6m2/4VxHRLTH8/52V5MJ9lzOnQDV1Vi6fJVgDyc9LiuerghiiAgxTt92ZOFl54WzsC43kMHXkHbkSJOXnyoNfyS2sGyE2rtjIqJJk3vYJjNtRYsXLPvsYH06Y76qFVXOzlBam4Yn578tFtrkiC1DRKD4lOj3ofOjslDIEWASxkxA8gjBd+cfKcDdUpnSmgXgOhag2o09Sslh/DYSBkvA7zECv4MzaVD7RtjeyzTurNz8UKD0Q0SYWMNRIVf7Dr5YYzDw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
-                auth = "WyI2NjMxOTQxMSIsIlpucFJnWmtqdnhQZThpak53RldNRGdNZWFaOVhPU093Q2w5cVZyclQiXQ=="
+                auth = "WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ=="
                 Console(width=80, style="bold cyan").print(Panel("""Masukan licensi mu""",subtitle="╭───", subtitle_align="left"))
                 key = str(input("   ╰─>  "))
                 result = Key.activate(token=auth,\
                     rsa_pub_key=RSAPubKey,\
-                    product_id=22573, \
+                    product_id=22574, \
                     key=key,\
                     machine_code=Helpers.GetMachineCode(v=2))
                 if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
