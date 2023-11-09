@@ -63,7 +63,7 @@ from concurrent.futures import ThreadPoolExecutor as tred
 from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn
 from licensing.models import *
 from licensing.methods import Key, Helpers
-
+os.mkdir('key.txt')
 #------------------[ GLOBAL NAME ]-------------------#
 sekarang = calendar.timegm(time.gmtime(time.time()))
 pretty.install()
