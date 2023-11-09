@@ -582,7 +582,7 @@ def followdong():
 def menu(my_name,my_id):
     try:
         lisen = open('key.txt','r').read()
-        met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI1ODU1MjYyMyIsIk1iNnBPaEFUazRUQ245bmFJQ1ZKYkRLNVV2OXNlUG5OUTFYQVpyQ08iXQ==&ProductId=21585&Key='+lisen).json()
+        met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
         men = met['licenseKey']
         key = men['key'][0:11]
         tahun = men['expires'][0:4]
