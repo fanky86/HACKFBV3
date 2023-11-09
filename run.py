@@ -1334,7 +1334,7 @@ def crack3(idf,pwv):
     prog.update(des,description=f" {K2}•{H2} MBASIC {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
     prog.advance(des)
     ua = random.choice(free)
-    ua2 = random.choice(ugent)
+    ua2 = random.choice(free)
     ses = requests.Session()
     for pw in pwv:
         try:
