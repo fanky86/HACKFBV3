@@ -399,20 +399,6 @@ def banner():
 #----------[LICENSE]------------#
 def license():
         try :
-            lol=open('key.txt','r').read()
-            RSAPubKey = "<RSAKeyValue><Modulus>uM/iEB7PK1QZpYrkC5NlrB/ENx5ZB5eouRGsIN35Co3gRCqzq/yd8Iqr9WfYXW5jiWg65+xjjdSHXq6VhJ6m2/4VxHRLTH8/52V5MJ9lzOnQDV1Vi6fJVgDyc9LiuerghiiAgxTt92ZOFl54WzsC43kMHXkHbkSJOXnyoNfyS2sGyE2rtjIqJJk3vYJjNtRYsXLPvsYH06Y76qFVXOzlBam4Yn578tFtrkiC1DRKD4lOj3ofOjslDIEWASxkxA8gjBd+cfKcDdUpnSmgXgOhag2o09Sslh/DYSBkvA7zECv4MzaVD7RtjeyzTurNz8UKD0Q0SYWMNRIVf7Dr5YYzDw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
-            auth = "WyI2NjMxOTQxMSIsIlpucFJnWmtqdnhQZThpak53RldNRGdNZWFaOVhPU093Q2w5cVZyclQiXQ=="
-            result = Key.activate(token=auth,\
-                    rsa_pub_key=RSAPubKey,\
-                    product_id=22573, \
-                    key=lol,\
-                    machine_code=Helpers.GetMachineCode(v=2))
-            if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
-                print("The license does not work: {0}".format(result[1]))
-            else:
-                license_key = result[0]
-                print("License Expires: " + str(license_key.expires))
-                login()
             os.system ('clear')
             banner()
             Console(width=80, style="bold cyan").print(Panel("""[bold yellow][1] [bold white]Dapatkan Api key\n[bold yellow][2] [bold white]Masukan Api Key\n[bold yellow][3] [bold white]Keluar [bold red][Exit][bold white]""",subtitle="╭───", subtitle_align="left", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
