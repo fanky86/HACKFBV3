@@ -397,10 +397,23 @@ def banner():
 
 
 #----------[LICENSE]------------#
+def cek lisen():
+	try:
+		liku = open('key.txt','r').read()
+		met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
+		men = met['licenseKey']
+		key = men['key'][0:11]
+		print('key kadaluarsa ')
+		license()
+	except :
+		os.system('rm -rf key.txt')
+		print ('menghapus key')
+		
+	
 def license():
         try :
             os.system ('clear')
-            banner()
+            logoku()
             Console(width=80, style="bold cyan").print(Panel("""[bold yellow][1] [bold white]Dapatkan Api key\n[bold yellow][2] [bold white]Masukan Api Key\n[bold yellow][3] [bold white]Keluar [bold red][Exit][bold white]""",subtitle="╭───", subtitle_align="left", title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
             masuk = Console().input("[bold cyan]   ╰─> ")
             if masuk in ['1','01']:
@@ -423,8 +436,6 @@ def license():
                 else:
                     print("License Berhasil Di Pakai")
                     license_key = result[0]
-                    print("Feature 1: " + str(license_key.f1))
-                    print("License Expires: " + str(license_key.expires))
                     open('key.txt','w').write(key)
                     time .sleep (2 )
                     login()
