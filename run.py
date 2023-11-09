@@ -397,7 +397,7 @@ def banner():
 
 
 #----------[LICENSE]------------#
-def cek lisen():
+def cek_lisen():
 	try:
 		liku = open('key.txt','r').read()
 		met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
@@ -2680,4 +2680,4 @@ if __name__=='__main__':
 	except:pass
 	try:os.system('clear')
 	except:pass
-	license()
+	cek_lisen()
