@@ -397,17 +397,6 @@ def banner():
 
 
 #----------[LICENSE]------------#
-def cek_keeery():
-	with open('key.txt', 'r') as f:
-		pubKey = "<RSAKeyValue><Modulus>p4V61zMS8Gd/Kd7PKOrwamb78Cbds1AhcLvp1bwdlNRAW1oxoA2uIKYSBwF/9bgmPkli6v6JIk5EDyzNE044Lk2KWYiet4Mn5WIvBxkbPvZeWJejLxJy4ZJiEgLacJRfg5mUTJJn9jZrM59QDke2mmnGRKlJVOO4oZU0mnHd9M6yIFkBa1zBZ/5if69Gkxor08otF3YygPRpAiWPON2DloTUB4FeYiIkTz4o3ZUDP6E4GmH8Pd8THjNttZsk6we3bNeS81b4fJgnowD31r+Q0lZiQL6N3XtZLIPvZ9iedEuDoLqcntgaJx0lJVet9TzRP4CMq0aPU6dHbuBKKpp/cw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
-		license_key = LicenseKey.load_from_string(pubKey, f.read(), 30)
-		if license_key == None or not Helpers.IsOnRightMachine(license_key, v=2):
-			print("NOTE: This license file does not belong to this machine.")
-			license()
-		else:
-			print("Feature 1: " + str(license_key.f1))
-			print("License expires: " + str(license_key.expires))
-			login()
 	    
 def cek_key():
 	RSAPubKey = "<RSAKeyValue><Modulus>p4V61zMS8Gd/Kd7PKOrwamb78Cbds1AhcLvp1bwdlNRAW1oxoA2uIKYSBwF/9bgmPkli6v6JIk5EDyzNE044Lk2KWYiet4Mn5WIvBxkbPvZeWJejLxJy4ZJiEgLacJRfg5mUTJJn9jZrM59QDke2mmnGRKlJVOO4oZU0mnHd9M6yIFkBa1zBZ/5if69Gkxor08otF3YygPRpAiWPON2DloTUB4FeYiIkTz4o3ZUDP6E4GmH8Pd8THjNttZsk6we3bNeS81b4fJgnowD31r+Q0lZiQL6N3XtZLIPvZ9iedEuDoLqcntgaJx0lJVet9TzRP4CMq0aPU6dHbuBKKpp/cw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
@@ -419,7 +408,9 @@ def cek_key():
 			      key=key,\
 			      machine_code=Helpers.GetMachineCode(v=2))
 	if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
+		print()
 		print("The license does not work: {0}".format(result[1]))
+		time.sleep(3)
 		license()
 	else:
 		license_key = result[0]
