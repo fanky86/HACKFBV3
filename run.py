@@ -402,28 +402,20 @@ def cek_lisen():
 		pubKey = "<RSAKeyValue><Modulus>p4V61zMS8Gd/Kd7PKOrwamb78Cbds1AhcLvp1bwdlNRAW1oxoA2uIKYSBwF/9bgmPkli6v6JIk5EDyzNE044Lk2KWYiet4Mn5WIvBxkbPvZeWJejLxJy4ZJiEgLacJRfg5mUTJJn9jZrM59QDke2mmnGRKlJVOO4oZU0mnHd9M6yIFkBa1zBZ/5if69Gkxor08otF3YygPRpAiWPON2DloTUB4FeYiIkTz4o3ZUDP6E4GmH8Pd8THjNttZsk6we3bNeS81b4fJgnowD31r+Q0lZiQL6N3XtZLIPvZ9iedEuDoLqcntgaJx0lJVet9TzRP4CMq0aPU6dHbuBKKpp/cw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
 		lisen = open('key.txt','r').read()
 		met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
-		men = met['licenseKey']
-		key = men['key'][0:11]
-		tahun = men['expires'][0:4]
-		buln = men['expires'][5:7]
-		tanggal = men['expires'][8:10]
-		bulan = dic2[buln]
-		tahun1 = men['created'][0:4]
-		buln1 = men['created'][5:7]
-		tanggal1 = men['created'][8:10]
-		bulan1 = dic2[buln1]
-		print('join : {tanggal1} {buln1} {tahun1}')
 		with open('key.txt', 'r') as f:
 			license_key = LicenseKey.load_from_string(pubKey, f.read(), 30)
 			if license_key == None or not Helpers.IsOnRightMachine(license_key, v=2):
-				print("NOTE: This license file does not belong to this machine.")
+				print("CATATAN: File lisensi ini bukan milik mesin ini.")
 			else:
 				print("Feature 1: " + str(license_key.f1))
-				print("License expires: " + str(license_key.expires))
-			login()
+				print("License Kadaluwarsa: " + str(license_key.expires))
+				if expires in license_key:
+					print('key error')
+				license()
+			
 	except :
 		print ('menghapus key')
-		license()
+		exit('woilah')
 		
 	
 def license():
