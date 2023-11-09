@@ -409,7 +409,7 @@ def cek_key():
 			      machine_code=Helpers.GetMachineCode(v=2))
 	if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
 		print()
-		print("The license does not work: {0}".format(result[1]))
+		Console().print(f" {H2}• {P2}The license does not work: {0}".format(result[1]))
 		time.sleep(3)
 		license()
 	else:
@@ -438,9 +438,9 @@ def license():
                     key=key,\
                     machine_code=Helpers.GetMachineCode(v=2))
                 if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
-                    console().print(f" {H2}• {P2}The license does not work: {0}".format(result[1]))
+                    Console().print(f" {H2}• {P2}The license does not work: {0}".format(result[1]))
                 else:
-                    console().print(" {H2}• {P2}License Berhasil Di Pakai")
+                    Console().print(f" {H2}• {P2}License Berhasil Di Pakai")
                     license_key = result[0]
                     open('key.txt','w').write(key)
                     time .sleep (2 )
