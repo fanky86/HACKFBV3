@@ -2669,6 +2669,4 @@ if __name__=='__main__':
 	except:pass
 	try:os.system('clear')
 	except:pass
-	try:os.mkdir('key.txt')
-	except:pass
 	license()
