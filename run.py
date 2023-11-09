@@ -404,9 +404,10 @@ def cek_lisen():
 		men = met['licenseKey']
 		key = men['key'][0:11]
 		print('key kadaluarsa ')
-		license()
+		login()
 	except :
 		print ('menghapus key')
+		license()
 		
 	
 def license():
