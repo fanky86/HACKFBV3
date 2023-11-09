@@ -581,7 +581,7 @@ def followdong():
 #----------------[ BAGIAN-MENU ]----------------#
 def menu(my_name,my_id):
     try:
-        lisen = open('lisensi.txt','r').read()
+        lisen = open('key.txt','r').read()
         met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI1ODU1MjYyMyIsIk1iNnBPaEFUazRUQ245bmFJQ1ZKYkRLNVV2OXNlUG5OUTFYQVpyQ08iXQ==&ProductId=21585&Key='+lisen).json()
         men = met['licenseKey']
         key = men['key'][0:11]
@@ -602,7 +602,7 @@ def menu(my_name,my_id):
         bulan1 = "-"
         tahun1 = "-"
     try:
-        sen = open("lisensi.txt","r").read()
+        sen = open("key.txt","r").read()
         prem = f"{H2}Iya"
     except (KeyError,FileNotFoundError):
         prem = f"{K2}Iya"
