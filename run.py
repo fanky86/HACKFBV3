@@ -260,7 +260,7 @@ def cek():
         x = requests.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s"%(x)).json()['licenseKey']['key']
         login()
     except KeyError:
-        print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
+        Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
         os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+crack+Facebook MBF")
         time.sleep(2)
@@ -270,18 +270,18 @@ def cek():
 def key():
     os.system("clear") 
     banner()
-    print(Panel(f"{P2}silahkan masukan lisensi tools agar bisa masuk ke tools MBF\njika anda belum mempunyai lisensi ketik {H2}beli {P2}untuk melihat harga lisensi",width=80,padding=(0,2),style=f"{color_table}"))
+    Console().print(Panel(f"{P2}silahkan masukan lisensi tools agar bisa masuk ke tools MBF\njika anda belum mempunyai lisensi ketik {H2}beli {P2}untuk melihat harga lisensi",width=80,padding=(0,2),style=f"{color_table}"))
     key = console.input(f" {H2}•{P2} masukan lisensi : ")
     if key in ["beli","Beli","BELI"]:beli_bang()
     try:
         ses = requests.Session()
         asu = ses.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
         open("key.txt","w").write(key)
-        print(Panel(f"{H2}selamat lisensi yang anda masukan terdaftar ke server MBF",width=80,padding=(0,9),style=f"{color_table}"))
+        Console().print(Panel(f"{H2}selamat lisensi yang anda masukan terdaftar ke server MBF",width=80,padding=(0,9),style=f"{color_table}"))
         time.sleep(3)
         login()
     except KeyError:
-        print(Panel(f"{P2} lisensi yang anda masukan tidak terdaftar silahkan beli terlebih dahulu",width=80,padding=(0,1),style=f"{color_table}"))
+        Console().print(Panel(f"{P2} lisensi yang anda masukan tidak terdaftar silahkan beli terlebih dahulu",width=80,padding=(0,1),style=f"{color_table}"))
         os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+crack+Facebook MBF")
         time.sleep(2)
         exit()
@@ -296,37 +296,37 @@ def cek():
         x = requests.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s"%(x)).json()['licenseKey']['key']
         login()
     except KeyError:
-        print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
-        os.system("rm -rf data/lisensi.txt")
+        Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
+        os.system("rm -rf key.txt")
         os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+crack+Facebook MBF")
         time.sleep(2)
         exit()
 
 ###----------[ BUY LISENSI ]---------- ###	
 def beli_bang():
-    print(Panel(f"{P2}[{H2}01{P2}]. 1 minggu {H2}50.000 {P2}max pemakaian 1 device\n{P2}[{H2}02{P2}]. 1 bulan {H2}100.000{P2} max pemakaian 5 device\n{P2}[{H2}03{P2}]. open source full update {H2}200.000",width=80,padding=(0,15),style=f"{color_table}"))
+    Console().print(Panel(f"{P2}[{H2}01{P2}]. 1 minggu {H2}50.000 {P2}max pemakaian 1 device\n{P2}[{H2}02{P2}]. 1 bulan {H2}100.000{P2} max pemakaian 5 device\n{P2}[{H2}03{P2}]. open source full update {H2}200.000",width=80,padding=(0,15),style=f"{color_table}"))
     zxc = console.input(f" {H2}•{P2} pilih lisensi : ")
     if zxc in [""]:
-        print(f" {H2}•{P2} pilih yang bener broo jangan kosong")
+        Console().print(f" {H2}•{P2} pilih yang bener broo jangan kosong")
         time.sleep(3)
         cek_lisensi_aktif()
     elif zxc in ["1","01"]:
-        print(f" {H2}•{P2} anda akan di arahkan ke WhatsApp")
+        Console().print(f" {H2}•{P2} anda akan di arahkan ke WhatsApp")
         os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+facebook+1+minggu")
         time.sleep(2)
         exit()
     elif zxc in ["2","02"]:
-        print(f" {H2}•{P2} anda akan di arahkan ke WhatsApp")
+        Console().print(f" {H2}•{P2} anda akan di arahkan ke WhatsApp")
         os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+facebook+1+bulan")
         time.sleep(2)
         exit()
     elif zxc in ["3","03"]:
-        print(f" {H2}•{P2} anda akan di arahkan ke WhatsApp")
+        Console().print(f" {H2}•{P2} anda akan di arahkan ke WhatsApp")
         os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+facebook+full+source")
         time.sleep(2)
         exit()
     else:
-        print(f" {H2}•{P2} ngetik apaan lu ngab")
+        Console().print(f" {H2}•{P2} ngetik apaan lu ngab")
         time.sleep(3)
         cek_lisensi_aktif()
 
@@ -2712,4 +2712,4 @@ if __name__=='__main__':
 	except:pass
 	try:os.system('clear')
 	except:pass
-	cek_lisensi_aktif()
+	key()
