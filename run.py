@@ -439,7 +439,7 @@ def noww():
 	men = met['licenseKey']
 	print(men)
 	time.sleep(3)
-	open('key.txt','w')write(lisen)
+	open('key.txt','w').write(lisen)
 		
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login123():
