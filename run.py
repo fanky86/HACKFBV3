@@ -334,7 +334,6 @@ def beli_bang():
 def cek_lisensi_aktif():
     try:
         xz = open("key.txt","r").read()
-        cek()
     except FileNotFoundError:
         key()
         os.system("clear")
