@@ -402,15 +402,10 @@ def cek_key():
 	try:
 		lisen = open('key.txt','r').read()
 		result = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
-		if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
-			print()
-			Console().print(f" {H2}• {P2}The license does not work: {0}".format(result[1]))
-			time.sleep(3)
-			license()
-		else:
-			license_key = result[0]
-			time .sleep (2 )
-			login()
+		men = result['licenseKey']
+		print('sukses')
+		time.sleep(3)
+		login()
 	except:
 		print('License Kadaluwarsa')
 		time.sleep(5)
