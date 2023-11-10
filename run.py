@@ -441,23 +441,7 @@ def license():
                 os .system ('xdg-open https://wa.me/62895386194665?text=Bang+Minta+Lisensi')
                 exit ()
             elif masuk in ['2','02']:
-                RSAPubKey = "<RSAKeyValue><Modulus>p4V61zMS8Gd/Kd7PKOrwamb78Cbds1AhcLvp1bwdlNRAW1oxoA2uIKYSBwF/9bgmPkli6v6JIk5EDyzNE044Lk2KWYiet4Mn5WIvBxkbPvZeWJejLxJy4ZJiEgLacJRfg5mUTJJn9jZrM59QDke2mmnGRKlJVOO4oZU0mnHd9M6yIFkBa1zBZ/5if69Gkxor08otF3YygPRpAiWPON2DloTUB4FeYiIkTz4o3ZUDP6E4GmH8Pd8THjNttZsk6we3bNeS81b4fJgnowD31r+Q0lZiQL6N3XtZLIPvZ9iedEuDoLqcntgaJx0lJVet9TzRP4CMq0aPU6dHbuBKKpp/cw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
-                auth = "WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ=="
-                Console().print(Panel("""[bold white]Masukan licensi mu""",width=80,style=f"{color_panel}"))
-                key = console.input(f" {H2}• {P2}License : ")
-                result = Key.activate(token=auth,\
-                    rsa_pub_key=RSAPubKey,\
-                    product_id=22574, \
-                    key=key,\
-                    machine_code=Helpers.GetMachineCode(v=2))
-                if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
-                    Console().print(f" {H2}• {P2}The license does not work: {0}".format(result[1]))
-                else:
-                    Console().print(f" {H2}• {P2}License Berhasil Di Pakai")
-                    license_key = result[0]
-                    open('key.txt','w').write(key)
-                    time .sleep (2 )
-                    login()
+                noww()
             elif masuk in ['3','03']:
                 exit ()
             else :
@@ -466,6 +450,20 @@ def license():
             exit (f"[!] Api Key Invalid")
         except Exception as masuk :
             exit (f"[!] {masuk}")
+
+def noww():
+	try:
+		lisen = input('your key : ')
+		result = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
+		men = result['licenseKey']
+		print('sukses')
+		time.sleep(3)
+		login()
+	except KeyError as e:
+		print(e)
+		time.sleep(5)
+		license()
+	
 		
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login123():
