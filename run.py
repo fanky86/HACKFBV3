@@ -238,7 +238,7 @@ def key():
     os.system("clear");banner();key = input(f" {K}#{P} masukan lisensi : {H}")
     try:
         ses = requests.Session()
-        asu = ses.get("https://app.cryptolens.io/api/key/Activate?token===&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
+        asu = ses.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
         open("key.txt","w").write(key)
         print(Panel(f"{P2}selamat lisensi yang anda masukan terdaftar ke server Facebook MBF",width=80,padding=(0,6),style=f"{color_table}"))
         time.sleep(4)
