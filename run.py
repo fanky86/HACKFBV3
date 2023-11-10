@@ -437,9 +437,9 @@ def noww():
 	lisen = console.input(f" {H2}• {P2} Masukan License : ")
 	met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
 	men = met['licenseKey']
-	print('sukses')
+	print(men)
 	time.sleep(3)
-	login()
+	open('key.txt','w')write(lisen)
 		
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login123():
