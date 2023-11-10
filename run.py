@@ -397,8 +397,19 @@ def banner():
 
 
 #----------[LICENSE]------------#
-	    
+
 def cek_key():
+	try:
+		lisen = open('key.txt','r').read()
+		met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
+		men = met['licenseKey']
+		print(f'{men}')
+	except:
+		print('License Kadaluwarsa')
+		time.sleep(5)
+		license()
+	    
+def cek_kkey():
 	RSAPubKey = "<RSAKeyValue><Modulus>p4V61zMS8Gd/Kd7PKOrwamb78Cbds1AhcLvp1bwdlNRAW1oxoA2uIKYSBwF/9bgmPkli6v6JIk5EDyzNE044Lk2KWYiet4Mn5WIvBxkbPvZeWJejLxJy4ZJiEgLacJRfg5mUTJJn9jZrM59QDke2mmnGRKlJVOO4oZU0mnHd9M6yIFkBa1zBZ/5if69Gkxor08otF3YygPRpAiWPON2DloTUB4FeYiIkTz4o3ZUDP6E4GmH8Pd8THjNttZsk6we3bNeS81b4fJgnowD31r+Q0lZiQL6N3XtZLIPvZ9iedEuDoLqcntgaJx0lJVet9TzRP4CMq0aPU6dHbuBKKpp/cw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
 	auth = "WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ=="
 	key = open('key.txt','r').read()
