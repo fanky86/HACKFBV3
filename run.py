@@ -1802,7 +1802,7 @@ def mengecek(user,pw):
 		print("%s %s"%(M,oh))
 	else:
 		tree = Tree(" ",guide_style=f"bold white")
-		tree.add(Panel(f"login gagal, silahkan cek kembali id dan kata sandi",width=83,padding=(0,2),style=f"{color_panel}"))
+		tree.add(Panel(f"{P2}login gagal, silahkan cek kembali id dan kata sandi",width=83,padding=(0,2),style=f"{color_panel}"))
 		prints(tree)
 		  
 def scarpping_ua():
