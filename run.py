@@ -1148,7 +1148,7 @@ def cektahun(fx):
  
 #-------------[ PENGATURAN-IDZ ]---------------#
 def setting():
-    Console().print(Panel(f'[{color_text}01{P2}] Crack akun Old [/]\n[{color_text}02{P2}] Crack Akun New [/]\n[{color_text}03{P2}] Crack Akun Random [[bold green]Recommended[bold white]][/]', title='[bold green] %s '%(len(id)),width=80,style=f"{color_panel}"))
+    Console().print(Panel(f'{P2}[{color_text}01{P2}] Crack akun Old [/]\n{P2}[{color_text}02{P2}] Crack Akun New [/]\n{P2}[{color_text}03{P2}] Crack Akun Random [[bold green]Recommended[bold white]][/]', title='[bold green] %s '%(len(id)),width=80,style=f"{color_panel}"))
     hu = console.input(f" {H2}• {P2}Masukan : ")
     if hu in ['1','01']:
         for tua in sorted(id):
@@ -1169,7 +1169,7 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console().print(Panel(f'[{color_text}01{P2}] Login Site [bold green]mbasic.facebook.com[bold white] [/]\n[{color_text}02{P2}] Login Site [bold green]Api.facebook.com[bold white]\n[{color_text}03{P2}] Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
+    Console().print(Panel(f'{P2}[{color_text}01{P2}] Login Site [bold green]mbasic.facebook.com[bold white] [/]\n{P2}[{color_text}02{P2}] Login Site [bold green]Api.facebook.com[bold white]\n{P2}[{color_text}03{P2}] Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
     hc = console.input(f" {H2}• {P2}Masukan : ")
     if hc in ['1','01']:
         method.append('mbasic')
