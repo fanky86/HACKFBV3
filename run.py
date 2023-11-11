@@ -257,7 +257,7 @@ def cek():
     try:
         x=open("key.txt","r").read()
     except FileNotFoundError:
-        key()
+        license()
     try:
         x = requests.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s"%(x)).json()['licenseKey']['key']
         login()
@@ -293,7 +293,7 @@ def cek():
     try:
         x=open("key.txt","r").read()
     except FileNotFoundError:
-        key()
+        license()
     try:
         x = requests.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s"%(x)).json()['licenseKey']['key']
         login()
@@ -337,7 +337,7 @@ def cek_lisensi_aktif():
     try:
         xz = open("key.txt","r").read()
     except FileNotFoundError:
-        key()
+        license()
         os.system("clear")
         cek()
  
@@ -399,7 +399,7 @@ def license():
                 os .system ('xdg-open https://wa.me/62895386194665?text=Bang+Minta+Lisensi')
                 exit ()
             elif masuk in ['2','02']:
-                noww()
+                key()
             elif masuk in ['3','03']:
                 exit ()
             else :
