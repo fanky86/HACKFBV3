@@ -567,7 +567,7 @@ def menu(my_name,my_id):
     banner()
     negara = requests.get("http://ip-api.com/json/").json()["country"]
     ip = requests.get("http://ip-api.com/json/").json()["query"]
-    prints(Panel(f"{P2}{ip}",padding=(0,30),title=f"{P2}Halo, {my_name}{waktucok()}",subtitle=f"{H2}{negara}",style=f"{color_panel}"))
+    prints(Panel(f"{U2}{ip}",padding=(0,30),title=f"{P2}Halo, {H2}{my_name} {P2}{waktucok()}",subtitle=f"{P2}{negara}",style=f"{color_panel}"))
     dia.append(Panel(f'{P2}lisensi : {H2}{key}-****-****\n{P2}premium : {H2}{prem}',width=38,padding=(0,2),style=f"{color_panel}"))
     dia.append(panel(f'{P2}Join    : {H2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {H2}{tanggal} {bulan} {tahun}',width=38,padding=(0,2),style=f"{color_panel}"))
     console.print(Columns(dia))
@@ -1148,7 +1148,7 @@ def cektahun(fx):
  
 #-------------[ PENGATURAN-IDZ ]---------------#
 def setting():
-    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white]Crack akun Old [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Crack Akun New [/]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white]Crack Akun Random [[bold green]Recommended[bold white]][/]', title='[bold green] %s '%(len(id)),width=80,style=f"{color_panel}"))
+    Console().print(Panel(f'[{color_text}01{P2}] Crack akun Old [/]\n[{color_text}02{P2}] Crack Akun New [/]\n[{color_text}03{P2}] Crack Akun Random [[bold green]Recommended[bold white]][/]', title='[bold green] %s '%(len(id)),width=80,style=f"{color_panel}"))
     hu = console.input(f" {H2}• {P2}Masukan : ")
     if hu in ['1','01']:
         for tua in sorted(id):
@@ -1169,7 +1169,7 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white]Login Site [bold green]mbasic.facebook.com[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Login Site [bold green]Api.facebook.com[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white]Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
+    Console().print(Panel(f'[{color_text}01{P2}] Login Site [bold green]mbasic.facebook.com[bold white] [/]\n[{color_text}02{P2}] Login Site [bold green]Api.facebook.com[bold white]\n[{color_text}03{P2}] Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
     hc = console.input(f" {H2}• {P2}Masukan : ")
     if hc in ['1','01']:
         method.append('mbasic')
