@@ -111,7 +111,7 @@ for crack in range(200):
 	ngentodd = f"Mozilla/5.0 (Linux; Android {str(random.randint(2,8))}.{str(random.randint(1,9))}.{str(random.randint(1,9))}; LG-F320L Build/{builx}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/95.0.{chrome4}.{chrome3} Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/309.0.0.16.{chrome3};]"
 	ngentoddd = f"Mozilla/5.0 (Linux; Android  {str(random.randint(2,8))}.{str(random.randint(1,9))}.{str(random.randint(1,9))}; Micromax E484 Build/{builx}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/46.0.{chrome4}.{chrome3} Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/332.0.0.23.{chrome3};]"
 	rudalcui=random.choice([ngentod,ngentodd,ngentoddd])
-	uakucui=append(rudalcui)
+	uakucui.append(rudalcui)
 
 for xd in range(10000):
     rr = random.randint; rc = random.choice
