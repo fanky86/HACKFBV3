@@ -1179,7 +1179,7 @@ def setting():
         method.append('reguler')
     else:
         method.append('mbasic')
-    Console().print(Panel(f'[bold yellow]Apakah Anda Ingin Mengunakan UA Manual Untuk Melakukan Crack Account ? Y/T',title=f"[bold green]Setting User-Agent",width=80,style=f"{color_panel}"))
+    Console().print(Panel(f'[bold white]Apakah Anda Ingin Mengunakan UA Manual Untuk Melakukan Crack Account ? Y/T',title=f"[bold green]Setting User-Agent",width=80,style=f"{color_panel}"))
     uatambah = console.input(f" {H2}• {P2}Masukan : ")
     if uatambah in ['y','Ya','ya','Y']:
         ualuh.append('ya')
@@ -1199,7 +1199,7 @@ def passwrd():
     urut.append(panel(f'         [bold yellow]%s [bold white]'%(cpc),width=40,title=f"[bold yellow]CP SAVE",style=f"{color_panel}"))
     wa.print(Columns(urut))
     awal = datetime.now()
-    Console().print(Panel(f'\t[bold yellow]hidup/matikan Mode Pesawat Setiap [bold green]300[bold yellow] ID ',title=f"[bold green]Informasi",width=80,style=f"{color_panel}"))
+    Console().print(Panel(f'\t[bold white]hidup/matikan Mode Pesawat Setiap [bold green]300[bold yellow] ID ',title=f"[bold green]Informasi",width=80,style=f"{color_panel}"))
     prog = Progress(TextColumn('{task.description}'))
     des = prog.add_task('',total=len(id2))
     with prog:
