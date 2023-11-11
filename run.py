@@ -1043,7 +1043,7 @@ def publik():
 				setting()
 			except Exception as e:
 				print(e)
-#-------------------[ CRACK-PUBLIK ]----------------#
+#-------------------[ CRACK-Masal ]----------------#
 def massal():
     try:
         token = open('.token.txt','r').read()
@@ -1051,20 +1051,20 @@ def massal():
     except IOError:
         exit()
     try:
-        Console(width=80, style="bold cyan").print(Panel('\t[bold yellow] Mau Berapa Target Yang Mau Di Crack',subtitle="╭───", subtitle_align="left", title="[bold green]>[hot_pink2] (Crack Masal) [bold green]<"))
-        jum = int(input(f"{O}   ╰─> "))
+        Console().print(Panel('\t[bold white] Mau Berapa Target Yang Mau Di Crack',width=80,style=f"{color_panel}", title="[bold green] Crack Masal [bold white]"))
+        jum = int(input(f"{O}  ─> "))
     except ValueError:
-        Console().print("[bold cyan]   ╰─>[bold red] Wrong input ")
+        Console().print(f" {H2}• {P2} Wrong input ")
         exit()
     if jum<1 or jum>80:
-        Console().print("[bold cyan]   ╰─>[bold red] Pertemanan Tidak Publik  ")
+        Console().print(f" {H2}• {P2} Pertemanan Tidak Publik  ")
         exit()
     ses=requests.Session()
     yz = 0
     for met in range(jum):
         yz+=1
-        Console(width=80,style="bold cyan").print(panel('\t[bold yellow] Masukkan Target ke '+str(yz)+'',subtitle="╭───", subtitle_align="left"))
-        kl = Console().input(f'[bold cyan]   ╰─> ')
+        Console().print(panel('\t[bold white] Masukkan Target ke '+str(yz)+'',width=80,style=f"{color_panel}"))
+        kl = Console().input(f" {H2}• {P2}Masukan : ")
         uid.append(kl)
     for userr in uid:
         try:
@@ -1095,11 +1095,11 @@ def massal():
         except (KeyError,IOError):
             pass
         except requests.exceptions.ConnectionError:
-            Console().print("[bold cyan]   ╰─>[bold red] Unstable Signal ")
+            Console().print(f" {H2}• {P2}Unstable Signal ")
             exit()
     try:
-        Console(width=80,style="bold cyan").print(panel("""[bold yellow] Total Id Target Yang Terkumpul""",subtitle="╭───", subtitle_align="left"))
-        Console().print('[bold cyan]   ╰─> [bold green]'+str(len(id)))					  
+        Console().print(panel("""[bold white] Total Id Target Yang Terkumpul""",width=80,style=f"{color_panel}"))
+        Console().print(f' {H2}• {P2}'+str(len(id)))					  
         setting()
     except requests.exceptions.ConnectionError:
         print(f'')
