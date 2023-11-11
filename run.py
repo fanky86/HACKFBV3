@@ -248,7 +248,7 @@ def key():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
-        exit()
+        license()
 
 ###----------[ CEK LISENSI ]---------- ###
 def cek():
@@ -262,7 +262,7 @@ def cek():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
-        exit()
+        license()
 
 ###----------[ MASUK LISENSI ]---------- ###
 def key():
@@ -277,7 +277,7 @@ def key():
         login()
     except KeyError:
         Console().print(Panel(f"{P2} lisensi yang anda masukan tidak terdaftar silahkan beli terlebih dahulu",width=80,padding=(0,1),style=f"{color_table}"))
-        exit()
+        license()
 
 ###----------[ CEK LISENSI ]---------- ###				
 def cek():
@@ -291,7 +291,7 @@ def cek():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
-        exit()
+        license()
 
 ###----------[ BUY LISENSI ]---------- ###	
 def beli_bang():
@@ -366,7 +366,7 @@ def license():
 	try :
 		os.system ('clear')
 		logoku()
-		Console().print(Panel("""[{color_text}01{P2}] Dapatkan Api key\n[{color_text}02{P2}] Masukan Api Key\n[{color_text}03{P2}] Keluar [bold red][Exit][bold white]""",width=80,style=f"{color_panel}",title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
+		Console().print(Panel(f"""[{color_text}01{P2}] Dapatkan Api key\n[{color_text}02{P2}] Masukan Api Key\n[{color_text}03{P2}] Keluar [bold red][Exit][bold white]""",width=80,style=f"{color_panel}",title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
 		masuk = console.input(f" {H2}• {P2}pilih menu : ")
 		if masuk in ['1','01']:
 			beli_bang()
