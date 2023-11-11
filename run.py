@@ -237,7 +237,7 @@ def waktucok():
         return timenow
 ###----------[ CEK LISENSI ]---------- ###
 def key():
-    os.system("clear");banner();key = Console().input(f" {K}#{P} masukan lisensi : {H}")
+    os.system("clear");logoku();key = Console().input(f" {K}#{P} masukan lisensi : {H}")
     try:
         ses = requests.Session()
         asu = ses.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
@@ -248,8 +248,6 @@ def key():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
-        os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+crack+Facebook MBF")
-        time.sleep(2)
         exit()
 
 ###----------[ CEK LISENSI ]---------- ###
@@ -264,14 +262,12 @@ def cek():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
-        os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+crack+Facebook MBF")
-        time.sleep(2)
         exit()
 
 ###----------[ MASUK LISENSI ]---------- ###
 def key():
     os.system("clear") 
-    banner()
+    logoku()
     Console().print(Panel(f"{P2}silahkan masukan lisensi tools agar bisa masuk ke tools MBF\njika anda belum mempunyai lisensi ketik {H2}beli {P2}untuk melihat harga lisensi",width=80,padding=(0,2),style=f"{color_table}"))
     key = Console().input(f" {H2}•{P2} masukan lisensi : ")
     if key in ["beli","Beli","BELI"]:beli_bang()
@@ -284,8 +280,6 @@ def key():
         login()
     except KeyError:
         Console().print(Panel(f"{P2} lisensi yang anda masukan tidak terdaftar silahkan beli terlebih dahulu",width=80,padding=(0,1),style=f"{color_table}"))
-        os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+crack+Facebook MBF")
-        time.sleep(2)
         exit()
 
 ###----------[ CEK LISENSI ]---------- ###				
@@ -300,8 +294,6 @@ def cek():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
-        os.system("xdg-open https://wa.me/+62895386194665?text=assalamualaikum+bang+mau+beli+lisensi+crack+Facebook MBF")
-        time.sleep(2)
         exit()
 
 ###----------[ BUY LISENSI ]---------- ###	
