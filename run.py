@@ -170,9 +170,9 @@ except:
 	color_ok = "#00FF00"
 	color_cp = "#FFFF00"
 try:
-	color_table = open("data/theme_color.txt","r").read()
+	color_table = open("data/theme_color","r").read()
 except FileNotFoundError:
-	color_table = "#00FFFF"
+	color_table = "#00FF00"
 
 SE="[#9F9F9F]"
 puti = '\x1b[1;97m'# WARNA-PUTIH
@@ -266,9 +266,8 @@ def cek():
 
 ###----------[ MASUK LISENSI ]---------- ###
 def key():
-    Console().print(Panel(f"{P2}silahkan masukan lisensi tools agar bisa masuk ke tools MBF\njika anda belum mempunyai lisensi ketik {H2}beli {P2}untuk melihat harga lisensi",width=80,padding=(0,2),style=f"{color_table}"))
+    Console().print(Panel(f"{P2}silahkan masukan lisensi tools agar bisa masuk ke tools HACKFBV3",width=80,padding=(0,2),style=f"{color_table}"))
     key = Console().input(f" {H2}•{P2} masukan lisensi : ")
-    if key in ["beli","Beli","BELI"]:beli_bang()
     try:
         ses = requests.Session()
         asu = ses.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
@@ -378,26 +377,23 @@ def cek_key():
 		license()
 
 def license():
-        try :
-            os.system ('clear')
-            logoku()
-            Console().print(Panel("""[bold yellow][1] [bold white]Dapatkan Api key\n[bold yellow][2] [bold white]Masukan Api Key\n[bold yellow][3] [bold white]Keluar [bold red][Exit][bold white]""",width=80,style=f"{color_panel}",title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
-            masuk = console.input(f" {H2}• {P2}pilih menu : ")
-            if masuk in ['1','01']:
-                print (f"{H}[{P}!{H}]{P} Anda Akan Diarahkan Ke Whatsapp...")
-                time .sleep (3 )
-                os .system ('xdg-open https://wa.me/62895386194665?text=Bang+Minta+Lisensi')
-                exit ()
-            elif masuk in ['2','02']:
-                key()
-            elif masuk in ['3','03']:
-                exit ()
-            else :
-                exit (f"[!] Wrong Input")
-        except (KeyError ):
-            exit (f"[!] Api Key Invalid")
-        except Exception as masuk :
-            exit (f"[!] {masuk}")
+	try :
+		os.system ('clear')
+		logoku()
+		Console().print(Panel("""[bold yellow][1] [bold white]Dapatkan Api key\n[bold yellow][2] [bold white]Masukan Api Key\n[bold yellow][3] [bold white]Keluar [bold red][Exit][bold white]""",width=80,style=f"{color_panel}",title="[bold red]>[bold yellow]>[bold green]>[hot_pink2] (License) [bold green]<[bold yellow]<[bold red]<"))
+		masuk = console.input(f" {H2}• {P2}pilih menu : ")
+		if masuk in ['1','01']:
+			beli_bang()
+		elif masuk in ['2','02']:
+			key()
+		elif masuk in ['3','03']:
+			exit ()
+		else :
+			exit (f"[!] Wrong Input")
+	except (KeyError ):
+		exit (f"[!] Api Key Invalid")
+	except Exception as masuk :
+		exit (f"[!] {masuk}")
 
 def noww():
 	lisen = console.input(f" {H2}• {P2} Masukan License : ")
