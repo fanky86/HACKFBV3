@@ -90,7 +90,7 @@ try:
 	prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=80000&country=all&ssl=all&anonymity=all').text
 	open('.prox.txt','w').write(prox)
 except Exception as e:
-	print(' [+] Koneksi Internet Anda Tidak Terdeteksi Silahkan Cek Kuota Anda');exit()
+	Console().print(f' {H2}•{P2} Koneksi Internet Anda Tidak Terdeteksi Silahkan Cek Kuota Anda');exit()
 prox=open('.prox.txt','r').read().splitlines()
 
 ###----------[ GENERATE USERAGENT ]---------- ###
@@ -242,7 +242,7 @@ def key():
         ses = requests.Session()
         asu = ses.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
         open("key.txt","w").write(key)
-        Console().print(Panel(f"{P2}selamat lisensi yang anda masukan terdaftar ke server Facebook MBF",width=80,padding=(0,6),style=f"{color_table}"))
+        Console().print(Panel(f"{P2}selamat lisensi yang anda masukan terdaftar ke server Facebook HACKFB",width=80,padding=(0,6),style=f"{color_table}"))
         time.sleep(4)
         login()
     except KeyError:
@@ -272,7 +272,7 @@ def key():
         ses = requests.Session()
         asu = ses.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
         open("key.txt","w").write(key)
-        Console().print(Panel(f"{H2}selamat lisensi yang anda masukan terdaftar ke server MBF",width=80,padding=(0,9),style=f"{color_table}"))
+        Console().print(Panel(f"{H2}selamat lisensi yang anda masukan terdaftar ke server HACKFB",width=80,padding=(0,9),style=f"{color_table}"))
         time.sleep(3)
         login()
     except KeyError:
@@ -362,20 +362,6 @@ def banner():
 
 
 #----------[LICENSE]------------#
-
-def cek_key():
-	try:
-		lisen = open('key.txt','r').read()
-		result = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
-		men = result['licenseKey']
-		print('sukses')
-		time.sleep(3)
-		login()
-	except KeyError as e:
-		print(e)
-		time.sleep(5)
-		license()
-
 def license():
 	try :
 		os.system ('clear')
@@ -394,14 +380,6 @@ def license():
 		exit (f"[!] Api Key Invalid")
 	except Exception as masuk :
 		exit (f"[!] {masuk}")
-
-def noww():
-	lisen = console.input(f" {H2}• {P2} Masukan License : ")
-	met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
-	men = met['licenseKey']
-	print(men)
-	time.sleep(3)
-	open('key.txt','w').write(lisen)
 		
 #--------------------[ BAGIAN-MASUK ]--------------#
 def login123():
