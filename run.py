@@ -237,7 +237,7 @@ def waktucok():
         return timenow
 ###----------[ CEK LISENSI ]---------- ###
 def key():
-    os.system("clear");logoku();key = Console().input(f" {K}#{P} masukan lisensi : {H}")
+    logoku();key = Console().input(f" {K}#{P} masukan lisensi : {H}")
     try:
         ses = requests.Session()
         asu = ses.get("https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key=%s&Sign=True"%(key)).json()['licenseKey']['key']
@@ -266,8 +266,6 @@ def cek():
 
 ###----------[ MASUK LISENSI ]---------- ###
 def key():
-    os.system("clear") 
-    logoku()
     Console().print(Panel(f"{P2}silahkan masukan lisensi tools agar bisa masuk ke tools MBF\njika anda belum mempunyai lisensi ketik {H2}beli {P2}untuk melihat harga lisensi",width=80,padding=(0,2),style=f"{color_table}"))
     key = Console().input(f" {H2}•{P2} masukan lisensi : ")
     if key in ["beli","Beli","BELI"]:beli_bang()
