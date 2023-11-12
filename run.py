@@ -248,6 +248,7 @@ def key():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
+        time.sleep(3)
         license()
 
 ###----------[ CEK LISENSI ]---------- ###
@@ -262,6 +263,7 @@ def cek():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
+	    
         license()
 
 ###----------[ MASUK LISENSI ]---------- ###
@@ -277,8 +279,8 @@ def key():
         login()
     except KeyError:
         Console().print(Panel(f"{P2} lisensi yang anda masukan tidak terdaftar silahkan beli terlebih dahulu",width=80,padding=(0,1),style=f"{color_table}"))
+        time.sleep(3)
         license()
-
 ###----------[ CEK LISENSI ]---------- ###				
 def cek():
     try:
@@ -291,6 +293,7 @@ def cek():
     except KeyError:
         Console().print(Panel(f"{P2}lisensi kamu sudah kedaluwarsa silahkan beli lisensi ke admin",width=80,padding=(0,6),style=f"{color_table}"))
         os.system("rm -rf key.txt")
+        time.sleep(3)
         license()
 
 ###----------[ BUY LISENSI ]---------- ###	
