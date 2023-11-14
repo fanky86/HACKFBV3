@@ -307,7 +307,7 @@ def cek():
 
 ###----------[ BUY LISENSI ]---------- ###	
 def beli_bang():
-    Console().print(Panel(f"[{color_text}01{P2}]. 1 minggu {H2}50.000 {P2}max pemakaian 1 device\n[{color_text}02{P2}]. 1 bulan {H2}100.000{P2} max pemakaian 5 device\n[{color_text}03{P2}]. open source full update {H2}200.000",width=80,style=f"{color_table}"))
+    Console().print(Panel(f"[{color_text}01{P2}]. 1 minggu max pemakaian 1 device\n[{color_text}02{P2}]. 1 bulan max pemakaian 5 device\n[{color_text}03{P2}]. open source full update",width=80,style=f"{color_table}"))
     zxc = console.input(f" {H2}•{P2} pilih lisensi : ")
     if zxc in [""]:
         Console().print(f" {H2}•{P2} pilih yang bener broo jangan kosong")
