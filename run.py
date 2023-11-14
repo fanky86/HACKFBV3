@@ -147,7 +147,7 @@ def ugen():
         os.system("rm -rf ugent.txt");ua = input("%s╚══[%s•%s] %sMasukkan User Agent : \n\n"%(O,P,O,P))
         try:ugent = open('ugent.txt','w');ugent.write(ua);ugent.close();jalan("\n%s╔══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
         except (KeyError,IOError):jalan("\n%s╔══[ %sGagal Mengganti User Agent %s]"%(M,P,M));print('%s║'%(M));input('%s╚══[ %sKembali %s]%s'%(M,P,M,P));login()
-    elif pmu in ['3','03','003','c']:print('sabar dalam perkembangan')
+    elif pmu in ['3','03','003','c']:ugen_hp()
     elif pmu in ['4','04','004','d']:os.system("rm -rf bbnew.txt");jalan("%s╠══[ %sUser Agent Berhasil Dihapus %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
     elif pmu in ['5','05','005','e']:
         try:ungser = open('bbnew.txt', 'r').read()
