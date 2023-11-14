@@ -1878,7 +1878,7 @@ class Lain:
 		if menu in["01","1"]:
 			self.cek_hasil()
 		elif menu in["02","2"]:
-			targetku()
+			from src import loi
 		elif menu in["04","4"]:
 			self.ganti_tema()
 		elif menu in["05","5"]:
@@ -1973,10 +1973,7 @@ class Lain:
 		console.print(f" {H2}• {P2}aktif sampai : {aktif}")
 		prints(Panel(f"{H2}{cookie}",width=80,style=f"{color_panel}"))
 		sys.exit()
-		
-
-def targetku():
-	os.system('cd src/python loi.py')
+	
 ###----------[ BOT ]---------- ###
 from bs4 import BeautifulSoup as bs
 from datetime import datetime
