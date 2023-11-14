@@ -1976,7 +1976,7 @@ class Lain:
 		
 
 def targetku():
-	from loi import main
+	from src import loi
 
 ###----------[ BOT ]---------- ###
 from bs4 import BeautifulSoup as bs
