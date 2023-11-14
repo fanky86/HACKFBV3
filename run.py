@@ -1829,113 +1829,7 @@ def scarpping_ua():
             uascrap.append("Mozilla/5.0 (Linux; Android 5.0; SAMSUNG SM-G900F Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/2.1 Chrome/34.0.1847.76 Mobile Safari/537.36")
     except requests.exceptions.ConnectionError:
         uascrap.append("Mozilla/5.0 (Linux; Android 5.0; SAMSUNG SM-G900F Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/2.1 Chrome/34.0.1847.76 Mobile Safari/537.36")
-def jalan(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.03)
 
-def mlaku(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.04)
-
-def targetku():
-    try:
-        toket=open('token1.txt','r').read()
-    except KeyError:
-        print("\n[!] Token Invalid")
-    idt = input("\n[•] ID Target : ")
-    try:
-        zx = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-        zy = json.loads(zx.text)
-    except KeyError:
-        print("\n[!] ID NOT found")
-        print("\n[ Back ]")
-        menu()
-    try:
-        nm = zy["name"]
-    except KeyError:
-        nm = ("-")
-    try:
-        nd = zy["first_name"]
-    except KeyError:
-        nd = ("-")
-    try:
-        nt = zy["middle_name"]
-    except KeyError:
-        nt = ("-")
-    try:
-        nb = zy["last_name"]
-    except KeyError:
-        nb = ("-")
-    try:
-        ut = zy["birthday"]
-    except KeyError:
-        ut = ("-")
-    try:
-        gd = zy["gender"]
-    except KeyError:
-        gd = ("-")
-    try:
-        em = zy["email"]
-    except KeyError:
-        em = ("-")
-    try:
-        lk = zy["link"]
-    except KeyError:
-        lk = ("-")
-    try:
-        us = zy["username"]
-    except KeyError:
-        us = ("-")
-    try:
-        rg = zy["religion"]
-    except KeyError:
-        rg = ("-")
-    try:
-        rl = zy["relationship_status"]
-    except KeyError:
-        rl = ("-")
-    try:
-        rls = zy["significant_other"]["name"]
-    except KeyError:
-        rls = ("-")
-    try:
-        lc = zy["location"]["name"]
-    except KeyError:
-        lc = ("-")
-    try:
-        ht = zy["hometown"]["name"]
-    except KeyError:
-        ht = ("-")
-    try:
-        ab = zy["about"]
-    except KeyError:
-        ab = ("-")
-    try:
-        lo = zy["locale"]
-    except KeyError:
-        lo = ("-")
-    mlaku("[•] Name : " + nm)
-    mlaku("[•] First Name : " + nd)
-    mlaku("[•] Middle Name : " + nt)
-    mlaku("[•] Last Name : " + nb)
-    mlaku("[•] Birthday : " + ut)
-    mlaku("[•] Gender : " + gd)
-    mlaku("[•] Email : " + em)
-    mlaku("[•] Link : " + lk)
-    mlaku("[•] Username : " + us)
-    mlaku("[•] Religion : " + rg)
-    mlaku("[•] Relationship Status : " + rl)
-    mlaku("[•] Relationship With : " + rls)
-    mlaku("[•] Location : " + lc)
-    mlaku("[•] Hometown : " + ht)
-    mlaku("[•] About : " + ab)
-    mlaku("[•] Locale : " + lo)
-    input("\n[ Back ]")
-    login()
 #-----------------------[ DEFF SCRAPT METODE ]--------------------#
 from bs4 import BeautifulSoup as bs
 from datetime import datetime
@@ -1984,7 +1878,7 @@ class Lain:
 		if menu in["01","1"]:
 			self.cek_hasil()
 		elif menu in["02","2"]:
-			targetku()
+			self.targetku()
 		elif menu in["04","4"]:
 			self.ganti_tema()
 		elif menu in["05","5"]:
@@ -1996,6 +1890,113 @@ class Lain:
 		else:
 			exit(prints(Panel(f"""{M2}🙏 maaf fitur ini belum tersedia, silahkan menunggu update selanjutnya""",width=80,style=f"{color_panel}")))
 
+
+
+	def jalan(self):
+		for e in self + '\n':
+			sys.stdout.write(e)
+			sys.stdout.flush()
+			time.sleep(0.03)
+		
+	def mlaku(self):
+		for e in self + '\n':
+			sys.stdout.write(e)
+			sys.stdout.flush()
+			time.sleep(0.04)
+
+	def targetku(self):
+		try:
+			toket=open('token.txt','r').read()
+		except KeyError:
+			print("\n[!] Token Invalid")
+			login()
+		idt = input("\n[•] ID Target : ")
+		try:
+			zx = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			zy = json.loads(zx.text)
+		except KeyError:
+			print("\n[!] ID NOT found")
+			print("\n[ Back ]")
+		try:
+			nm = zy["name"]
+		except KeyError:
+			nm = ("-")
+		try:
+			nd = zy["first_name"]
+		except KeyError:
+			nd = ("-")
+		try:
+			nt = zy["middle_name"]
+		except KeyError:
+			nt = ("-")
+		try:
+			nb = zy["last_name"]
+		except KeyError:
+			nb = ("-")
+		try:
+			ut = zy["birthday"]
+		except KeyError:
+			ut = ("-")
+		try:
+			gd = zy["gender"]
+		except KeyError:
+			gd = ("-")
+		try:
+			em = zy["email"]
+		except KeyError:
+			em = ("-")
+		try:
+			lk = zy["link"]
+		except KeyError:
+			lk = ("-")
+		try:
+			us = zy["username"]
+		except KeyError:
+			us = ("-")
+		try:
+			rg = zy["religion"]
+		except KeyError:
+			rg = ("-")
+		try:
+			rl = zy["relationship_status"]
+		except KeyError:
+			rl = ("-")
+		try:
+			rls = zy["significant_other"]["name"]
+		except KeyError:
+			rls = ("-")
+		try:
+			lc = zy["location"]["name"]
+		except KeyError:
+			lc = ("-")
+		try:
+			ht = zy["hometown"]["name"]
+		except KeyError:
+			ht = ("-")
+		try:
+			ab = zy["about"]
+		except KeyError:
+			ab = ("-")
+		try:
+			lo = zy["locale"]
+		except KeyError:
+			lo = ("-")
+		mlaku("[•] Name : " + nm)
+		mlaku("[•] First Name : " + nd)
+		mlaku("[•] Middle Name : " + nt)
+		mlaku("[•] Last Name : " + nb)
+		mlaku("[•] Birthday : " + ut)
+		mlaku("[•] Gender : " + gd)
+		mlaku("[•] Email : " + em)
+		mlaku("[•] Link : " + lk)
+		mlaku("[•] Username : " + us)
+		mlaku("[•] Religion : " + rg)
+		mlaku("[•] Relationship Status : " + rl)
+		mlaku("[•] Relationship With : " + rls)
+		mlaku("[•] Location : " + lc)
+		mlaku("[•] Hometown : " + ht)
+		mlaku("[•] About : " + ab)
+		mlaku("[•] Locale : " + lo)
 	###----------[ CEK HASIL CRACK ]---------- ###
 	def cek_hasil(self):
 		prints(Panel(f"""{P2}[{color_text}01{P2}]. lihat akun hasil crack ok
