@@ -119,6 +119,14 @@ for xd in range(10000):
     uateddy = random.choice([strvredmi, strvsamsung, strvgt])
     free.append(uateddy)
 
+ua_xiaomi  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
+ua_nokia   = 'nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+'
+ua_asus    = 'Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
+ua_huawei  = 'Mozilla/5.0 (Linux; Android 8.1.0; HUAWEI Y7 PRIME 2019 Build/5887208) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.62 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
+ua_vivo    = 'Mozilla/5.0 (Linux; Android 11; vivo 1918) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.62 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
+ua_oppo    = 'Mozilla/5.0 (Linux; Android 5.1.1; A37f) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
+ua_samsung = 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/35.0.0.48.273;]'
+ua_windows = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
 
 def var_ugen():
     print("%s╠══[%s1%s] %sDapatkan User Agent"%(O,P,O,P))
@@ -133,20 +141,45 @@ def ugen():
     var_ugen()
     pmu = input('%s╠══[%s•%s] %sPilih : '%(O,P,O,P))
     print('%s║'%(O))
-    if pmu in[""]:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));menu()
-    elif pmu in ['1','01','001','a']:os.system('xdg-_dapunta_dapunta_ https://www.google.com/search?q=My+User+Agent&oq=My+User+Agent&aqs=chrome..69i57j0l3j0i22i30l6.4674j0j1&sourceid=chrome&ie=UTF-8');input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
+    if pmu in[""]:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));login()
+    elif pmu in ['1','01','001','a']:os.system('xdg-open https://www.google.com/search?q=My+User+Agent&oq=My+User+Agent&aqs=chrome..69i57j0l3j0i22i30l6.4674j0j1&sourceid=chrome&ie=UTF-8');input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
     elif pmu in ['2','02','002','b']:
         os.system("rm -rf ugent.txt");ua = input("%s╚══[%s•%s] %sMasukkan User Agent : \n\n"%(O,P,O,P))
-        try:ugent = open('ugent.txt','w');ugent.write(ua);ugent.close();jalan("\n%s╔══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
-        except (KeyError,IOError):jalan("\n%s╔══[ %sGagal Mengganti User Agent %s]"%(M,P,M));print('%s║'%(M));input('%s╚══[ %sKembali %s]%s'%(M,P,M,P));menu()
+        try:ugent = open('ugent.txt','w');ugent.write(ua);ugent.close();jalan("\n%s╔══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
+        except (KeyError,IOError):jalan("\n%s╔══[ %sGagal Mengganti User Agent %s]"%(M,P,M));print('%s║'%(M));input('%s╚══[ %sKembali %s]%s'%(M,P,M,P));login()
     elif pmu in ['3','03','003','c']:print('sabar dalam perkembangan')
-    elif pmu in ['4','04','004','d']:os.system("rm -rf ugent.txt");jalan("%s╠══[ %sUser Agent Berhasil Dihapus %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
+    elif pmu in ['4','04','004','d']:os.system("rm -rf bbnew.txt");jalan("%s╠══[ %sUser Agent Berhasil Dihapus %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
     elif pmu in ['5','05','005','e']:
-        try:ungser = open('ugent.txt', 'r').read()
+        try:ungser = open('bbnew.txt', 'r').read()
         except (KeyError,IOError):ungser = 'Tidak Ditemukan'
-        print("%s╚══[%s•%s] %sUser Agent Anda  : \n\n%s%s"%(O,P,O,P,O,ungser));jalan("\n%s╔══[ %sIni Adalah User Agent Anda Saat Ini %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
-    elif pmu in ['0','00','000','f']:menu()
+        print("%s╚══[%s•%s] %sUser Agent Anda  : \n\n%s%s"%(O,P,O,P,O,ungser));jalan("\n%s╔══[ %sIni Adalah User Agent Anda Saat Ini %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
+    elif pmu in ['0','00','000','f']:login()
     else:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P))
+def ugen_hp():
+    os.system("rm -rf bbnew.txt")
+    print('%s╠══[%s1%s] %sXiaomi'%(O,P,O,P))
+    print('%s╠══[%s2%s] %sNokia'%(O,P,O,P))
+    print('%s╠══[%s3%s] %sAsus'%(O,P,O,P))
+    print('%s╠══[%s4%s] %sHuawei'%(O,P,O,P))
+    print('%s╠══[%s5%s] %sVivo'%(O,P,O,P))
+    print('%s╠══[%s6%s] %sOppo'%(O,P,O,P))
+    print('%s╠══[%s7%s] %sSamsung'%(O,P,O,P))
+    print('%s╠══[%s8%s] %sWindows'%(O,P,O,P))
+    pc = input('%s╠══[%s•%s] %sPilih : '%(O,P,O,P))
+    print('%s║'%(O))
+    if pc in['']:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));login()
+    elif pc in ['1','01']:ugent = open('bbnew.txt','w');ugent.write(ua_xiaomi);ugent.close()
+    elif pc in ['2','02']:ugent = open('bbnew.txt','w');ugent.write(ua_nokia);ugent.close()
+    elif pc in ['3','03']:ugent = open('bbnew.txt','w');ugent.write(ua_asus);ugent.close()
+    elif pc in ['4','04']:ugent = open('bbnew.txt','w');ugent.write(ua_huawei);ugent.close()
+    elif pc in ['5','05']:ugent = open('bbnew.txt','w');ugent.write(ua_vivo);ugent.close()
+    elif pc in ['6','06']:ugent = open('bbnew.txt','w');ugent.write(ua_oppo);ugent.close()
+    elif pc in ['7','07']:ugent = open('bbnew.txt','w');ugent.write(ua_samsung);ugent.close()
+    elif pc in ['8','08']:ugent = open('bbnew.txt','w');ugent.write(ua_windows);ugent.close()
+    else:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));login()
+    jalan("%s╠══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
+
+
 def uaku():
     try:
         ua=open('bbnew.txt','r').read().splitlines()
