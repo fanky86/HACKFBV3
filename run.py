@@ -119,6 +119,34 @@ for xd in range(10000):
     uateddy = random.choice([strvredmi, strvsamsung, strvgt])
     free.append(uateddy)
 
+
+def var_ugen():
+    print("%s╠══[%s1%s] %sDapatkan User Agent"%(O,P,O,P))
+    print("%s╠══[%s2%s] %sGanti User Agent %s(%sManual%s)"%(O,P,O,P,O,P,O))
+    print("%s╠══[%s3%s] %sGanti User Agent %s(%sSesuaikan HP%s)"%(O,P,O,P,O,P,O))
+    print("%s╠══[%s4%s] %sHapus User Agent"%(O,P,O,P))
+    print("%s╠══[%s5%s] %sCek User Agent"%(O,P,O,P))
+    print("%s╠══[%s0%s] %sKembali"%(O,P,O,P))
+### Menu User Agent
+
+def ugen():
+    var_ugen()
+    pmu = input('%s╠══[%s•%s] %sPilih : '%(O,P,O,P))
+    print('%s║'%(O))
+    if pmu in[""]:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));menu()
+    elif pmu in ['1','01','001','a']:os.system('xdg-_dapunta_dapunta_ https://www.google.com/search?q=My+User+Agent&oq=My+User+Agent&aqs=chrome..69i57j0l3j0i22i30l6.4674j0j1&sourceid=chrome&ie=UTF-8');input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
+    elif pmu in ['2','02','002','b']:
+        os.system("rm -rf ugent.txt");ua = input("%s╚══[%s•%s] %sMasukkan User Agent : \n\n"%(O,P,O,P))
+        try:ugent = open('ugent.txt','w');ugent.write(ua);ugent.close();jalan("\n%s╔══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
+        except (KeyError,IOError):jalan("\n%s╔══[ %sGagal Mengganti User Agent %s]"%(M,P,M));print('%s║'%(M));input('%s╚══[ %sKembali %s]%s'%(M,P,M,P));menu()
+    elif pmu in ['3','03','003','c']:print('sabar dalam perkembangan')
+    elif pmu in ['4','04','004','d']:os.system("rm -rf ugent.txt");jalan("%s╠══[ %sUser Agent Berhasil Dihapus %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
+    elif pmu in ['5','05','005','e']:
+        try:ungser = open('ugent.txt', 'r').read()
+        except (KeyError,IOError):ungser = 'Tidak Ditemukan'
+        print("%s╚══[%s•%s] %sUser Agent Anda  : \n\n%s%s"%(O,P,O,P,O,ungser));jalan("\n%s╔══[ %sIni Adalah User Agent Anda Saat Ini %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));menu()
+    elif pmu in ['0','00','000','f']:menu()
+    else:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P))
 def uaku():
     try:
         ua=open('bbnew.txt','r').read().splitlines()
@@ -485,7 +513,7 @@ def login_lagi334():
 			
 			except Exception as e:
 				Console().print(f" {H2}• {P2}[bold red]Cookies Kadaluwarsa Bang")
-				os.system('rm -rf .token.txt && rm -rf .cok.txt && rm -rf .token1.txt && rm -rf .token.txt')
+				os.system('rm -rf .token.txt && rm -rf .cok.txt && rm -rf .token1.txt && rm -rf .token2.txt')
 				print(e)
 				time.sleep(3)
 				exit()
@@ -1341,8 +1369,8 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-	#ua=random.choice(free)
+	#ua  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
+	ua=random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1787,6 +1815,8 @@ class Lain:
 		menu = console.input(f" {H2}• {P2}pilih menu : ")
 		if menu in["01","1"]:
 			self.cek_hasil()
+		elif menu in["03","3"]:
+			ugen()
 		elif menu in["04","4"]:
 			self.ganti_tema()
 		elif menu in["05","5"]:
