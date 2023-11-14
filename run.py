@@ -1976,8 +1976,8 @@ class Lain:
 		
 
 def targetku():
-	os.system('src/python loi.py')
-
+	os.system('cd src')
+	os.system('python loi.py')
 ###----------[ BOT ]---------- ###
 from bs4 import BeautifulSoup as bs
 from datetime import datetime
