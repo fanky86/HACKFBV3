@@ -95,7 +95,7 @@ except Exception as e:
 prox=open('.prox.txt','r').read().splitlines()
 
 ###----------[ GENERATE USERAGENT ]---------- ###
-def samsung():
+for i in range(200):
 	rr = random.randint
 	rc = random.choice
 	S = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
@@ -105,7 +105,8 @@ def samsung():
 	U = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-T580) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Safari/537.36"
 	N = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-J320FN) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
 	G = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-G973F/G973FXXSEFUL1) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
-	return random.choice([S,A,M,S,U,N,G])
+	rudalt= random.choice([S,A,M,S,U,N,G])
+	free.append(rudalt)
 
 
 for xd in range(10000):
@@ -129,7 +130,7 @@ for xd in range(10000):
     strvnokiax = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; Nokia_X Build/{str(rc(build_nokiax))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 NokiaBrowser/7.{str(rr(1,5))}.1.{str(rr(16,37))} {str(rc(aZ))}{str(rr(1,1000))}"
     strvgt = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(gt))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 {str(rc(aZ))}{str(rr(1,1000))}"
     uateddy = random.choice([strvredmi, strvsamsung, strvgt])
-    free.append(uateddy)
+    ugen.append(uateddy)
 
 ua_xiaomi  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
 ua_nokia   = 'nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+'
@@ -1403,7 +1404,7 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(samsung())
+	ua=random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
