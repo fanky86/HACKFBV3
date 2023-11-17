@@ -1333,6 +1333,7 @@ def passwrd():
 def regulerv3(idf,pwv,url):
 	global loop,ok,cp
 	rr = random.randint
+	rc = random.choice
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f'\r[bold white]Reguler V3[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
