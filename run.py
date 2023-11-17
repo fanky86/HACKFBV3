@@ -96,18 +96,27 @@ except Exception as e:
 prox=open('.prox.txt','r').read().splitlines()
 
 ###----------[ GENERATE USERAGENT ]---------- ###
-for i in range(200):
-	rr = random.randint
-	rc = random.choice
-	S = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
-	A = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A115F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
-	M = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A505F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
-	S = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-A105F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
-	U = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-T580) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Safari/537.36"
-	N = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-J320FN) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
-	G = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-G973F/G973FXXSEFUL1) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
-	rudalt= random.choice([S,A,M,S,U,N,G])
-	ugent.append(rudalt)
+realme = random.choice(["RMX2072","RMX2086","RMX3350"])
+for Xr in range (10000):	
+	a='Mozilla/5.0 (Linux; Android'
+	b=random.randrange(1, 9)
+	c=random.randrange(1, 9)
+	d='Build/'
+	e=random.choice(["MMB29T","JZO54K","M1AJQ","KOT49H"])
+	f='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
+	g=random.randrange(73,112)
+	h='0'
+	i=random.randrange(4200,4900)
+	j=random.randrange(40,150)
+	k='Mobile Safari/534.36'
+	l=random.choice(["UCBrowser","VenusBrowser","HiBrowser","HeadlessChrome","PaleMoon","OPR","Edge"])
+	#l=random.choice(["VenusBrowser","HiBrowser","HeadlessChrome"])
+	m=random.randrange(1,9)
+	n=random.randrange(1,9)
+	o='0'
+	p=random.randrange(5,20)
+	uaku=(f'{a} {b}.{c}; {realme}) {d}{e}; wv) {f}{g}.{h}.{i}.{j} {k} {l}/{m}.{n}.{o}.{p}')
+	ugent.append(uaku)
 #----------[ USER-AGENT ]----------#  
 for khontol in range(9999):
 	rc = random.choice; rr = random.randint
@@ -1335,9 +1344,9 @@ def regulerv3(idf,pwv,url):
 	rr = random.randint
 	rc = random.choice
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-	prog.update(des,description=f'\r[bold white]Reguler V3[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
+	prog.update(des,description=f'\r[bold white]Grap-Api[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	ua = random.choice(raka)
+	ua = random.choice(ugent)
 	#ua = random.choice(free)
 	ua2 = rc(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
 	ses = requests.Session()
