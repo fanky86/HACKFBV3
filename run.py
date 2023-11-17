@@ -109,29 +109,6 @@ for i in range(200):
 	rudalt= random.choice([S,A,M,S,U,N,G])
 	ugent.append(rudalt)
 #----------[ USER-AGENT ]----------#  
-realme = random.choice(["RMX2072","RMX2086","RMX3350"])
-for Xr in range (10000):	
-	a='Mozilla/5.0 (Linux; Android'
-	b=random.randrange(1, 9)
-	c=random.randrange(1, 9)
-	d='Build/'
-	e=random.choice(["MMB29T","JZO54K","M1AJQ","KOT49H"])
-	f='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
-	g=random.randrange(73,112)
-	h='0'
-	i=random.randrange(4200,4900)
-	j=random.randrange(40,150)
-	k='Mobile Safari/534.36'
-	l=random.choice(["UCBrowser","VenusBrowser","HiBrowser","HeadlessChrome","PaleMoon","OPR","Edge"])
-	#l=random.choice(["VenusBrowser","HiBrowser","HeadlessChrome"])
-	m=random.randrange(1,9)
-	n=random.randrange(1,9)
-	o='0'
-	p=random.randrange(5,20)
-	uaku=(f'{a} {b}.{c}; {realme}) {d}{e}; wv) {f}{g}.{h}.{i}.{j} {k} {l}/{m}.{n}.{o}.{p}')
-	free.append(uaku)
-
-
 for khontol in range(9999):
 	rc = random.choice; rr = random.randint
 	android_versi = str(rr(5,13))
@@ -180,7 +157,7 @@ for xd in range(10000):
     strvnokiax = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; Nokia_X Build/{str(rc(build_nokiax))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 NokiaBrowser/7.{str(rr(1,5))}.1.{str(rr(16,37))} {str(rc(aZ))}{str(rr(1,1000))}"
     strvgt = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(gt))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 {str(rc(aZ))}{str(rr(1,1000))}"
     uateddy = random.choice([strvredmi, strvsamsung, strvgt])
-    ugen.append(uateddy)
+    free.append(uateddy)
 
 ua_xiaomi  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
 ua_nokia   = 'nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+'
@@ -1359,7 +1336,7 @@ def regulerv3(idf,pwv,url):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f'\r[bold white]Reguler V2[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	ua = random.choice(ugen)
+	ua = random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1423,7 +1400,7 @@ def regulerv2(idf,pwv,url):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f'\r[bold white]Reguler V2[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	ua = random.choice(ugen)
+	ua = random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1494,7 +1471,7 @@ def crack3(idf,pwv):
     global loop,ok,cp
     prog.update(des,description=f" {K2}•{H2} MBASIC {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
     prog.advance(des)
-    ua = random.choice(raka)
+    ua = random.choice(free)
     ua2 = random.choice(raka)
     ses = requests.Session()
     for pw in pwv:
@@ -1556,7 +1533,7 @@ def mbasic(idf,pwv):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f" {K2}•{H2} VALIDATE {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(raka)
+	ua=random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1591,7 +1568,7 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(ugen)
+	ua=random.choice(free)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
