@@ -109,7 +109,6 @@ for i in range(200):
 	rudalt= random.choice([S,A,M,S,U,N,G])
 	ugent.append(rudalt)
 #----------[ USER-AGENT ]----------#  
-ugen=[]
 realme = random.choice(["RMX2072","RMX2086","RMX3350"])
 for Xr in range (10000):	
 	a='Mozilla/5.0 (Linux; Android'
@@ -130,7 +129,7 @@ for Xr in range (10000):
 	o='0'
 	p=random.randrange(5,20)
 	uaku=(f'{a} {b}.{c}; {realme}) {d}{e}; wv) {f}{g}.{h}.{i}.{j} {k} {l}/{m}.{n}.{o}.{p}')
-	ugen.append(uaku)
+	free.append(uaku)
 
 
 for khontol in range(9999):
@@ -181,7 +180,7 @@ for xd in range(10000):
     strvnokiax = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; Nokia_X Build/{str(rc(build_nokiax))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 NokiaBrowser/7.{str(rr(1,5))}.1.{str(rr(16,37))} {str(rc(aZ))}{str(rr(1,1000))}"
     strvgt = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(gt))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 {str(rc(aZ))}{str(rr(1,1000))}"
     uateddy = random.choice([strvredmi, strvsamsung, strvgt])
-    free.append(uateddy)
+    ugen.append(uateddy)
 
 ua_xiaomi  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
 ua_nokia   = 'nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+'
