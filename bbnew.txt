@@ -1,1 +1,0 @@
-Mozilla/5.0 (Linux; Android  6; SAMSUNG SM-J210Y) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/14.0 Chrome/89.0.4397.63 Mobile Safari/537.36
