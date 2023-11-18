@@ -165,7 +165,7 @@ for xd in range(10000):
     strvredmi1 = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(redmi))} Build/{str(rc(lonte))}) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{str(rr(10,107))}.0.{str(rr(111,6666))}.{str(rr(10,400))} UCBrowser/{str(rr(1,20))}.{str(rr(1,10))}.0.{str(rr(111,5555))} Mobile Safari/537.36 OPR/{str(rr(10,80))}.{str(rr(1,10))}.{str(rr(111,5555))}.{str(rr(111,99999))}"
     strvnokiax = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; Nokia_X Build/{str(rc(build_nokiax))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 NokiaBrowser/7.{str(rr(1,5))}.1.{str(rr(16,37))} {str(rc(aZ))}{str(rr(1,1000))}"
     strvgt = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(gt))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 {str(rc(aZ))}{str(rr(1,1000))}"
-    uateddy = random.choice([strvredmi, strvsamsung, strvgt])
+    uateddy = random.choice([strvredmi, strvsamsung])
     free.append(uateddy)
 
 ua_xiaomi  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
@@ -1253,7 +1253,7 @@ def setting():
     else:
         print(' [+] Pilih Yang Bener Sayang ')
         exit()
-    Console().print(Panel(f'{P2}[{color_text}01{P2}] Login Site [bold green]mbasic.facebook.com[bold white] [/]\n{P2}[{color_text}02{P2}] Login Site [bold green]validate.facebook.com[bold white]\n{P2}[{color_text}03{P2}] Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
+    Console().print(Panel(f'{P2}[{color_text}01{P2}] Login Site [bold green]Graph.facebook.com[bold white] [/]\n{P2}[{color_text}02{P2}] Login Site [bold green]validate.facebook.com[bold white]\n{P2}[{color_text}03{P2}] Login Site [bold green]reguler.facebook.com[bold white] [/]',width=80,style=f"{color_panel}", title="[bold green] Method"))
     hc = console.input(f" {H2}• {P2}Masukan : ")
     if hc in ['1','01']:
         method.append('mbasic')
@@ -1344,7 +1344,7 @@ def regulerv3(idf,pwv,url):
 	rr = random.randint
 	rc = random.choice
 	AinkRaka = random.choice(["id-ID,id;q=0.9","en-US,en;q=0.9","en-GB,en;q=0.9","bd-BD,bd;q=0.9"])
-	prog.update(des,description=f'\r[bold white]Grap-Api[bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
+	prog.update(des,description=f'\r[bold white]Grap-Api [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
 	ua = random.choice(free)
 	#ua = random.choice(free)
