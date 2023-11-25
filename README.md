@@ -9,7 +9,7 @@ download aplikasi termux di playstore atau <a href="https://f-droid.org/en/packa
     $ rm -rf HACK-FB
     $ git clone https://github.com/Rudal-XD/HACKFBV3
     $ cd HACKFBV3
-    $ python run.py
+    $ python puh.py
 
 - Oke sekarang script sudah berhasil di ```install```
 
@@ -20,7 +20,7 @@ sekarang karena script sudah ```diinstall``` tinggal kita jalankan, ketikan peri
 
     $ cd $HOME/HACKFBV3
     $ git pull
-    $ python run.py
+    $ python puh.py
 
 
 - Notice me: ```Hasil crack followers banyak atau sedikit nya tergantung target yang di dapatkan.```
