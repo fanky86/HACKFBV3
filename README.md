@@ -6,7 +6,7 @@ download aplikasi termux di playstore atau <a href="https://f-droid.org/en/packa
     $ pkg update && pkg upgrade
     $ pkg install python git
     $ pkg install requests
-    $ rm -rf HACK-FB
+    $ rm -rf HACKFBV3
     $ git clone https://github.com/Rudal-XD/HACKFBV3
     $ cd HACKFBV3
     $ python puh.py
